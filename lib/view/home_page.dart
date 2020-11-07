@@ -9,7 +9,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 class HomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    Timer(Duration(seconds: 1), () {
+    Timer(Duration(milliseconds: 500), () {
       context.read<SparkARBloc>().add(SparkAREvent.update);
     });
     return BlocBuilder<SparkARBloc, SparkARState>(builder: (_, state) {
@@ -17,12 +17,13 @@ class HomePage extends StatelessWidget {
           child: RefreshIndicator(
               onRefresh: () async =>
                   context.read<SparkARBloc>().add(SparkAREvent.update),
-              child: Expanded(
-                  child: ListView.builder(
+              child: ListView.builder(
                 itemCount: state.userList.length,
                 itemBuilder: (context, index) =>
                     UserListItem(user: state.userList[index]),
-              ))));
+              )
+          )
+      );
     });
   }
 }
