@@ -20,12 +20,6 @@ jobs:
       - name: flutter build
         run: flutter build web
 
-      - name: installing npm
-        run: sudo apt update && sudo apt i -y npm
-
-      - name: installing npx
-        run: sudo npm -g install npx
-
       - uses: FirebaseExtended/action-hosting-deploy@v0
         with:
           repoToken: '${{ secrets.GITHUB_TOKEN }}'
