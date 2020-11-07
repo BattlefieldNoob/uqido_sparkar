@@ -14,6 +14,9 @@ jobs:
     steps:
       - uses: actions/checkout@v2
 
+      - name: flutter enable web
+        run: flutter config --enable-web
+
       - name: flutter build
         run: flutter build web
 
