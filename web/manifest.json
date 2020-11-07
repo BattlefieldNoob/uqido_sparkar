@@ -1,11 +1,11 @@
 {
-    "name": "uqido_sparkar",
-    "short_name": "uqido_sparkar",
+    "name": "Uqido SparkAR",
+    "short_name": "Uqido SparkAR",
     "start_url": ".",
     "display": "standalone",
     "background_color": "#0175C2",
     "theme_color": "#0175C2",
-    "description": "A new Flutter project.",
+    "description": "Uqido SparkAR",
     "orientation": "portrait-primary",
     "prefer_related_applications": false,
     "icons": [

@@ -1,4 +1,6 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/rendering.dart';
 import 'package:flutter/widgets.dart';
 import 'package:uqido_sparkar/model/sparkar_effect.dart';
 import 'package:url_launcher/url_launcher.dart';
@@ -10,41 +12,54 @@ class EffectListItem extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Card(
-        child: Padding(
-      padding: EdgeInsets.all(8),
+    return getCardScaffold(
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
-          elevateIntoCard(Image.network(effect.iconUrl, width: 64, height: 64)),
-          Text(
-            effect.name,
-            style: TextStyle(fontSize: 30),
-          ),
-          Row(children: [
-            elevateIntoCard(
-                getClickableIcon(Icons.public_rounded, effect.publicLink)),
-            elevateIntoCard(getClickableIcon(Icons.home, effect.testLink)),
-          ]),
+          FittedBox(
+              alignment: Alignment.centerLeft,
+              child: Image.network(
+                effect.iconUrl,
+                width: 64,
+                height: 64,
+              )),
+          Expanded(
+              child: Padding(
+                  padding: EdgeInsets.symmetric(horizontal: 8),
+                  child: Text(
+                    effect.name,
+                    style: TextStyle(color: Colors.white, fontSize: 20),
+                  ))),
+          FittedBox(
+              alignment: Alignment.centerRight,
+              child: Row(children: [
+                getClickableIcon(Icons.public_rounded, effect.publicLink),
+                getClickableIcon(Icons.home, effect.testLink),
+              ])),
         ],
       ),
-    ));
-  }
-
-  Widget elevateIntoCard(Widget child) {
-    return Card(
-        elevation: 3,
-        shape: RoundedRectangleBorder(
-          borderRadius: BorderRadius.circular(10.0),
-        ),
-        child: child);
+    );
   }
 
   Widget getClickableIcon(IconData icon, String url) {
     return IconButton(
         iconSize: 48,
         icon: Icon(icon),
-        color: Colors.black12,
+        color: Colors.white70,
         onPressed: () => launch(url));
+  }
+
+  Widget getCardScaffold({Widget child}) {
+    return Card(
+        shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(10)),
+        elevation: 3,
+        child: Container(
+            decoration: BoxDecoration(color: Color.fromRGBO(64, 75, 106, .9)),
+            child: ConstrainedBox(
+                constraints: BoxConstraints(maxHeight: 80),
+                child: AspectRatio(
+                    aspectRatio: 7,
+                    child:
+                        Padding(padding: EdgeInsets.all(8), child: child)))));
   }
 }

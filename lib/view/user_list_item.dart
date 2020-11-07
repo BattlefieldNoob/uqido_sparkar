@@ -13,10 +13,10 @@ class UserListItem extends StatelessWidget {
     return Padding(
         padding: EdgeInsets.all(16),
         child: ConstrainedBox(
-            constraints: new BoxConstraints(minHeight: 35.0, maxHeight: 600.0),
+            constraints: new BoxConstraints(minHeight: 35.0, maxHeight: 900.0),
             child:
                 Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
-              Text(user.name,style: TextStyle(fontSize: 45),),
+              Text(user.name,style: TextStyle(fontSize: 45,color: Colors.white),),
               SizedBox(height: 8,),
               Expanded(
                   child: ListView.builder(

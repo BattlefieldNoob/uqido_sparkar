@@ -10,7 +10,9 @@ class App extends StatelessWidget {
     return BlocProvider(
       create: (_) => SparkARBloc(),
       child: MaterialApp(
+          theme: ThemeData.dark(),
           home: Scaffold(
+              backgroundColor: Color.fromRGBO(58, 66, 86, 1.0),
               appBar: AppBar(title: const Text('Uqido Spark AR')),
               body: HomePage())),
     );
