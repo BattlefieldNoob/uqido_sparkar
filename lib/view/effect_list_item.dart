@@ -56,7 +56,7 @@ class EffectListItem extends StatelessWidget {
         child: Container(
             decoration: BoxDecoration(color: Color.fromRGBO(64, 75, 106, .9)),
             child: ConstrainedBox(
-                constraints: BoxConstraints(maxHeight: 80),
+                constraints: BoxConstraints(maxHeight: 80, minWidth:double.infinity),
                 child: AspectRatio(
                     aspectRatio: 7,
                     child:
