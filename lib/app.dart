@@ -2,7 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:uqido_sparkar/blocs/sparkar_bloc.dart';
-import 'package:uqido_sparkar/view/home_page.dart';
+import 'package:uqido_sparkar/view/home_page_desktop.dart';
+import 'package:uqido_sparkar/view/home_page_mobile.dart';
 
 class App extends StatelessWidget {
   @override
@@ -14,7 +15,15 @@ class App extends StatelessWidget {
           home: Scaffold(
               backgroundColor: Color.fromRGBO(58, 66, 86, 1.0),
               appBar: AppBar(title: const Text('Uqido Spark AR')),
-              body: HomePage())),
+              body: LayoutBuilder(
+                builder: (context, constraints) {
+                  final ratio = constraints.maxWidth / constraints.maxHeight;
+                  print("Ratio:" + ratio.toString());
+                  return ratio > 1.5 ? HomePageDesktop() : HomePageMobile();
+                },
+              )
+          )
+      ),
     );
   }
 }
