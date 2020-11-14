@@ -8,7 +8,9 @@ part of 'sparkar_user.dart';
 
 SparkARUser _$SparkARUserFromJson(Map<String, dynamic> json) {
   return SparkARUser(
+    json['id'] as String,
     json['name'] as String,
+    json['iconUrl'] as String,
     (json['effects'] as List)
         ?.map((e) => e == null
             ? null
@@ -19,6 +21,8 @@ SparkARUser _$SparkARUserFromJson(Map<String, dynamic> json) {
 
 Map<String, dynamic> _$SparkARUserToJson(SparkARUser instance) =>
     <String, dynamic>{
+      'id': instance.id,
       'name': instance.name,
+      'iconUrl': instance.iconUrl,
       'effects': instance.effects,
     };

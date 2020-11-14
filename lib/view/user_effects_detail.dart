@@ -1,3 +1,4 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:uqido_sparkar/model/sparkar_effect.dart';
@@ -11,12 +12,11 @@ class UserEffectDetail extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Padding(
+    return ListView.builder(
         padding: EdgeInsets.symmetric(horizontal: 16, vertical: 6),
-        child: ListView.builder(
-            itemCount: effects.length,
-            itemBuilder: (context, index) => EffectListItem(
-                  effect: effects[index],
-                )));
+        itemCount: effects.length,
+        itemBuilder: (context, index) => EffectListItem(
+              effect: effects[index],
+            ));
   }
 }

@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
 import 'package:flutter/widgets.dart';
 import 'package:uqido_sparkar/model/sparkar_effect.dart';
+import 'package:uqido_sparkar/view/effect_visibility_status.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 class EffectListItem extends StatelessWidget {
@@ -15,6 +16,7 @@ class EffectListItem extends StatelessWidget {
     return getCardScaffold(
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
+        crossAxisAlignment: CrossAxisAlignment.center,
         children: [
           FittedBox(
               alignment: Alignment.centerLeft,
@@ -25,11 +27,20 @@ class EffectListItem extends StatelessWidget {
               )),
           Expanded(
               child: Padding(
-                  padding: EdgeInsets.symmetric(horizontal: 8),
-                  child: Text(
-                    effect.name,
-                    style: TextStyle(color: Colors.white, fontSize: 20),
-                  ))),
+                  padding: EdgeInsets.symmetric(horizontal: 12, vertical: 6),
+                  child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Text(
+                          effect.name,
+                          style: TextStyle(color: Colors.white, fontSize: 20),
+                        ),
+                        SizedBox(
+                          height: 2,
+                        ),
+                        EffectVisibilityStatus(effect.submissionStatus,
+                            effect.visibilityStatus, effect.isDeprecated)
+                      ]))),
           FittedBox(
               alignment: Alignment.centerRight,
               child: Row(children: [
@@ -56,7 +67,8 @@ class EffectListItem extends StatelessWidget {
         child: Container(
             decoration: BoxDecoration(color: Color.fromRGBO(64, 75, 106, .9)),
             child: ConstrainedBox(
-                constraints: BoxConstraints(maxHeight: 80, minWidth:double.infinity),
+                constraints:
+                    BoxConstraints(maxHeight: 80, minWidth: double.infinity),
                 child: AspectRatio(
                     aspectRatio: 7,
                     child:

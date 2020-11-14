@@ -29,7 +29,7 @@ class HomePageDesktop extends HookWidget {
               context.read<SparkARBloc>().add(SparkARUpdateAction()),
           child: Row(children: [
             SizedBox(
-                width: 400,
+                width: 500,
                 child: Container(
                     color: Color.fromRGBO(48, 56, 66, 1.0),
                     child: ListView.builder(
@@ -59,22 +59,30 @@ class HomePageDesktop extends HookWidget {
   Widget getUserNameItem(
       BuildContext context, List<SparkARUser> users, int index) {
     return Padding(
-        padding: EdgeInsets.symmetric(vertical: 2),
-        child: InkWell(
-            onTap: () =>
-                context.read<SparkARBloc>().add(SparkARSelectUserAction(index)),
-            child: Container(
-                color: Color.fromRGBO(58, 66, 76, 1.0),
+        padding: EdgeInsets.only(bottom: 4),
+        child: Container(
+            color: Color.fromRGBO(58, 66, 76, 1.0),
+            child: InkWell(
+                onTap: () => context
+                    .read<SparkARBloc>()
+                    .add(SparkARSelectUserAction(index)),
                 child: SizedBox(
                     height: 64,
-                    child: Padding(
-                        padding: EdgeInsets.symmetric(horizontal: 8, vertical: 4),
-                        child: Align(
-                            alignment: Alignment.centerLeft,
-                            child: Text(
-                              users[index].name,
-                              textAlign: TextAlign.start,
-                              style: TextStyle(fontSize: 20),
-                            )))))));
+                    child: Row(
+                        children: [
+                      Padding(
+                          padding: EdgeInsets.symmetric(horizontal: 12),
+                          child: CircleAvatar(
+                              radius: 20,
+                              backgroundImage:
+                                  NetworkImage(users[index].iconUrl))),
+                      Align(
+                          alignment: Alignment.centerLeft,
+                          child: Text(
+                            users[index].name,
+                            textAlign: TextAlign.start,
+                            style: TextStyle(fontSize: 20),
+                          ))
+                    ])))));
   }
 }
