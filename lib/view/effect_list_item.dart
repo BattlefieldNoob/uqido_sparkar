@@ -14,50 +14,35 @@ class EffectListItem extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return getCardScaffold(
-      child: Row(
-        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-        crossAxisAlignment: CrossAxisAlignment.center,
-        children: [
-          FittedBox(
-              alignment: Alignment.centerLeft,
-              child: Image.network(
-                effect.iconUrl,
-                width: 64,
-                height: 64,
-              )),
-          Expanded(
-              child: Padding(
-                  padding: EdgeInsets.symmetric(horizontal: 12, vertical: 6),
-                  child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        Text(
-                          effect.name,
-                          style: TextStyle(color: Colors.white, fontSize: 20),
-                        ),
-                        SizedBox(
-                          height: 2,
-                        ),
-                        EffectVisibilityStatus(effect.submissionStatus,
-                            effect.visibilityStatus, effect.isDeprecated)
-                      ]))),
-          FittedBox(
-              alignment: Alignment.centerRight,
-              child: Row(children: [
-                getClickableIcon(Icons.public_rounded, effect.publicLink),
-                getClickableIcon(Icons.home, effect.testLink),
-              ])),
-        ],
+      child: ListTile(
+        dense: false,
+        contentPadding: EdgeInsets.symmetric(horizontal: 10),
+        leading: Image.network(
+          effect.iconUrl,
+          width: 48,
+          height: 48,
+        ),
+        title: Text(effect.name),
+        subtitle: EffectVisibilityStatus(effect.submissionStatus,
+            effect.visibilityStatus, effect.isDeprecated),
+        trailing: FittedBox(
+            alignment: Alignment.centerRight,
+            child: Row(children: [
+              getClickableIcon(Icons.public_rounded, effect.publicLink,
+                  enabled: mapStatusToBool()),
+              getClickableIcon(Icons.home, effect.testLink)
+            ])),
       ),
     );
   }
 
-  Widget getClickableIcon(IconData icon, String url) {
+  Widget getClickableIcon(IconData icon, String url, {bool enabled = true}) {
     return IconButton(
-        iconSize: 48,
+        iconSize: 36,
         icon: Icon(icon),
+        disabledColor: Colors.white30,
         color: Colors.white70,
-        onPressed: () => launch(url));
+        onPressed: enabled ? () => launch(url) : null);
   }
 
   Widget getCardScaffold({Widget child}) {
@@ -66,12 +51,21 @@ class EffectListItem extends StatelessWidget {
         elevation: 3,
         child: Container(
             decoration: BoxDecoration(color: Color.fromRGBO(64, 75, 106, .9)),
-            child: ConstrainedBox(
-                constraints:
-                    BoxConstraints(maxHeight: 80, minWidth: double.infinity),
-                child: AspectRatio(
-                    aspectRatio: 7,
-                    child:
-                        Padding(padding: EdgeInsets.all(8), child: child)))));
+            child: child));
+  }
+
+  bool mapStatusToBool() {
+    final visibility = effect.visibilityStatus;
+    final submission = effect.submissionStatus;
+    if (visibility == "NOT_VISIBLE" ||
+        submission == "NOT_APPROVED" ||
+        submission == "NOT_REVIEWED" ||
+        effect.isDeprecated)
+      return false;
+    else if ((visibility == "VISIBLE" && submission == "UPDATE_REJECTED") ||
+        (visibility == "VISIBLE" && submission == "APPROVED"))
+      return true;
+    else
+      return false;
   }
 }

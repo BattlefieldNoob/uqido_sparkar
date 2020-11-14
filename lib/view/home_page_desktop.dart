@@ -58,9 +58,7 @@ class HomePageDesktop extends HookWidget {
 
   Widget getUserNameItem(
       BuildContext context, List<SparkARUser> users, int index) {
-    return Padding(
-        padding: EdgeInsets.only(bottom: 4),
-        child: Container(
+    return Container(
             color: Color.fromRGBO(58, 66, 76, 1.0),
             child: InkWell(
                 onTap: () => context
@@ -83,6 +81,6 @@ class HomePageDesktop extends HookWidget {
                             textAlign: TextAlign.start,
                             style: TextStyle(fontSize: 20),
                           ))
-                    ])))));
+                    ]))));
   }
 }

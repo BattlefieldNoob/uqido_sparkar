@@ -12,23 +12,19 @@ class EffectVisibilityStatus extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Padding(
-        padding: EdgeInsets.all(2),
-        child: Row(
-          children: [
-            CircleAvatar(
-              backgroundColor: mapStatusToColor(),
-              radius: 4,
-            ),
-            SizedBox(
-              width: 4,
-            ),
-            Text(
-              mapStatusToText(),
-              style: TextStyle(fontSize: 12, color: Colors.white70),
-            )
-          ],
-        ));
+    return Row(children: [
+      SizedBox(
+        width: 1,
+      ),
+      CircleAvatar(
+        backgroundColor: mapStatusToColor(),
+        radius: 4,
+      ),
+      SizedBox(
+        width: 4,
+      ),
+      Text(mapStatusToText(), style: TextStyle(height: 1.1,fontSize: 12))
+    ]);
   }
 
   Color mapStatusToColor() {
@@ -57,9 +53,9 @@ class EffectVisibilityStatus extends StatelessWidget {
       return "Deprecato";
     else if (visibilityStatus == "VISIBLE" &&
         submissionStatus == "UPDATE_REJECTED")
-      return "Visible, ultimo update non approvato";
+      return "Visible, update rifiutato";
     else if (visibilityStatus == "VISIBLE" && submissionStatus == "APPROVED")
-      return "Visible";
+      return "Visibile";
     else
       return "Caso eccezionale, fix me please!";
   }
