@@ -1,6 +1,5 @@
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:uqido_sparkar/db/firestore_db.dart';
-import 'package:uqido_sparkar/model/sparkar_effect.dart';
 import 'package:uqido_sparkar/model/sparkar_user.dart';
 
 enum SparkAREvent { update, selectUser }
@@ -25,21 +24,25 @@ class SparkARSelectUserAction extends SparkARAction {
 class SparkARState {
   final List<SparkARUser> userList;
   final int selectedIndex;
+  final bool isLoading;
 
-  SparkARState._internal(this.userList, this.selectedIndex);
+  SparkARState._internal(this.userList, this.selectedIndex, this.isLoading);
 
-  SparkARState fromCurrent({List<SparkARUser> userList, int selectedIndex}) {
-    return SparkARState._internal(
-        userList ?? this.userList, selectedIndex ?? this.selectedIndex);
+  SparkARState fromCurrent(
+      {List<SparkARUser> userList, int selectedIndex, bool isLoading = false}) {
+    return SparkARState._internal(userList ?? this.userList,
+        selectedIndex ?? this.selectedIndex, isLoading);
   }
 
   static SparkARState initial() {
-    return SparkARState._internal(List.empty(), -1);
+    return SparkARState._internal(List.empty(), -1, false);
   }
 }
 
 class SparkARBloc extends Bloc<SparkARAction, SparkARState> {
-  SparkARBloc() : super(SparkARState.initial());
+  SparkARBloc() : super(SparkARState.initial()) {
+    add(SparkARUpdateAction());
+  }
 
   FirestoreDB _db = FirestoreDB.getInstance();
 
@@ -48,14 +51,18 @@ class SparkARBloc extends Bloc<SparkARAction, SparkARState> {
     print("Executing Event $action");
     switch (action.event) {
       case SparkAREvent.update:
+        yield state.fromCurrent(isLoading: true);
+
         var users = await _db.getAllUsers();
-        if(users.length==0)
-          yield state;
+
+        if (users.length == 0)
+          yield state.fromCurrent(isLoading: false);
         else
-          yield state.fromCurrent(userList: users,selectedIndex: 0);
+          yield state.fromCurrent(userList: users, selectedIndex: 0);
         break;
       case SparkAREvent.selectUser:
         var selectUserAction = action as SparkARSelectUserAction;
+
         if (selectUserAction.selectUserIndex < 0 ||
             selectUserAction.selectUserIndex > state.userList.length)
           yield state.fromCurrent(selectedIndex: -1);

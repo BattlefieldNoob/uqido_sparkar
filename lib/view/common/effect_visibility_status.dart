@@ -23,7 +23,7 @@ class EffectVisibilityStatus extends StatelessWidget {
       SizedBox(
         width: 4,
       ),
-      Text(mapStatusToText(), style: TextStyle(height: 1.1,fontSize: 12))
+      Text(mapStatusToText(), style: TextStyle(height: 1.1, fontSize: 12))
     ]);
   }
 

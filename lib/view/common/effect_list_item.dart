@@ -3,8 +3,9 @@ import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
 import 'package:flutter/widgets.dart';
 import 'package:uqido_sparkar/model/sparkar_effect.dart';
-import 'package:uqido_sparkar/view/effect_visibility_status.dart';
 import 'package:url_launcher/url_launcher.dart';
+
+import 'effect_visibility_status.dart';
 
 class EffectListItem extends StatelessWidget {
   final SparkAREffect effect;

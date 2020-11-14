@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:uqido_sparkar/model/sparkar_user.dart';
-import 'effect_list_item.dart';
+
+import '../common/effect_list_item.dart';
 
 class UserListItem extends StatelessWidget {
   final SparkARUser user;
