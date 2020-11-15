@@ -19,7 +19,10 @@ class UserEffectDetail extends StatelessWidget {
       ).state;
 
       if (state.selectedIndex < 0)
-        return Center(child: Text("No Account Selected!"));
+        return Center(
+            child: Text((state.searchKey != null && state.searchKey.isEmpty)
+                ? "No account found! Try pull to refresh"
+                : "No result found"));
       else {
         final effects = state.userList[state.selectedIndex].effects;
 

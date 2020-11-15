@@ -7,7 +7,7 @@ part of 'sparkar_user.dart';
 // **************************************************************************
 
 SparkARUser _$SparkARUserFromJson(Map<String, dynamic> json) {
-  return SparkARUser(
+  return SparkARUser._internal(
     json['id'] as String,
     json['name'] as String,
     json['iconUrl'] as String,

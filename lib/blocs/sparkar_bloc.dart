@@ -2,7 +2,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:uqido_sparkar/db/firestore_db.dart';
 import 'package:uqido_sparkar/model/sparkar_user.dart';
 
-enum SparkAREvent { update, selectUser }
+enum SparkAREvent { update, selectUser, search }
 
 abstract class SparkARAction {
   final SparkAREvent event;
@@ -21,21 +21,41 @@ class SparkARSelectUserAction extends SparkARAction {
       : super(SparkAREvent.selectUser);
 }
 
+class SparkARSearchAction extends SparkARAction {
+  final String searchKeyword;
+
+  SparkARSearchAction(this.searchKeyword) : super(SparkAREvent.search);
+}
+
 class SparkARState {
-  final List<SparkARUser> userList;
+  List<SparkARUser> get userList =>
+      networkUserList == filteredUserList ? networkUserList : filteredUserList;
+
+  final List<SparkARUser> networkUserList;
+  final List<SparkARUser> filteredUserList;
   final int selectedIndex;
   final bool isLoading;
+  final String searchKey;
 
-  SparkARState._internal(this.userList, this.selectedIndex, this.isLoading);
+  SparkARState._internal(this.networkUserList, this.selectedIndex,
+      this.isLoading, this.filteredUserList, this.searchKey);
 
   SparkARState fromCurrent(
-      {List<SparkARUser> userList, int selectedIndex, bool isLoading = false}) {
-    return SparkARState._internal(userList ?? this.userList,
-        selectedIndex ?? this.selectedIndex, isLoading);
+      {List<SparkARUser> networkUserList,
+      int selectedIndex,
+      bool isLoading = false,
+      List<SparkARUser> filteredList,
+      String searchKey}) {
+    return SparkARState._internal(
+        networkUserList ?? this.networkUserList,
+        selectedIndex ?? this.selectedIndex,
+        isLoading,
+        filteredList ?? networkUserList ?? this.filteredUserList,
+        searchKey ?? this.searchKey);
   }
 
   static SparkARState initial() {
-    return SparkARState._internal(List.empty(), -1, false);
+    return SparkARState._internal(List.empty(), -1, false, List.empty(), "");
   }
 }
 
@@ -44,7 +64,7 @@ class SparkARBloc extends Bloc<SparkARAction, SparkARState> {
     add(SparkARUpdateAction());
   }
 
-  FirestoreDB _db = FirestoreDB.getInstance();
+  final FirestoreDB _db = FirestoreDB.getInstance();
 
   @override
   Stream<SparkARState> mapEventToState(SparkARAction action) async* {
@@ -58,8 +78,9 @@ class SparkARBloc extends Bloc<SparkARAction, SparkARState> {
         if (users.length == 0)
           yield state.fromCurrent(isLoading: false);
         else
-          yield state.fromCurrent(userList: users, selectedIndex: 0);
+          yield state.fromCurrent(networkUserList: users, selectedIndex: 0);
         break;
+
       case SparkAREvent.selectUser:
         var selectUserAction = action as SparkARSelectUserAction;
 
@@ -69,6 +90,39 @@ class SparkARBloc extends Bloc<SparkARAction, SparkARState> {
         else
           yield state.fromCurrent(
               selectedIndex: selectUserAction.selectUserIndex);
+        break;
+
+      case SparkAREvent.search:
+        var searchAction = action as SparkARSearchAction;
+
+        yield state.fromCurrent(isLoading: true);
+
+        var filteredList = await Future(() async {
+          final filteredList = List<SparkARUser>.empty(growable: true);
+          for (var user in state.networkUserList) {
+            if (user.name
+                .toLowerCase()
+                .contains(searchAction.searchKeyword.toLowerCase())) {
+              //take all user with effects
+              filteredList.add(user);
+            } else {
+              //filter effects by effects
+              final effects = user.effects
+                  .where((effect) => effect.name
+                      .toLowerCase()
+                      .contains(searchAction.searchKeyword.toLowerCase()))
+                  .toList(growable: false);
+              if (effects.length > 0)
+                filteredList.add(user.cloneWithEffects(effects));
+            }
+          }
+          return filteredList;
+        });
+
+        yield state.fromCurrent(
+            selectedIndex: filteredList.length == 0 ? -1 : 0,
+            filteredList: filteredList,
+            searchKey: searchAction.searchKeyword);
         break;
       default:
         throw UnimplementedError();
