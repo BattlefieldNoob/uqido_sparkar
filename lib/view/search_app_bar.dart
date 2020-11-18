@@ -80,38 +80,52 @@ class _SearchAppBarState extends State<SearchAppBar> {
 
   Widget searchAppBar({@required BuildContext context}) {
     return AppBar(
-        leading: InkWell(child: BackButton(
-          onPressed: () {
-            stream.add(false);
-          },
-        )),
-        backgroundColor: widget.primary,
-        title: Align(
-          alignment: Alignment.centerRight,
-          child: ConstrainedBox(
-            constraints: BoxConstraints.tightFor(width: 500),
-            child: TextField(
-              controller: queryController,
-              autofocus: true,
-              onSubmitted: (String value) {
-                stream.add(false);
-                widget.onSubmit(value);
-              },
-              style: TextStyle(
-                fontSize: widget.searchFontSize,
-                color: widget.mainTextColor,
-              ),
-              cursorColor: widget.mainTextColor,
-              decoration: InputDecoration(
-                hintText: widget.searchHint,
-                border: InputBorder.none,
-                hintStyle: TextStyle(
-                  color: widget.mainTextColor.withAlpha(100),
-                ),
+      leading: InkWell(child: BackButton(
+        onPressed: () {
+          stream.add(false);
+          widget.onSubmit("");
+        },
+      )),
+      backgroundColor: widget.primary,
+      title: Align(
+        alignment: Alignment.centerRight,
+        child: ConstrainedBox(
+          constraints: BoxConstraints.tightFor(width: 500),
+          child: TextField(
+            controller: queryController,
+            autofocus: true,
+            onSubmitted: (String value) {
+              //stream.add(false);
+              widget.onSubmit(value);
+            },
+            style: TextStyle(
+              fontSize: widget.searchFontSize,
+              color: widget.mainTextColor,
+            ),
+            cursorColor: widget.mainTextColor,
+            decoration: InputDecoration(
+              hintText: widget.searchHint,
+              border: InputBorder.none,
+              hintStyle: TextStyle(
+                color: widget.mainTextColor.withAlpha(100),
               ),
             ),
           ),
-        ));
+        ),
+      ),
+      actions: [
+        IconButton(
+          onPressed: () {
+            //stream.add(true);
+            widget.onSubmit(queryController.text);
+          },
+          icon: Icon(Icons.search),
+        ),
+        SizedBox(
+          width: 10,
+        )
+      ],
+    );
   }
 
   @override

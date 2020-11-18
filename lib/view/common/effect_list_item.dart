@@ -31,18 +31,32 @@ class EffectListItem extends StatelessWidget {
             child: Row(children: [
               getClickableIcon(Icons.public_rounded, effect.publicLink,
                   enabled: mapStatusToBool()),
-              getClickableIcon(Icons.home, effect.testLink)
+              SizedBox(
+                width: 8,
+              ),
+              getClickableIcon(Icons.home, effect.testLink, primary: false)
             ])),
       ),
     );
   }
 
-  Widget getClickableIcon(IconData icon, String url, {bool enabled = true}) {
-    return IconButton(
-        iconSize: 36,
-        icon: Icon(icon),
-        disabledColor: Colors.white30,
-        color: Colors.white70,
+  Widget getClickableIcon(IconData icon, String url,
+      {bool enabled = true, bool primary = true}) {
+    return OutlinedButton(
+        style: OutlinedButton.styleFrom(
+            shape: RoundedRectangleBorder(
+              borderRadius: BorderRadius.circular(8.0),
+            ),
+            side: BorderSide(
+                width: 3,
+                color: Color.fromRGBO(78, 86, enabled ? 176 : 130, 1.0)),
+            backgroundColor: primary
+                ? Color.fromRGBO(78, 86, enabled ? 176 : 130, 1.0)
+                : null,
+            minimumSize: Size(64, 64)),
+        child: Center(
+            child:
+                Icon(icon, color: enabled ? Colors.white70 : Colors.white30)),
         onPressed: enabled ? () => launch(url) : null);
   }
 

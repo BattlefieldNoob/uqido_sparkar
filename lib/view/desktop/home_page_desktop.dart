@@ -18,9 +18,12 @@ class HomePageDesktop extends StatelessWidget {
     print('Home Page HookBuilder');
     return Row(children: [
       SizedBox(
-          width: 400,
+          width: 460,
           child: Container(
-              color: Color.fromRGBO(48, 56, 66, 1.0),
+              decoration: BoxDecoration(
+                boxShadow: [BoxShadow(spreadRadius: 0.5, blurRadius: 5)],
+                color: Color.fromRGBO(48, 56, 66, 1.0),
+              ),
               child: ListView.builder(
                 itemCount: state.userList.length,
                 itemBuilder: (context, index) =>
@@ -35,17 +38,19 @@ class HomePageDesktop extends StatelessWidget {
     return Padding(
         padding: EdgeInsets.only(bottom: 4),
         child: ListTile(
-            contentPadding: EdgeInsets.symmetric(horizontal: 8, vertical: 4),
+            contentPadding: EdgeInsets.symmetric(horizontal: 16, vertical: 4),
             tileColor: Color.fromRGBO(58, 66, 76, 1.0),
             onTap: () =>
                 context.read<SparkARBloc>().add(SparkARSelectUserAction(index)),
             dense: false,
             leading: CircleAvatar(
+                backgroundColor: Color.fromRGBO(78, 86, 136, 1.0),
+                radius: 16,
                 backgroundImage: NetworkImage(users[index].iconUrl)),
             title: Text(
               users[index].name,
               textAlign: TextAlign.start,
-              style: TextStyle(fontSize: 20),
+              style: TextStyle(fontSize: 22),
             )));
   }
 }

@@ -53,7 +53,7 @@ class EffectVisibilityStatus extends StatelessWidget {
       return "Deprecato";
     else if (visibilityStatus == "VISIBLE" &&
         submissionStatus == "UPDATE_REJECTED")
-      return "Visible, update rifiutato";
+      return "Ultimo update rifiutato";
     else if (visibilityStatus == "VISIBLE" && submissionStatus == "APPROVED")
       return "Visibile";
     else
