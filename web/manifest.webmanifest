@@ -1,10 +1,10 @@
 {
     "name": "Uqido SparkAR",
     "short_name": "Uqido SparkAR",
-    "start_url": ".",
+    "start_url": "/",
     "display": "standalone",
-    "background_color": "#0175C2",
-    "theme_color": "#0175C2",
+    "background_color": "#3A4256",
+    "theme_color": "#3A4256",
     "description": "Uqido SparkAR",
     "orientation": "portrait-primary",
     "prefer_related_applications": false,
