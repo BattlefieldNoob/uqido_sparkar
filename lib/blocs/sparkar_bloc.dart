@@ -50,8 +50,13 @@ class SparkARState {
         networkUserList ?? this.networkUserList,
         selectedIndex ?? this.selectedIndex,
         isLoading,
-        filteredList ?? networkUserList ?? this.filteredUserList,
+        filteredList ?? networkUserList ?? this.networkUserList,
         searchKey ?? this.searchKey);
+  }
+
+  @override
+  String toString() {
+    return 'SparkARState{networkUserList: $networkUserList, filteredUserList: $filteredUserList, selectedIndex: $selectedIndex, isLoading: $isLoading, searchKey: $searchKey}';
   }
 
   static SparkARState initial() {
@@ -95,34 +100,38 @@ class SparkARBloc extends Bloc<SparkARAction, SparkARState> {
       case SparkAREvent.search:
         var searchAction = action as SparkARSearchAction;
 
-        yield state.fromCurrent(isLoading: true);
+        if (searchAction.searchKeyword.isEmpty) {
+          yield state.fromCurrent(searchKey: '');
+        } else {
+          yield state.fromCurrent(isLoading: true);
 
-        var filteredList = await Future(() async {
-          final filteredList = List<SparkARUser>.empty(growable: true);
-          for (var user in state.networkUserList) {
-            if (user.name
-                .toLowerCase()
-                .contains(searchAction.searchKeyword.toLowerCase())) {
-              //take all user with effects
-              filteredList.add(user);
-            } else {
-              //filter effects by effects
-              final effects = user.effects
-                  .where((effect) => effect.name
-                      .toLowerCase()
-                      .contains(searchAction.searchKeyword.toLowerCase()))
-                  .toList(growable: false);
-              if (effects.length > 0)
-                filteredList.add(user.cloneWithEffects(effects));
+          var filteredList = await Future(() async {
+            final filteredList = List<SparkARUser>.empty(growable: true);
+            for (var user in state.networkUserList) {
+              if (user.name
+                  .toLowerCase()
+                  .contains(searchAction.searchKeyword.toLowerCase())) {
+                //take all user with effects
+                filteredList.add(user);
+              } else {
+                //filter effects by effects
+                final effects = user.effects
+                    .where((effect) => effect.name
+                        .toLowerCase()
+                        .contains(searchAction.searchKeyword.toLowerCase()))
+                    .toList(growable: false);
+                if (effects.length > 0)
+                  filteredList.add(user.cloneWithEffects(effects));
+              }
             }
-          }
-          return filteredList;
-        });
+            return filteredList;
+          });
 
-        yield state.fromCurrent(
-            selectedIndex: filteredList.length == 0 ? -1 : 0,
-            filteredList: filteredList,
-            searchKey: searchAction.searchKeyword);
+          yield state.fromCurrent(
+              selectedIndex: filteredList.length == 0 ? -1 : 0,
+              filteredList: filteredList,
+              searchKey: searchAction.searchKeyword);
+        }
         break;
       default:
         throw UnimplementedError();

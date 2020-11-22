@@ -10,47 +10,46 @@ import 'package:uqido_sparkar/model/sparkar_user.dart';
 import 'user_effects_detail.dart';
 
 class HomePageDesktop extends StatelessWidget {
-  const HomePageDesktop();
+  final SparkARState state;
+
+  const HomePageDesktop(this.state);
 
   @override
   Widget build(BuildContext context) {
+    print('Home Page Desktop Build!');
+    return Row(children: [
+      SizedBox(
+          width: 460,
+          child: Container(
+              decoration: const BoxDecoration(
+                boxShadow: [const BoxShadow(spreadRadius: 0.5, blurRadius: 5)],
+                color: const Color.fromRGBO(48, 56, 66, 1.0),
+              ),
+              child: ListView.builder(
+                itemCount: state.userList.length,
+                itemBuilder: (context, index) =>
+                    getUserNameItem(context, state.userList, index),
+              ))),
+      Expanded(child: getDetailPage(state))
+    ]);
+  }
+
+  Widget getDetailPage(SparkARState state) {
     return HookBuilder(builder: (ctx) {
-      //print('UserEffectDetail HookBuilder');
+      print('Detail HookBuilder');
       final state = useBloc<SparkARBloc, SparkARState>(
         onEmitted: (_, prev, curr) {
           return prev.selectedIndex != curr.selectedIndex;
         },
       ).state;
-      print('Home Page Desktop Build!');
-
-      return Row(children: [
-        SizedBox(
-            width: 460,
-            child: Container(
-                decoration: const BoxDecoration(
-                  boxShadow: [
-                    const BoxShadow(spreadRadius: 0.5, blurRadius: 5)
-                  ],
-                  color: const Color.fromRGBO(48, 56, 66, 1.0),
-                ),
-                child: ListView.builder(
-                  itemCount: state.userList.length,
-                  itemBuilder: (context, index) =>
-                      getUserNameItem(context, state.userList, index),
-                ))),
-        Expanded(child: getDetailPage(state))
-      ]);
+      if (state.selectedIndex < 0)
+        return Center(
+            child: (state.searchKey != null && state.searchKey.isEmpty)
+                ? const Text("No account found! Try pull to refresh")
+                : const Text("No result found"));
+      else
+        return UserEffectDetail(state.userList[state.selectedIndex]);
     });
-  }
-
-  Widget getDetailPage(SparkARState state) {
-    if (state.selectedIndex < 0)
-      return Center(
-          child: (state.searchKey != null && state.searchKey.isEmpty)
-              ? const Text("No account found! Try pull to refresh")
-              : const Text("No result found"));
-    else
-      return UserEffectDetail(state.userList[state.selectedIndex]);
   }
 
   Widget getUserNameItem(

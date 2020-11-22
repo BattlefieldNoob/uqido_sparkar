@@ -8,9 +8,9 @@ import 'package:responsive_framework/utils/scroll_behavior.dart';
 import 'package:uqido_sparkar/blocs/sparkar_bloc.dart';
 import 'package:uqido_sparkar/view/search_app_bar.dart';
 
-import 'desktop/home_page_desktop.dart' deferred as desktoppage;
+import 'desktop/home_page_desktop.dart' deferred as desktopPage;
 import 'home_page.dart';
-import 'mobile/home_page_mobile.dart' deferred as mobilepage;
+import 'mobile/home_page_mobile.dart' deferred as mobilePage;
 
 class App extends StatelessWidget {
   const App();
@@ -20,11 +20,10 @@ class App extends StatelessWidget {
     return MaterialApp(
         builder: (context, widget) => ResponsiveWrapper.builder(
                 BouncingScrollWrapper.builder(context, widget),
-                debugLog: true,
                 breakpoints: [
                   ResponsiveBreakpoint.resize(450, name: MOBILE),
                   ResponsiveBreakpoint.autoScale(800,
-                      scaleFactor: 0.9, name: TABLET),
+                      scaleFactor: 0.8, name: TABLET),
                   ResponsiveBreakpoint.resize(1000, name: DESKTOP),
                 ]),
         theme: ThemeData.dark(),
@@ -58,25 +57,33 @@ class App extends StatelessWidget {
                             ],
                             bottom: getAppBarLoadingBar());
                       }),
-                  body: RefreshIndicator(
-                      onRefresh: () async => ctx
-                          .read<SparkARBloc>()
-                          .add(const SparkARUpdateAction()),
-                      child: HomePageProvider(
-                        desktopScreen: loadHomePageDesktop(),
-                        mobileScreen: loadHomePageMobile(),
-                      )));
+                  body: HookBuilder(builder: (ctx) {
+                    print('Body HookBuilder');
+                    final state = useBloc<SparkARBloc, SparkARState>(
+                      onEmitted: (_, prev, curr) {
+                        print(curr);
+                        return prev.userList != curr.userList;
+                      },
+                    ).state;
+
+                    if (state.userList.length == 0) return SizedBox();
+
+                    return HomePageProvider(
+                      desktopScreen: loadHomePageDesktop(state),
+                      mobileScreen: loadHomePageMobile(state),
+                    );
+                  }));
             })));
   }
 
-  Future<Widget> loadHomePageDesktop() async {
-    await desktoppage.loadLibrary();
-    return desktoppage.HomePageDesktop();
+  Future<Widget> loadHomePageDesktop(SparkARState state) async {
+    await desktopPage.loadLibrary();
+    return desktopPage.HomePageDesktop(state);
   }
 
-  Future<Widget> loadHomePageMobile() async {
-    await mobilepage.loadLibrary();
-    return mobilepage.HomePageMobile();
+  Future<Widget> loadHomePageMobile(SparkARState state) async {
+    await mobilePage.loadLibrary();
+    return mobilePage.HomePageMobile(state);
   }
 
   PreferredSize getAppBarLoadingBar() {
@@ -90,7 +97,7 @@ class App extends StatelessWidget {
           ).state;
           return AnimatedOpacity(
               opacity: state.isLoading ? 1 : 0,
-              duration: Duration(milliseconds: 500),
+              duration: const Duration(milliseconds: 500),
               curve: Curves.easeInOutQuint,
               child: LinearProgressIndicator(
                 backgroundColor: Colors.transparent,
