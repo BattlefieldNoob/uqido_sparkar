@@ -8,7 +8,9 @@ import 'package:responsive_framework/utils/scroll_behavior.dart';
 import 'package:uqido_sparkar/blocs/sparkar_bloc.dart';
 import 'package:uqido_sparkar/view/search_app_bar.dart';
 
+import 'desktop/home_page_desktop.dart' deferred as desktoppage;
 import 'home_page.dart';
+import 'mobile/home_page_mobile.dart' deferred as mobilepage;
 
 class App extends StatelessWidget {
   const App();
@@ -60,8 +62,21 @@ class App extends StatelessWidget {
                       onRefresh: () async => ctx
                           .read<SparkARBloc>()
                           .add(const SparkARUpdateAction()),
-                      child: HomePage()));
+                      child: HomePageProvider(
+                        desktopScreen: loadHomePageDesktop(),
+                        mobileScreen: loadHomePageMobile(),
+                      )));
             })));
+  }
+
+  Future<Widget> loadHomePageDesktop() async {
+    await desktoppage.loadLibrary();
+    return desktoppage.HomePageDesktop();
+  }
+
+  Future<Widget> loadHomePageMobile() async {
+    await mobilepage.loadLibrary();
+    return mobilepage.HomePageMobile();
   }
 
   PreferredSize getAppBarLoadingBar() {
