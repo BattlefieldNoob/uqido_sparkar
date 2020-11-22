@@ -53,7 +53,7 @@ class EffectListItem extends StatelessWidget {
             backgroundColor: primary
                 ? Color.fromRGBO(78, 86, enabled ? 176 : 130, 1.0)
                 : null,
-            minimumSize: Size(64, 64)),
+            minimumSize: Size(54, 54)),
         child: Center(
             child:
                 Icon(icon, color: enabled ? Colors.white70 : Colors.white30)),
