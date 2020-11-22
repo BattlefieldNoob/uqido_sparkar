@@ -17,7 +17,7 @@ class HomePageMobile extends StatelessWidget {
 
     return Container(
         child: ListView.builder(
-      padding: EdgeInsets.all(16),
+      padding: const EdgeInsets.all(16),
       itemCount: flattenList.length,
       itemBuilder: (context, index) {
         final elem = flattenList[index];
@@ -33,11 +33,14 @@ class HomePageMobile extends StatelessWidget {
 
   Column getTitleItemList(Object elem) {
     return Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
+      const SizedBox(
+        height: 8,
+      ),
       Text(
         elem.toString(),
-        style: TextStyle(fontSize: 45, color: Colors.white),
+        style: const TextStyle(fontSize: 45, color: Colors.white),
       ),
-      SizedBox(
+      const SizedBox(
         height: 8,
       )
     ]);

@@ -90,7 +90,7 @@ class _SearchAppBarState extends State<SearchAppBar> {
       title: Align(
         alignment: Alignment.centerRight,
         child: ConstrainedBox(
-          constraints: BoxConstraints.tightFor(width: 500),
+          constraints: const BoxConstraints.tightFor(width: 500),
           child: TextField(
             controller: queryController,
             autofocus: true,
@@ -119,9 +119,9 @@ class _SearchAppBarState extends State<SearchAppBar> {
             //stream.add(true);
             widget.onSubmit(queryController.text);
           },
-          icon: Icon(Icons.search),
+          icon: const Icon(Icons.search),
         ),
-        SizedBox(
+        const SizedBox(
           width: 10,
         )
       ],

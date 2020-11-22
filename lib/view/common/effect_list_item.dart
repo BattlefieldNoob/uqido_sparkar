@@ -8,6 +8,9 @@ import 'package:url_launcher/url_launcher.dart';
 import 'effect_visibility_status.dart';
 
 class EffectListItem extends StatelessWidget {
+  static const Color enabledColor = const Color.fromRGBO(78, 86, 176, 1.0);
+  static const Color disabledColor = const Color.fromRGBO(78, 86, 130, 1.0);
+
   final SparkAREffect effect;
 
   const EffectListItem({Key key, this.effect}) : super(key: key);
@@ -17,7 +20,7 @@ class EffectListItem extends StatelessWidget {
     return getCardScaffold(
       child: ListTile(
         dense: false,
-        contentPadding: EdgeInsets.symmetric(horizontal: 10),
+        contentPadding: const EdgeInsets.symmetric(horizontal: 10),
         leading: Image.network(
           effect.iconUrl,
           width: 48,
@@ -31,7 +34,7 @@ class EffectListItem extends StatelessWidget {
             child: Row(children: [
               getClickableIcon(Icons.public_rounded, effect.publicLink,
                   enabled: mapStatusToBool()),
-              SizedBox(
+              const SizedBox(
                 width: 8,
               ),
               getClickableIcon(Icons.home, effect.testLink, primary: false)
@@ -47,13 +50,15 @@ class EffectListItem extends StatelessWidget {
             shape: RoundedRectangleBorder(
               borderRadius: BorderRadius.circular(8.0),
             ),
-            side: BorderSide(
-                width: 3,
-                color: Color.fromRGBO(78, 86, enabled ? 176 : 130, 1.0)),
+            side: enabled
+                ? const BorderSide(width: 3, color: enabledColor)
+                : const BorderSide(width: 3, color: disabledColor),
             backgroundColor: primary
-                ? Color.fromRGBO(78, 86, enabled ? 176 : 130, 1.0)
+                ? enabled
+                    ? enabledColor
+                    : disabledColor
                 : null,
-            minimumSize: Size(54, 54)),
+            minimumSize: const Size(54, 54)),
         child: Center(
             child:
                 Icon(icon, color: enabled ? Colors.white70 : Colors.white30)),
@@ -65,7 +70,8 @@ class EffectListItem extends StatelessWidget {
         shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(10)),
         elevation: 3,
         child: Container(
-            decoration: BoxDecoration(color: Color.fromRGBO(64, 75, 106, .9)),
+            decoration: const BoxDecoration(
+                color: const Color.fromRGBO(64, 75, 106, .9)),
             child: child));
   }
 

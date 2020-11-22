@@ -7,11 +7,11 @@ enum SparkAREvent { update, selectUser, search }
 abstract class SparkARAction {
   final SparkAREvent event;
 
-  SparkARAction(this.event);
+  const SparkARAction(this.event);
 }
 
 class SparkARUpdateAction extends SparkARAction {
-  SparkARUpdateAction() : super(SparkAREvent.update);
+  const SparkARUpdateAction() : super(SparkAREvent.update);
 }
 
 class SparkARSelectUserAction extends SparkARAction {

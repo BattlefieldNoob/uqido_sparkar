@@ -8,6 +8,8 @@ import 'package:uqido_sparkar/blocs/sparkar_bloc.dart';
 import '../common/effect_list_item.dart';
 
 class UserEffectDetail extends StatelessWidget {
+  const UserEffectDetail();
+
   @override
   Widget build(BuildContext context) {
     return HookBuilder(builder: (ctx) {
@@ -20,14 +22,14 @@ class UserEffectDetail extends StatelessWidget {
 
       if (state.selectedIndex < 0)
         return Center(
-            child: Text((state.searchKey != null && state.searchKey.isEmpty)
-                ? "No account found! Try pull to refresh"
-                : "No result found"));
+            child: (state.searchKey != null && state.searchKey.isEmpty)
+                ? const Text("No account found! Try pull to refresh")
+                : const Text("No result found"));
       else {
         final effects = state.userList[state.selectedIndex].effects;
 
         return ListView.builder(
-            padding: EdgeInsets.symmetric(horizontal: 16, vertical: 6),
+            padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 6),
             itemCount: effects.length,
             itemBuilder: (context, index) => EffectListItem(
                   effect: effects[index],

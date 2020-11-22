@@ -13,17 +13,17 @@ class EffectVisibilityStatus extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Row(children: [
-      SizedBox(
+      const SizedBox(
         width: 1,
       ),
       CircleAvatar(
         backgroundColor: mapStatusToColor(),
         radius: 4,
       ),
-      SizedBox(
+      const SizedBox(
         width: 4,
       ),
-      Text(mapStatusToText(), style: TextStyle(height: 1.1, fontSize: 12))
+      Text(mapStatusToText(), style: const TextStyle(height: 1.1, fontSize: 12))
     ]);
   }
 
