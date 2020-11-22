@@ -3,11 +3,12 @@ import 'package:flutter/widgets.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_hooks/flutter_hooks.dart';
 import 'package:flutter_hooks_bloc/flutter_hooks_bloc.dart';
+import 'package:responsive_framework/responsive_wrapper.dart';
+import 'package:responsive_framework/utils/scroll_behavior.dart';
 import 'package:uqido_sparkar/blocs/sparkar_bloc.dart';
 import 'package:uqido_sparkar/view/search_app_bar.dart';
 
-import 'desktop/home_page_desktop.dart';
-import 'mobile/home_page_mobile.dart';
+import 'home_page.dart';
 
 class App extends StatelessWidget {
   const App();
@@ -15,6 +16,15 @@ class App extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+        builder: (context, widget) => ResponsiveWrapper.builder(
+                BouncingScrollWrapper.builder(context, widget),
+                debugLog: true,
+                breakpoints: [
+                  ResponsiveBreakpoint.resize(450, name: MOBILE),
+                  ResponsiveBreakpoint.autoScale(800,
+                      scaleFactor: 0.9, name: TABLET),
+                  ResponsiveBreakpoint.resize(1000, name: DESKTOP),
+                ]),
         theme: ThemeData.dark(),
         home: BlocProvider(
             create: (_) => SparkARBloc(),
@@ -46,26 +56,11 @@ class App extends StatelessWidget {
                             ],
                             bottom: getAppBarLoadingBar());
                       }),
-                  body: HookBuilder(builder: (ctx) {
-                    final state = useBloc<SparkARBloc, SparkARState>(
-                      onEmitted: (_, prev, curr) {
-                        return prev.userList != curr.userList;
-                      },
-                    ).state;
-
-                    return RefreshIndicator(
-                        onRefresh: () async => ctx
-                            .read<SparkARBloc>()
-                            .add(const SparkARUpdateAction()),
-                        child: LayoutBuilder(builder: (context, constraints) {
-                          final ratio =
-                              constraints.maxWidth / constraints.maxHeight;
-                          print("Ratio:" + ratio.toString());
-                          return ratio > 1.4
-                              ? HomePageDesktop(state)
-                              : HomePageMobile(state);
-                        }));
-                  }));
+                  body: RefreshIndicator(
+                      onRefresh: () async => ctx
+                          .read<SparkARBloc>()
+                          .add(const SparkARUpdateAction()),
+                      child: HomePage()));
             })));
   }
 
