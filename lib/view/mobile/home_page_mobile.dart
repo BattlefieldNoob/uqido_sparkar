@@ -16,19 +16,21 @@ class HomePageMobile extends StatelessWidget {
         state.userList.expand((e) => [e.name, ...e.effects]).toList();
 
     return Container(
-        child: ListView.builder(
+        child: RepaintBoundary(
+            child: ListView.builder(
       padding: const EdgeInsets.all(16),
       itemCount: flattenList.length,
       itemBuilder: (context, index) {
         final elem = flattenList[index];
         if (elem is SparkAREffect) {
-          return EffectListItem(
+          return RepaintBoundary(
+              child: EffectListItem(
             effect: elem,
-          );
+          ));
         }
         return getTitleItemList(elem);
       },
-    ));
+    )));
   }
 
   Column getTitleItemList(Object elem) {
