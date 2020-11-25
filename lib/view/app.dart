@@ -6,10 +6,10 @@ import 'package:flutter_hooks_bloc/flutter_hooks_bloc.dart';
 import 'package:responsive_framework/responsive_wrapper.dart';
 import 'package:responsive_framework/utils/scroll_behavior.dart';
 import 'package:uqido_sparkar/blocs/sparkar_bloc.dart';
-import 'package:uqido_sparkar/view/search_app_bar.dart';
 
+import 'common/navigation_rail.dart';
 import 'desktop/home_page_desktop.dart' deferred as desktopPage;
-import 'home_page.dart';
+import 'desktop/user_effects_detail.dart';
 import 'mobile/home_page_mobile.dart' deferred as mobilePage;
 
 class App extends StatelessWidget {
@@ -28,6 +28,45 @@ class App extends StatelessWidget {
                 ]),
         theme: ThemeData.dark(),
         home: BlocProvider(
+            create: (_) => SparkARBloc(),
+            child: Builder(builder: (ctx) {
+              return HookBuilder(builder: (ctx) {
+                print('Body HookBuilder');
+                final state = useBloc<SparkARBloc, SparkARState>(
+                  onEmitted: (_, prev, curr) {
+                    print(curr);
+                    //return prev.userList != curr.userList;
+                    return true;
+                  },
+                ).state;
+
+                if (state.userList.length == 0) return SizedBox();
+
+                return NavRail(
+                    drawerWidth: 300,
+                    drawerHeaderBuilder: (context) {
+                      return Column(
+                        children: <Widget>[],
+                      );
+                    },
+                    title: const Text('Uqido Spark AR'),
+                    onTap: (index) {
+                      ctx
+                          .read<SparkARBloc>()
+                          .add(SparkARSelectUserAction(index));
+                    },
+                    currentIndex: state.selectedIndex,
+                    tabs: state.userList
+                        .map((e) => BottomNavigationBarItem(
+                            icon: Image.network(e.iconUrl), label: e.name))
+                        .toList(),
+                    body: Container(
+                        color: const Color.fromRGBO(58, 66, 86, 1.0),
+                        child: UserEffectDetail(
+                            state.userList[state.selectedIndex])));
+              });
+
+              /*BlocProvider(
             create: (_) => SparkARBloc(),
             child: Builder(builder: (ctx) {
               return Scaffold(
@@ -73,6 +112,7 @@ class App extends StatelessWidget {
                       mobileScreen: loadHomePageMobile(state),
                     );
                   }));
+            }))*/
             })));
   }
 
