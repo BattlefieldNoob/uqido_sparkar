@@ -87,17 +87,15 @@ class NavRail extends StatelessWidget {
         body: body,
         floatingActionButton: floatingActionButton,
         floatingActionButtonLocation: FloatingActionButtonLocation.endFloat,
-        bottomNavigationBar: ConstrainedBox(
-            constraints: BoxConstraints.tightFor(height: 56),
-            child: ScrollableBottomNavigationBar(
-              type: bottomNavigationBarType,
-              backgroundColor: bottomNavigationBarColor,
-              currentIndex: currentIndex,
-              onTap: onTap,
-              items: tabs,
-              unselectedItemColor: bottomNavigationBarUnselectedColor,
-              selectedItemColor: bottomNavigationBarSelectedColor,
-            )));
+        bottomNavigationBar: ScrollableBottomNavigationBar(
+          type: bottomNavigationBarType,
+          backgroundColor: bottomNavigationBarColor,
+          currentIndex: currentIndex,
+          onTap: onTap,
+          items: tabs,
+          unselectedItemColor: bottomNavigationBarUnselectedColor,
+          selectedItemColor: bottomNavigationBarSelectedColor,
+        ));
   }
 
   Scaffold _buildTabletScaffold(BuildContext context) {

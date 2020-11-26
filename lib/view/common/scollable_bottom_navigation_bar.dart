@@ -451,39 +451,35 @@ class _BottomNavigationTile extends StatelessWidget {
       onTap: onTap,
       mouseCursor: mouseCursor,
       child: Padding(
-        padding: EdgeInsets.only(top: topPadding, bottom: bottomPadding),
-        child: SizedBox(
-            width: 64,
-            height: 64,
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.center,
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              mainAxisSize: MainAxisSize.min,
-              children: <Widget>[
-                _TileIcon(
-                  colorTween: colorTween,
-                  animation: animation,
-                  iconSize: iconSize,
-                  selected: selected,
-                  item: item,
-                  selectedIconTheme: selectedIconTheme,
-                  unselectedIconTheme: unselectedIconTheme,
-                ),
-                _Label(
-                  colorTween: colorTween,
-                  animation: animation,
-                  item: item,
-                  selectedLabelStyle: selectedLabelStyle,
-                  unselectedLabelStyle: unselectedLabelStyle,
-                  showSelectedLabels: showSelectedLabels,
-                  showUnselectedLabels: showUnselectedLabels,
-                ),
-              ],
-            )),
-      ),
+          padding: EdgeInsets.only(top: topPadding, bottom: bottomPadding),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.center,
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            mainAxisSize: MainAxisSize.min,
+            children: <Widget>[
+              _TileIcon(
+                colorTween: colorTween,
+                animation: animation,
+                iconSize: iconSize,
+                selected: selected,
+                item: item,
+                selectedIconTheme: selectedIconTheme,
+                unselectedIconTheme: unselectedIconTheme,
+              ),
+              _Label(
+                colorTween: colorTween,
+                animation: animation,
+                item: item,
+                selectedLabelStyle: selectedLabelStyle,
+                unselectedLabelStyle: unselectedLabelStyle,
+                showSelectedLabels: showSelectedLabels,
+                showUnselectedLabels: showUnselectedLabels,
+              ),
+            ],
+          )),
     );
 
-    if (item.label != null) {
+    /*if (item.label != null) {
       result = Tooltip(
         message: item.label,
         preferBelow: false,
@@ -503,13 +499,9 @@ class _BottomNavigationTile extends StatelessWidget {
           ),
         ],
       ),
-    );
+    );*/
 
-    return SizedBox(
-      width: 64,
-      height: 64,
-      child: Container(color: Colors.red),
-    );
+    return result;
   }
 }
 
@@ -616,7 +608,11 @@ class _Label extends StatelessWidget {
           ),
         ),
         alignment: Alignment.bottomCenter,
-        child: item.title ?? Text(item.label),
+        child: item.title ??
+            Text(
+              item.label,
+              overflow: TextOverflow.ellipsis,
+            ),
       ),
     );
 
@@ -878,47 +874,36 @@ class _BottomNavigationBarState extends State<ScrollableBottomNavigationBar>
 
     final List<Widget> tiles = <Widget>[];
     for (int i = 0; i < widget.items.length; i++) {
-      tiles.add(Container(
-              color: Colors
-                  .red) /*_BottomNavigationTile(
-        _effectiveType,
-        widget.items[i],
-        _animations[i],
-        widget.iconSize,
-        selectedIconTheme:
-            widget.selectedIconTheme ?? bottomTheme.selectedIconTheme,
-        unselectedIconTheme:
-            widget.unselectedIconTheme ?? bottomTheme.unselectedIconTheme,
-        selectedLabelStyle: effectiveSelectedLabelStyle,
-        unselectedLabelStyle: effectiveUnselectedLabelStyle,
-        onTap: () {
-          if (widget.onTap != null) widget.onTap(i);
-        },
-        colorTween: colorTween,
-        flex: _evaluateFlex(_animations[i]),
-        selected: i == widget.currentIndex,
-        showSelectedLabels:
-            widget.showSelectedLabels ?? bottomTheme.showSelectedLabels ?? true,
-        showUnselectedLabels: widget.showUnselectedLabels ??
-            bottomTheme.showUnselectedLabels ??
-            _defaultShowUnselected,
-        indexLabel: localizations.tabLabel(
-            tabIndex: i + 1, tabCount: widget.items.length),
-        mouseCursor: effectiveMouseCursor,
-      )*/
-          );
+      tiles.add(SizedBox(
+          width: 72,
+          height: 72,
+          child: _BottomNavigationTile(
+            _effectiveType,
+            widget.items[i],
+            _animations[i],
+            widget.iconSize,
+            selectedIconTheme: IconThemeData.fallback(),
+            unselectedIconTheme: IconThemeData.fallback(),
+            selectedLabelStyle: effectiveSelectedLabelStyle,
+            unselectedLabelStyle: effectiveUnselectedLabelStyle,
+            onTap: () {
+              if (widget.onTap != null) widget.onTap(i);
+            },
+            colorTween: colorTween,
+            flex: _evaluateFlex(_animations[i]),
+            selected: i == widget.currentIndex,
+            showSelectedLabels: widget.showSelectedLabels ??
+                bottomTheme.showSelectedLabels ??
+                true,
+            showUnselectedLabels: widget.showUnselectedLabels ??
+                bottomTheme.showUnselectedLabels ??
+                _defaultShowUnselected,
+            indexLabel: localizations.tabLabel(
+                tabIndex: i + 1, tabCount: widget.items.length),
+            mouseCursor: effectiveMouseCursor,
+          )));
     }
     return tiles;
-  }
-
-  Widget _createContainer(List<Widget> tiles) {
-    return DefaultTextStyle.merge(
-      overflow: TextOverflow.ellipsis,
-      child: Row(
-        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-        children: tiles,
-      ),
-    );
   }
 
   @override
@@ -928,23 +913,8 @@ class _BottomNavigationBarState extends State<ScrollableBottomNavigationBar>
     assert(debugCheckHasMediaQuery(context));
     assert(Overlay.of(context, debugRequiredFor: widget) != null);
 
-    final BottomNavigationBarThemeData bottomTheme =
-        BottomNavigationBarTheme.of(context);
-
-    // Labels apply up to _bottomMargin padding. Remainder is media padding.
-    final double additionalBottomPadding = math.max(
-        MediaQuery.of(context).padding.bottom - widget.selectedFontSize / 2.0,
-        0.0);
-    Color backgroundColor;
-    switch (_effectiveType) {
-      case ScrollableBottomNavigationBarType.fixed:
-        backgroundColor = widget.backgroundColor ?? bottomTheme.backgroundColor;
-        break;
-      case ScrollableBottomNavigationBarType.shifting:
-        backgroundColor = _backgroundColor;
-        break;
-    }
-    return Row(children: _createTiles());
+    return SingleChildScrollView(
+        scrollDirection: Axis.horizontal, child: Row(children: _createTiles()));
   }
 }
 
@@ -997,66 +967,5 @@ class _Circle {
 
   void dispose() {
     controller.dispose();
-  }
-}
-
-// Paints the animating color splash circles.
-class _RadialPainter extends CustomPainter {
-  _RadialPainter({
-    @required this.circles,
-    @required this.textDirection,
-  })  : assert(circles != null),
-        assert(textDirection != null);
-
-  final List<_Circle> circles;
-  final TextDirection textDirection;
-
-  // Computes the maximum radius attainable such that at least one of the
-  // bounding rectangle's corners touches the edge of the circle. Drawing a
-  // circle larger than this radius is not needed, since there is no perceivable
-  // difference within the cropped rectangle.
-  static double _maxRadius(Offset center, Size size) {
-    final double maxX = math.max(center.dx, size.width - center.dx);
-    final double maxY = math.max(center.dy, size.height - center.dy);
-    return math.sqrt(maxX * maxX + maxY * maxY);
-  }
-
-  @override
-  bool shouldRepaint(_RadialPainter oldPainter) {
-    if (textDirection != oldPainter.textDirection) return true;
-    if (circles == oldPainter.circles) return false;
-    if (circles.length != oldPainter.circles.length) return true;
-    for (int i = 0; i < circles.length; i += 1)
-      if (circles[i] != oldPainter.circles[i]) return true;
-    return false;
-  }
-
-  @override
-  void paint(Canvas canvas, Size size) {
-    for (final _Circle circle in circles) {
-      final Paint paint = Paint()..color = circle.color;
-      final Rect rect = Rect.fromLTWH(0.0, 0.0, size.width, size.height);
-      canvas.clipRect(rect);
-      double leftFraction;
-      switch (textDirection) {
-        case TextDirection.rtl:
-          leftFraction = 1.0 - circle.horizontalLeadingOffset;
-          break;
-        case TextDirection.ltr:
-          leftFraction = circle.horizontalLeadingOffset;
-          break;
-      }
-      final Offset center =
-          Offset(leftFraction * size.width, size.height / 2.0);
-      final Tween<double> radiusTween = Tween<double>(
-        begin: 0.0,
-        end: _maxRadius(center, size),
-      );
-      canvas.drawCircle(
-        center,
-        radiusTween.transform(circle.animation.value),
-        paint,
-      );
-    }
   }
 }

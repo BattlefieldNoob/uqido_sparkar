@@ -50,6 +50,11 @@ class App extends StatelessWidget {
                       );
                     },
                     title: const Text('Uqido Spark AR'),
+                    actions: [Icon(Icons.search)],
+                    floatingActionButton: FloatingActionButton(
+                      onPressed: () {},
+                      child: Icon(Icons.search),
+                    ),
                     onTap: (index) {
                       ctx
                           .read<SparkARBloc>()
