@@ -1,13 +1,14 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:uqido_sparkar/utils/string_extension.dart';
 import 'package:uqido_sparkar/view/common/scollable_bottom_navigation_bar.dart';
 
 const _tabletBreakpoint = 720.0;
 const _desktopBreakpoint = 1440.0;
 const _minHeight = 400.0;
-const _drawerWidth = 270.0;
-const _railSize = 72.0;
-const _denseRailSize = 56.0;
+const _drawerWidth = 350.0;
+const _railSize = 92.0;
+const _denseRailSize = 72.0;
 
 class NavRail extends StatelessWidget {
   final FloatingActionButton floatingActionButton;
@@ -19,13 +20,13 @@ class NavRail extends StatelessWidget {
   final WidgetBuilder drawerHeaderBuilder, drawerFooterBuilder;
   final Color bottomNavigationBarColor;
   final double tabletBreakpoint, desktopBreakpoint, minHeight, drawerWidth;
-  final List<Widget> actions;
   final ScrollableBottomNavigationBarType bottomNavigationBarType;
   final Color bottomNavigationBarSelectedColor,
       bottomNavigationBarUnselectedColor;
   final bool isDense;
   final bool hideTitleBar;
   final GlobalKey<ScaffoldState> scaffoldKey;
+  final PreferredSizeWidget appBar;
 
   const NavRail({
     Key key,
@@ -33,7 +34,7 @@ class NavRail extends StatelessWidget {
     @required this.tabs,
     @required this.onTap,
     this.scaffoldKey,
-    this.actions,
+    this.appBar,
     this.isDense = false,
     this.floatingActionButton,
     this.drawerFooterBuilder,
@@ -74,16 +75,7 @@ class NavRail extends StatelessWidget {
   Scaffold _buildMobileScaffold(BuildContext context) {
     return Scaffold(
         key: scaffoldKey,
-        appBar: hideTitleBar
-            ? null
-            : AppBar(
-                title: title,
-                actions: actions,
-                automaticallyImplyLeading: true,
-              ),
-        drawer: drawerHeaderBuilder != null || drawerFooterBuilder != null
-            ? _buildDrawer(context, false)
-            : null,
+        appBar: hideTitleBar ? null : appBar,
         body: body,
         floatingActionButton: floatingActionButton,
         floatingActionButtonLocation: FloatingActionButtonLocation.endFloat,
@@ -101,22 +93,13 @@ class NavRail extends StatelessWidget {
   Scaffold _buildTabletScaffold(BuildContext context) {
     return Scaffold(
       key: scaffoldKey,
-      appBar: hideTitleBar
-          ? null
-          : AppBar(
-              title: title,
-              actions: actions,
-              automaticallyImplyLeading: true,
-            ),
-      drawer: drawerHeaderBuilder != null || drawerFooterBuilder != null
-          ? _buildDrawer(context, false)
-          : null,
+      appBar: hideTitleBar ? null : appBar,
       floatingActionButton: floatingActionButton,
       floatingActionButtonLocation: FloatingActionButtonLocation.endTop,
       body: Row(
         children: <Widget>[
           ConstrainedBox(
-            child: buildRail(context, false),
+            child: buildRail(context, false, false),
             constraints: BoxConstraints.tightFor(
                 width: isDense ? _denseRailSize : _railSize),
           ),
@@ -129,34 +112,26 @@ class NavRail extends StatelessWidget {
   Material _buildDesktopScaffold(BuildContext context) {
     return Material(
       color: Theme.of(context).scaffoldBackgroundColor,
-      child: Row(
-        children: <Widget>[
+      child: Scaffold(
+        key: scaffoldKey,
+        floatingActionButton: floatingActionButton,
+        floatingActionButtonLocation: FloatingActionButtonLocation.endTop,
+        appBar: hideTitleBar ? null : appBar,
+        body: Row(children: <Widget>[
           Container(
             width: drawerWidth,
             child: _buildDrawer(context, true),
           ),
           Expanded(
-            child: Scaffold(
-              key: scaffoldKey,
-              floatingActionButton: floatingActionButton,
-              floatingActionButtonLocation:
-                  FloatingActionButtonLocation.startTop,
-              appBar: hideTitleBar
-                  ? null
-                  : AppBar(
-                      title: title,
-                      actions: actions,
-                      automaticallyImplyLeading: false,
-                    ),
-              body: body,
-            ),
+            child: body,
           ),
-        ],
+        ]),
       ),
     );
   }
 
-  NavigationRail buildRail(BuildContext context, bool extended) {
+  NavigationRail buildRail(
+      BuildContext context, bool isDesktop, bool extended) {
     return NavigationRail(
       extended: extended,
       backgroundColor: Theme.of(context).scaffoldBackgroundColor,
@@ -164,19 +139,23 @@ class NavRail extends StatelessWidget {
       selectedIconTheme: IconThemeData(
         color: Theme.of(context).accentColor,
       ),
+      unselectedLabelTextStyle: TextStyle(fontSize: isDesktop ? 20 : 14),
       selectedLabelTextStyle: TextStyle(
-        color: Theme.of(context).accentColor,
-      ),
+          color: Theme.of(context).accentColor, fontSize: isDesktop ? 22 : 15),
       unselectedIconTheme: IconThemeData(
-        color: Colors.grey,
+        color: Colors.white,
       ),
       labelType: extended ? null : NavigationRailLabelType.all,
       selectedIndex: currentIndex,
+      elevation: 3,
       onDestinationSelected: (val) => onTap(val),
       destinations: tabs
           .map((e) => NavigationRailDestination(
+                selectedIcon: Container(
+                    child: Padding(padding: EdgeInsets.all(2), child: e.icon),
+                    color: Theme.of(context).accentColor),
                 label: Text(
-                  e.label.toLowerCase(),
+                  e.label.toLowerCapitalize(),
                   overflow: TextOverflow.ellipsis,
                 ),
                 icon: e.icon,
@@ -194,7 +173,7 @@ class NavRail extends StatelessWidget {
               drawerHeaderBuilder(context),
             ],
             if (showTabs) ...[
-              Expanded(child: buildRail(context, true)),
+              Expanded(child: buildRail(context, true, true)),
             ],
             if (drawerFooterBuilder != null) ...[
               drawerFooterBuilder(context),

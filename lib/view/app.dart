@@ -6,6 +6,8 @@ import 'package:flutter_hooks_bloc/flutter_hooks_bloc.dart';
 import 'package:responsive_framework/responsive_wrapper.dart';
 import 'package:responsive_framework/utils/scroll_behavior.dart';
 import 'package:uqido_sparkar/blocs/sparkar_bloc.dart';
+import 'package:uqido_sparkar/utils/string_extension.dart';
+import 'package:uqido_sparkar/view/search_app_bar.dart';
 
 import 'common/navigation_rail.dart';
 import 'desktop/home_page_desktop.dart' deferred as desktopPage;
@@ -26,7 +28,10 @@ class App extends StatelessWidget {
                       scaleFactor: 0.8, name: TABLET),
                   ResponsiveBreakpoint.resize(1000, name: DESKTOP),
                 ]),
-        theme: ThemeData.dark(),
+        theme: ThemeData(
+            brightness: Brightness.dark,
+            scaffoldBackgroundColor: Color.fromRGBO(38, 38, 40, .9),
+            accentColor: Color.fromRGBO(78, 86, 176, 1.0)),
         home: BlocProvider(
             create: (_) => SparkARBloc(),
             child: Builder(builder: (ctx) {
@@ -43,18 +48,43 @@ class App extends StatelessWidget {
                 if (state.userList.length == 0) return SizedBox();
 
                 return NavRail(
-                    drawerWidth: 300,
                     drawerHeaderBuilder: (context) {
                       return Column(
                         children: <Widget>[],
                       );
                     },
                     title: const Text('Uqido Spark AR'),
-                    actions: [Icon(Icons.search)],
-                    floatingActionButton: FloatingActionButton(
+                    appBar: SearchAppBar(
+                        primary: Theme.of(ctx).primaryColor,
+                        searchHint: "Cerca un effetto...",
+                        mainTextColor: Colors.white,
+                        onSubmit: (String value) {
+                          print(value);
+                          ctx
+                              .read<SparkARBloc>()
+                              .add(SparkARSearchAction(value));
+                        },
+                        //Will show when SEARCH MODE wasn't active
+                        mainAppBar: (stream, keyword) {
+                          return AppBar(
+                              title: const Text('Uqido Spark AR'),
+                              actions: [
+                                IconButton(
+                                  onPressed: () {
+                                    stream.add(true);
+                                  },
+                                  icon: const Icon(Icons.search),
+                                ),
+                                const SizedBox(
+                                  width: 10,
+                                )
+                              ],
+                              bottom: getAppBarLoadingBar());
+                        }),
+                    /*floatingActionButton: FloatingActionButton(
                       onPressed: () {},
                       child: Icon(Icons.search),
-                    ),
+                    ),*/
                     onTap: (index) {
                       ctx
                           .read<SparkARBloc>()
@@ -63,7 +93,8 @@ class App extends StatelessWidget {
                     currentIndex: state.selectedIndex,
                     tabs: state.userList
                         .map((e) => BottomNavigationBarItem(
-                            icon: Image.network(e.iconUrl), label: e.name))
+                            icon: Image.network(e.iconUrl),
+                            label: e.name.toLowerCapitalize()))
                         .toList(),
                     body: Container(
                         color: const Color.fromRGBO(58, 66, 86, 1.0),

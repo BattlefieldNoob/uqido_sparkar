@@ -187,7 +187,6 @@ class ScrollableBottomNavigationBar extends StatefulWidget {
     this.showUnselectedLabels,
     this.mouseCursor,
   })  : assert(items != null),
-        assert(items.length >= 2),
         assert(
           items.every((BottomNavigationBarItem item) => item.title != null) ||
               items.every((BottomNavigationBarItem item) => item.label != null),
