@@ -7,12 +7,10 @@ import 'package:responsive_framework/responsive_wrapper.dart';
 import 'package:responsive_framework/utils/scroll_behavior.dart';
 import 'package:uqido_sparkar/blocs/sparkar_bloc.dart';
 import 'package:uqido_sparkar/utils/string_extension.dart';
-import 'package:uqido_sparkar/view/search_app_bar.dart';
+import 'package:uqido_sparkar/view/widgets/search_app_bar.dart';
 
-import 'common/navigation_rail.dart';
-import 'desktop/home_page_desktop.dart' deferred as desktopPage;
-import 'desktop/user_effects_detail.dart';
-import 'mobile/home_page_mobile.dart' deferred as mobilePage;
+import 'user_effects_detail.dart';
+import 'widgets/navigation_rail.dart';
 
 class App extends StatelessWidget {
   const App();
@@ -30,7 +28,7 @@ class App extends StatelessWidget {
                 ]),
         theme: ThemeData(
             brightness: Brightness.dark,
-            scaffoldBackgroundColor: Color.fromRGBO(38, 38, 40, .9),
+            scaffoldBackgroundColor: Color.fromRGBO(38, 44, 50, .9),
             accentColor: Color.fromRGBO(78, 86, 176, 1.0)),
         home: BlocProvider(
             create: (_) => SparkARBloc(),
@@ -97,69 +95,11 @@ class App extends StatelessWidget {
                             label: e.name.toLowerCapitalize()))
                         .toList(),
                     body: Container(
-                        color: const Color.fromRGBO(58, 66, 86, 1.0),
+                        color: const Color.fromRGBO(50, 58, 78, 1.0),
                         child: UserEffectDetail(
                             state.userList[state.selectedIndex])));
               });
-
-              /*BlocProvider(
-            create: (_) => SparkARBloc(),
-            child: Builder(builder: (ctx) {
-              return Scaffold(
-                  backgroundColor: const Color.fromRGBO(58, 66, 86, 1.0),
-                  appBar: SearchAppBar(
-                      primary: Theme.of(ctx).primaryColor,
-                      searchHint: "Cerca un effetto...",
-                      mainTextColor: Colors.white,
-                      onSubmit: (String value) {
-                        print(value);
-                        ctx.read<SparkARBloc>().add(SparkARSearchAction(value));
-                      },
-                      //Will show when SEARCH MODE wasn't active
-                      mainAppBar: (stream, keyword) {
-                        return AppBar(
-                            title: const Text('Uqido Spark AR'),
-                            actions: [
-                              IconButton(
-                                onPressed: () {
-                                  stream.add(true);
-                                },
-                                icon: const Icon(Icons.search),
-                              ),
-                              const SizedBox(
-                                width: 10,
-                              )
-                            ],
-                            bottom: getAppBarLoadingBar());
-                      }),
-                  body: HookBuilder(builder: (ctx) {
-                    print('Body HookBuilder');
-                    final state = useBloc<SparkARBloc, SparkARState>(
-                      onEmitted: (_, prev, curr) {
-                        print(curr);
-                        return prev.userList != curr.userList;
-                      },
-                    ).state;
-
-                    if (state.userList.length == 0) return SizedBox();
-
-                    return HomePageProvider(
-                      desktopScreen: loadHomePageDesktop(state),
-                      mobileScreen: loadHomePageMobile(state),
-                    );
-                  }));
-            }))*/
             })));
-  }
-
-  Future<Widget> loadHomePageDesktop(SparkARState state) async {
-    await desktopPage.loadLibrary();
-    return desktopPage.HomePageDesktop(state);
-  }
-
-  Future<Widget> loadHomePageMobile(SparkARState state) async {
-    await mobilePage.loadLibrary();
-    return mobilePage.HomePageMobile(state);
   }
 
   PreferredSize getAppBarLoadingBar() {

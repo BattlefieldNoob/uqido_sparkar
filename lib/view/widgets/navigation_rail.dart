@@ -1,7 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:uqido_sparkar/utils/string_extension.dart';
-import 'package:uqido_sparkar/view/common/scollable_bottom_navigation_bar.dart';
+import 'package:uqido_sparkar/view/widgets/scollable_bottom_navigation_bar.dart';
 
 const _tabletBreakpoint = 720.0;
 const _desktopBreakpoint = 1440.0;
@@ -9,6 +9,7 @@ const _minHeight = 400.0;
 const _drawerWidth = 350.0;
 const _railSize = 92.0;
 const _denseRailSize = 72.0;
+const _maxCharForString = 22;
 
 class NavRail extends StatelessWidget {
   final FloatingActionButton floatingActionButton;
@@ -118,13 +119,11 @@ class NavRail extends StatelessWidget {
         floatingActionButtonLocation: FloatingActionButtonLocation.endTop,
         appBar: hideTitleBar ? null : appBar,
         body: Row(children: <Widget>[
-          Container(
-            width: drawerWidth,
+          ConstrainedBox(
+            constraints: BoxConstraints.tightFor(width: drawerWidth),
             child: _buildDrawer(context, true),
           ),
-          Expanded(
-            child: body,
-          ),
+          Expanded(child: body),
         ]),
       ),
     );
@@ -147,20 +146,22 @@ class NavRail extends StatelessWidget {
       ),
       labelType: extended ? null : NavigationRailLabelType.all,
       selectedIndex: currentIndex,
-      elevation: 3,
       onDestinationSelected: (val) => onTap(val),
-      destinations: tabs
-          .map((e) => NavigationRailDestination(
-                selectedIcon: Container(
-                    child: Padding(padding: EdgeInsets.all(2), child: e.icon),
-                    color: Theme.of(context).accentColor),
-                label: Text(
-                  e.label.toLowerCapitalize(),
-                  overflow: TextOverflow.ellipsis,
-                ),
-                icon: e.icon,
-              ))
-          .toList(),
+      destinations: tabs.map((e) {
+        var lowerCapitalize = e.label.toLowerCapitalize();
+        if (isDesktop)
+          lowerCapitalize = lowerCapitalize.truncateTo(_maxCharForString);
+        return NavigationRailDestination(
+          selectedIcon: Container(
+              child: Padding(padding: EdgeInsets.all(2), child: e.icon),
+              color: Theme.of(context).accentColor),
+          label: Text(
+            lowerCapitalize,
+            overflow: TextOverflow.ellipsis,
+          ),
+          icon: e.icon,
+        );
+      }).toList(),
     );
   }
 
