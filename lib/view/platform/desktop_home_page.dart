@@ -1,3 +1,4 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -9,8 +10,10 @@ class DesktopHomePage extends StatelessWidget {
   final SparkARState state;
   final List<NavigationRailDestination> destinations;
   final Widget appBar;
+  final bool isTablet;
 
-  const DesktopHomePage(this.state, this.appBar, this.destinations)
+  const DesktopHomePage(
+      this.state, this.appBar, this.destinations, this.isTablet)
       : super(key: null);
 
   @override
@@ -29,13 +32,13 @@ class DesktopHomePage extends StatelessWidget {
                       minHeight: constraints.maxHeight,
                     ),
                     child: IntrinsicHeight(
-                        child: _DesktopNavigationRail(destinations, state)),
+                        child: _DesktopNavigationRail(
+                            destinations, state, isTablet)),
                   ),
                 ),
               );
             },
           ), //,
-          const VerticalDivider(thickness: 1, width: 1),
           Expanded(child: UserEffectDetail(state.userList[state.selectedIndex]))
         ]));
   }
@@ -44,17 +47,21 @@ class DesktopHomePage extends StatelessWidget {
 class _DesktopNavigationRail extends HookWidget {
   final List<NavigationRailDestination> destinations;
   final SparkARState state;
+  final bool isTablet;
 
-  _DesktopNavigationRail(this.destinations, this.state);
+  _DesktopNavigationRail(this.destinations, this.state, this.isTablet);
 
   @override
   Widget build(BuildContext context) {
-    var extended = useState(false);
+    var extended = useState(!isTablet);
 
     return NavigationRail(
         destinations: destinations,
+        elevation: 4,
+        minWidth: 92,
         extended: extended.value,
-        leading: getHeader(extended),
+        minExtendedWidth: 350,
+        leading: isTablet ? getHeader(extended) : null,
         labelType: NavigationRailLabelType.none,
         onDestinationSelected: (index) =>
             context.read<SparkARBloc>().add(SparkARSelectUserAction(index)),
@@ -62,22 +69,20 @@ class _DesktopNavigationRail extends HookWidget {
   }
 
   Widget getHeader(ValueNotifier<bool> extended) {
-    return SizedBox(
-      height: 56,
-      child: Row(
-        children: [
-          const SizedBox(width: 6),
-          InkWell(
-            borderRadius: const BorderRadius.all(Radius.circular(16)),
-            child: Padding(
-                padding: EdgeInsets.all(8),
-                child: Text(extended.value ? "Reduce" : "Expand")),
-            onTap: () {
-              extended.value = !extended.value;
-            },
-          )
-        ],
-      ),
-    );
+    return Padding(
+        padding: EdgeInsets.all(4),
+        child: SizedBox(
+            height: 56,
+            child: Align(
+              alignment: Alignment.centerLeft,
+              child: InkResponse(
+                  borderRadius: BorderRadius.circular(10),
+                  child: TextButton.icon(
+                    icon: Icon(
+                        extended.value ? Icons.arrow_left : Icons.arrow_right),
+                    label: Text(!extended.value ? "Apri" : "Chiudi"),
+                    onPressed: () => extended.value = !extended.value,
+                  )),
+            )));
   }
 }

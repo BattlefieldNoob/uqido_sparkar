@@ -14,6 +14,8 @@ import 'package:uqido_sparkar/view/common/search_app_bar.dart';
 import 'package:uqido_sparkar/view/platform/desktop_home_page.dart';
 import 'package:uqido_sparkar/view/platform/mobile_home_page.dart';
 
+import 'common/AppTheme.dart';
+
 class App extends StatelessWidget {
   final ValueNotifier<bool> extended = new ValueNotifier(false);
 
@@ -32,10 +34,7 @@ class App extends StatelessWidget {
                           scaleFactor: 0.8, name: TABLET),
                       ResponsiveBreakpoint.resize(1000, name: DESKTOP),
                     ]),
-            theme: ThemeData.dark().copyWith(
-                scaffoldBackgroundColor: Color.fromRGBO(38, 44, 50, .9),
-                backgroundColor: Color.fromRGBO(30, 38, 45, .9),
-                accentColor: Color.fromRGBO(78, 86, 176, 1.0)),
+            theme: getTheme(),
             home: Builder(builder: (ctx) {
               return HookBuilder(builder: (ctx) {
                 print('Body HookBuilder');
@@ -52,7 +51,7 @@ class App extends StatelessWidget {
                 var destinations = state.userList
                     .map((e) => NavigationRailDestination(
                         icon: Image.network(e.iconUrl),
-                        label: Text(e.name.truncateTo(20))))
+                        label: Text(e.name.truncateTo(30))))
                     .toList();
 
                 while (destinations.length < 2) {
@@ -67,7 +66,7 @@ class App extends StatelessWidget {
                 final isTablet = isDisplaySmallDesktop(ctx);
                 if (isDesktop) {
                   return DesktopHomePage(
-                      state, generateSearchAppBar(ctx), destinations);
+                      state, generateSearchAppBar(ctx), destinations, isTablet);
                 } else {
                   return MobileHomePage(
                       state, generateSearchAppBar(ctx), destinations);
@@ -82,8 +81,8 @@ class App extends StatelessWidget {
         searchHint: "Cerca un effetto...",
         mainTextColor: Colors.white,
         onSubmit: (String value) {
-          print(value);
-          ctx.read<SparkARBloc>().add(SparkARSearchAction(value));
+          if (value.isNotEmpty)
+            ctx.read<SparkARBloc>().add(SparkARSearchAction(value));
         },
         //Will show when SEARCH MODE wasn't active
         mainAppBar: (stream, keyword) {

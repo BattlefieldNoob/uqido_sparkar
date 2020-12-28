@@ -8,8 +8,7 @@ import 'package:url_launcher/url_launcher.dart';
 import 'effect_visibility_status.dart';
 
 class EffectListItem extends StatelessWidget {
-  static const Color enabledColor = const Color.fromRGBO(78, 86, 176, 1.0);
-  static const Color disabledColor = const Color.fromRGBO(78, 86, 130, 1.0);
+  static const Color disabledColor = const Color.fromRGBO(48, 46, 50, 1.0);
 
   final SparkAREffect effect;
 
@@ -32,26 +31,28 @@ class EffectListItem extends StatelessWidget {
         trailing: FittedBox(
             alignment: Alignment.centerRight,
             child: Row(children: [
-              getClickableIcon(Icons.public_rounded, effect.publicLink,
+              getClickableIcon(context, Icons.public_rounded, effect.publicLink,
                   enabled: mapStatusToBool()),
               const SizedBox(
                 width: 8,
               ),
-              getClickableIcon(Icons.home, effect.testLink, primary: false)
+              getClickableIcon(context, Icons.home, effect.testLink,
+                  primary: false)
             ])),
       ),
     );
   }
 
-  Widget getClickableIcon(IconData icon, String url,
+  Widget getClickableIcon(BuildContext context, IconData icon, String url,
       {bool enabled = true, bool primary = true}) {
+    var enabledColor = Theme.of(context).accentColor;
     return OutlinedButton(
         style: OutlinedButton.styleFrom(
             shape: RoundedRectangleBorder(
               borderRadius: BorderRadius.circular(8.0),
             ),
             side: enabled
-                ? const BorderSide(width: 3, color: enabledColor)
+                ? BorderSide(width: 3, color: enabledColor)
                 : const BorderSide(width: 3, color: disabledColor),
             backgroundColor: primary
                 ? enabled
@@ -69,10 +70,7 @@ class EffectListItem extends StatelessWidget {
     return Card(
         shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(10)),
         elevation: 3,
-        child: Container(
-            decoration: const BoxDecoration(
-                color: const Color.fromRGBO(64, 75, 106, .9)),
-            child: child));
+        child: child);
   }
 
   bool mapStatusToBool() {
