@@ -1,6 +1,7 @@
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:uqido_sparkar/db/firestore_db.dart';
 import 'package:uqido_sparkar/model/sparkar_user.dart';
+import 'package:uqido_sparkar/view/common/logging.dart';
 
 enum SparkAREvent { update, selectUser, search }
 
@@ -73,7 +74,7 @@ class SparkARBloc extends Bloc<SparkARAction, SparkARState> {
 
   @override
   Stream<SparkARState> mapEventToState(SparkARAction action) async* {
-    print("Executing Event $action");
+    printOnlyDebug("Executing Event $action");
     switch (action.event) {
       case SparkAREvent.update:
         yield state.fromCurrent(isLoading: true);
@@ -103,6 +104,10 @@ class SparkARBloc extends Bloc<SparkARAction, SparkARState> {
         if (searchAction.searchKeyword.isEmpty) {
           yield state.fromCurrent(searchKey: '');
         } else {
+          if (state.searchKey == searchAction.searchKeyword) {
+            return;
+          }
+
           yield state.fromCurrent(isLoading: true);
 
           var filteredList = await Future(() async {
@@ -128,7 +133,7 @@ class SparkARBloc extends Bloc<SparkARAction, SparkARState> {
           });
 
           yield state.fromCurrent(
-              selectedIndex: filteredList.length == 0 ? -1 : 0,
+              selectedIndex: filteredList.length == 0 ? 0 : 0,
               filteredList: filteredList,
               searchKey: searchAction.searchKeyword);
         }

@@ -32,14 +32,25 @@ class DesktopHomePage extends StatelessWidget {
                       minHeight: constraints.maxHeight,
                     ),
                     child: IntrinsicHeight(
-                        child: _DesktopNavigationRail(
-                            destinations, state, isTablet)),
+                        child: state.userList.length != 0
+                            ? _DesktopNavigationRail(
+                                destinations, state, isTablet)
+                            : Material(
+                                color: Color.fromRGBO(48, 54, 60, .9),
+                                elevation: 4,
+                                child: SizedBox(
+                                  width: isTablet ? 92 : 350,
+                                ),
+                              )),
                   ),
                 ),
               );
             },
           ), //,
-          Expanded(child: UserEffectDetail(state.userList[state.selectedIndex]))
+          state.userList.length != 0
+              ? Expanded(
+                  child: UserEffectDetail(state.userList[state.selectedIndex]))
+              : SizedBox()
         ]));
   }
 }
@@ -54,6 +65,10 @@ class _DesktopNavigationRail extends HookWidget {
   @override
   Widget build(BuildContext context) {
     var extended = useState(!isTablet);
+
+    var empty = destinations.length == 0;
+
+    if (empty) {}
 
     return NavigationRail(
         destinations: destinations,

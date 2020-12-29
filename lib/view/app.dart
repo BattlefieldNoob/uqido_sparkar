@@ -14,7 +14,8 @@ import 'package:uqido_sparkar/view/common/search_app_bar.dart';
 import 'package:uqido_sparkar/view/platform/desktop_home_page.dart';
 import 'package:uqido_sparkar/view/platform/mobile_home_page.dart';
 
-import 'common/AppTheme.dart';
+import 'common/app_theme.dart';
+import 'common/logging.dart';
 
 class App extends StatelessWidget {
   final ValueNotifier<bool> extended = new ValueNotifier(false);
@@ -37,16 +38,14 @@ class App extends StatelessWidget {
             theme: getTheme(),
             home: Builder(builder: (ctx) {
               return HookBuilder(builder: (ctx) {
-                print('Body HookBuilder');
+                printOnlyDebug('Body HookBuilder');
                 final state = useBloc<SparkARBloc, SparkARState>(
                   onEmitted: (_, prev, curr) {
-                    print(curr);
+                    printOnlyDebug(curr);
                     //return prev.userList != curr.userList;
                     return true;
                   },
                 ).state;
-
-                if (state.userList.length == 0) return SizedBox();
 
                 var destinations = state.userList
                     .map((e) => NavigationRailDestination(
@@ -81,8 +80,7 @@ class App extends StatelessWidget {
         searchHint: "Cerca un effetto...",
         mainTextColor: Colors.white,
         onSubmit: (String value) {
-          if (value.isNotEmpty)
-            ctx.read<SparkARBloc>().add(SparkARSearchAction(value));
+          ctx.read<SparkARBloc>().add(SparkARSearchAction(value));
         },
         //Will show when SEARCH MODE wasn't active
         mainAppBar: (stream, keyword) {

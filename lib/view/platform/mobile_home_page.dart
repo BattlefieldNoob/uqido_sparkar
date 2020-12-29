@@ -17,7 +17,9 @@ class MobileHomePage extends StatelessWidget {
     return Scaffold(
       extendBody: true,
       appBar: appBar,
-      body: UserEffectDetail(state.userList[state.selectedIndex]),
+      body: state.userList.length != 0
+          ? UserEffectDetail(state.userList[state.selectedIndex])
+          : SizedBox(),
       bottomNavigationBar: BottomAppBar(
         notchMargin: 6,
         child: Container(
@@ -32,10 +34,13 @@ class MobileHomePage extends StatelessWidget {
                     onPressed: () => showBottomDrawer(context),
                   )),
               Center(
-                  child: Text(
-                state.userList[state.selectedIndex].name,
-                style: TextStyle(fontSize: 20, fontWeight: FontWeight.w500),
-              ))
+                  child: state.userList.length != 0
+                      ? Text(
+                          state.userList[state.selectedIndex].name,
+                          style: TextStyle(
+                              fontSize: 20, fontWeight: FontWeight.w500),
+                        )
+                      : Text(""))
             ],
           ),
         ),
