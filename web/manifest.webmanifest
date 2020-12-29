@@ -3,11 +3,18 @@
     "short_name": "Uqido SparkAR",
     "start_url": "/",
     "display": "standalone",
-    "background_color": "#3A4256",
-    "theme_color": "#3A4256",
+    "background_color": "#272D33",
+    "theme_color": "#272D33",
     "description": "Uqido SparkAR",
     "orientation": "portrait-primary",
     "prefer_related_applications": false,
+    "shortcuts" : [
+      {
+        "name": "Apri Preferiti",
+        "url": "/starred",
+        "description": "Mostra direttamente la sezione preferiti"
+      }
+    ],
     "icons": [
         {
             "src": "icons/Icon-192.png",
@@ -18,6 +25,7 @@
             "src": "icons/Icon-512.png",
             "sizes": "512x512",
             "type": "image/png"
-        }
+        },
+
     ]
 }

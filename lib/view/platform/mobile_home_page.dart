@@ -40,15 +40,6 @@ class MobileHomePage extends StatelessWidget {
           ),
         ),
       ),
-
-      /*floatingActionButton: _bottomDrawerVisible
-                ? null
-                : const Padding(
-              padding: EdgeInsetsDirectional.only(bottom: 8),
-              child: _ReplyFab(),
-            ),*/
-
-      //floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
     );
   }
 
