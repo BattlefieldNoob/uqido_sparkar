@@ -36,42 +36,55 @@ class App extends StatelessWidget {
                       ResponsiveBreakpoint.resize(1000, name: DESKTOP),
                     ]),
             theme: getTheme(),
-            home: Builder(builder: (ctx) {
-              return HookBuilder(builder: (ctx) {
-                printOnlyDebug('Body HookBuilder');
-                final state = useBloc<SparkARBloc, SparkARState>(
-                  onEmitted: (_, prev, curr) {
-                    printOnlyDebug(curr);
-                    //return prev.userList != curr.userList;
-                    return true;
-                  },
-                ).state;
+            onGenerateRoute: generateRoutes));
+  }
 
-                var destinations = state.userList
-                    .map((e) => NavigationRailDestination(
-                        icon: Image.network(e.iconUrl),
-                        label: Text(e.name.truncateTo(30))))
-                    .toList();
+  Route<dynamic> generateRoutes(RouteSettings settings) {
+    print(settings.name);
+    switch (settings.name) {
+      case "/":
+        return MaterialPageRoute(builder: (context) => getHomePage());
+      default:
+        return MaterialPageRoute(builder: (context) => getHomePage());
+    }
+  }
 
-                while (destinations.length < 2) {
-                  destinations.add(NavigationRailDestination(
-                      icon: Opacity(opacity: 0),
-                      label: Opacity(
-                        opacity: 0,
-                      )));
-                }
+  Builder getHomePage() {
+    return Builder(builder: (ctx) {
+      return HookBuilder(builder: (ctx) {
+        printOnlyDebug('Body HookBuilder');
+        final state = useBloc<SparkARBloc, SparkARState>(
+          onEmitted: (_, prev, curr) {
+            printOnlyDebug(curr);
+            //return prev.userList != curr.userList;
+            return true;
+          },
+        ).state;
 
-                final isDesktop = isDisplayDesktop(ctx);
-                final isTablet = isDisplaySmallDesktop(ctx);
-                if (isDesktop) {
-                  return DesktopHomePage(
-                      state, generateSearchAppBar(ctx), destinations, isTablet);
-                } else {
-                  return MobileHomePage(
-                      state, generateSearchAppBar(ctx), destinations);
-                }
-              });
-            })));
+        var destinations = state.userList
+            .map((e) => NavigationRailDestination(
+                icon: Image.network(e.iconUrl),
+                label: Text(e.name.truncateTo(30))))
+            .toList();
+
+        while (destinations.length < 2) {
+          destinations.add(NavigationRailDestination(
+              icon: Opacity(opacity: 0),
+              label: Opacity(
+                opacity: 0,
+              )));
+        }
+
+        final isDesktop = isDisplayDesktop(ctx);
+        final isTablet = isDisplaySmallDesktop(ctx);
+        if (isDesktop) {
+          return DesktopHomePage(
+              state, generateSearchAppBar(ctx), destinations, isTablet);
+        } else {
+          return MobileHomePage(state, generateSearchAppBar(ctx), destinations);
+        }
+      });
+    });
   }
 
   SearchAppBar generateSearchAppBar(BuildContext ctx) {

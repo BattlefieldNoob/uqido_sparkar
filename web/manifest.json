@@ -8,13 +8,6 @@
     "description": "Uqido SparkAR",
     "orientation": "portrait-primary",
     "prefer_related_applications": false,
-    "shortcuts" : [
-      {
-        "name": "Apri Preferiti",
-        "url": "/starred",
-        "description": "Mostra direttamente la sezione preferiti"
-      }
-    ],
     "icons": [
         {
             "src": "icons/Icon-192.png",
