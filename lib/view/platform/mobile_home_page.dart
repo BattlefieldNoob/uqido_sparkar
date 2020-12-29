@@ -50,59 +50,89 @@ class MobileHomePage extends StatelessWidget {
         builder: getModalBottomSheetBody);
   }
 
-  ConstrainedBox getModalBottomSheetBody(BuildContext context) {
-    return ConstrainedBox(
-        constraints: BoxConstraints.loose(Size(double.infinity, 600)),
-        child: Column(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            children: [
-              Padding(
-                padding: const EdgeInsets.all(16),
-                child: Column(
-                  children: [
-                    Material(
-                      elevation: 1,
-                      borderRadius: BorderRadius.circular(10),
-                      color: Color.fromRGBO(70, 70, 70, .9),
-                      child: SizedBox(
-                        width: 128,
-                        height: 12,
-                      ),
+  Widget getModalBottomSheetBody(BuildContext context) {
+    final screenHeight = MediaQuery.of(context).size.height;
+    final screenWidth = MediaQuery.of(context).size.width;
+    final orientation = MediaQuery.of(context).orientation;
+    return Padding(
+        padding: EdgeInsets.fromLTRB(16, 8, 16, 16),
+        child: SizedBox(
+            height: 700,
+            child: Column(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  Material(
+                    elevation: 1,
+                    borderRadius: BorderRadius.circular(10),
+                    color: Color.fromRGBO(70, 70, 70, .9),
+                    child: SizedBox(
+                      width: 128,
+                      height: 12,
                     ),
-                    const SizedBox(height: 16),
-                    for (var i = 0; i < state.userList.length; i++)
-                      ListTile(
-                          leading: Image.network(state.userList[i].iconUrl),
-                          title: Text(
-                            state.userList[i].name,
-                            style: state.selectedIndex == i
-                                ? TextStyle(
-                                    color: Color.fromRGBO(20, 92, 255, 1))
-                                : null,
-                          ),
-                          selected: state.selectedIndex == i,
-                          selectedTileColor: Theme.of(context)
-                              .navigationRailTheme
-                              .backgroundColor,
-                          onTap: () {
-                            context
-                                .read<SparkARBloc>()
-                                .add(SparkARSelectUserAction(i));
-                            Navigator.pop(context);
-                          }),
-                  ],
-                ),
-              ),
-              Align(
-                  alignment: Alignment.centerLeft,
-                  child: Padding(
-                    padding: EdgeInsets.symmetric(horizontal: 8, vertical: 16),
+                  ),
+                  const SizedBox(height: 16),
+                  ConstrainedBox(
+                      constraints: BoxConstraints.loose(Size(
+                          double.infinity,
+                          orientation == Orientation.portrait
+                              ? screenHeight / 2.5
+                              : screenHeight / 3.5)),
+                      child: getUsersListOrGrid(screenWidth, orientation)),
+                  const SizedBox(height: 8),
+                  Align(
+                    alignment: Alignment.bottomLeft,
                     child: FlatButton.icon(
                       icon: Icon(Icons.arrow_drop_down),
                       label: Text("Chiudi"),
                       onPressed: () => Navigator.pop(context),
                     ),
-                  ))
-            ]));
+                  )
+                ])));
+  }
+
+  Widget getUsersListOrGrid(double width, Orientation orientation) {
+    if (orientation == Orientation.portrait)
+      return ListView.builder(
+        itemCount: state.userList.length,
+        itemBuilder: (context, i) => UserListItem(state: state, i: i),
+      );
+    else
+      return GridView.builder(
+        gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+            crossAxisCount: 2, childAspectRatio: width / 100),
+        itemCount: state.userList.length,
+        itemBuilder: (context, i) =>
+            Center(child: UserListItem(state: state, i: i)),
+      );
+  }
+}
+
+class UserListItem extends StatelessWidget {
+  const UserListItem({
+    Key key,
+    @required this.state,
+    @required this.i,
+  }) : super(key: key);
+
+  final SparkARState state;
+  final int i;
+
+  @override
+  Widget build(BuildContext context) {
+    return ListTile(
+        leading: Image.network(state.userList[i].iconUrl),
+        title: Text(
+          state.userList[i].name,
+          style: state.selectedIndex == i
+              ? TextStyle(color: Color.fromRGBO(20, 92, 255, 1))
+              : null,
+        ),
+        selected: state.selectedIndex == i,
+        selectedTileColor:
+            Theme.of(context).navigationRailTheme.backgroundColor,
+        onTap: () {
+          context.read<SparkARBloc>().add(SparkARSelectUserAction(i));
+          Navigator.pop(context);
+        });
   }
 }

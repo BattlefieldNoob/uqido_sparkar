@@ -15,7 +15,7 @@ class UserEffectDetail extends StatelessWidget {
     final effects = user.effects;
 
     return ListView.builder(
-        padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 6),
+        padding: const EdgeInsets.fromLTRB(16, 6, 16, 64),
         itemCount: effects.length,
         itemBuilder: (context, index) => EffectListItem(
               effect: effects[index],
