@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:flutter_hooks_bloc/flutter_hooks_bloc.dart';
 import 'package:uqido_sparkar/blocs/sparkar_bloc.dart';
 import 'package:uqido_sparkar/view/common/home_loading_bar.dart';
 import 'package:uqido_sparkar/view/common/search_app_bar.dart';

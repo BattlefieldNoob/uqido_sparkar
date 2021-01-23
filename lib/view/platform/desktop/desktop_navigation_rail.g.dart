@@ -7,10 +7,8 @@ part of 'desktop_navigation_rail.dart';
 // **************************************************************************
 
 class DesktopHeader extends StatelessWidget {
-  const DesktopHeader(this.extended, {Key key}) : super(key: key);
-
-  final ValueNotifier<bool> extended;
+  const DesktopHeader({Key key}) : super(key: key);
 
   @override
-  Widget build(BuildContext _context) => desktopHeader(extended);
+  Widget build(BuildContext _context) => desktopHeader(_context);
 }

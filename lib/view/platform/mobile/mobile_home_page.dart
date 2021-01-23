@@ -1,7 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
-import 'package:uqido_sparkar/blocs/sparkar_bloc.dart';
+import 'package:uqido_sparkar/blocs/sparkar_bloc.state.dart';
 import 'package:uqido_sparkar/view/sparkar/user_effects_detail.dart';
 
 import 'mobile_bottom_sheet_body.dart';
@@ -15,9 +15,14 @@ class MobileHomePage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    var scaffoldBody = state.userList.length != 0
-        ? UserEffectDetail(state.userList[state.selectedIndex])
+    final scaffoldBody = state.userList.length != 0
+        ? UserEffectDetail(state.userList[state.selected])
         : SizedBox();
+
+    final bottomAppBarTitle = Text(
+      state.userList[state.selected].name,
+      style: TextStyle(fontSize: 20, fontWeight: FontWeight.w500),
+    );
 
     return Scaffold(
       extendBody: true,
@@ -37,13 +42,8 @@ class MobileHomePage extends StatelessWidget {
                     onPressed: () => showBottomDrawer(context, state),
                   )),
               Center(
-                  child: state.userList.length != 0
-                      ? Text(
-                          state.userList[state.selectedIndex].name,
-                          style: TextStyle(
-                              fontSize: 20, fontWeight: FontWeight.w500),
-                        )
-                      : Text(""))
+                  child:
+                      state.userList.length != 0 ? bottomAppBarTitle : Text(""))
             ],
           ),
         ),
@@ -51,7 +51,7 @@ class MobileHomePage extends StatelessWidget {
     );
   }
 
-  void showBottomDrawer(BuildContext context, SparkARState state) {
+  void showBottomDrawer(final BuildContext context, final SparkARState state) {
     showModalBottomSheet<void>(
         context: context,
         shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(10)),

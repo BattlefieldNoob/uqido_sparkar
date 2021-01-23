@@ -3,6 +3,6 @@ extension StringExtension on String {
     return "${this[0].toUpperCase()}${this.substring(1).toLowerCase()}";
   }
 
-  String truncateTo(int maxLength) =>
+  String truncateTo(final int maxLength) =>
       (this.length <= maxLength) ? this : '${this.substring(0, maxLength)}...';
 }

@@ -1,7 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
-import 'package:uqido_sparkar/blocs/sparkar_bloc.dart';
+import 'package:uqido_sparkar/blocs/sparkar_bloc.state.dart';
 import 'package:uqido_sparkar/view/sparkar/user_effects_detail.dart';
 
 import 'desktop_navigation_rail.dart';
@@ -49,7 +49,7 @@ class DesktopHomePage extends StatelessWidget {
           ), //,
           state.userList.length != 0
               ? Expanded(
-                  child: UserEffectDetail(state.userList[state.selectedIndex]))
+                  child: UserEffectDetail(state.userList[state.selected]))
               : SizedBox()
         ]));
   }

@@ -10,6 +10,7 @@ import 'package:url_launcher/url_launcher.dart';
 import 'effect_visibility_status.dart';
 
 part 'effect_list_item.g.dart';
+part 'effect_list_item.viewmodel.dart';
 
 const Color disabledColor = const Color.fromRGBO(48, 46, 50, 1.0);
 
@@ -36,7 +37,7 @@ class EffectListItem extends StatelessWidget {
             alignment: Alignment.centerRight,
             child: Row(children: [
               ClickableIcon(Icons.public_rounded, effect.publicLink,
-                  enabled: mapStatusToBool()),
+                  enabled: mapStatusToBool(effect)),
               const SizedBox(
                 width: 8,
               ),
@@ -44,21 +45,6 @@ class EffectListItem extends StatelessWidget {
             ])),
       ),
     );
-  }
-
-  bool mapStatusToBool() {
-    final visibility = effect.visibilityStatus;
-    final submission = effect.submissionStatus;
-    if (visibility == "NOT_VISIBLE" ||
-        submission == "NOT_APPROVED" ||
-        submission == "NOT_REVIEWED" ||
-        effect.isDeprecated)
-      return false;
-    else if ((visibility == "VISIBLE" && submission == "UPDATE_REJECTED") ||
-        (visibility == "VISIBLE" && submission == "APPROVED"))
-      return true;
-    else
-      return false;
   }
 }
 

@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:functional_widget_annotation/functional_widget_annotation.dart';
-import 'package:uqido_sparkar/blocs/sparkar_bloc.dart';
+import 'package:uqido_sparkar/blocs/sparkar_bloc.state.dart';
 
 import 'mobile_user_list_item.dart';
 
@@ -54,8 +54,8 @@ class MobileBottomSheetBody extends StatelessWidget {
 }
 
 @swidget
-Widget usersListOrGrid(
-    SparkARState state, double width, Orientation orientation) {
+Widget usersListOrGrid(final SparkARState state, final double width,
+    final Orientation orientation) {
   if (orientation == Orientation.portrait)
     return ListView.builder(
       itemCount: state.userList.length,

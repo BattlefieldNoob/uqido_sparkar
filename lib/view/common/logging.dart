@@ -1,6 +1,6 @@
 import 'package:flutter/foundation.dart';
 
-void printOnlyDebug(Object message) {
+void printOnlyDebug(final Object message) {
   if (kReleaseMode) return;
   print(message);
 }

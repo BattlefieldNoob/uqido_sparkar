@@ -64,21 +64,42 @@ class _SearchAppBarState extends State<SearchAppBar> {
         }
 
         if (_show) {
-          return searchAppBar(
-            context: context,
-          );
+          return SearchAppBarBody(
+              stream: stream,
+              widget: widget,
+              queryController: queryController,
+              context: context);
         } else {
-          return showMainAppBar();
+          return widget.mainAppBar(stream, queryController.text);
         }
       },
     );
   }
 
-  Widget showMainAppBar() {
-    return widget.mainAppBar(stream, queryController.text);
+  @override
+  void dispose() {
+    super.dispose();
+    queryController.dispose();
+    stream.close();
   }
+}
 
-  Widget searchAppBar({@required BuildContext context}) {
+class SearchAppBarBody extends StatelessWidget {
+  const SearchAppBarBody({
+    Key key,
+    @required this.stream,
+    @required this.widget,
+    @required this.queryController,
+    @required this.context,
+  }) : super(key: key);
+
+  final StreamController<bool> stream;
+  final SearchAppBar widget;
+  final TextEditingController queryController;
+  final BuildContext context;
+
+  @override
+  Widget build(BuildContext context) {
     return AppBar(
       leading: InkWell(child: BackButton(
         onPressed: () {
@@ -126,12 +147,5 @@ class _SearchAppBarState extends State<SearchAppBar> {
         )
       ],
     );
-  }
-
-  @override
-  void dispose() {
-    super.dispose();
-    queryController.dispose();
-    stream.close();
   }
 }
