@@ -4,8 +4,8 @@ import 'package:flutter_hooks_bloc/flutter_hooks_bloc.dart';
 import 'package:uqido_sparkar/blocs/sparkar_bloc.dart';
 import 'package:uqido_sparkar/utils/string_extension.dart';
 import 'package:uqido_sparkar/utils/ui_utils.dart';
-import 'package:uqido_sparkar/view/platform/desktop_home_page.dart';
-import 'package:uqido_sparkar/view/platform/mobile_home_page.dart';
+import 'package:uqido_sparkar/view/platform/desktop/desktop_home_page.dart';
+import 'package:uqido_sparkar/view/platform/mobile/mobile_home_page.dart';
 
 import 'home_app_bar.dart';
 import 'logging.dart';
