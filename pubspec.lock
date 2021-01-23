@@ -91,7 +91,7 @@ packages:
       name: build_runner
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "1.10.6"
+    version: "1.11.0"
   build_runner_core:
     dependency: transitive
     description:
@@ -317,6 +317,20 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "0.11.0+1"
+  functional_widget:
+    dependency: "direct dev"
+    description:
+      name: functional_widget
+      url: "https://pub.dartlang.org"
+    source: hosted
+    version: "0.8.1"
+  functional_widget_annotation:
+    dependency: "direct main"
+    description:
+      name: functional_widget_annotation
+      url: "https://pub.dartlang.org"
+    source: hosted
+    version: "0.8.0"
   glob:
     dependency: transitive
     description:

@@ -10,10 +10,10 @@ class SparkARUser {
   final String iconUrl;
   final List<SparkAREffect> effects;
 
-  SparkARUser._internal(this.id, this.name, this.iconUrl, this.effects);
+  SparkARUser(this.id, this.name, this.iconUrl, this.effects);
 
   SparkARUser cloneWithEffects(List<SparkAREffect> effects) {
-    return SparkARUser._internal(id, name, iconUrl, effects);
+    return SparkARUser(id, name, iconUrl, effects);
   }
 
   factory SparkARUser.fromJson(Map<String, dynamic> json) =>
