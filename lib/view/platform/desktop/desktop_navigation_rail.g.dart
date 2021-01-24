@@ -7,13 +7,13 @@ part of 'desktop_navigation_rail.dart';
 // **************************************************************************
 
 class DesktopHeader extends StatelessWidget {
-  const DesktopHeader(this.isTablet, this.onToggle, {Key key})
+  const DesktopHeader(this.extended, this.onToggle, {Key key})
       : super(key: key);
 
-  final bool isTablet;
+  final bool extended;
 
   final dynamic Function() onToggle;
 
   @override
-  Widget build(BuildContext _context) => desktopHeader(isTablet, onToggle);
+  Widget build(BuildContext _context) => desktopHeader(extended, onToggle);
 }

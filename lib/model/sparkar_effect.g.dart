@@ -6,8 +6,8 @@ part of 'sparkar_effect.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-SparkAREffect _$SparkAREffectFromJson(Map<String, dynamic> json) {
-  return SparkAREffect(
+_$_SparkAREffect _$_$_SparkAREffectFromJson(Map<String, dynamic> json) {
+  return _$_SparkAREffect(
     json['id'] as String,
     json['name'] as String,
     json['submissionStatus'] as String,
@@ -19,7 +19,7 @@ SparkAREffect _$SparkAREffectFromJson(Map<String, dynamic> json) {
   );
 }
 
-Map<String, dynamic> _$SparkAREffectToJson(SparkAREffect instance) =>
+Map<String, dynamic> _$_$_SparkAREffectToJson(_$_SparkAREffect instance) =>
     <String, dynamic>{
       'id': instance.id,
       'name': instance.name,

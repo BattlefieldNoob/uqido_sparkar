@@ -1,30 +1,21 @@
+import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:json_annotation/json_annotation.dart';
 
+part 'sparkar_effect.freezed.dart';
 part 'sparkar_effect.g.dart';
 
-@JsonSerializable()
-class SparkAREffect {
-  final String id;
-  final String name;
-  final String submissionStatus;
-  final String visibilityStatus;
-  final bool isDeprecated;
-  final String testLink;
-  final String publicLink;
-  final String iconUrl;
-
-  SparkAREffect(
-      this.id,
-      this.name,
-      this.submissionStatus,
-      this.visibilityStatus,
-      this.isDeprecated,
-      this.testLink,
-      this.publicLink,
-      this.iconUrl);
+@freezed
+abstract class SparkAREffect with _$SparkAREffect {
+  factory SparkAREffect(
+      String id,
+      String name,
+      String submissionStatus,
+      String visibilityStatus,
+      bool isDeprecated,
+      String testLink,
+      String publicLink,
+      String iconUrl) = _SparkAREffect;
 
   factory SparkAREffect.fromJson(Map<String, dynamic> json) =>
       _$SparkAREffectFromJson(json);
-
-  Map<String, dynamic> toJson() => _$SparkAREffectToJson(this);
 }

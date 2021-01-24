@@ -48,16 +48,14 @@ class SparkARBloc extends Bloc<SparkARAction, SparkARState> {
                       effect.name.toLowerCase().contains(keyword.toLowerCase()))
                   .toList(growable: false);
               if (effects.length > 0)
-                filteredList.add(user.cloneWithEffects(effects));
+                filteredList.add(user.copyWith(effects: effects));
             }
           }
           return filteredList;
         });
 
         yield validState.copyWith(
-            selected: validState.selected.clamp(0, filteredList.length - 1),
-            filteredUserList: filteredList,
-            searchKey: keyword);
+            selected: 0, filteredUserList: filteredList, searchKey: keyword);
       }
     });
   }

@@ -6,8 +6,8 @@ part of 'sparkar_user.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-SparkARUser _$SparkARUserFromJson(Map<String, dynamic> json) {
-  return SparkARUser(
+_$_SparkARUser _$_$_SparkARUserFromJson(Map<String, dynamic> json) {
+  return _$_SparkARUser(
     json['id'] as String,
     json['name'] as String,
     json['iconUrl'] as String,
@@ -19,7 +19,7 @@ SparkARUser _$SparkARUserFromJson(Map<String, dynamic> json) {
   );
 }
 
-Map<String, dynamic> _$SparkARUserToJson(SparkARUser instance) =>
+Map<String, dynamic> _$_$_SparkARUserToJson(_$_SparkARUser instance) =>
     <String, dynamic>{
       'id': instance.id,
       'name': instance.name,
