@@ -14,19 +14,26 @@ class _$SparkARStateTearOff {
   const _$SparkARStateTearOff();
 
 // ignore: unused_element
-  _SparkARState call(
-      List<SparkARUser> networkUserList,
-      List<SparkARUser> filteredUserList,
-      int selected,
-      bool isLoading,
-      String searchKey) {
-    return _SparkARState(
+  _SparkARValidState valid(List<SparkARUser> networkUserList,
+      {List<SparkARUser> filteredUserList,
+      int selected = -1,
+      String searchKey = ""}) {
+    return _SparkARValidState(
       networkUserList,
-      filteredUserList,
-      selected,
-      isLoading,
-      searchKey,
+      filteredUserList: filteredUserList,
+      selected: selected,
+      searchKey: searchKey,
     );
+  }
+
+// ignore: unused_element
+  _SparkARLoadingState loading() {
+    return _SparkARLoadingState();
+  }
+
+// ignore: unused_element
+  _SparkARErrorState error() {
+    return _SparkARErrorState();
   }
 }
 
@@ -36,14 +43,35 @@ const $SparkARState = _$SparkARStateTearOff();
 
 /// @nodoc
 mixin _$SparkARState {
-  List<SparkARUser> get networkUserList;
-  List<SparkARUser> get filteredUserList;
-  int get selected;
-  bool get isLoading;
-  String get searchKey;
-
-  @JsonKey(ignore: true)
-  $SparkARStateCopyWith<SparkARState> get copyWith;
+  @optionalTypeArgs
+  TResult when<TResult extends Object>({
+    @required
+        TResult valid(List<SparkARUser> networkUserList,
+            List<SparkARUser> filteredUserList, int selected, String searchKey),
+    @required TResult loading(),
+    @required TResult error(),
+  });
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object>({
+    TResult valid(List<SparkARUser> networkUserList,
+        List<SparkARUser> filteredUserList, int selected, String searchKey),
+    TResult loading(),
+    TResult error(),
+    @required TResult orElse(),
+  });
+  @optionalTypeArgs
+  TResult map<TResult extends Object>({
+    @required TResult valid(_SparkARValidState value),
+    @required TResult loading(_SparkARLoadingState value),
+    @required TResult error(_SparkARErrorState value),
+  });
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object>({
+    TResult valid(_SparkARValidState value),
+    TResult loading(_SparkARLoadingState value),
+    TResult error(_SparkARErrorState value),
+    @required TResult orElse(),
+  });
 }
 
 /// @nodoc
@@ -51,12 +79,6 @@ abstract class $SparkARStateCopyWith<$Res> {
   factory $SparkARStateCopyWith(
           SparkARState value, $Res Function(SparkARState) then) =
       _$SparkARStateCopyWithImpl<$Res>;
-  $Res call(
-      {List<SparkARUser> networkUserList,
-      List<SparkARUser> filteredUserList,
-      int selected,
-      bool isLoading,
-      String searchKey});
 }
 
 /// @nodoc
@@ -66,107 +88,79 @@ class _$SparkARStateCopyWithImpl<$Res> implements $SparkARStateCopyWith<$Res> {
   final SparkARState _value;
   // ignore: unused_field
   final $Res Function(SparkARState) _then;
+}
+
+/// @nodoc
+abstract class _$SparkARValidStateCopyWith<$Res> {
+  factory _$SparkARValidStateCopyWith(
+          _SparkARValidState value, $Res Function(_SparkARValidState) then) =
+      __$SparkARValidStateCopyWithImpl<$Res>;
+  $Res call(
+      {List<SparkARUser> networkUserList,
+      List<SparkARUser> filteredUserList,
+      int selected,
+      String searchKey});
+}
+
+/// @nodoc
+class __$SparkARValidStateCopyWithImpl<$Res>
+    extends _$SparkARStateCopyWithImpl<$Res>
+    implements _$SparkARValidStateCopyWith<$Res> {
+  __$SparkARValidStateCopyWithImpl(
+      _SparkARValidState _value, $Res Function(_SparkARValidState) _then)
+      : super(_value, (v) => _then(v as _SparkARValidState));
+
+  @override
+  _SparkARValidState get _value => super._value as _SparkARValidState;
 
   @override
   $Res call({
     Object networkUserList = freezed,
     Object filteredUserList = freezed,
     Object selected = freezed,
-    Object isLoading = freezed,
     Object searchKey = freezed,
   }) {
-    return _then(_value.copyWith(
-      networkUserList: networkUserList == freezed
+    return _then(_SparkARValidState(
+      networkUserList == freezed
           ? _value.networkUserList
           : networkUserList as List<SparkARUser>,
       filteredUserList: filteredUserList == freezed
           ? _value.filteredUserList
           : filteredUserList as List<SparkARUser>,
       selected: selected == freezed ? _value.selected : selected as int,
-      isLoading: isLoading == freezed ? _value.isLoading : isLoading as bool,
       searchKey: searchKey == freezed ? _value.searchKey : searchKey as String,
     ));
   }
 }
 
 /// @nodoc
-abstract class _$SparkARStateCopyWith<$Res>
-    implements $SparkARStateCopyWith<$Res> {
-  factory _$SparkARStateCopyWith(
-          _SparkARState value, $Res Function(_SparkARState) then) =
-      __$SparkARStateCopyWithImpl<$Res>;
-  @override
-  $Res call(
-      {List<SparkARUser> networkUserList,
-      List<SparkARUser> filteredUserList,
-      int selected,
-      bool isLoading,
-      String searchKey});
-}
-
-/// @nodoc
-class __$SparkARStateCopyWithImpl<$Res> extends _$SparkARStateCopyWithImpl<$Res>
-    implements _$SparkARStateCopyWith<$Res> {
-  __$SparkARStateCopyWithImpl(
-      _SparkARState _value, $Res Function(_SparkARState) _then)
-      : super(_value, (v) => _then(v as _SparkARState));
-
-  @override
-  _SparkARState get _value => super._value as _SparkARState;
-
-  @override
-  $Res call({
-    Object networkUserList = freezed,
-    Object filteredUserList = freezed,
-    Object selected = freezed,
-    Object isLoading = freezed,
-    Object searchKey = freezed,
-  }) {
-    return _then(_SparkARState(
-      networkUserList == freezed
-          ? _value.networkUserList
-          : networkUserList as List<SparkARUser>,
-      filteredUserList == freezed
-          ? _value.filteredUserList
-          : filteredUserList as List<SparkARUser>,
-      selected == freezed ? _value.selected : selected as int,
-      isLoading == freezed ? _value.isLoading : isLoading as bool,
-      searchKey == freezed ? _value.searchKey : searchKey as String,
-    ));
-  }
-}
-
-/// @nodoc
-class _$_SparkARState extends _SparkARState {
-  _$_SparkARState(this.networkUserList, this.filteredUserList, this.selected,
-      this.isLoading, this.searchKey)
+class _$_SparkARValidState implements _SparkARValidState {
+  _$_SparkARValidState(this.networkUserList,
+      {this.filteredUserList, this.selected = -1, this.searchKey = ""})
       : assert(networkUserList != null),
-        assert(filteredUserList != null),
         assert(selected != null),
-        assert(isLoading != null),
-        assert(searchKey != null),
-        super._();
+        assert(searchKey != null);
 
   @override
   final List<SparkARUser> networkUserList;
   @override
   final List<SparkARUser> filteredUserList;
+  @JsonKey(defaultValue: -1)
   @override
   final int selected;
-  @override
-  final bool isLoading;
+  @JsonKey(defaultValue: "")
   @override
   final String searchKey;
 
   @override
   String toString() {
-    return 'SparkARState(networkUserList: $networkUserList, filteredUserList: $filteredUserList, selected: $selected, isLoading: $isLoading, searchKey: $searchKey)';
+    return 'SparkARState.valid(networkUserList: $networkUserList, filteredUserList: $filteredUserList, selected: $selected, searchKey: $searchKey)';
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is _SparkARState &&
+        (other is _SparkARValidState &&
             (identical(other.networkUserList, networkUserList) ||
                 const DeepCollectionEquality()
                     .equals(other.networkUserList, networkUserList)) &&
@@ -176,9 +170,6 @@ class _$_SparkARState extends _SparkARState {
             (identical(other.selected, selected) ||
                 const DeepCollectionEquality()
                     .equals(other.selected, selected)) &&
-            (identical(other.isLoading, isLoading) ||
-                const DeepCollectionEquality()
-                    .equals(other.isLoading, isLoading)) &&
             (identical(other.searchKey, searchKey) ||
                 const DeepCollectionEquality()
                     .equals(other.searchKey, searchKey)));
@@ -190,35 +181,283 @@ class _$_SparkARState extends _SparkARState {
       const DeepCollectionEquality().hash(networkUserList) ^
       const DeepCollectionEquality().hash(filteredUserList) ^
       const DeepCollectionEquality().hash(selected) ^
-      const DeepCollectionEquality().hash(isLoading) ^
       const DeepCollectionEquality().hash(searchKey);
 
   @JsonKey(ignore: true)
   @override
-  _$SparkARStateCopyWith<_SparkARState> get copyWith =>
-      __$SparkARStateCopyWithImpl<_SparkARState>(this, _$identity);
+  _$SparkARValidStateCopyWith<_SparkARValidState> get copyWith =>
+      __$SparkARValidStateCopyWithImpl<_SparkARValidState>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object>({
+    @required
+        TResult valid(List<SparkARUser> networkUserList,
+            List<SparkARUser> filteredUserList, int selected, String searchKey),
+    @required TResult loading(),
+    @required TResult error(),
+  }) {
+    assert(valid != null);
+    assert(loading != null);
+    assert(error != null);
+    return valid(networkUserList, filteredUserList, selected, searchKey);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object>({
+    TResult valid(List<SparkARUser> networkUserList,
+        List<SparkARUser> filteredUserList, int selected, String searchKey),
+    TResult loading(),
+    TResult error(),
+    @required TResult orElse(),
+  }) {
+    assert(orElse != null);
+    if (valid != null) {
+      return valid(networkUserList, filteredUserList, selected, searchKey);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object>({
+    @required TResult valid(_SparkARValidState value),
+    @required TResult loading(_SparkARLoadingState value),
+    @required TResult error(_SparkARErrorState value),
+  }) {
+    assert(valid != null);
+    assert(loading != null);
+    assert(error != null);
+    return valid(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object>({
+    TResult valid(_SparkARValidState value),
+    TResult loading(_SparkARLoadingState value),
+    TResult error(_SparkARErrorState value),
+    @required TResult orElse(),
+  }) {
+    assert(orElse != null);
+    if (valid != null) {
+      return valid(this);
+    }
+    return orElse();
+  }
 }
 
-abstract class _SparkARState extends SparkARState {
-  _SparkARState._() : super._();
-  factory _SparkARState(
-      List<SparkARUser> networkUserList,
-      List<SparkARUser> filteredUserList,
+abstract class _SparkARValidState implements SparkARState {
+  factory _SparkARValidState(List<SparkARUser> networkUserList,
+      {List<SparkARUser> filteredUserList,
       int selected,
-      bool isLoading,
-      String searchKey) = _$_SparkARState;
+      String searchKey}) = _$_SparkARValidState;
+
+  List<SparkARUser> get networkUserList;
+  List<SparkARUser> get filteredUserList;
+  int get selected;
+  String get searchKey;
+  @JsonKey(ignore: true)
+  _$SparkARValidStateCopyWith<_SparkARValidState> get copyWith;
+}
+
+/// @nodoc
+abstract class _$SparkARLoadingStateCopyWith<$Res> {
+  factory _$SparkARLoadingStateCopyWith(_SparkARLoadingState value,
+          $Res Function(_SparkARLoadingState) then) =
+      __$SparkARLoadingStateCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class __$SparkARLoadingStateCopyWithImpl<$Res>
+    extends _$SparkARStateCopyWithImpl<$Res>
+    implements _$SparkARLoadingStateCopyWith<$Res> {
+  __$SparkARLoadingStateCopyWithImpl(
+      _SparkARLoadingState _value, $Res Function(_SparkARLoadingState) _then)
+      : super(_value, (v) => _then(v as _SparkARLoadingState));
 
   @override
-  List<SparkARUser> get networkUserList;
+  _SparkARLoadingState get _value => super._value as _SparkARLoadingState;
+}
+
+/// @nodoc
+class _$_SparkARLoadingState implements _SparkARLoadingState {
+  _$_SparkARLoadingState();
+
   @override
-  List<SparkARUser> get filteredUserList;
+  String toString() {
+    return 'SparkARState.loading()';
+  }
+
   @override
-  int get selected;
+  bool operator ==(dynamic other) {
+    return identical(this, other) || (other is _SparkARLoadingState);
+  }
+
   @override
-  bool get isLoading;
+  int get hashCode => runtimeType.hashCode;
+
   @override
-  String get searchKey;
+  @optionalTypeArgs
+  TResult when<TResult extends Object>({
+    @required
+        TResult valid(List<SparkARUser> networkUserList,
+            List<SparkARUser> filteredUserList, int selected, String searchKey),
+    @required TResult loading(),
+    @required TResult error(),
+  }) {
+    assert(valid != null);
+    assert(loading != null);
+    assert(error != null);
+    return loading();
+  }
+
   @override
-  @JsonKey(ignore: true)
-  _$SparkARStateCopyWith<_SparkARState> get copyWith;
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object>({
+    TResult valid(List<SparkARUser> networkUserList,
+        List<SparkARUser> filteredUserList, int selected, String searchKey),
+    TResult loading(),
+    TResult error(),
+    @required TResult orElse(),
+  }) {
+    assert(orElse != null);
+    if (loading != null) {
+      return loading();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object>({
+    @required TResult valid(_SparkARValidState value),
+    @required TResult loading(_SparkARLoadingState value),
+    @required TResult error(_SparkARErrorState value),
+  }) {
+    assert(valid != null);
+    assert(loading != null);
+    assert(error != null);
+    return loading(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object>({
+    TResult valid(_SparkARValidState value),
+    TResult loading(_SparkARLoadingState value),
+    TResult error(_SparkARErrorState value),
+    @required TResult orElse(),
+  }) {
+    assert(orElse != null);
+    if (loading != null) {
+      return loading(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _SparkARLoadingState implements SparkARState {
+  factory _SparkARLoadingState() = _$_SparkARLoadingState;
+}
+
+/// @nodoc
+abstract class _$SparkARErrorStateCopyWith<$Res> {
+  factory _$SparkARErrorStateCopyWith(
+          _SparkARErrorState value, $Res Function(_SparkARErrorState) then) =
+      __$SparkARErrorStateCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class __$SparkARErrorStateCopyWithImpl<$Res>
+    extends _$SparkARStateCopyWithImpl<$Res>
+    implements _$SparkARErrorStateCopyWith<$Res> {
+  __$SparkARErrorStateCopyWithImpl(
+      _SparkARErrorState _value, $Res Function(_SparkARErrorState) _then)
+      : super(_value, (v) => _then(v as _SparkARErrorState));
+
+  @override
+  _SparkARErrorState get _value => super._value as _SparkARErrorState;
+}
+
+/// @nodoc
+class _$_SparkARErrorState implements _SparkARErrorState {
+  _$_SparkARErrorState();
+
+  @override
+  String toString() {
+    return 'SparkARState.error()';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) || (other is _SparkARErrorState);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object>({
+    @required
+        TResult valid(List<SparkARUser> networkUserList,
+            List<SparkARUser> filteredUserList, int selected, String searchKey),
+    @required TResult loading(),
+    @required TResult error(),
+  }) {
+    assert(valid != null);
+    assert(loading != null);
+    assert(error != null);
+    return error();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object>({
+    TResult valid(List<SparkARUser> networkUserList,
+        List<SparkARUser> filteredUserList, int selected, String searchKey),
+    TResult loading(),
+    TResult error(),
+    @required TResult orElse(),
+  }) {
+    assert(orElse != null);
+    if (error != null) {
+      return error();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object>({
+    @required TResult valid(_SparkARValidState value),
+    @required TResult loading(_SparkARLoadingState value),
+    @required TResult error(_SparkARErrorState value),
+  }) {
+    assert(valid != null);
+    assert(loading != null);
+    assert(error != null);
+    return error(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object>({
+    TResult valid(_SparkARValidState value),
+    TResult loading(_SparkARLoadingState value),
+    TResult error(_SparkARErrorState value),
+    @required TResult orElse(),
+  }) {
+    assert(orElse != null);
+    if (error != null) {
+      return error(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _SparkARErrorState implements SparkARState {
+  factory _SparkARErrorState() = _$_SparkARErrorState;
 }

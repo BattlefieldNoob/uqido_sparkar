@@ -1,15 +1,17 @@
 import 'package:flutter/material.dart';
 import 'package:functional_widget_annotation/functional_widget_annotation.dart';
-import 'package:uqido_sparkar/blocs/sparkar_bloc.state.dart';
+import 'package:uqido_sparkar/model/sparkar_user.dart';
 
 import 'mobile_user_list_item.dart';
 
 part 'mobile_bottom_sheet_body.g.dart';
 
 class MobileBottomSheetBody extends StatelessWidget {
-  const MobileBottomSheetBody(this.state, {Key key}) : super(key: key);
+  const MobileBottomSheetBody(this.userList, this.selected, {Key key})
+      : super(key: key);
 
-  final SparkARState state;
+  final List<SparkARUser> userList;
+  final int selected;
 
   @override
   Widget build(BuildContext context) {
@@ -39,7 +41,8 @@ class MobileBottomSheetBody extends StatelessWidget {
                           orientation == Orientation.portrait
                               ? screenHeight / 2.5
                               : screenHeight / 3.5)),
-                      child: UsersListOrGrid(state, screenWidth, orientation)),
+                      child: UsersListOrGrid(
+                          userList, selected, screenWidth, orientation)),
                   const SizedBox(height: 8),
                   Align(
                     alignment: Alignment.bottomLeft,
@@ -54,19 +57,27 @@ class MobileBottomSheetBody extends StatelessWidget {
 }
 
 @swidget
-Widget usersListOrGrid(final SparkARState state, final double width,
-    final Orientation orientation) {
+Widget usersListOrGrid(final List<SparkARUser> userList, final int selected,
+    final double width, final Orientation orientation) {
   if (orientation == Orientation.portrait)
     return ListView.builder(
-      itemCount: state.userList.length,
-      itemBuilder: (context, i) => MobileUserListItem(state: state, i: i),
+      itemCount: userList.length,
+      itemBuilder: (context, i) => MobileUserListItem(
+        userList: userList,
+        i: i,
+        selected: selected,
+      ),
     );
   else
     return GridView.builder(
       gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
           crossAxisCount: 2, childAspectRatio: width / 100),
-      itemCount: state.userList.length,
-      itemBuilder: (context, i) =>
-          Center(child: MobileUserListItem(state: state, i: i)),
+      itemCount: userList.length,
+      itemBuilder: (context, i) => Center(
+          child: MobileUserListItem(
+        userList: userList,
+        i: i,
+        selected: selected,
+      )),
     );
 }

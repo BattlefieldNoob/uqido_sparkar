@@ -7,10 +7,14 @@ part of 'mobile_bottom_sheet_body.dart';
 // **************************************************************************
 
 class UsersListOrGrid extends StatelessWidget {
-  const UsersListOrGrid(this.state, this.width, this.orientation, {Key key})
+  const UsersListOrGrid(
+      this.userList, this.selected, this.width, this.orientation,
+      {Key key})
       : super(key: key);
 
-  final SparkARState state;
+  final List<SparkARUser> userList;
+
+  final int selected;
 
   final double width;
 
@@ -18,5 +22,5 @@ class UsersListOrGrid extends StatelessWidget {
 
   @override
   Widget build(BuildContext _context) =>
-      usersListOrGrid(state, width, orientation);
+      usersListOrGrid(userList, selected, width, orientation);
 }

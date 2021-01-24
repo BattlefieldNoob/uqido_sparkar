@@ -1,26 +1,10 @@
-part of 'sparkar_bloc.dart';
+import 'package:freezed_annotation/freezed_annotation.dart';
 
-enum SparkAREvent { update, selectUser, search }
+part 'sparkar_bloc.actions.freezed.dart';
 
-abstract class SparkARAction {
-  final SparkAREvent event;
-
-  const SparkARAction(this.event);
-}
-
-class SparkARUpdateAction extends SparkARAction {
-  const SparkARUpdateAction() : super(SparkAREvent.update);
-}
-
-class SparkARSelectUserAction extends SparkARAction {
-  final int selectUserIndex;
-
-  SparkARSelectUserAction(this.selectUserIndex)
-      : super(SparkAREvent.selectUser);
-}
-
-class SparkARSearchAction extends SparkARAction {
-  final String searchKeyword;
-
-  SparkARSearchAction(this.searchKeyword) : super(SparkAREvent.search);
+@freezed
+abstract class SparkARAction with _$SparkARAction {
+  const factory SparkARAction.update() = _UpdateAction;
+  const factory SparkARAction.selectUser(int selectedUser) = _SelectAction;
+  const factory SparkARAction.search(String keyword) = _SearchAction;
 }
