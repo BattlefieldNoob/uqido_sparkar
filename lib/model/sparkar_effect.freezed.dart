@@ -1,5 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
-// ignore_for_file: deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies
+// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides
 
 part of 'sparkar_effect.dart';
 
@@ -8,6 +8,10 @@ part of 'sparkar_effect.dart';
 // **************************************************************************
 
 T _$identity<T>(T value) => value;
+
+final _privateConstructorUsedError = UnsupportedError(
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more informations: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
+
 SparkAREffect _$SparkAREffectFromJson(Map<String, dynamic> json) {
   return _SparkAREffect.fromJson(json);
 }
@@ -16,7 +20,6 @@ SparkAREffect _$SparkAREffectFromJson(Map<String, dynamic> json) {
 class _$SparkAREffectTearOff {
   const _$SparkAREffectTearOff();
 
-// ignore: unused_element
   _SparkAREffect call(
       String id,
       String name,
@@ -38,30 +41,29 @@ class _$SparkAREffectTearOff {
     );
   }
 
-// ignore: unused_element
   SparkAREffect fromJson(Map<String, Object> json) {
     return SparkAREffect.fromJson(json);
   }
 }
 
 /// @nodoc
-// ignore: unused_element
 const $SparkAREffect = _$SparkAREffectTearOff();
 
 /// @nodoc
 mixin _$SparkAREffect {
-  String get id;
-  String get name;
-  String get submissionStatus;
-  String get visibilityStatus;
-  bool get isDeprecated;
-  String get testLink;
-  String get publicLink;
-  String get iconUrl;
+  String get id => throw _privateConstructorUsedError;
+  String get name => throw _privateConstructorUsedError;
+  String get submissionStatus => throw _privateConstructorUsedError;
+  String get visibilityStatus => throw _privateConstructorUsedError;
+  bool get isDeprecated => throw _privateConstructorUsedError;
+  String get testLink => throw _privateConstructorUsedError;
+  String get publicLink => throw _privateConstructorUsedError;
+  String get iconUrl => throw _privateConstructorUsedError;
 
-  Map<String, dynamic> toJson();
+  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
-  $SparkAREffectCopyWith<SparkAREffect> get copyWith;
+  $SparkAREffectCopyWith<SparkAREffect> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
@@ -91,14 +93,14 @@ class _$SparkAREffectCopyWithImpl<$Res>
 
   @override
   $Res call({
-    Object id = freezed,
-    Object name = freezed,
-    Object submissionStatus = freezed,
-    Object visibilityStatus = freezed,
-    Object isDeprecated = freezed,
-    Object testLink = freezed,
-    Object publicLink = freezed,
-    Object iconUrl = freezed,
+    Object? id = freezed,
+    Object? name = freezed,
+    Object? submissionStatus = freezed,
+    Object? visibilityStatus = freezed,
+    Object? isDeprecated = freezed,
+    Object? testLink = freezed,
+    Object? publicLink = freezed,
+    Object? iconUrl = freezed,
   }) {
     return _then(_value.copyWith(
       id: id == freezed ? _value.id : id as String,
@@ -150,14 +152,14 @@ class __$SparkAREffectCopyWithImpl<$Res>
 
   @override
   $Res call({
-    Object id = freezed,
-    Object name = freezed,
-    Object submissionStatus = freezed,
-    Object visibilityStatus = freezed,
-    Object isDeprecated = freezed,
-    Object testLink = freezed,
-    Object publicLink = freezed,
-    Object iconUrl = freezed,
+    Object? id = freezed,
+    Object? name = freezed,
+    Object? submissionStatus = freezed,
+    Object? visibilityStatus = freezed,
+    Object? isDeprecated = freezed,
+    Object? testLink = freezed,
+    Object? publicLink = freezed,
+    Object? iconUrl = freezed,
   }) {
     return _then(_SparkAREffect(
       id == freezed ? _value.id : id as String,
@@ -188,15 +190,7 @@ class _$_SparkAREffect implements _SparkAREffect {
       this.isDeprecated,
       this.testLink,
       this.publicLink,
-      this.iconUrl)
-      : assert(id != null),
-        assert(name != null),
-        assert(submissionStatus != null),
-        assert(visibilityStatus != null),
-        assert(isDeprecated != null),
-        assert(testLink != null),
-        assert(publicLink != null),
-        assert(iconUrl != null);
+      this.iconUrl);
 
   factory _$_SparkAREffect.fromJson(Map<String, dynamic> json) =>
       _$_$_SparkAREffectFromJson(json);
@@ -288,22 +282,23 @@ abstract class _SparkAREffect implements SparkAREffect {
       _$_SparkAREffect.fromJson;
 
   @override
-  String get id;
+  String get id => throw _privateConstructorUsedError;
   @override
-  String get name;
+  String get name => throw _privateConstructorUsedError;
   @override
-  String get submissionStatus;
+  String get submissionStatus => throw _privateConstructorUsedError;
   @override
-  String get visibilityStatus;
+  String get visibilityStatus => throw _privateConstructorUsedError;
   @override
-  bool get isDeprecated;
+  bool get isDeprecated => throw _privateConstructorUsedError;
   @override
-  String get testLink;
+  String get testLink => throw _privateConstructorUsedError;
   @override
-  String get publicLink;
+  String get publicLink => throw _privateConstructorUsedError;
   @override
-  String get iconUrl;
+  String get iconUrl => throw _privateConstructorUsedError;
   @override
   @JsonKey(ignore: true)
-  _$SparkAREffectCopyWith<_SparkAREffect> get copyWith;
+  _$SparkAREffectCopyWith<_SparkAREffect> get copyWith =>
+      throw _privateConstructorUsedError;
 }

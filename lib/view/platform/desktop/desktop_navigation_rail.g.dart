@@ -7,7 +7,7 @@ part of 'desktop_navigation_rail.dart';
 // **************************************************************************
 
 class DesktopHeader extends StatelessWidget {
-  const DesktopHeader(this.extended, this.onToggle, {Key key})
+  const DesktopHeader(this.extended, this.onToggle, {Key? key})
       : super(key: key);
 
   final bool extended;

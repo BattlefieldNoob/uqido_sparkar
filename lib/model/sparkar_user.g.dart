@@ -11,11 +11,9 @@ _$_SparkARUser _$_$_SparkARUserFromJson(Map<String, dynamic> json) {
     json['id'] as String,
     json['name'] as String,
     json['iconUrl'] as String,
-    (json['effects'] as List)
-        ?.map((e) => e == null
-            ? null
-            : SparkAREffect.fromJson(e as Map<String, dynamic>))
-        ?.toList(),
+    (json['effects'] as List<dynamic>)
+        .map((e) => SparkAREffect.fromJson(e as Map<String, dynamic>))
+        .toList(),
   );
 }
 

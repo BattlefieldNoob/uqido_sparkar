@@ -5,7 +5,7 @@ import 'package:uqido_sparkar/blocs/sparkar_bloc.dart';
 import 'package:uqido_sparkar/view/common/home_loading_bar.dart';
 import 'package:uqido_sparkar/view/common/search_app_bar.dart';
 
-class HomeAppBar extends PreferredSize {
+class HomeAppBar extends StatelessWidget implements PreferredSizeWidget {
   @override
   Size get preferredSize {
     return Size.fromHeight(60.0);

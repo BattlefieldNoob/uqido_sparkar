@@ -4,9 +4,9 @@ import 'package:uqido_sparkar/model/sparkar_user.dart';
 part 'sparkar_bloc.state.freezed.dart';
 
 @freezed
-abstract class SparkARState with _$SparkARState {
+class SparkARState with _$SparkARState {
   factory SparkARState.valid(List<SparkARUser> networkUserList,
-      {List<SparkARUser> filteredUserList,
+      {@Default([]) List<SparkARUser> filteredUserList,
       @Default(-1) int selected,
       @Default("") String searchKey}) = _SparkARValidState;
 

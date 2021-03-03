@@ -7,7 +7,7 @@ import 'mobile_user_list_item.dart';
 part 'mobile_bottom_sheet_body.g.dart';
 
 class MobileBottomSheetBody extends StatelessWidget {
-  const MobileBottomSheetBody(this.userList, this.selected, {Key key})
+  const MobileBottomSheetBody(this.userList, this.selected, {Key? key})
       : super(key: key);
 
   final List<SparkARUser> userList;

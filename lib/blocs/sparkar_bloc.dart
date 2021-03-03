@@ -64,7 +64,7 @@ class SparkARBloc extends Bloc<SparkARAction, SparkARState> {
     yield* state.maybeMap(orElse: () async* {
       yield state;
     }, valid: (validState) async* {
-      if (selected < 0 || selected > validState.userList.length)
+      if (selected < 0 || selected > validState.userList!.length)
         yield validState.copyWith(selected: -1);
       else
         yield validState.copyWith(selected: selected);
