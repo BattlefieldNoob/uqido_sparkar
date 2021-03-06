@@ -77,11 +77,10 @@ class SparkARBloc extends Bloc<SparkARAction, SparkARState> {
     List<SparkARUser>? users = [];
 
     for (final db in _dbs) {
-      print(db.toString() + " Calling");
       users = await db.getAllUsers();
       if (users != null) {
         if (users.isNotEmpty) {
-          print(db.toString() + " runned successfully");
+          print(db.toString() + " Runned successfully");
           break;
         } else {
           print(db.toString() + " Returned no data");
