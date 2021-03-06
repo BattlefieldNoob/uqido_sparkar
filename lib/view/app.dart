@@ -5,6 +5,7 @@ import 'package:responsive_framework/responsive_wrapper.dart';
 import 'package:responsive_framework/utils/scroll_behavior.dart';
 import 'package:uqido_sparkar/blocs/sparkar_bloc.dart';
 import 'package:uqido_sparkar/db/firestore_db.dart';
+import 'package:uqido_sparkar/db/netlify_function_db.dart';
 import 'package:uqido_sparkar/view/common/home_page.dart';
 
 import 'common/app_theme.dart';
@@ -17,7 +18,8 @@ class App extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return BlocProvider(
-        create: (_) => SparkARBloc(FirestoreDB.getInstance()),
+        create: (_) => SparkARBloc(
+            [NetlifyFunctionDB.getInstance(), FirestoreDB.getInstance()]),
         child: MaterialApp(
             builder: (context, widget) => ResponsiveWrapper.builder(
                     BouncingScrollWrapper.builder(context, widget),
