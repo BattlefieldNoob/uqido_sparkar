@@ -74,56 +74,24 @@ class SparkARBloc extends Bloc<SparkARAction, SparkARState> {
   Stream<SparkARState> handleUpdateEvent() async* {
     yield SparkARState.loading();
 
-    List<SparkARUser> users = [];
+    List<SparkARUser>? users = [];
 
-    try {
-      users = await _dbs[0].getAllUsers();
-      if (users.isNotEmpty) {
-        print(_dbs[0].toString() + " runned successfully");
-      } else {
-        print(_dbs[0].toString() + " Returned no data");
-      }
-    } catch (_) {
-      print(_dbs[0].toString() + " Raised an error, could not retrieve data");
-    }
-
-    await Future.delayed(Duration(seconds: 1));
-    print(_dbs[0].toString() + " Raised an error, could not retrieve data");
-    await Future.delayed(Duration(seconds: 1));
-    print(_dbs[0].toString() + " Raised an error, could not retrieve data");
-
-    try {
-      print(" GET! firestone");
-
-      await Future.delayed(Duration(seconds: 10));
-      users = await _dbs[1].getAllUsers();
-      print(" GET AFTER! firestone");
-
-      if (users.isNotEmpty) {
-        print(_dbs[1].toString() + " runned successfully");
-      } else {
-        print(_dbs[1].toString() + " Returned no data");
-      }
-    } catch (_) {
-      print(_dbs[1].toString() + " Raised an error, could not retrieve data");
-    }
-
-    /*for (final db in _dbs) {
+    for (final db in _dbs) {
       print(db.toString() + " Calling");
-      try {
-        users = await db.getAllUsers();
+      users = await db.getAllUsers();
+      if (users != null) {
         if (users.isNotEmpty) {
           print(db.toString() + " runned successfully");
           break;
         } else {
           print(db.toString() + " Returned no data");
         }
-      } catch (_) {
+      } else {
         print(db.toString() + " Raised an error, could not retrieve data");
       }
-    }*/
+    }
 
-    if (users.isEmpty)
+    if (users == null || users.isEmpty)
       yield SparkARState.valid(List.empty());
     else
       yield SparkARState.valid(users, selected: 0);
