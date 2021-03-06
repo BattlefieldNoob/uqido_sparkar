@@ -9,7 +9,7 @@ part of 'mobile_bottom_sheet_body.dart';
 class UsersListOrGrid extends StatelessWidget {
   const UsersListOrGrid(
       this.userList, this.selected, this.width, this.orientation,
-      {Key key})
+      {Key? key})
       : super(key: key);
 
   final List<SparkARUser> userList;

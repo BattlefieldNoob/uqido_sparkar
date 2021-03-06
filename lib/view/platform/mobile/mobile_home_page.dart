@@ -2,6 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:uqido_sparkar/blocs/sparkar_bloc.state.dart';
+import 'package:uqido_sparkar/model/sparkar_user.dart';
 import 'package:uqido_sparkar/view/common/home_app_bar.dart';
 import 'package:uqido_sparkar/view/sparkar/user_effects_detail.dart';
 
@@ -62,7 +63,8 @@ class MobileHomePage extends StatelessWidget {
 
   void showBottomDrawer(final BuildContext context, final SparkARState state) {
     final userList = state.maybeMap(
-        orElse: () => List.empty(), valid: (validState) => validState.userList);
+        orElse: () => List<SparkARUser>.empty(),
+        valid: (validState) => validState.userList);
 
     final selected = state.maybeMap(
         orElse: () => -1, valid: (validState) => validState.selected);

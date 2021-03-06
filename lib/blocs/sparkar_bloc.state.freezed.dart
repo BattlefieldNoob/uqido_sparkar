@@ -1,5 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
-// ignore_for_file: deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies
+// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides
 
 part of 'sparkar_bloc.state.dart';
 
@@ -9,13 +9,15 @@ part of 'sparkar_bloc.state.dart';
 
 T _$identity<T>(T value) => value;
 
+final _privateConstructorUsedError = UnsupportedError(
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more informations: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
+
 /// @nodoc
 class _$SparkARStateTearOff {
   const _$SparkARStateTearOff();
 
-// ignore: unused_element
   _SparkARValidState valid(List<SparkARUser> networkUserList,
-      {List<SparkARUser> filteredUserList,
+      {List<SparkARUser> filteredUserList = const [],
       int selected = -1,
       String searchKey = ""}) {
     return _SparkARValidState(
@@ -26,52 +28,54 @@ class _$SparkARStateTearOff {
     );
   }
 
-// ignore: unused_element
   _SparkARLoadingState loading() {
     return _SparkARLoadingState();
   }
 
-// ignore: unused_element
   _SparkARErrorState error() {
     return _SparkARErrorState();
   }
 }
 
 /// @nodoc
-// ignore: unused_element
 const $SparkARState = _$SparkARStateTearOff();
 
 /// @nodoc
 mixin _$SparkARState {
   @optionalTypeArgs
-  TResult when<TResult extends Object>({
-    @required
-        TResult valid(List<SparkARUser> networkUserList,
-            List<SparkARUser> filteredUserList, int selected, String searchKey),
-    @required TResult loading(),
-    @required TResult error(),
-  });
+  TResult when<TResult extends Object?>({
+    required TResult Function(List<SparkARUser> networkUserList,
+            List<SparkARUser> filteredUserList, int selected, String searchKey)
+        valid,
+    required TResult Function() loading,
+    required TResult Function() error,
+  }) =>
+      throw _privateConstructorUsedError;
   @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object>({
-    TResult valid(List<SparkARUser> networkUserList,
-        List<SparkARUser> filteredUserList, int selected, String searchKey),
-    TResult loading(),
-    TResult error(),
-    @required TResult orElse(),
-  });
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(List<SparkARUser> networkUserList,
+            List<SparkARUser> filteredUserList, int selected, String searchKey)?
+        valid,
+    TResult Function()? loading,
+    TResult Function()? error,
+    required TResult orElse(),
+  }) =>
+      throw _privateConstructorUsedError;
   @optionalTypeArgs
-  TResult map<TResult extends Object>({
-    @required TResult valid(_SparkARValidState value),
-    @required TResult loading(_SparkARLoadingState value),
-    @required TResult error(_SparkARErrorState value),
-  });
+  TResult map<TResult extends Object?>({
+    required TResult Function(_SparkARValidState value) valid,
+    required TResult Function(_SparkARLoadingState value) loading,
+    required TResult Function(_SparkARErrorState value) error,
+  }) =>
+      throw _privateConstructorUsedError;
   @optionalTypeArgs
-  TResult maybeMap<TResult extends Object>({
-    TResult valid(_SparkARValidState value),
-    TResult loading(_SparkARLoadingState value),
-    TResult error(_SparkARErrorState value),
-    @required TResult orElse(),
-  });
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_SparkARValidState value)? valid,
+    TResult Function(_SparkARLoadingState value)? loading,
+    TResult Function(_SparkARErrorState value)? error,
+    required TResult orElse(),
+  }) =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
@@ -115,10 +119,10 @@ class __$SparkARValidStateCopyWithImpl<$Res>
 
   @override
   $Res call({
-    Object networkUserList = freezed,
-    Object filteredUserList = freezed,
-    Object selected = freezed,
-    Object searchKey = freezed,
+    Object? networkUserList = freezed,
+    Object? filteredUserList = freezed,
+    Object? selected = freezed,
+    Object? searchKey = freezed,
   }) {
     return _then(_SparkARValidState(
       networkUserList == freezed
@@ -136,13 +140,13 @@ class __$SparkARValidStateCopyWithImpl<$Res>
 /// @nodoc
 class _$_SparkARValidState implements _SparkARValidState {
   _$_SparkARValidState(this.networkUserList,
-      {this.filteredUserList, this.selected = -1, this.searchKey = ""})
-      : assert(networkUserList != null),
-        assert(selected != null),
-        assert(searchKey != null);
+      {this.filteredUserList = const [],
+      this.selected = -1,
+      this.searchKey = ""});
 
   @override
   final List<SparkARUser> networkUserList;
+  @JsonKey(defaultValue: const [])
   @override
   final List<SparkARUser> filteredUserList;
   @JsonKey(defaultValue: -1)
@@ -190,29 +194,26 @@ class _$_SparkARValidState implements _SparkARValidState {
 
   @override
   @optionalTypeArgs
-  TResult when<TResult extends Object>({
-    @required
-        TResult valid(List<SparkARUser> networkUserList,
-            List<SparkARUser> filteredUserList, int selected, String searchKey),
-    @required TResult loading(),
-    @required TResult error(),
+  TResult when<TResult extends Object?>({
+    required TResult Function(List<SparkARUser> networkUserList,
+            List<SparkARUser> filteredUserList, int selected, String searchKey)
+        valid,
+    required TResult Function() loading,
+    required TResult Function() error,
   }) {
-    assert(valid != null);
-    assert(loading != null);
-    assert(error != null);
     return valid(networkUserList, filteredUserList, selected, searchKey);
   }
 
   @override
   @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object>({
-    TResult valid(List<SparkARUser> networkUserList,
-        List<SparkARUser> filteredUserList, int selected, String searchKey),
-    TResult loading(),
-    TResult error(),
-    @required TResult orElse(),
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(List<SparkARUser> networkUserList,
+            List<SparkARUser> filteredUserList, int selected, String searchKey)?
+        valid,
+    TResult Function()? loading,
+    TResult Function()? error,
+    required TResult orElse(),
   }) {
-    assert(orElse != null);
     if (valid != null) {
       return valid(networkUserList, filteredUserList, selected, searchKey);
     }
@@ -221,26 +222,22 @@ class _$_SparkARValidState implements _SparkARValidState {
 
   @override
   @optionalTypeArgs
-  TResult map<TResult extends Object>({
-    @required TResult valid(_SparkARValidState value),
-    @required TResult loading(_SparkARLoadingState value),
-    @required TResult error(_SparkARErrorState value),
+  TResult map<TResult extends Object?>({
+    required TResult Function(_SparkARValidState value) valid,
+    required TResult Function(_SparkARLoadingState value) loading,
+    required TResult Function(_SparkARErrorState value) error,
   }) {
-    assert(valid != null);
-    assert(loading != null);
-    assert(error != null);
     return valid(this);
   }
 
   @override
   @optionalTypeArgs
-  TResult maybeMap<TResult extends Object>({
-    TResult valid(_SparkARValidState value),
-    TResult loading(_SparkARLoadingState value),
-    TResult error(_SparkARErrorState value),
-    @required TResult orElse(),
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_SparkARValidState value)? valid,
+    TResult Function(_SparkARLoadingState value)? loading,
+    TResult Function(_SparkARErrorState value)? error,
+    required TResult orElse(),
   }) {
-    assert(orElse != null);
     if (valid != null) {
       return valid(this);
     }
@@ -254,12 +251,13 @@ abstract class _SparkARValidState implements SparkARState {
       int selected,
       String searchKey}) = _$_SparkARValidState;
 
-  List<SparkARUser> get networkUserList;
-  List<SparkARUser> get filteredUserList;
-  int get selected;
-  String get searchKey;
+  List<SparkARUser> get networkUserList => throw _privateConstructorUsedError;
+  List<SparkARUser> get filteredUserList => throw _privateConstructorUsedError;
+  int get selected => throw _privateConstructorUsedError;
+  String get searchKey => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
-  _$SparkARValidStateCopyWith<_SparkARValidState> get copyWith;
+  _$SparkARValidStateCopyWith<_SparkARValidState> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
@@ -300,29 +298,26 @@ class _$_SparkARLoadingState implements _SparkARLoadingState {
 
   @override
   @optionalTypeArgs
-  TResult when<TResult extends Object>({
-    @required
-        TResult valid(List<SparkARUser> networkUserList,
-            List<SparkARUser> filteredUserList, int selected, String searchKey),
-    @required TResult loading(),
-    @required TResult error(),
+  TResult when<TResult extends Object?>({
+    required TResult Function(List<SparkARUser> networkUserList,
+            List<SparkARUser> filteredUserList, int selected, String searchKey)
+        valid,
+    required TResult Function() loading,
+    required TResult Function() error,
   }) {
-    assert(valid != null);
-    assert(loading != null);
-    assert(error != null);
     return loading();
   }
 
   @override
   @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object>({
-    TResult valid(List<SparkARUser> networkUserList,
-        List<SparkARUser> filteredUserList, int selected, String searchKey),
-    TResult loading(),
-    TResult error(),
-    @required TResult orElse(),
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(List<SparkARUser> networkUserList,
+            List<SparkARUser> filteredUserList, int selected, String searchKey)?
+        valid,
+    TResult Function()? loading,
+    TResult Function()? error,
+    required TResult orElse(),
   }) {
-    assert(orElse != null);
     if (loading != null) {
       return loading();
     }
@@ -331,26 +326,22 @@ class _$_SparkARLoadingState implements _SparkARLoadingState {
 
   @override
   @optionalTypeArgs
-  TResult map<TResult extends Object>({
-    @required TResult valid(_SparkARValidState value),
-    @required TResult loading(_SparkARLoadingState value),
-    @required TResult error(_SparkARErrorState value),
+  TResult map<TResult extends Object?>({
+    required TResult Function(_SparkARValidState value) valid,
+    required TResult Function(_SparkARLoadingState value) loading,
+    required TResult Function(_SparkARErrorState value) error,
   }) {
-    assert(valid != null);
-    assert(loading != null);
-    assert(error != null);
     return loading(this);
   }
 
   @override
   @optionalTypeArgs
-  TResult maybeMap<TResult extends Object>({
-    TResult valid(_SparkARValidState value),
-    TResult loading(_SparkARLoadingState value),
-    TResult error(_SparkARErrorState value),
-    @required TResult orElse(),
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_SparkARValidState value)? valid,
+    TResult Function(_SparkARLoadingState value)? loading,
+    TResult Function(_SparkARErrorState value)? error,
+    required TResult orElse(),
   }) {
-    assert(orElse != null);
     if (loading != null) {
       return loading(this);
     }
@@ -400,29 +391,26 @@ class _$_SparkARErrorState implements _SparkARErrorState {
 
   @override
   @optionalTypeArgs
-  TResult when<TResult extends Object>({
-    @required
-        TResult valid(List<SparkARUser> networkUserList,
-            List<SparkARUser> filteredUserList, int selected, String searchKey),
-    @required TResult loading(),
-    @required TResult error(),
+  TResult when<TResult extends Object?>({
+    required TResult Function(List<SparkARUser> networkUserList,
+            List<SparkARUser> filteredUserList, int selected, String searchKey)
+        valid,
+    required TResult Function() loading,
+    required TResult Function() error,
   }) {
-    assert(valid != null);
-    assert(loading != null);
-    assert(error != null);
     return error();
   }
 
   @override
   @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object>({
-    TResult valid(List<SparkARUser> networkUserList,
-        List<SparkARUser> filteredUserList, int selected, String searchKey),
-    TResult loading(),
-    TResult error(),
-    @required TResult orElse(),
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(List<SparkARUser> networkUserList,
+            List<SparkARUser> filteredUserList, int selected, String searchKey)?
+        valid,
+    TResult Function()? loading,
+    TResult Function()? error,
+    required TResult orElse(),
   }) {
-    assert(orElse != null);
     if (error != null) {
       return error();
     }
@@ -431,26 +419,22 @@ class _$_SparkARErrorState implements _SparkARErrorState {
 
   @override
   @optionalTypeArgs
-  TResult map<TResult extends Object>({
-    @required TResult valid(_SparkARValidState value),
-    @required TResult loading(_SparkARLoadingState value),
-    @required TResult error(_SparkARErrorState value),
+  TResult map<TResult extends Object?>({
+    required TResult Function(_SparkARValidState value) valid,
+    required TResult Function(_SparkARLoadingState value) loading,
+    required TResult Function(_SparkARErrorState value) error,
   }) {
-    assert(valid != null);
-    assert(loading != null);
-    assert(error != null);
     return error(this);
   }
 
   @override
   @optionalTypeArgs
-  TResult maybeMap<TResult extends Object>({
-    TResult valid(_SparkARValidState value),
-    TResult loading(_SparkARLoadingState value),
-    TResult error(_SparkARErrorState value),
-    @required TResult orElse(),
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_SparkARValidState value)? valid,
+    TResult Function(_SparkARLoadingState value)? loading,
+    TResult Function(_SparkARErrorState value)? error,
+    required TResult orElse(),
   }) {
-    assert(orElse != null);
     if (error != null) {
       return error(this);
     }

@@ -17,7 +17,7 @@ const Color disabledColor = const Color.fromRGBO(48, 46, 50, 1.0);
 class EffectListItem extends StatelessWidget {
   final SparkAREffect effect;
 
-  const EffectListItem({Key key, this.effect}) : super(key: key);
+  const EffectListItem({Key? key, required this.effect}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -72,7 +72,7 @@ Widget clickableIcon(BuildContext context, IconData icon, String url,
 }
 
 @swidget
-Widget effectCardScaffold({Widget child}) {
+Widget effectCardScaffold({required Widget child}) {
   return Card(
       shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(10)),
       elevation: 3,

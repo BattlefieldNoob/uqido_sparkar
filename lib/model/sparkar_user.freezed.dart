@@ -1,5 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
-// ignore_for_file: deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies
+// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides
 
 part of 'sparkar_user.dart';
 
@@ -8,6 +8,10 @@ part of 'sparkar_user.dart';
 // **************************************************************************
 
 T _$identity<T>(T value) => value;
+
+final _privateConstructorUsedError = UnsupportedError(
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more informations: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
+
 SparkARUser _$SparkARUserFromJson(Map<String, dynamic> json) {
   return _SparkARUser.fromJson(json);
 }
@@ -16,7 +20,6 @@ SparkARUser _$SparkARUserFromJson(Map<String, dynamic> json) {
 class _$SparkARUserTearOff {
   const _$SparkARUserTearOff();
 
-// ignore: unused_element
   _SparkARUser call(
       String id, String name, String iconUrl, List<SparkAREffect> effects) {
     return _SparkARUser(
@@ -27,26 +30,25 @@ class _$SparkARUserTearOff {
     );
   }
 
-// ignore: unused_element
   SparkARUser fromJson(Map<String, Object> json) {
     return SparkARUser.fromJson(json);
   }
 }
 
 /// @nodoc
-// ignore: unused_element
 const $SparkARUser = _$SparkARUserTearOff();
 
 /// @nodoc
 mixin _$SparkARUser {
-  String get id;
-  String get name;
-  String get iconUrl;
-  List<SparkAREffect> get effects;
+  String get id => throw _privateConstructorUsedError;
+  String get name => throw _privateConstructorUsedError;
+  String get iconUrl => throw _privateConstructorUsedError;
+  List<SparkAREffect> get effects => throw _privateConstructorUsedError;
 
-  Map<String, dynamic> toJson();
+  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
-  $SparkARUserCopyWith<SparkARUser> get copyWith;
+  $SparkARUserCopyWith<SparkARUser> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
@@ -68,10 +70,10 @@ class _$SparkARUserCopyWithImpl<$Res> implements $SparkARUserCopyWith<$Res> {
 
   @override
   $Res call({
-    Object id = freezed,
-    Object name = freezed,
-    Object iconUrl = freezed,
-    Object effects = freezed,
+    Object? id = freezed,
+    Object? name = freezed,
+    Object? iconUrl = freezed,
+    Object? effects = freezed,
   }) {
     return _then(_value.copyWith(
       id: id == freezed ? _value.id : id as String,
@@ -106,10 +108,10 @@ class __$SparkARUserCopyWithImpl<$Res> extends _$SparkARUserCopyWithImpl<$Res>
 
   @override
   $Res call({
-    Object id = freezed,
-    Object name = freezed,
-    Object iconUrl = freezed,
-    Object effects = freezed,
+    Object? id = freezed,
+    Object? name = freezed,
+    Object? iconUrl = freezed,
+    Object? effects = freezed,
   }) {
     return _then(_SparkARUser(
       id == freezed ? _value.id : id as String,
@@ -124,11 +126,7 @@ class __$SparkARUserCopyWithImpl<$Res> extends _$SparkARUserCopyWithImpl<$Res>
 
 /// @nodoc
 class _$_SparkARUser implements _SparkARUser {
-  _$_SparkARUser(this.id, this.name, this.iconUrl, this.effects)
-      : assert(id != null),
-        assert(name != null),
-        assert(iconUrl != null),
-        assert(effects != null);
+  _$_SparkARUser(this.id, this.name, this.iconUrl, this.effects);
 
   factory _$_SparkARUser.fromJson(Map<String, dynamic> json) =>
       _$_$_SparkARUserFromJson(json);
@@ -190,14 +188,15 @@ abstract class _SparkARUser implements SparkARUser {
       _$_SparkARUser.fromJson;
 
   @override
-  String get id;
+  String get id => throw _privateConstructorUsedError;
   @override
-  String get name;
+  String get name => throw _privateConstructorUsedError;
   @override
-  String get iconUrl;
+  String get iconUrl => throw _privateConstructorUsedError;
   @override
-  List<SparkAREffect> get effects;
+  List<SparkAREffect> get effects => throw _privateConstructorUsedError;
   @override
   @JsonKey(ignore: true)
-  _$SparkARUserCopyWith<_SparkARUser> get copyWith;
+  _$SparkARUserCopyWith<_SparkARUser> get copyWith =>
+      throw _privateConstructorUsedError;
 }

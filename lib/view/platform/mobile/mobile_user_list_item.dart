@@ -6,10 +6,10 @@ import 'package:uqido_sparkar/model/sparkar_user.dart';
 
 class MobileUserListItem extends StatelessWidget {
   const MobileUserListItem(
-      {Key key,
-      @required this.userList,
-      @required this.i,
-      @required this.selected})
+      {Key? key,
+      required this.userList,
+      required this.i,
+      required this.selected})
       : super(key: key);
 
   final List<SparkARUser> userList;

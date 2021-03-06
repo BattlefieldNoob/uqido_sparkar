@@ -5,7 +5,7 @@ part 'sparkar_user.freezed.dart';
 part 'sparkar_user.g.dart';
 
 @freezed
-abstract class SparkARUser with _$SparkARUser {
+class SparkARUser with _$SparkARUser {
   factory SparkARUser(
           String id, String name, String iconUrl, List<SparkAREffect> effects) =
       _SparkARUser;

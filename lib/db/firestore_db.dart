@@ -23,6 +23,6 @@ class FirestoreDB {
 
   Future<List<Map<String, dynamic>>> getDataFromFirestone() async {
     var snapshot = await firestore.collection("spark-ar-users").get();
-    return snapshot.docs.map((e) => e.data()).toList();
+    return snapshot.docs.where((e) => e.exists).map((e) => e.data()!).toList();
   }
 }

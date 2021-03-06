@@ -8,7 +8,7 @@ part of 'effect_list_item.dart';
 
 class ClickableIcon extends StatelessWidget {
   const ClickableIcon(this.icon, this.url,
-      {Key key, this.enabled = true, this.primary = true})
+      {Key? key, this.enabled = true, this.primary = true})
       : super(key: key);
 
   final IconData icon;
@@ -25,7 +25,7 @@ class ClickableIcon extends StatelessWidget {
 }
 
 class EffectCardScaffold extends StatelessWidget {
-  const EffectCardScaffold({Key key, this.child}) : super(key: key);
+  const EffectCardScaffold({Key? key, required this.child}) : super(key: key);
 
   final Widget child;
 

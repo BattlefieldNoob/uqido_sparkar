@@ -18,7 +18,7 @@ class DesktopNavigationRail extends StatefulWidget {
 }
 
 class _DesktopNavigationRailState extends State<DesktopNavigationRail> {
-  bool extended;
+  late bool extended;
 
   @override
   void initState() {

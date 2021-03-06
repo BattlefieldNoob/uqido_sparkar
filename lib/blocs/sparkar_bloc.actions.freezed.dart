@@ -1,5 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
-// ignore_for_file: deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies
+// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides
 
 part of 'sparkar_bloc.actions.dart';
 
@@ -9,23 +9,23 @@ part of 'sparkar_bloc.actions.dart';
 
 T _$identity<T>(T value) => value;
 
+final _privateConstructorUsedError = UnsupportedError(
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more informations: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
+
 /// @nodoc
 class _$SparkARActionTearOff {
   const _$SparkARActionTearOff();
 
-// ignore: unused_element
   _UpdateAction update() {
     return const _UpdateAction();
   }
 
-// ignore: unused_element
   _SelectAction selectUser(int selectedUser) {
     return _SelectAction(
       selectedUser,
     );
   }
 
-// ignore: unused_element
   _SearchAction search(String keyword) {
     return _SearchAction(
       keyword,
@@ -34,37 +34,40 @@ class _$SparkARActionTearOff {
 }
 
 /// @nodoc
-// ignore: unused_element
 const $SparkARAction = _$SparkARActionTearOff();
 
 /// @nodoc
 mixin _$SparkARAction {
   @optionalTypeArgs
-  TResult when<TResult extends Object>({
-    @required TResult update(),
-    @required TResult selectUser(int selectedUser),
-    @required TResult search(String keyword),
-  });
+  TResult when<TResult extends Object?>({
+    required TResult Function() update,
+    required TResult Function(int selectedUser) selectUser,
+    required TResult Function(String keyword) search,
+  }) =>
+      throw _privateConstructorUsedError;
   @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object>({
-    TResult update(),
-    TResult selectUser(int selectedUser),
-    TResult search(String keyword),
-    @required TResult orElse(),
-  });
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? update,
+    TResult Function(int selectedUser)? selectUser,
+    TResult Function(String keyword)? search,
+    required TResult orElse(),
+  }) =>
+      throw _privateConstructorUsedError;
   @optionalTypeArgs
-  TResult map<TResult extends Object>({
-    @required TResult update(_UpdateAction value),
-    @required TResult selectUser(_SelectAction value),
-    @required TResult search(_SearchAction value),
-  });
+  TResult map<TResult extends Object?>({
+    required TResult Function(_UpdateAction value) update,
+    required TResult Function(_SelectAction value) selectUser,
+    required TResult Function(_SearchAction value) search,
+  }) =>
+      throw _privateConstructorUsedError;
   @optionalTypeArgs
-  TResult maybeMap<TResult extends Object>({
-    TResult update(_UpdateAction value),
-    TResult selectUser(_SelectAction value),
-    TResult search(_SearchAction value),
-    @required TResult orElse(),
-  });
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_UpdateAction value)? update,
+    TResult Function(_SelectAction value)? selectUser,
+    TResult Function(_SearchAction value)? search,
+    required TResult orElse(),
+  }) =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
@@ -122,26 +125,22 @@ class _$_UpdateAction implements _UpdateAction {
 
   @override
   @optionalTypeArgs
-  TResult when<TResult extends Object>({
-    @required TResult update(),
-    @required TResult selectUser(int selectedUser),
-    @required TResult search(String keyword),
+  TResult when<TResult extends Object?>({
+    required TResult Function() update,
+    required TResult Function(int selectedUser) selectUser,
+    required TResult Function(String keyword) search,
   }) {
-    assert(update != null);
-    assert(selectUser != null);
-    assert(search != null);
     return update();
   }
 
   @override
   @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object>({
-    TResult update(),
-    TResult selectUser(int selectedUser),
-    TResult search(String keyword),
-    @required TResult orElse(),
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? update,
+    TResult Function(int selectedUser)? selectUser,
+    TResult Function(String keyword)? search,
+    required TResult orElse(),
   }) {
-    assert(orElse != null);
     if (update != null) {
       return update();
     }
@@ -150,26 +149,22 @@ class _$_UpdateAction implements _UpdateAction {
 
   @override
   @optionalTypeArgs
-  TResult map<TResult extends Object>({
-    @required TResult update(_UpdateAction value),
-    @required TResult selectUser(_SelectAction value),
-    @required TResult search(_SearchAction value),
+  TResult map<TResult extends Object?>({
+    required TResult Function(_UpdateAction value) update,
+    required TResult Function(_SelectAction value) selectUser,
+    required TResult Function(_SearchAction value) search,
   }) {
-    assert(update != null);
-    assert(selectUser != null);
-    assert(search != null);
     return update(this);
   }
 
   @override
   @optionalTypeArgs
-  TResult maybeMap<TResult extends Object>({
-    TResult update(_UpdateAction value),
-    TResult selectUser(_SelectAction value),
-    TResult search(_SearchAction value),
-    @required TResult orElse(),
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_UpdateAction value)? update,
+    TResult Function(_SelectAction value)? selectUser,
+    TResult Function(_SearchAction value)? search,
+    required TResult orElse(),
   }) {
-    assert(orElse != null);
     if (update != null) {
       return update(this);
     }
@@ -202,7 +197,7 @@ class __$SelectActionCopyWithImpl<$Res>
 
   @override
   $Res call({
-    Object selectedUser = freezed,
+    Object? selectedUser = freezed,
   }) {
     return _then(_SelectAction(
       selectedUser == freezed ? _value.selectedUser : selectedUser as int,
@@ -212,7 +207,7 @@ class __$SelectActionCopyWithImpl<$Res>
 
 /// @nodoc
 class _$_SelectAction implements _SelectAction {
-  const _$_SelectAction(this.selectedUser) : assert(selectedUser != null);
+  const _$_SelectAction(this.selectedUser);
 
   @override
   final int selectedUser;
@@ -242,26 +237,22 @@ class _$_SelectAction implements _SelectAction {
 
   @override
   @optionalTypeArgs
-  TResult when<TResult extends Object>({
-    @required TResult update(),
-    @required TResult selectUser(int selectedUser),
-    @required TResult search(String keyword),
+  TResult when<TResult extends Object?>({
+    required TResult Function() update,
+    required TResult Function(int selectedUser) selectUser,
+    required TResult Function(String keyword) search,
   }) {
-    assert(update != null);
-    assert(selectUser != null);
-    assert(search != null);
     return selectUser(selectedUser);
   }
 
   @override
   @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object>({
-    TResult update(),
-    TResult selectUser(int selectedUser),
-    TResult search(String keyword),
-    @required TResult orElse(),
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? update,
+    TResult Function(int selectedUser)? selectUser,
+    TResult Function(String keyword)? search,
+    required TResult orElse(),
   }) {
-    assert(orElse != null);
     if (selectUser != null) {
       return selectUser(selectedUser);
     }
@@ -270,26 +261,22 @@ class _$_SelectAction implements _SelectAction {
 
   @override
   @optionalTypeArgs
-  TResult map<TResult extends Object>({
-    @required TResult update(_UpdateAction value),
-    @required TResult selectUser(_SelectAction value),
-    @required TResult search(_SearchAction value),
+  TResult map<TResult extends Object?>({
+    required TResult Function(_UpdateAction value) update,
+    required TResult Function(_SelectAction value) selectUser,
+    required TResult Function(_SearchAction value) search,
   }) {
-    assert(update != null);
-    assert(selectUser != null);
-    assert(search != null);
     return selectUser(this);
   }
 
   @override
   @optionalTypeArgs
-  TResult maybeMap<TResult extends Object>({
-    TResult update(_UpdateAction value),
-    TResult selectUser(_SelectAction value),
-    TResult search(_SearchAction value),
-    @required TResult orElse(),
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_UpdateAction value)? update,
+    TResult Function(_SelectAction value)? selectUser,
+    TResult Function(_SearchAction value)? search,
+    required TResult orElse(),
   }) {
-    assert(orElse != null);
     if (selectUser != null) {
       return selectUser(this);
     }
@@ -300,9 +287,10 @@ class _$_SelectAction implements _SelectAction {
 abstract class _SelectAction implements SparkARAction {
   const factory _SelectAction(int selectedUser) = _$_SelectAction;
 
-  int get selectedUser;
+  int get selectedUser => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
-  _$SelectActionCopyWith<_SelectAction> get copyWith;
+  _$SelectActionCopyWith<_SelectAction> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
@@ -326,7 +314,7 @@ class __$SearchActionCopyWithImpl<$Res>
 
   @override
   $Res call({
-    Object keyword = freezed,
+    Object? keyword = freezed,
   }) {
     return _then(_SearchAction(
       keyword == freezed ? _value.keyword : keyword as String,
@@ -336,7 +324,7 @@ class __$SearchActionCopyWithImpl<$Res>
 
 /// @nodoc
 class _$_SearchAction implements _SearchAction {
-  const _$_SearchAction(this.keyword) : assert(keyword != null);
+  const _$_SearchAction(this.keyword);
 
   @override
   final String keyword;
@@ -365,26 +353,22 @@ class _$_SearchAction implements _SearchAction {
 
   @override
   @optionalTypeArgs
-  TResult when<TResult extends Object>({
-    @required TResult update(),
-    @required TResult selectUser(int selectedUser),
-    @required TResult search(String keyword),
+  TResult when<TResult extends Object?>({
+    required TResult Function() update,
+    required TResult Function(int selectedUser) selectUser,
+    required TResult Function(String keyword) search,
   }) {
-    assert(update != null);
-    assert(selectUser != null);
-    assert(search != null);
     return search(keyword);
   }
 
   @override
   @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object>({
-    TResult update(),
-    TResult selectUser(int selectedUser),
-    TResult search(String keyword),
-    @required TResult orElse(),
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? update,
+    TResult Function(int selectedUser)? selectUser,
+    TResult Function(String keyword)? search,
+    required TResult orElse(),
   }) {
-    assert(orElse != null);
     if (search != null) {
       return search(keyword);
     }
@@ -393,26 +377,22 @@ class _$_SearchAction implements _SearchAction {
 
   @override
   @optionalTypeArgs
-  TResult map<TResult extends Object>({
-    @required TResult update(_UpdateAction value),
-    @required TResult selectUser(_SelectAction value),
-    @required TResult search(_SearchAction value),
+  TResult map<TResult extends Object?>({
+    required TResult Function(_UpdateAction value) update,
+    required TResult Function(_SelectAction value) selectUser,
+    required TResult Function(_SearchAction value) search,
   }) {
-    assert(update != null);
-    assert(selectUser != null);
-    assert(search != null);
     return search(this);
   }
 
   @override
   @optionalTypeArgs
-  TResult maybeMap<TResult extends Object>({
-    TResult update(_UpdateAction value),
-    TResult selectUser(_SelectAction value),
-    TResult search(_SearchAction value),
-    @required TResult orElse(),
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_UpdateAction value)? update,
+    TResult Function(_SelectAction value)? selectUser,
+    TResult Function(_SearchAction value)? search,
+    required TResult orElse(),
   }) {
-    assert(orElse != null);
     if (search != null) {
       return search(this);
     }
@@ -423,7 +403,8 @@ class _$_SearchAction implements _SearchAction {
 abstract class _SearchAction implements SparkARAction {
   const factory _SearchAction(String keyword) = _$_SearchAction;
 
-  String get keyword;
+  String get keyword => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
-  _$SearchActionCopyWith<_SearchAction> get copyWith;
+  _$SearchActionCopyWith<_SearchAction> get copyWith =>
+      throw _privateConstructorUsedError;
 }
