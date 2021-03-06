@@ -22,6 +22,7 @@ class NetlifyFunctionDB with DBCache implements AbstractDB {
   Future<List<SparkARUser>?> getAllUsers() async {
     try {
       var data = await checkCache('spark-ar-users-netlify', getDataFromNetlify);
+
       return List.unmodifiable(data.map((e) => SparkARUser.fromJson(e)));
     } catch (e) {
       print(e);

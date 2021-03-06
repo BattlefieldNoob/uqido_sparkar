@@ -17,6 +17,12 @@ mixin DBCache {
 
   Future<List<dynamic>> checkCache(
       String key, Future<List<Map<String, dynamic>>> Function() f) async {
-    return await Cache.remember(key, f, cacheDuration);
+    final data = await Cache.remember(key, f, cacheDuration) as List<dynamic>;
+
+    if (data.isEmpty) {
+      print("DELETE KEY, DATA IS EMPTY");
+      Cache.destroy(key); //i don't want to cache empty data
+    }
+    return data;
   }
 }
