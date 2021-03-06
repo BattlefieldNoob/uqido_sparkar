@@ -1,14 +1,14 @@
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:uqido_sparkar/blocs/sparkar_bloc.actions.dart';
 import 'package:uqido_sparkar/blocs/sparkar_bloc.state.dart';
-import 'package:uqido_sparkar/db/firestore_db.dart';
+import 'package:uqido_sparkar/db/abstract_db.dart';
 import 'package:uqido_sparkar/model/sparkar_user.dart';
 import 'package:uqido_sparkar/view/common/logging.dart';
 
 class SparkARBloc extends Bloc<SparkARAction, SparkARState> {
-  final FirestoreDB _db;
+  final List<AbstractDB> _dbs;
 
-  SparkARBloc(this._db) : super(SparkARState.loading()) {
+  SparkARBloc(this._dbs) : super(SparkARState.loading()) {
     add(SparkARAction.update());
   }
 
@@ -74,15 +74,25 @@ class SparkARBloc extends Bloc<SparkARAction, SparkARState> {
   Stream<SparkARState> handleUpdateEvent() async* {
     yield SparkARState.loading();
 
-    try {
-      var users = await _db.getAllUsers();
+    List<SparkARUser>? users = [];
 
-      if (users.length == 0)
-        yield SparkARState.valid(List.empty());
-      else
-        yield SparkARState.valid(users, selected: 0);
-    } catch (_) {
-      yield SparkARState.error();
+    for (final db in _dbs) {
+      users = await db.getAllUsers();
+      if (users != null) {
+        if (users.isNotEmpty) {
+          print(db.toString() + " Runned successfully");
+          break;
+        } else {
+          print(db.toString() + " Returned no data");
+        }
+      } else {
+        print(db.toString() + " Raised an error, could not retrieve data");
+      }
     }
+
+    if (users == null || users.isEmpty)
+      yield SparkARState.valid(List.empty());
+    else
+      yield SparkARState.valid(users, selected: 0);
   }
 }

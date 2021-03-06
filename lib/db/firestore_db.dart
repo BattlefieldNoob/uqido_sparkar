@@ -1,10 +1,10 @@
 import 'dart:async';
 
 import 'package:cloud_firestore/cloud_firestore.dart';
-import 'package:flutter_cache/flutter_cache.dart';
+import 'package:uqido_sparkar/db/abstract_db.dart';
 import 'package:uqido_sparkar/model/sparkar_user.dart';
 
-class FirestoreDB {
+class FirestoreDB with DBCache implements AbstractDB {
   static final FirestoreDB _instance = FirestoreDB._internal();
   final FirebaseFirestore firestore = FirebaseFirestore.instance;
 
@@ -14,11 +14,16 @@ class FirestoreDB {
     return _instance;
   }
 
-  Future<List<SparkARUser>> getAllUsers() async {
-    var data =
-        await Cache.remember('spark-ar-users', getDataFromFirestone, 120);
-
-    return List.unmodifiable(data.map((e) => SparkARUser.fromJson(e)));
+  @override
+  Future<List<SparkARUser>?> getAllUsers() async {
+    try {
+      final data =
+          await checkCache('spark-ar-users-firestone', getDataFromFirestone);
+      return List.unmodifiable(data.map((e) => SparkARUser.fromJson(e)));
+    } catch (e) {
+      print(e);
+      return null;
+    }
   }
 
   Future<List<Map<String, dynamic>>> getDataFromFirestone() async {
