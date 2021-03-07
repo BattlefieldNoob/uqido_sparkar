@@ -47,7 +47,8 @@ class DesktopHomePage extends StatelessWidget {
               : SizedBox();
         },
         loading: (loadingState) => SizedBox(),
-        error: (errorState) => Expanded(child: Text("Error, please reload")));
+        error: (errorState) => Expanded(child: Text("Error, please reload")),
+        logout: (value) => SizedBox());
 
     return Scaffold(
         appBar: HomeAppBar(),

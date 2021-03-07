@@ -15,7 +15,8 @@ class FirestoreDB with DBCache implements AbstractDB {
   }
 
   @override
-  Future<List<SparkARUser>?> getAllUsers() async {
+  Future<List<SparkARUser>?> getAllUsers(
+      String encryptedEmail, String encryptedPassword) async {
     try {
       final data =
           await checkCache('spark-ar-users-firestone', getDataFromFirestone);

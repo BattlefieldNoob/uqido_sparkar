@@ -4,9 +4,11 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:responsive_framework/responsive_wrapper.dart';
 import 'package:responsive_framework/utils/scroll_behavior.dart';
 import 'package:uqido_sparkar/blocs/sparkar_bloc.dart';
+import 'package:uqido_sparkar/blocs/sparkar_bloc.state.dart';
 import 'package:uqido_sparkar/db/firestore_db.dart';
 import 'package:uqido_sparkar/db/netlify_function_db.dart';
 import 'package:uqido_sparkar/view/common/home_page.dart';
+import 'package:uqido_sparkar/view/common/login_page.dart';
 
 import 'common/app_theme.dart';
 
@@ -30,6 +32,9 @@ class App extends StatelessWidget {
                       ResponsiveBreakpoint.resize(1000, name: DESKTOP),
                     ]),
             theme: getTheme(),
-            home: HomePage()));
+            home: BlocBuilder<SparkARBloc, SparkARState>(builder: (ctx, state) {
+              return state.maybeMap(
+                  orElse: () => HomePage(), logout: (state) => LoginPage());
+            })));
   }
 }

@@ -3,7 +3,8 @@ import 'package:flutter_cache/flutter_cache.dart';
 import 'package:uqido_sparkar/model/sparkar_user.dart';
 
 abstract class AbstractDB {
-  Future<List<SparkARUser>?> getAllUsers();
+  Future<List<SparkARUser>?> getAllUsers(
+      String encryptedEmail, String encryptedPassword);
 }
 
 mixin DBCache {

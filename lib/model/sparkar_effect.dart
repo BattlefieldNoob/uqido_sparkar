@@ -5,7 +5,7 @@ part 'sparkar_effect.freezed.dart';
 part 'sparkar_effect.g.dart';
 
 @freezed
-abstract class SparkAREffect with _$SparkAREffect {
+class SparkAREffect with _$SparkAREffect {
   factory SparkAREffect(
       String id,
       String name,

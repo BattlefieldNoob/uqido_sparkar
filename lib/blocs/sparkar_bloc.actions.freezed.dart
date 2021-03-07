@@ -31,6 +31,13 @@ class _$SparkARActionTearOff {
       keyword,
     );
   }
+
+  _LoginAction login({String? email, String? password}) {
+    return _LoginAction(
+      email: email,
+      password: password,
+    );
+  }
 }
 
 /// @nodoc
@@ -43,6 +50,7 @@ mixin _$SparkARAction {
     required TResult Function() update,
     required TResult Function(int selectedUser) selectUser,
     required TResult Function(String keyword) search,
+    required TResult Function(String? email, String? password) login,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -50,6 +58,7 @@ mixin _$SparkARAction {
     TResult Function()? update,
     TResult Function(int selectedUser)? selectUser,
     TResult Function(String keyword)? search,
+    TResult Function(String? email, String? password)? login,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -58,6 +67,7 @@ mixin _$SparkARAction {
     required TResult Function(_UpdateAction value) update,
     required TResult Function(_SelectAction value) selectUser,
     required TResult Function(_SearchAction value) search,
+    required TResult Function(_LoginAction value) login,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -65,6 +75,7 @@ mixin _$SparkARAction {
     TResult Function(_UpdateAction value)? update,
     TResult Function(_SelectAction value)? selectUser,
     TResult Function(_SearchAction value)? search,
+    TResult Function(_LoginAction value)? login,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -129,6 +140,7 @@ class _$_UpdateAction implements _UpdateAction {
     required TResult Function() update,
     required TResult Function(int selectedUser) selectUser,
     required TResult Function(String keyword) search,
+    required TResult Function(String? email, String? password) login,
   }) {
     return update();
   }
@@ -139,6 +151,7 @@ class _$_UpdateAction implements _UpdateAction {
     TResult Function()? update,
     TResult Function(int selectedUser)? selectUser,
     TResult Function(String keyword)? search,
+    TResult Function(String? email, String? password)? login,
     required TResult orElse(),
   }) {
     if (update != null) {
@@ -153,6 +166,7 @@ class _$_UpdateAction implements _UpdateAction {
     required TResult Function(_UpdateAction value) update,
     required TResult Function(_SelectAction value) selectUser,
     required TResult Function(_SearchAction value) search,
+    required TResult Function(_LoginAction value) login,
   }) {
     return update(this);
   }
@@ -163,6 +177,7 @@ class _$_UpdateAction implements _UpdateAction {
     TResult Function(_UpdateAction value)? update,
     TResult Function(_SelectAction value)? selectUser,
     TResult Function(_SearchAction value)? search,
+    TResult Function(_LoginAction value)? login,
     required TResult orElse(),
   }) {
     if (update != null) {
@@ -241,6 +256,7 @@ class _$_SelectAction implements _SelectAction {
     required TResult Function() update,
     required TResult Function(int selectedUser) selectUser,
     required TResult Function(String keyword) search,
+    required TResult Function(String? email, String? password) login,
   }) {
     return selectUser(selectedUser);
   }
@@ -251,6 +267,7 @@ class _$_SelectAction implements _SelectAction {
     TResult Function()? update,
     TResult Function(int selectedUser)? selectUser,
     TResult Function(String keyword)? search,
+    TResult Function(String? email, String? password)? login,
     required TResult orElse(),
   }) {
     if (selectUser != null) {
@@ -265,6 +282,7 @@ class _$_SelectAction implements _SelectAction {
     required TResult Function(_UpdateAction value) update,
     required TResult Function(_SelectAction value) selectUser,
     required TResult Function(_SearchAction value) search,
+    required TResult Function(_LoginAction value) login,
   }) {
     return selectUser(this);
   }
@@ -275,6 +293,7 @@ class _$_SelectAction implements _SelectAction {
     TResult Function(_UpdateAction value)? update,
     TResult Function(_SelectAction value)? selectUser,
     TResult Function(_SearchAction value)? search,
+    TResult Function(_LoginAction value)? login,
     required TResult orElse(),
   }) {
     if (selectUser != null) {
@@ -357,6 +376,7 @@ class _$_SearchAction implements _SearchAction {
     required TResult Function() update,
     required TResult Function(int selectedUser) selectUser,
     required TResult Function(String keyword) search,
+    required TResult Function(String? email, String? password) login,
   }) {
     return search(keyword);
   }
@@ -367,6 +387,7 @@ class _$_SearchAction implements _SearchAction {
     TResult Function()? update,
     TResult Function(int selectedUser)? selectUser,
     TResult Function(String keyword)? search,
+    TResult Function(String? email, String? password)? login,
     required TResult orElse(),
   }) {
     if (search != null) {
@@ -381,6 +402,7 @@ class _$_SearchAction implements _SearchAction {
     required TResult Function(_UpdateAction value) update,
     required TResult Function(_SelectAction value) selectUser,
     required TResult Function(_SearchAction value) search,
+    required TResult Function(_LoginAction value) login,
   }) {
     return search(this);
   }
@@ -391,6 +413,7 @@ class _$_SearchAction implements _SearchAction {
     TResult Function(_UpdateAction value)? update,
     TResult Function(_SelectAction value)? selectUser,
     TResult Function(_SearchAction value)? search,
+    TResult Function(_LoginAction value)? login,
     required TResult orElse(),
   }) {
     if (search != null) {
@@ -406,5 +429,135 @@ abstract class _SearchAction implements SparkARAction {
   String get keyword => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
   _$SearchActionCopyWith<_SearchAction> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$LoginActionCopyWith<$Res> {
+  factory _$LoginActionCopyWith(
+          _LoginAction value, $Res Function(_LoginAction) then) =
+      __$LoginActionCopyWithImpl<$Res>;
+  $Res call({String? email, String? password});
+}
+
+/// @nodoc
+class __$LoginActionCopyWithImpl<$Res> extends _$SparkARActionCopyWithImpl<$Res>
+    implements _$LoginActionCopyWith<$Res> {
+  __$LoginActionCopyWithImpl(
+      _LoginAction _value, $Res Function(_LoginAction) _then)
+      : super(_value, (v) => _then(v as _LoginAction));
+
+  @override
+  _LoginAction get _value => super._value as _LoginAction;
+
+  @override
+  $Res call({
+    Object? email = freezed,
+    Object? password = freezed,
+  }) {
+    return _then(_LoginAction(
+      email: email == freezed ? _value.email : email as String?,
+      password: password == freezed ? _value.password : password as String?,
+    ));
+  }
+}
+
+/// @nodoc
+class _$_LoginAction implements _LoginAction {
+  const _$_LoginAction({this.email, this.password});
+
+  @override
+  final String? email;
+  @override
+  final String? password;
+
+  @override
+  String toString() {
+    return 'SparkARAction.login(email: $email, password: $password)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other is _LoginAction &&
+            (identical(other.email, email) ||
+                const DeepCollectionEquality().equals(other.email, email)) &&
+            (identical(other.password, password) ||
+                const DeepCollectionEquality()
+                    .equals(other.password, password)));
+  }
+
+  @override
+  int get hashCode =>
+      runtimeType.hashCode ^
+      const DeepCollectionEquality().hash(email) ^
+      const DeepCollectionEquality().hash(password);
+
+  @JsonKey(ignore: true)
+  @override
+  _$LoginActionCopyWith<_LoginAction> get copyWith =>
+      __$LoginActionCopyWithImpl<_LoginAction>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() update,
+    required TResult Function(int selectedUser) selectUser,
+    required TResult Function(String keyword) search,
+    required TResult Function(String? email, String? password) login,
+  }) {
+    return login(email, password);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? update,
+    TResult Function(int selectedUser)? selectUser,
+    TResult Function(String keyword)? search,
+    TResult Function(String? email, String? password)? login,
+    required TResult orElse(),
+  }) {
+    if (login != null) {
+      return login(email, password);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_UpdateAction value) update,
+    required TResult Function(_SelectAction value) selectUser,
+    required TResult Function(_SearchAction value) search,
+    required TResult Function(_LoginAction value) login,
+  }) {
+    return login(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_UpdateAction value)? update,
+    TResult Function(_SelectAction value)? selectUser,
+    TResult Function(_SearchAction value)? search,
+    TResult Function(_LoginAction value)? login,
+    required TResult orElse(),
+  }) {
+    if (login != null) {
+      return login(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _LoginAction implements SparkARAction {
+  const factory _LoginAction({String? email, String? password}) =
+      _$_LoginAction;
+
+  String? get email => throw _privateConstructorUsedError;
+  String? get password => throw _privateConstructorUsedError;
+  @JsonKey(ignore: true)
+  _$LoginActionCopyWith<_LoginAction> get copyWith =>
       throw _privateConstructorUsedError;
 }
