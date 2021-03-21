@@ -29,6 +29,19 @@ class HomeAppBar extends StatelessWidget implements PreferredSizeWidget {
                 textStyle: NeumorphicTextStyle(fontSize: 25),
               ),
               actions: [
+                //NeumorphicButton(
+                //  onPressed: () {
+                //    final neumorphicTheme = NeumorphicTheme.of(context);
+                //    if (neumorphicTheme!.isUsingDark) {
+                //      neumorphicTheme.themeMode = ThemeMode.light;
+                //    } else {
+                //      neumorphicTheme.themeMode = ThemeMode.dark;
+                //    }
+                //  },
+                //  style: NeumorphicStyle(boxShape: NeumorphicBoxShape.circle()),
+                //  child: NeumorphicIcon(Icons.invert_colors,
+                //      size: 32, style: NeumorphicStyle(color: Colors.grey)),
+                //),
                 NeumorphicButton(
                   onPressed: () {
                     stream.add(true);
