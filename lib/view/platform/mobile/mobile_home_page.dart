@@ -23,6 +23,7 @@ class MobileHomePage extends StatelessWidget {
               : SizedBox();
         },
         loading: (loadingState) => Container(),
+        logout: (value) => Text("Error, please logout/login again"),
         error: (errorState) => Text("Error, please reload"));
 
     final bottomAppBarTitle = state.maybeMap(

@@ -35,6 +35,10 @@ class _$SparkARStateTearOff {
   _SparkARErrorState error() {
     return _SparkARErrorState();
   }
+
+  _SparkARLogoutState logout() {
+    return _SparkARLogoutState();
+  }
 }
 
 /// @nodoc
@@ -49,6 +53,7 @@ mixin _$SparkARState {
         valid,
     required TResult Function() loading,
     required TResult Function() error,
+    required TResult Function() logout,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -58,6 +63,7 @@ mixin _$SparkARState {
         valid,
     TResult Function()? loading,
     TResult Function()? error,
+    TResult Function()? logout,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -66,6 +72,7 @@ mixin _$SparkARState {
     required TResult Function(_SparkARValidState value) valid,
     required TResult Function(_SparkARLoadingState value) loading,
     required TResult Function(_SparkARErrorState value) error,
+    required TResult Function(_SparkARLogoutState value) logout,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -73,6 +80,7 @@ mixin _$SparkARState {
     TResult Function(_SparkARValidState value)? valid,
     TResult Function(_SparkARLoadingState value)? loading,
     TResult Function(_SparkARErrorState value)? error,
+    TResult Function(_SparkARLogoutState value)? logout,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -200,6 +208,7 @@ class _$_SparkARValidState implements _SparkARValidState {
         valid,
     required TResult Function() loading,
     required TResult Function() error,
+    required TResult Function() logout,
   }) {
     return valid(networkUserList, filteredUserList, selected, searchKey);
   }
@@ -212,6 +221,7 @@ class _$_SparkARValidState implements _SparkARValidState {
         valid,
     TResult Function()? loading,
     TResult Function()? error,
+    TResult Function()? logout,
     required TResult orElse(),
   }) {
     if (valid != null) {
@@ -226,6 +236,7 @@ class _$_SparkARValidState implements _SparkARValidState {
     required TResult Function(_SparkARValidState value) valid,
     required TResult Function(_SparkARLoadingState value) loading,
     required TResult Function(_SparkARErrorState value) error,
+    required TResult Function(_SparkARLogoutState value) logout,
   }) {
     return valid(this);
   }
@@ -236,6 +247,7 @@ class _$_SparkARValidState implements _SparkARValidState {
     TResult Function(_SparkARValidState value)? valid,
     TResult Function(_SparkARLoadingState value)? loading,
     TResult Function(_SparkARErrorState value)? error,
+    TResult Function(_SparkARLogoutState value)? logout,
     required TResult orElse(),
   }) {
     if (valid != null) {
@@ -304,6 +316,7 @@ class _$_SparkARLoadingState implements _SparkARLoadingState {
         valid,
     required TResult Function() loading,
     required TResult Function() error,
+    required TResult Function() logout,
   }) {
     return loading();
   }
@@ -316,6 +329,7 @@ class _$_SparkARLoadingState implements _SparkARLoadingState {
         valid,
     TResult Function()? loading,
     TResult Function()? error,
+    TResult Function()? logout,
     required TResult orElse(),
   }) {
     if (loading != null) {
@@ -330,6 +344,7 @@ class _$_SparkARLoadingState implements _SparkARLoadingState {
     required TResult Function(_SparkARValidState value) valid,
     required TResult Function(_SparkARLoadingState value) loading,
     required TResult Function(_SparkARErrorState value) error,
+    required TResult Function(_SparkARLogoutState value) logout,
   }) {
     return loading(this);
   }
@@ -340,6 +355,7 @@ class _$_SparkARLoadingState implements _SparkARLoadingState {
     TResult Function(_SparkARValidState value)? valid,
     TResult Function(_SparkARLoadingState value)? loading,
     TResult Function(_SparkARErrorState value)? error,
+    TResult Function(_SparkARLogoutState value)? logout,
     required TResult orElse(),
   }) {
     if (loading != null) {
@@ -397,6 +413,7 @@ class _$_SparkARErrorState implements _SparkARErrorState {
         valid,
     required TResult Function() loading,
     required TResult Function() error,
+    required TResult Function() logout,
   }) {
     return error();
   }
@@ -409,6 +426,7 @@ class _$_SparkARErrorState implements _SparkARErrorState {
         valid,
     TResult Function()? loading,
     TResult Function()? error,
+    TResult Function()? logout,
     required TResult orElse(),
   }) {
     if (error != null) {
@@ -423,6 +441,7 @@ class _$_SparkARErrorState implements _SparkARErrorState {
     required TResult Function(_SparkARValidState value) valid,
     required TResult Function(_SparkARLoadingState value) loading,
     required TResult Function(_SparkARErrorState value) error,
+    required TResult Function(_SparkARLogoutState value) logout,
   }) {
     return error(this);
   }
@@ -433,6 +452,7 @@ class _$_SparkARErrorState implements _SparkARErrorState {
     TResult Function(_SparkARValidState value)? valid,
     TResult Function(_SparkARLoadingState value)? loading,
     TResult Function(_SparkARErrorState value)? error,
+    TResult Function(_SparkARLogoutState value)? logout,
     required TResult orElse(),
   }) {
     if (error != null) {
@@ -444,4 +464,101 @@ class _$_SparkARErrorState implements _SparkARErrorState {
 
 abstract class _SparkARErrorState implements SparkARState {
   factory _SparkARErrorState() = _$_SparkARErrorState;
+}
+
+/// @nodoc
+abstract class _$SparkARLogoutStateCopyWith<$Res> {
+  factory _$SparkARLogoutStateCopyWith(
+          _SparkARLogoutState value, $Res Function(_SparkARLogoutState) then) =
+      __$SparkARLogoutStateCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class __$SparkARLogoutStateCopyWithImpl<$Res>
+    extends _$SparkARStateCopyWithImpl<$Res>
+    implements _$SparkARLogoutStateCopyWith<$Res> {
+  __$SparkARLogoutStateCopyWithImpl(
+      _SparkARLogoutState _value, $Res Function(_SparkARLogoutState) _then)
+      : super(_value, (v) => _then(v as _SparkARLogoutState));
+
+  @override
+  _SparkARLogoutState get _value => super._value as _SparkARLogoutState;
+}
+
+/// @nodoc
+class _$_SparkARLogoutState implements _SparkARLogoutState {
+  _$_SparkARLogoutState();
+
+  @override
+  String toString() {
+    return 'SparkARState.logout()';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) || (other is _SparkARLogoutState);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(List<SparkARUser> networkUserList,
+            List<SparkARUser> filteredUserList, int selected, String searchKey)
+        valid,
+    required TResult Function() loading,
+    required TResult Function() error,
+    required TResult Function() logout,
+  }) {
+    return logout();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(List<SparkARUser> networkUserList,
+            List<SparkARUser> filteredUserList, int selected, String searchKey)?
+        valid,
+    TResult Function()? loading,
+    TResult Function()? error,
+    TResult Function()? logout,
+    required TResult orElse(),
+  }) {
+    if (logout != null) {
+      return logout();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_SparkARValidState value) valid,
+    required TResult Function(_SparkARLoadingState value) loading,
+    required TResult Function(_SparkARErrorState value) error,
+    required TResult Function(_SparkARLogoutState value) logout,
+  }) {
+    return logout(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_SparkARValidState value)? valid,
+    TResult Function(_SparkARLoadingState value)? loading,
+    TResult Function(_SparkARErrorState value)? error,
+    TResult Function(_SparkARLogoutState value)? logout,
+    required TResult orElse(),
+  }) {
+    if (logout != null) {
+      return logout(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _SparkARLogoutState implements SparkARState {
+  factory _SparkARLogoutState() = _$_SparkARLogoutState;
 }

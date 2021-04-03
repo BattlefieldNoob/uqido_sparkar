@@ -11,7 +11,10 @@ class SparkARState with _$SparkARState {
       @Default("") String searchKey}) = _SparkARValidState;
 
   factory SparkARState.loading() = _SparkARLoadingState;
+
   factory SparkARState.error() = _SparkARErrorState;
+
+  factory SparkARState.logout() = _SparkARLogoutState;
 }
 
 extension Properties on _SparkARValidState {
