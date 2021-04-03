@@ -1,5 +1,5 @@
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:flutter_cache/flutter_cache.dart';
+import 'package:flutter_cache/flutter_cache.dart' as cache;
 import 'package:uqido_sparkar/blocs/sparkar_bloc.actions.dart';
 import 'package:uqido_sparkar/blocs/sparkar_bloc.state.dart';
 import 'package:uqido_sparkar/db/abstract_db.dart';
@@ -30,8 +30,8 @@ class SparkARBloc extends Bloc<SparkARAction, SparkARState> {
     if (email == null && password == null) {
       //login with cached credentials
 
-      var email = await Cache.load("email") as String?;
-      var password = await Cache.load("password") as String?;
+      var email = await cache.load("email") as String?;
+      var password = await cache.load("password") as String?;
 
       if (email == null || password == null) {
         yield SparkARState.logout();
@@ -80,8 +80,8 @@ class SparkARBloc extends Bloc<SparkARAction, SparkARState> {
         yield SparkARState.logout();
       else {
         //credentials are correct, saving them
-        await Cache.write("email", email);
-        await Cache.write("password", password);
+        await cache.write("email", email);
+        await cache.write("password", password);
 
         yield SparkARState.valid(users, selected: 0);
       }
@@ -144,8 +144,8 @@ class SparkARBloc extends Bloc<SparkARAction, SparkARState> {
 
     List<SparkARUser>? users = [];
 
-    var email = Cache.load("email") as String?;
-    var password = Cache.load("password") as String?;
+    var email = cache.load("email") as String?;
+    var password = cache.load("password") as String?;
 
     if (email == null || password == null) {
       yield SparkARState.error();

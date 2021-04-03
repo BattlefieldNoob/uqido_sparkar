@@ -24,7 +24,7 @@ BbWXekxzuZqxHmt/YECtUAodpn7EbRR8jzEnDyVQvqw+/q59gv4dOBkCAwEAAQ==
       },
       onRecoverPassword: (String a) => Future.value(null),
       onSignup: (LoginData r) => Future.value(null),
-      showDebugButtons: true,
+      //showDebugButtons: true,
       messages: LoginMessages(
         usernameHint: 'Username',
         passwordHint: 'Pass',
@@ -47,7 +47,7 @@ BbWXekxzuZqxHmt/YECtUAodpn7EbRR8jzEnDyVQvqw+/q59gv4dOBkCAwEAAQ==
     final publicKey = parser.parse(PublicKey) as RSAPublicKey;
 
     final encrypter =
-        Encrypter(RSA(publicKey: publicKey, encoding: RSAEncoding.OAEP));
+        Encrypter(RSA(publicKey: publicKey, encoding: RSAEncoding.PKCS1));
 
     final encryptedEmail = encrypter.encrypt(data.name).base64;
     final encryptedPass = encrypter.encrypt(data.password).base64;

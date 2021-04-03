@@ -24,7 +24,7 @@ class App extends StatelessWidget {
             [NetlifyFunctionDB.getInstance(), FirestoreDB.getInstance()]),
         child: MaterialApp(
             builder: (context, widget) => ResponsiveWrapper.builder(
-                    BouncingScrollWrapper.builder(context, widget),
+                    BouncingScrollWrapper.builder(context, widget!),
                     breakpoints: [
                       ResponsiveBreakpoint.resize(450, name: MOBILE),
                       ResponsiveBreakpoint.autoScale(800,
