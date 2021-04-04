@@ -3,8 +3,10 @@ import 'dart:convert';
 import 'dart:core';
 import 'dart:typed_data';
 
+import 'package:cookie_jar/cookie_jar.dart';
 import 'package:dio/dio.dart';
-import 'package:http/http.dart' as http;
+import 'package:dio_cookie_manager/dio_cookie_manager.dart';
+import 'package:flutter_cache/flutter_cache.dart' as cache;
 import 'package:uqido_sparkar/db/abstract_db.dart';
 import 'package:uqido_sparkar/model/sparkar_user.dart';
 import 'package:webcrypto/webcrypto.dart';
@@ -15,72 +17,76 @@ class SparkARDB with DBCache implements AbstractDB {
 
   static final SparkARDB _instance = SparkARDB._internal();
 
-  SparkARDB._internal();
+  static final Dio dio = Dio();
+  static final CookieJar cookieJar = CookieJar();
+
+  SparkARDB._internal() {
+    dio.interceptors.add(CookieManager(cookieJar));
+  }
 
   factory SparkARDB.getInstance() {
     return _instance;
   }
 
   @override
-  Future<List<SparkARUser>?> getAllUsers(String email, String password) async {
+  Future<List<SparkARUser>?> getAllUsers(
+      {String? email, String? password}) async {
+    if (email != null && password != null) {
+      //i must delete login data from cache
+      cache.destroy('spark-ar-user-cookie');
+      cache.destroy('spark-ar-users-netlify');
+    }
     //get actual facebook public keys from netlify function
 
-    // var encryptdata = await Dio().get(
-    //     'https://sparkar-token-crawler.netlify.app/.netlify/functions/facebook_public_keys');
-//
-    // print(encryptdata);
-//
-    // var data = encryptdata.data;
-//
-    // var encpasss = await passwordEncrypt(password, data);
-//
-    // print(encpasss);
-//
-    // var tokenCookie = await Dio().get(
-    //     'https://sparkar-token-crawler.netlify.app/.netlify/functions/facebook_get_token_cookie',
-    //     queryParameters: {
-    //       'encpass': encpasss,
-    //       'lsd': data['lsd'],
-    //       'email': email
-    //     });
+    try {
+      var tokenCookie = (await checkCache<Map<String, dynamic>>(
+              'spark-ar-user-cookie', () async {
+        var encryptdata = await dio.get(
+            'https://sparkar-token-crawler.netlify.app/.netlify/functions/facebook_public_keys');
 
-    var tokenCookie = {
-      "cookie":
-          "datr=_HWxX_o48u5pA2omjmV3mWo3; expires=Tue, 04-Apr-2023 10:22:47 GMT; Max-Age=63072000; path=/; domain=.facebook.com; secure; httponly; SameSite=None;_js_datr=deleted; expires=Thu, 01-Jan-1970 00:00:01 GMT; Max-Age=-1617531766; path=/; domain=.facebook.com; httponly;c_user=1614964298; expires=Mon, 04-Apr-2022 10:22:45 GMT; Max-Age=31535998; path=/; domain=.facebook.com; secure; SameSite=None;xs=20%3Au2ElQRXzzw7vcA%3A2%3A1617531768%3A11787%3A10452; expires=Mon, 04-Apr-2022 10:22:45 GMT; Max-Age=31535998; path=/; domain=.facebook.com; secure; httponly; SameSite=None;sb=C3axXzaMOhkuTPSbY1oeo3U-; expires=Tue, 04-Apr-2023 10:22:47 GMT; Max-Age=63072000; path=/; domain=.facebook.com; secure; httponly; SameSite=None;fr=18wHiBPYRoq40KoEB.AWUxYYbMppSuYiSoP3X-AJulnB0.BfsXYL.K8.AAA.0.0.BgaZN3.AWV06MAdOc4; expires=Sat, 03-Jul-2021 10:22:43 GMT; Max-Age=7775996; path=/; domain=.facebook.com; secure; httponly; SameSite=None;",
-      "token": "AQG_F-ca6WrA:AQEK8rfR7pEg"
-    };
+        var a = await cookieJar.loadForRequest(
+            Uri.parse('https://sparkar-token-crawler.netlify.app'));
 
-    print(tokenCookie);
+        //print("cookie");
+        //print(a);
 
-    getUsers(tokenCookie);
+        //print(encryptdata);
 
-//
-    // try {
-    //   var data = await checkCache('spark-ar-users-netlify',
-    //       () async => await getDataFromSparkAR(email, password));
-//
-    //   return List.unmodifiable(data.map((e) => SparkARUser.fromJson(e)));
-    // } catch (e) {
-    //   print(e);
-    //   return null;
-    // }
-  }
+        var data = encryptdata.data;
 
-  Future<List<Map<String, dynamic>>> getDataFromSparkAR(
-      String encryptedEmail, String encryptedPassword) async {
-    //if (kReleaseMode) {
-    final response = await http.get(Uri.https(
-        'sparkar-token-crawler.netlify.app',
-        '.netlify/functions/sparkar_fetch',
-        {"encemail": encryptedEmail, "encpass": encryptedPassword}));
+        if (password == null) return [];
 
-    final data = jsonDecode(response.body) as List<dynamic>;
-    return data.map((e) => e as Map<String, dynamic>).toList();
-    /*} else {
-      final body = FAKE_DATA;
-      final data = jsonDecode(body) as List<dynamic>;
-      return data.map((e) => e as Map<String, dynamic>).toList();
-    }*/
+        var encpasss = await passwordEncrypt(password, data);
+
+        //print(encpasss);
+        var tokenCookiee = await dio.get(
+            'https://sparkar-token-crawler.netlify.app/.netlify/functions/facebook_get_cookie',
+            queryParameters: {
+              'encpass': encpasss,
+              'lsd': data['lsd'],
+              'email': email
+            });
+
+        //print(tokenCookiee);
+        return [tokenCookiee.data as Map<String, dynamic>];
+      }, customCacheDuration: Duration(days: 3)))
+          .first;
+
+      try {
+        var data = await checkCache<Map<String, dynamic>>(
+            'spark-ar-users-netlify',
+            () async => await getUsersAndEffects(tokenCookie));
+
+        //print(data);
+
+        return List.unmodifiable(data.map((e) => SparkARUser.fromJson(e)));
+      } catch (e) {
+        rethrow;
+        //return null;
+      }
+    } catch (e) {
+      return null;
+    }
   }
 
   Future<String> passwordEncrypt(String password, dynamic encryption) async {
@@ -266,41 +272,26 @@ class SparkARDB with DBCache implements AbstractDB {
     u += k;
 
     var secretKey = await AesGcmSecretKey.importRawKey(raw);
-    print(secretKey);
-    print("MOMOMOMOMO" + passwordBytes.length.toString());
     var enc = await secretKey.encryptBytes(passwordBytes, Uint8List(12),
         additionalData: dateBytes);
     o = 16;
     var b = seal;
-    print(b.length);
-    print(u);
-    print(b);
-    print(a);
-    print("VEEEEEEEEEEEEEEEEEEEEEEEEE");
 
     t[u] = b.length & 255;
     t[u + 1] = b.length >> 8 & 255;
     u += m;
     //t.set(b, u);
-    print("Before set ALL");
     t.setAll(u, b);
-    print(t);
     u += n;
     u += l;
     if (b.length != n + l) throw new Error();
-    print("VAVAVAAVVAVV");
-    print(enc.length);
     b = enc;
-    print(b);
-    print(b.length);
     var end = b.length - o;
     if (end < 0) {
       end = b.length - o;
     }
     a = b.sublist(b.length - o);
-    print(a);
     b = b.sublist(0, b.length - o);
-    print(b);
     //t.set(a, u);
     t.setAll(u, a);
     u += o;
@@ -309,64 +300,122 @@ class SparkARDB with DBCache implements AbstractDB {
     return t;
   }
 
-  Future<dynamic> getUsers(cookieAndToken) async {
-    var options = {'form': {}, 'headers': {}};
-    options['form']!['doc_id'] = '2737348616365573';
-    options['form']!['variables'] = '{}';
-    options['headers']!['cookie'] = cookieAndToken['cookie'];
-    options['form']!['fb_dtsg'] = cookieAndToken['token'];
-    const url = 'https://www.facebook.com/api/graphql/';
+  Future<List<Map<String, dynamic>>> getUsersAndEffects(cookieAndToken) async {
+    //print("getUsersAndEffects");
+    //print(cookieAndToken);
+    var url =
+        'https://sparkar-token-crawler.netlify.app/.netlify/functions/facebook_get_users_and_effects';
+    final response = await dio.get(url, queryParameters: cookieAndToken);
 
-    final effectQuery = await Dio().post(url, data: options);
-
-    print(effectQuery);
-
-    return effectQuery.data['ar_hub_settings']!['owners'].map((item) {
-      return {
-        'id': item.owner.id,
-        'name': item.owner.name,
-        'iconUrl': item.owner.profile_picture.uri
-      };
-    });
+    //print("Print data");
+    //print(response.data);
+    //final data = jsonDecode(response.data) as List<dynamic>;
+    final data = response.data['data'] as List<dynamic>;
+    //final cookie = response.data['cookie'] as List<dynamic>;
+    //print(data);
+    var list = data.map((e) => e as Map<String, dynamic>).toList();
+    //print(list);
+    return list;
   }
 
-  //Future<List<SparkARUser>> getEffectsForUsers(usersList,
-  //    cookieAndToken) async {
-  //  const usersAndEffects = [];
-  //  options.headers.cookie = cookieAndToken.cookie;
-  //  options.form.fb_dtsg = cookieAndToken.token;
-  //  for (const user of usersList) {
-  //    const variables = `
-  //    {
-  //      "selectedOwnerID"
-  //  :"${user.id}","filters":{"effect_name_contains_ci":"","visibility_statuses":[],"review_statuses":[],"surfaces":[],"exclude_surfaces":["AR_ADS"]},"orderby":["LAST_MODIFIED_TIME_DESC"]}`;
-  //  options.form.doc_id = '3625110550842914';
-  //  options.form.variables = variables;
-  //  const url = 'https://www.facebook.com/api/graphql/';
-  //  const effectQuery = await got_1.default.post(url, options).json();
-  //  const effectsForUser = effectQuery.owner.effects.edges.map((effect) => {
-  //  const studioEffect = effect.node.ar_studio_effect;
-  //  let isDeprecated = false;
-  //  if (studioEffect.submission_status !== 'NOT_REVIEWED' && studioEffect.submission_status !== 'NOT_APPROVED') {
-  //  isDeprecated = studioEffect.latest_active_arexport_file.is_deprecated;
-  //  }
-  //  return {
-  //  id: effect.node.id,
-  //  name: studioEffect.name,
-  //  iconUrl: studioEffect.thumbnail_uri,
-  //  visibilityStatus: studioEffect.visibility_status,
-  //  submissionStatus: studioEffect.submission_status,
-  //  isDeprecated: isDeprecated,
-  //  testLink: studioEffect.test_link,
-  //  publicLink: studioEffect.share_link
-  //  };
-  //  });
-  //  if (effectsForUser.length !== 0) {
-  //  user.effects = effectsForUser;
-  //  usersAndEffects.push(user);
-  //  }
-  //}
-  //  return
-  //  usersAndEffects;
-  //}
+//  Future<dynamic> getUsers(cookieAndToken) async {
+//    final headers = {
+//      //'headers': {
+//      //'cookie': '',
+//      'authority': ' www.facebook.com',
+//      'accept': ' */*',
+//      'accept-language': ' en-US,en;q=0.9,it;q=0.8',
+//      'content-type': 'application/x-www-form-urlencoded',
+//      // 'cookie': cookies,
+//      'origin': ' https://www.facebook.com',
+//      'referer': ' https://www.facebook.com/sparkarhub/effects/',
+//      'sec-fetch-dest': ' empty',
+//      'sec-fetch-mode': ' cors',
+//      'sec-fetch-site': ' same-origin',
+//      'user-agent':
+//          ' Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/86.0.4240.183 Safari/537.36'
+//      // }
+//    };
+//    var body = {'doc_id': '', 'variables': '{}', 'fb_dtsg': '', '__a': 1};
+//    body['doc_id'] = '2737348616365573';
+//    body['variables'] = '{}';
+//    //body['fb_dtsg'] = cookieAndToken['token'];
+//    body['fb_dtsg'] = 'AQG_F-ca6WrA:AQEK8rfR7pEg';
+//
+//    //headers['cookie'] = cookieAndToken['cookie'];
+//
+//    final cookiess =
+//        "datr=_HWxX_o48u5pA2omjmV3mWo3; Max-Age=63072000; path=/; domain=.facebook.com; secure; httponly; SameSite=None;_js_datr=deleted; Max-Age=-1617531766; path=/; domain=.facebook.com; httponly;c_user=1614964298; Max-Age=31535998; path=/; domain=.facebook.com; secure; SameSite=None;xs=20%3Au2ElQRXzzw7vcA%3A2%3A1617531768%3A11787%3A10452; Max-Age=31535998; path=/; domain=.facebook.com; secure; httponly; SameSite=None;sb=C3axXzaMOhkuTPSbY1oeo3U-; path=/; domain=.facebook.com; secure; httponly; SameSite=None;fr=18wHiBPYRoq40KoEB.AWUxYYbMppSuYiSoP3X-AJulnB0.BfsXYL.K8.AAA.0.0.BgaZN3.AWV06MAdOc4; Max-Age=7775996; path=/; domain=.facebook.com; secure; httponly; SameSite=None;";
+//
+//    const url = 'https://www.facebook.com/api/graphql/';
+//
+//    var dio = Dio();
+//    dio.options = new BaseOptions(
+//        connectTimeout: 5000, receiveTimeout: 10000, headers: headers);
+//    var cookieJar = CookieJar();
+//
+//    var cookies = cookiess.split(";").map((e) {
+//      var cookie = e.split("=");
+//      if (cookie.length == 1) return Cookie(e.trim(), "");
+//      return Cookie(cookie[0].trim(), cookie[1].trim());
+//    }).toList();
+//    dio.interceptors.add(CookieManager(cookieJar));
+//    await cookieJar.saveFromResponse(
+//        Uri.parse('https://www.facebook.com'), cookies);
+//    // Print cookies
+//    print(
+//        await cookieJar.loadForRequest(Uri.parse("https://www.facebook.com")));
+//
+//    final effectQuery = await dio.post(url, data: body);
+//
+//    print(effectQuery);
+//
+//    return effectQuery.data['ar_hub_settings']!['owners'].map((item) {
+//      return {
+//        'id': item.owner.id,
+//        'name': item.owner.name,
+//        'iconUrl': item.owner.profile_picture.uri
+//      };
+//    });
+//  }
+
+//Future<List<SparkARUser>> getEffectsForUsers(usersList,
+//    cookieAndToken) async {
+//  const usersAndEffects = [];
+//  options.headers.cookie = cookieAndToken.cookie;
+//  options.form.fb_dtsg = cookieAndToken.token;
+//  for (const user of usersList) {
+//    const variables = `
+//    {
+//      "selectedOwnerID"
+//  :"${user.id}","filters":{"effect_name_contains_ci":"","visibility_statuses":[],"review_statuses":[],"surfaces":[],"exclude_surfaces":["AR_ADS"]},"orderby":["LAST_MODIFIED_TIME_DESC"]}`;
+//  options.form.doc_id = '3625110550842914';
+//  options.form.variables = variables;
+//  const url = 'https://www.facebook.com/api/graphql/';
+//  const effectQuery = await got_1.default.post(url, options).json();
+//  const effectsForUser = effectQuery.owner.effects.edges.map((effect) => {
+//  const studioEffect = effect.node.ar_studio_effect;
+//  let isDeprecated = false;
+//  if (studioEffect.submission_status !== 'NOT_REVIEWED' && studioEffect.submission_status !== 'NOT_APPROVED') {
+//  isDeprecated = studioEffect.latest_active_arexport_file.is_deprecated;
+//  }
+//  return {
+//  id: effect.node.id,
+//  name: studioEffect.name,
+//  iconUrl: studioEffect.thumbnail_uri,
+//  visibilityStatus: studioEffect.visibility_status,
+//  submissionStatus: studioEffect.submission_status,
+//  isDeprecated: isDeprecated,
+//  testLink: studioEffect.test_link,
+//  publicLink: studioEffect.share_link
+//  };
+//  });
+//  if (effectsForUser.length !== 0) {
+//  user.effects = effectsForUser;
+//  usersAndEffects.push(user);
+//  }
+//}
+//  return
+//  usersAndEffects;
+//}
 }

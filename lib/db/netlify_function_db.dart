@@ -24,12 +24,12 @@ BbWXekxzuZqxHmt/YECtUAodpn7EbRR8jzEnDyVQvqw+/q59gv4dOBkCAwEAAQ==
 
   @override
   Future<List<SparkARUser>?> getAllUsers(
-      String encryptedEmail, String encryptedPassword) async {
+      {String? email, String? password}) async {
+    if (email == null || password == null) return null;
+
     try {
-      var data = await checkCache(
-          'spark-ar-users-netlify',
-          () async =>
-              await getDataFromNetlify(encryptedEmail, encryptedPassword));
+      var data = await checkCache('spark-ar-users-netlify',
+          () async => await getDataFromNetlify(email, password));
 
       return List.unmodifiable(data.map((e) => SparkARUser.fromJson(e)));
     } catch (e) {
