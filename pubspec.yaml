@@ -33,6 +33,9 @@ dependencies:
   adaptive_breakpoints: ^0.0.2
   animations: ^2.0.0
   http: ^0.13.0
+  dio: ^4.0.0
+  webcrypto:
+    path: ./webcrypto
   encrypt: ^5.0.0-beta.1
   flutter_login: ^1.0.14
   # The following adds the Cupertino Icons font to your application.
