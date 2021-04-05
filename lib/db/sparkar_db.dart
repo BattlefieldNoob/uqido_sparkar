@@ -2,9 +2,7 @@ import 'dart:async';
 import 'dart:convert';
 import 'dart:core';
 
-import 'package:cookie_jar/cookie_jar.dart';
 import 'package:dio/dio.dart';
-import 'package:dio_cookie_manager/dio_cookie_manager.dart';
 import 'package:flutter/foundation.dart';
 import 'package:uqido_sparkar/db/abstract_db.dart';
 import 'package:uqido_sparkar/model/sparkar_effect.dart';
@@ -15,11 +13,8 @@ class SparkARDB with DBCache implements AbstractDB {
   static final SparkARDB _instance = SparkARDB._internal();
 
   static final Dio dio = Dio();
-  static final CookieJar cookieJar = CookieJar();
 
-  SparkARDB._internal() {
-    dio.interceptors.add(CookieManager(cookieJar));
-  }
+  SparkARDB._internal();
 
   factory SparkARDB.getInstance() {
     return _instance;
