@@ -6,7 +6,6 @@ import 'package:cookie_jar/cookie_jar.dart';
 import 'package:dio/dio.dart';
 import 'package:dio_cookie_manager/dio_cookie_manager.dart';
 import 'package:flutter/foundation.dart';
-import 'package:flutter_cache/flutter_cache.dart' as cache;
 import 'package:uqido_sparkar/db/abstract_db.dart';
 import 'package:uqido_sparkar/model/sparkar_effect.dart';
 import 'package:uqido_sparkar/model/sparkar_user.dart';
@@ -29,11 +28,11 @@ class SparkARDB with DBCache implements AbstractDB {
   @override
   Future<List<SparkARUser>?> getAllUsers(
       {String? email, EncryptedLoginData? loginData}) async {
-    if (email != null && loginData != null) {
-      //i must delete login data from cache
-      cache.destroy('spark-ar-user-cookie');
-      cache.destroy('spark-ar-users-netlify');
-    }
+    //if (email != null && loginData != null) {
+    //  //i must delete login data from cache
+    //  cache.destroy('spark-ar-user-cookie');
+    //  cache.destroy('spark-ar-users-netlify');
+    //}
     //get actual facebook public keys from netlify function
 
     try {
@@ -42,16 +41,17 @@ class SparkARDB with DBCache implements AbstractDB {
         if (loginData == null) return [];
         final encpass = loginData.encpass;
         final lsd = loginData.lsd;
-        //print(encpasss);
+        print(encpass);
         var cookies = await dio.get(
             'https://sparkar-token-crawler.netlify.app/.netlify/functions/facebook_get_cookie',
             queryParameters: {'encpass': encpass, 'lsd': lsd, 'email': email});
 
-        //print(tokenCookiee);
+        print(cookies);
         return [cookies.data as Map<String, dynamic>];
       }, customCacheDuration: Duration(days: 3)))
           .first;
 
+      print(tokenCookie);
       try {
         var data = await checkCache<Map<String, dynamic>>(
             'spark-ar-users-netlify', () async {
@@ -67,10 +67,12 @@ class SparkARDB with DBCache implements AbstractDB {
 
         return List.unmodifiable(data.map((e) => SparkARUser.fromJson(e)));
       } catch (e) {
+        print(e);
         rethrow;
         //return null;
       }
     } catch (e) {
+      print(e);
       return null;
     }
   }
@@ -97,6 +99,8 @@ class SparkARDB with DBCache implements AbstractDB {
   Future<List<Map<String, dynamic>>> getUsersAndEffectsByRequest(
       String cookie, String token) async {
     print("getUsersAndEffectsByRequest");
+    print(cookie);
+    print(token);
     final headers = {
       //'headers': {
       //'cookie': '',
@@ -137,7 +141,9 @@ class SparkARDB with DBCache implements AbstractDB {
     var parsed = jsonDecode(effectQuery.data);
 
     var owners = parsed['data']['ar_hub_effects_query']['ar_hub_settings']
-        ['owners'] as List<Map<String, dynamic>>;
+        ['owners'] as List<dynamic>;
+
+    print(owners);
     var users = owners.map((item) {
       return SparkARUser(item['owner']['id'], item['owner']['name'],
           item['owner']['profile_picture']['uri'], []);
@@ -150,7 +156,7 @@ class SparkARDB with DBCache implements AbstractDB {
 
   Future<List<SparkARUser>> getEffectsForUsers(
       List<SparkARUser> usersList, cookie, token) async {
-    const usersAndEffects = <SparkARUser>[];
+    final usersAndEffects = List<SparkARUser>.empty(growable: true);
     final headers = {
       //'headers': {
       //'cookie': '',
@@ -189,10 +195,15 @@ class SparkARDB with DBCache implements AbstractDB {
       final effectQuery =
           await Dio().post(url, data: body, options: Options(headers: headers));
 
+      print("EFFECTSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSS");
       var parsed = jsonDecode(effectQuery.data);
       print(parsed);
-      final edges =
-          parsed['owner']['effects']['edges'] as List<Map<String, dynamic>>;
+      final effects =
+          parsed['data']['ar_hub_effects_query']['owner']['effects'];
+      print(effects);
+      if (effects == null) continue;
+
+      final edges = effects['edges'] as List<dynamic>;
 
       final effectsForUser = edges.map((effect) {
         final studioEffect = effect['node']['ar_studio_effect'];
@@ -214,8 +225,7 @@ class SparkARDB with DBCache implements AbstractDB {
         );
       }).toList();
       if (effectsForUser.length != 0) {
-        user.effects.addAll(effectsForUser);
-        usersAndEffects.add(user);
+        usersAndEffects.add(user.copyWith(effects: effectsForUser));
       }
     }
     return usersAndEffects;
