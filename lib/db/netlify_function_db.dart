@@ -4,6 +4,7 @@ import 'dart:convert';
 import 'package:http/http.dart' as http;
 import 'package:uqido_sparkar/db/abstract_db.dart';
 import 'package:uqido_sparkar/model/sparkar_user.dart';
+import 'package:uqido_sparkar/utils/facebook_password_encrypt_util.dart';
 
 class NetlifyFunctionDB with DBCache implements AbstractDB {
   static const String FAKE_DATA =
@@ -24,12 +25,12 @@ BbWXekxzuZqxHmt/YECtUAodpn7EbRR8jzEnDyVQvqw+/q59gv4dOBkCAwEAAQ==
 
   @override
   Future<List<SparkARUser>?> getAllUsers(
-      {String? email, String? password}) async {
-    if (email == null || password == null) return null;
+      {String? email, EncryptedLoginData? loginData}) async {
+    if (email == null || loginData == null) return null;
 
     try {
       var data = await checkCache('spark-ar-users-netlify',
-          () async => await getDataFromNetlify(email, password));
+          () async => await getDataFromNetlify(email, loginData.encpass));
 
       return List.unmodifiable(data.map((e) => SparkARUser.fromJson(e)));
     } catch (e) {

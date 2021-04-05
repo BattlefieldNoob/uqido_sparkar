@@ -3,6 +3,7 @@ import 'package:uqido_sparkar/blocs/sparkar_bloc.actions.dart';
 import 'package:uqido_sparkar/blocs/sparkar_bloc.state.dart';
 import 'package:uqido_sparkar/db/abstract_db.dart';
 import 'package:uqido_sparkar/model/sparkar_user.dart';
+import 'package:uqido_sparkar/utils/facebook_password_encrypt_util.dart';
 import 'package:uqido_sparkar/view/common/logging.dart';
 
 class SparkARBloc extends Bloc<SparkARAction, SparkARState> {
@@ -20,13 +21,13 @@ class SparkARBloc extends Bloc<SparkARAction, SparkARState> {
         update: () => handleUpdateEvent(),
         selectUser: (index) => handleSelectUserEvent(index),
         search: (keyword) => handleSearchEvent(keyword),
-        login: (String? email, String? password) =>
-            handleLoginAction(email, password));
+        login: (String? email, EncryptedLoginData? loginData) =>
+            handleLoginAction(email, loginData));
   }
 
   Stream<SparkARState> handleLoginAction(
-      String? email, String? password) async* {
-    if (email == null && password == null) {
+      String? email, EncryptedLoginData? loginData) async* {
+    if (email == null && loginData == null) {
       //login with cached data
 
       List<SparkARUser>? users = [];
@@ -49,15 +50,12 @@ class SparkARBloc extends Bloc<SparkARAction, SparkARState> {
         yield SparkARState.logout();
       else
         yield SparkARState.valid(users, selected: 0);
-    } else if (email != null &&
-        password != null &&
-        email.isNotEmpty &&
-        password.isNotEmpty) {
+    } else if (email != null && loginData != null && email.isNotEmpty) {
       //login with new credentials
 
       final db = _dbs.first;
       List<SparkARUser>? users =
-          await db.getAllUsers(email: email, password: password);
+          await db.getAllUsers(email: email, loginData: loginData);
       if (users != null) {
         if (users.isNotEmpty) {
           print(db.toString() + " Runned successfully");

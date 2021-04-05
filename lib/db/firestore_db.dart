@@ -3,6 +3,7 @@ import 'dart:async';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:uqido_sparkar/db/abstract_db.dart';
 import 'package:uqido_sparkar/model/sparkar_user.dart';
+import 'package:uqido_sparkar/utils/facebook_password_encrypt_util.dart';
 
 class FirestoreDB with DBCache implements AbstractDB {
   static final FirestoreDB _instance = FirestoreDB._internal();
@@ -16,7 +17,7 @@ class FirestoreDB with DBCache implements AbstractDB {
 
   @override
   Future<List<SparkARUser>?> getAllUsers(
-      {String? email, String? password}) async {
+      {String? email, EncryptedLoginData? loginData}) async {
     try {
       final data =
           await checkCache('spark-ar-users-firestone', getDataFromFirestone);

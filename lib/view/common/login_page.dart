@@ -4,13 +4,9 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_login/flutter_login.dart';
 import 'package:uqido_sparkar/blocs/sparkar_bloc.actions.dart';
 import 'package:uqido_sparkar/blocs/sparkar_bloc.dart';
+import 'package:uqido_sparkar/utils/facebook_password_encrypt_util.dart';
 
 class LoginPage extends StatelessWidget {
-  static const String PublicKey = """-----BEGIN PUBLIC KEY-----
-MFwwDQYJKoZIhvcNAQEBBQADSwAwSAJBALKsB0abzSKq73XAeDj6Y6X1T93lddvI
-BbWXekxzuZqxHmt/YECtUAodpn7EbRR8jzEnDyVQvqw+/q59gv4dOBkCAwEAAQ==
------END PUBLIC KEY-----""";
-
   @override
   Widget build(BuildContext context) {
     return FlutterLogin(
@@ -41,11 +37,13 @@ BbWXekxzuZqxHmt/YECtUAodpn7EbRR8jzEnDyVQvqw+/q59gv4dOBkCAwEAAQ==
   }
 
   Future<String?> _authUser(LoginData data, BuildContext context) async {
+    var encryptedData = await getEncryptedPasswordAndLoginData(data.password);
+
     context
         .read<SparkARBloc>()
-        .add(SparkARAction.login(email: data.name, password: data.password));
+        .add(SparkARAction.login(email: data.name, loginData: encryptedData));
 
-    await Future.delayed(Duration(seconds: 4));
+    await Future.delayed(Duration(seconds: 6));
 
     return context.read<SparkARBloc>().state.maybeMap(
         orElse: () => null, logout: (state) => "Email or Password are wrong!");
