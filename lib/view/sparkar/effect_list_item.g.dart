@@ -25,10 +25,10 @@ class ClickableIcon extends StatelessWidget {
 }
 
 class EffectCardScaffold extends StatelessWidget {
-  const EffectCardScaffold({Key? key, this.child}) : super(key: key);
+  const EffectCardScaffold({Key? key, required this.child}) : super(key: key);
 
-  final Widget? child;
+  final Widget child;
 
   @override
-  Widget build(BuildContext _context) => effectCardScaffold(child: child!);
+  Widget build(BuildContext _context) => effectCardScaffold(child: child);
 }

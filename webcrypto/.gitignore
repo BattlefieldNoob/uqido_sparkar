@@ -1,0 +1,13 @@
+/pubspec.lock
+/.dart_tool/
+/.packages
+/doc/api/
+/lib/src/boringssl_ffi/libssl.so
+/lib/src/webcrypto_extension/libwebcrypto_extension.so
+/lib/src/webcrypto_extension/obj/
+/dart-sdk/
+/.vscode/
+/build/
+/android/.cxx/
+/notes.md
+.DS_Store
