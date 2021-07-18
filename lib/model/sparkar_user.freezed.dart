@@ -76,22 +76,11 @@ class _$SparkARUserCopyWithImpl<$Res> implements $SparkARUserCopyWith<$Res> {
     Object? effects = freezed,
   }) {
     return _then(_value.copyWith(
-      id: id == freezed
-          ? _value.id
-          : id // ignore: cast_nullable_to_non_nullable
-              as String,
-      name: name == freezed
-          ? _value.name
-          : name // ignore: cast_nullable_to_non_nullable
-              as String,
-      iconUrl: iconUrl == freezed
-          ? _value.iconUrl
-          : iconUrl // ignore: cast_nullable_to_non_nullable
-              as String,
-      effects: effects == freezed
-          ? _value.effects
-          : effects // ignore: cast_nullable_to_non_nullable
-              as List<SparkAREffect>,
+      id: id == freezed ? _value.id : id as String,
+      name: name == freezed ? _value.name : name as String,
+      iconUrl: iconUrl == freezed ? _value.iconUrl : iconUrl as String,
+      effects:
+          effects == freezed ? _value.effects : effects as List<SparkAREffect>,
     ));
   }
 }
@@ -125,22 +114,10 @@ class __$SparkARUserCopyWithImpl<$Res> extends _$SparkARUserCopyWithImpl<$Res>
     Object? effects = freezed,
   }) {
     return _then(_SparkARUser(
-      id == freezed
-          ? _value.id
-          : id // ignore: cast_nullable_to_non_nullable
-              as String,
-      name == freezed
-          ? _value.name
-          : name // ignore: cast_nullable_to_non_nullable
-              as String,
-      iconUrl == freezed
-          ? _value.iconUrl
-          : iconUrl // ignore: cast_nullable_to_non_nullable
-              as String,
-      effects == freezed
-          ? _value.effects
-          : effects // ignore: cast_nullable_to_non_nullable
-              as List<SparkAREffect>,
+      id == freezed ? _value.id : id as String,
+      name == freezed ? _value.name : name as String,
+      iconUrl == freezed ? _value.iconUrl : iconUrl as String,
+      effects == freezed ? _value.effects : effects as List<SparkAREffect>,
     ));
   }
 }

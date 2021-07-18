@@ -1,27 +1,24 @@
 import 'package:flutter/foundation.dart';
 import 'package:flutter_cache/flutter_cache.dart' as cache;
 import 'package:uqido_sparkar/model/sparkar_user.dart';
-import 'package:uqido_sparkar/utils/facebook_password_encrypt_util.dart';
 
 abstract class AbstractDB {
   Future<List<SparkARUser>?> getAllUsers(
-      {String? email, EncryptedLoginData? loginData});
+      String encryptedEmail, String encryptedPassword);
 }
 
 mixin DBCache {
-  Duration get defaultCacheDuration {
+  int get cacheDuration {
     if (kReleaseMode) {
-      return Duration(hours: 4); //4 hours
+      return 14400; //4 hours
     } else {
-      return Duration(minutes: 1);
+      return 60;
     }
   }
 
-  Future<List<dynamic>> checkCache<T>(String key, Future<List<T>> Function() f,
-      {Duration? customCacheDuration}) async {
-    final cacheDuration = customCacheDuration ?? defaultCacheDuration;
-    final data =
-        await cache.remember(key, f, cacheDuration.inSeconds) as List<dynamic>;
+  Future<List<dynamic>> checkCache(
+      String key, Future<List<Map<String, dynamic>>> Function() f) async {
+    final data = await cache.remember(key, f, cacheDuration) as List<dynamic>;
 
     if (data.isEmpty) {
       print("DELETE KEY, DATA IS EMPTY");

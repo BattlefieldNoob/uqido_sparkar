@@ -32,10 +32,10 @@ class _$SparkARActionTearOff {
     );
   }
 
-  _LoginAction login({String? email, EncryptedLoginData? loginData}) {
+  _LoginAction login({String? email, String? password}) {
     return _LoginAction(
       email: email,
-      loginData: loginData,
+      password: password,
     );
   }
 }
@@ -50,8 +50,7 @@ mixin _$SparkARAction {
     required TResult Function() update,
     required TResult Function(int selectedUser) selectUser,
     required TResult Function(String keyword) search,
-    required TResult Function(String? email, EncryptedLoginData? loginData)
-        login,
+    required TResult Function(String? email, String? password) login,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -59,7 +58,7 @@ mixin _$SparkARAction {
     TResult Function()? update,
     TResult Function(int selectedUser)? selectUser,
     TResult Function(String keyword)? search,
-    TResult Function(String? email, EncryptedLoginData? loginData)? login,
+    TResult Function(String? email, String? password)? login,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -141,8 +140,7 @@ class _$_UpdateAction implements _UpdateAction {
     required TResult Function() update,
     required TResult Function(int selectedUser) selectUser,
     required TResult Function(String keyword) search,
-    required TResult Function(String? email, EncryptedLoginData? loginData)
-        login,
+    required TResult Function(String? email, String? password) login,
   }) {
     return update();
   }
@@ -153,7 +151,7 @@ class _$_UpdateAction implements _UpdateAction {
     TResult Function()? update,
     TResult Function(int selectedUser)? selectUser,
     TResult Function(String keyword)? search,
-    TResult Function(String? email, EncryptedLoginData? loginData)? login,
+    TResult Function(String? email, String? password)? login,
     required TResult orElse(),
   }) {
     if (update != null) {
@@ -217,10 +215,7 @@ class __$SelectActionCopyWithImpl<$Res>
     Object? selectedUser = freezed,
   }) {
     return _then(_SelectAction(
-      selectedUser == freezed
-          ? _value.selectedUser
-          : selectedUser // ignore: cast_nullable_to_non_nullable
-              as int,
+      selectedUser == freezed ? _value.selectedUser : selectedUser as int,
     ));
   }
 }
@@ -261,8 +256,7 @@ class _$_SelectAction implements _SelectAction {
     required TResult Function() update,
     required TResult Function(int selectedUser) selectUser,
     required TResult Function(String keyword) search,
-    required TResult Function(String? email, EncryptedLoginData? loginData)
-        login,
+    required TResult Function(String? email, String? password) login,
   }) {
     return selectUser(selectedUser);
   }
@@ -273,7 +267,7 @@ class _$_SelectAction implements _SelectAction {
     TResult Function()? update,
     TResult Function(int selectedUser)? selectUser,
     TResult Function(String keyword)? search,
-    TResult Function(String? email, EncryptedLoginData? loginData)? login,
+    TResult Function(String? email, String? password)? login,
     required TResult orElse(),
   }) {
     if (selectUser != null) {
@@ -342,10 +336,7 @@ class __$SearchActionCopyWithImpl<$Res>
     Object? keyword = freezed,
   }) {
     return _then(_SearchAction(
-      keyword == freezed
-          ? _value.keyword
-          : keyword // ignore: cast_nullable_to_non_nullable
-              as String,
+      keyword == freezed ? _value.keyword : keyword as String,
     ));
   }
 }
@@ -385,8 +376,7 @@ class _$_SearchAction implements _SearchAction {
     required TResult Function() update,
     required TResult Function(int selectedUser) selectUser,
     required TResult Function(String keyword) search,
-    required TResult Function(String? email, EncryptedLoginData? loginData)
-        login,
+    required TResult Function(String? email, String? password) login,
   }) {
     return search(keyword);
   }
@@ -397,7 +387,7 @@ class _$_SearchAction implements _SearchAction {
     TResult Function()? update,
     TResult Function(int selectedUser)? selectUser,
     TResult Function(String keyword)? search,
-    TResult Function(String? email, EncryptedLoginData? loginData)? login,
+    TResult Function(String? email, String? password)? login,
     required TResult orElse(),
   }) {
     if (search != null) {
@@ -447,7 +437,7 @@ abstract class _$LoginActionCopyWith<$Res> {
   factory _$LoginActionCopyWith(
           _LoginAction value, $Res Function(_LoginAction) then) =
       __$LoginActionCopyWithImpl<$Res>;
-  $Res call({String? email, EncryptedLoginData? loginData});
+  $Res call({String? email, String? password});
 }
 
 /// @nodoc
@@ -463,33 +453,27 @@ class __$LoginActionCopyWithImpl<$Res> extends _$SparkARActionCopyWithImpl<$Res>
   @override
   $Res call({
     Object? email = freezed,
-    Object? loginData = freezed,
+    Object? password = freezed,
   }) {
     return _then(_LoginAction(
-      email: email == freezed
-          ? _value.email
-          : email // ignore: cast_nullable_to_non_nullable
-              as String?,
-      loginData: loginData == freezed
-          ? _value.loginData
-          : loginData // ignore: cast_nullable_to_non_nullable
-              as EncryptedLoginData?,
+      email: email == freezed ? _value.email : email as String?,
+      password: password == freezed ? _value.password : password as String?,
     ));
   }
 }
 
 /// @nodoc
 class _$_LoginAction implements _LoginAction {
-  const _$_LoginAction({this.email, this.loginData});
+  const _$_LoginAction({this.email, this.password});
 
   @override
   final String? email;
   @override
-  final EncryptedLoginData? loginData;
+  final String? password;
 
   @override
   String toString() {
-    return 'SparkARAction.login(email: $email, loginData: $loginData)';
+    return 'SparkARAction.login(email: $email, password: $password)';
   }
 
   @override
@@ -498,16 +482,16 @@ class _$_LoginAction implements _LoginAction {
         (other is _LoginAction &&
             (identical(other.email, email) ||
                 const DeepCollectionEquality().equals(other.email, email)) &&
-            (identical(other.loginData, loginData) ||
+            (identical(other.password, password) ||
                 const DeepCollectionEquality()
-                    .equals(other.loginData, loginData)));
+                    .equals(other.password, password)));
   }
 
   @override
   int get hashCode =>
       runtimeType.hashCode ^
       const DeepCollectionEquality().hash(email) ^
-      const DeepCollectionEquality().hash(loginData);
+      const DeepCollectionEquality().hash(password);
 
   @JsonKey(ignore: true)
   @override
@@ -520,10 +504,9 @@ class _$_LoginAction implements _LoginAction {
     required TResult Function() update,
     required TResult Function(int selectedUser) selectUser,
     required TResult Function(String keyword) search,
-    required TResult Function(String? email, EncryptedLoginData? loginData)
-        login,
+    required TResult Function(String? email, String? password) login,
   }) {
-    return login(email, loginData);
+    return login(email, password);
   }
 
   @override
@@ -532,11 +515,11 @@ class _$_LoginAction implements _LoginAction {
     TResult Function()? update,
     TResult Function(int selectedUser)? selectUser,
     TResult Function(String keyword)? search,
-    TResult Function(String? email, EncryptedLoginData? loginData)? login,
+    TResult Function(String? email, String? password)? login,
     required TResult orElse(),
   }) {
     if (login != null) {
-      return login(email, loginData);
+      return login(email, password);
     }
     return orElse();
   }
@@ -569,11 +552,11 @@ class _$_LoginAction implements _LoginAction {
 }
 
 abstract class _LoginAction implements SparkARAction {
-  const factory _LoginAction({String? email, EncryptedLoginData? loginData}) =
+  const factory _LoginAction({String? email, String? password}) =
       _$_LoginAction;
 
   String? get email => throw _privateConstructorUsedError;
-  EncryptedLoginData? get loginData => throw _privateConstructorUsedError;
+  String? get password => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
   _$LoginActionCopyWith<_LoginAction> get copyWith =>
       throw _privateConstructorUsedError;

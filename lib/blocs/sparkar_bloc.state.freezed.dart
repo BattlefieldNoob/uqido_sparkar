@@ -135,20 +135,12 @@ class __$SparkARValidStateCopyWithImpl<$Res>
     return _then(_SparkARValidState(
       networkUserList == freezed
           ? _value.networkUserList
-          : networkUserList // ignore: cast_nullable_to_non_nullable
-              as List<SparkARUser>,
+          : networkUserList as List<SparkARUser>,
       filteredUserList: filteredUserList == freezed
           ? _value.filteredUserList
-          : filteredUserList // ignore: cast_nullable_to_non_nullable
-              as List<SparkARUser>,
-      selected: selected == freezed
-          ? _value.selected
-          : selected // ignore: cast_nullable_to_non_nullable
-              as int,
-      searchKey: searchKey == freezed
-          ? _value.searchKey
-          : searchKey // ignore: cast_nullable_to_non_nullable
-              as String,
+          : filteredUserList as List<SparkARUser>,
+      selected: selected == freezed ? _value.selected : selected as int,
+      searchKey: searchKey == freezed ? _value.searchKey : searchKey as String,
     ));
   }
 }

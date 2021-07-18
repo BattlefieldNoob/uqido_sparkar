@@ -103,38 +103,20 @@ class _$SparkAREffectCopyWithImpl<$Res>
     Object? iconUrl = freezed,
   }) {
     return _then(_value.copyWith(
-      id: id == freezed
-          ? _value.id
-          : id // ignore: cast_nullable_to_non_nullable
-              as String,
-      name: name == freezed
-          ? _value.name
-          : name // ignore: cast_nullable_to_non_nullable
-              as String,
+      id: id == freezed ? _value.id : id as String,
+      name: name == freezed ? _value.name : name as String,
       submissionStatus: submissionStatus == freezed
           ? _value.submissionStatus
-          : submissionStatus // ignore: cast_nullable_to_non_nullable
-              as String,
+          : submissionStatus as String,
       visibilityStatus: visibilityStatus == freezed
           ? _value.visibilityStatus
-          : visibilityStatus // ignore: cast_nullable_to_non_nullable
-              as String,
-      isDeprecated: isDeprecated == freezed
-          ? _value.isDeprecated
-          : isDeprecated // ignore: cast_nullable_to_non_nullable
-              as bool,
-      testLink: testLink == freezed
-          ? _value.testLink
-          : testLink // ignore: cast_nullable_to_non_nullable
-              as String,
-      publicLink: publicLink == freezed
-          ? _value.publicLink
-          : publicLink // ignore: cast_nullable_to_non_nullable
-              as String,
-      iconUrl: iconUrl == freezed
-          ? _value.iconUrl
-          : iconUrl // ignore: cast_nullable_to_non_nullable
-              as String,
+          : visibilityStatus as String,
+      isDeprecated:
+          isDeprecated == freezed ? _value.isDeprecated : isDeprecated as bool,
+      testLink: testLink == freezed ? _value.testLink : testLink as String,
+      publicLink:
+          publicLink == freezed ? _value.publicLink : publicLink as String,
+      iconUrl: iconUrl == freezed ? _value.iconUrl : iconUrl as String,
     ));
   }
 }
@@ -180,38 +162,18 @@ class __$SparkAREffectCopyWithImpl<$Res>
     Object? iconUrl = freezed,
   }) {
     return _then(_SparkAREffect(
-      id == freezed
-          ? _value.id
-          : id // ignore: cast_nullable_to_non_nullable
-              as String,
-      name == freezed
-          ? _value.name
-          : name // ignore: cast_nullable_to_non_nullable
-              as String,
+      id == freezed ? _value.id : id as String,
+      name == freezed ? _value.name : name as String,
       submissionStatus == freezed
           ? _value.submissionStatus
-          : submissionStatus // ignore: cast_nullable_to_non_nullable
-              as String,
+          : submissionStatus as String,
       visibilityStatus == freezed
           ? _value.visibilityStatus
-          : visibilityStatus // ignore: cast_nullable_to_non_nullable
-              as String,
-      isDeprecated == freezed
-          ? _value.isDeprecated
-          : isDeprecated // ignore: cast_nullable_to_non_nullable
-              as bool,
-      testLink == freezed
-          ? _value.testLink
-          : testLink // ignore: cast_nullable_to_non_nullable
-              as String,
-      publicLink == freezed
-          ? _value.publicLink
-          : publicLink // ignore: cast_nullable_to_non_nullable
-              as String,
-      iconUrl == freezed
-          ? _value.iconUrl
-          : iconUrl // ignore: cast_nullable_to_non_nullable
-              as String,
+          : visibilityStatus as String,
+      isDeprecated == freezed ? _value.isDeprecated : isDeprecated as bool,
+      testLink == freezed ? _value.testLink : testLink as String,
+      publicLink == freezed ? _value.publicLink : publicLink as String,
+      iconUrl == freezed ? _value.iconUrl : iconUrl as String,
     ));
   }
 }
