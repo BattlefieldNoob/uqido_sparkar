@@ -14,12 +14,14 @@ jobs:
     steps:
       - uses: actions/checkout@v2
 
+      - name: Copy cache from /root into HOME (without root folder itself)
+        run: cp -r /root/. $HOME 
+
       - name: flutter build
-        #run: flutter build web --dart-define=FLUTTER_WEB_USE_SKIA=true
-        run: flutter pub get && flutter build web
+        run: flutter build web
 
       - name: prepare deploy folder
-        run: cp ./build ./deploy/build
+        run: cp -R ./build ./deploy/build
 
       - uses: actions/upload-artifact@v2
         with:
@@ -34,7 +36,7 @@ jobs:
         with:
           name: Flutter web deploy folder
           path: ./
-
+  
       - uses: FirebaseExtended/action-hosting-deploy@v0
         with:
           repoToken: '${{ secrets.GITHUB_TOKEN }}'
