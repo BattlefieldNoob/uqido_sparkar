@@ -16,7 +16,7 @@ jobs:
 
       - name: flutter build
         #run: flutter build web --dart-define=FLUTTER_WEB_USE_SKIA=true
-        run: flutter build web
+        run: flutter pub get && flutter build web
 
       - name: prepare deploy folder
         run: cp ./build ./deploy/build
