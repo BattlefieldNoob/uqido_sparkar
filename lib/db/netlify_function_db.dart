@@ -1,6 +1,8 @@
 import 'dart:async';
+import 'dart:convert';
 
 import 'package:dio/dio.dart';
+import 'package:flutter/foundation.dart';
 import 'package:uqido_sparkar/db/abstract_db.dart';
 import 'package:uqido_sparkar/model/sparkar_user.dart';
 import 'package:uqido_sparkar/utils/facebook_password_encrypt_util.dart';
@@ -25,11 +27,11 @@ BbWXekxzuZqxHmt/YECtUAodpn7EbRR8jzEnDyVQvqw+/q59gv4dOBkCAwEAAQ==
   @override
   Future<List<SparkARUser>?> getAllUsers(
       {String? email, EncryptedLoginData? loginData}) async {
-    if (email == null || loginData == null) return null;
+    //if (email == null || loginData == null) return null;
 
     try {
       var data = await checkCache('spark-ar-users-netlify',
-          () async => await getDataFromNetlify(email, loginData.encpass));
+          () async => await getDataFromNetlify(email, ""));
 
       return List.unmodifiable(data.map((e) => SparkARUser.fromJson(e)));
     } catch (e) {
@@ -39,20 +41,10 @@ BbWXekxzuZqxHmt/YECtUAodpn7EbRR8jzEnDyVQvqw+/q59gv4dOBkCAwEAAQ==
   }
 
   Future<List<Map<String, dynamic>>> getDataFromNetlify(
-      String encryptedEmail, String encryptedPassword) async {
-    //if (kReleaseMode) {
-    final response = await Dio().get(
-        'https://sparkar-token-crawler.netlify.app/.netlify/functions/sparkar_fetch',
-        queryParameters: {
-          "encemail": encryptedEmail,
-          "encpass": encryptedPassword
-        });
-
-    return response.data.map((e) => e as Map<String, dynamic>).toList();
-    /*} else {
+      String? encryptedEmail, String? encryptedPassword) async {
+      debugPrint("aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa");
       final body = FAKE_DATA;
       final data = jsonDecode(body) as List<dynamic>;
       return data.map((e) => e as Map<String, dynamic>).toList();
-    }*/
   }
 }

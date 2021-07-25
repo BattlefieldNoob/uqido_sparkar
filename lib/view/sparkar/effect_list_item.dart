@@ -10,39 +10,50 @@ import 'package:url_launcher/url_launcher.dart';
 import 'effect_visibility_status.dart';
 
 part 'effect_list_item.g.dart';
+
 part 'effect_list_item.viewmodel.dart';
 
 const Color disabledColor = const Color.fromRGBO(48, 46, 50, 1.0);
 
 class EffectListItem extends StatelessWidget {
   final SparkAREffect effect;
+  final Color tileColor;
 
-  const EffectListItem({Key? key, required this.effect}) : super(key: key);
+  const EffectListItem({Key? key, required this.effect, required this.tileColor}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return EffectCardScaffold(
-      child: ListTile(
-        dense: false,
-        contentPadding: const EdgeInsets.symmetric(horizontal: 10),
-        leading: Image.network(
-          effect.iconUrl,
-          width: 48,
-          height: 48,
-        ),
-        title: Text(effect.name),
-        subtitle: EffectVisibilityStatus(effect.submissionStatus,
-            effect.visibilityStatus, effect.isDeprecated),
-        trailing: FittedBox(
-            alignment: Alignment.centerRight,
-            child: Row(children: [
-              ClickableIcon(Icons.public_rounded, effect.publicLink,
-                  enabled: mapStatusToBool(effect)),
-              const SizedBox(
-                width: 8,
-              ),
-              ClickableIcon(Icons.home, effect.testLink, primary: false)
-            ])),
+      tileColor: tileColor,
+      child: Padding(
+        child: Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
+          Image.network(
+            //effect.iconUrl,
+            "https://scontent.fqpa1-1.fna.fbcdn.net/v/t39.10260-6/69280886_712740072508099_7234937689319931904_n.png?_nc_cat=1&ccb=1-3&_nc_sid=df6b83&_nc_eui2=AeGwXNUlA1dgAe7jJ3NvdcULEtuQ4RYVs-YS25DhFhWz5qyVJnEIkbPgS-PmSsVT4kI&_nc_ohc=VUz9j6DBZ8kAX-xiosD&_nc_ht=scontent.fqpa1-1.fna&oh=c92d8ee64f35e54d8c8e6d2ec5666da7&oe=610303FE",
+            width: 48,
+            height: 48,
+          ),
+          Text(effect.name,style: TextStyle(fontWeight: FontWeight.bold, fontSize: 16)),
+          EffectVisibilityStatus(effect.submissionStatus,
+              effect.visibilityStatus, effect.isDeprecated),
+          Spacer(),
+          Row(
+            children: [
+              Spacer(),
+              FittedBox(
+                  alignment: Alignment.centerRight,
+                  child: Row(children: [
+                    ClickableIcon(Icons.public_rounded, effect.publicLink,
+                        enabled: mapStatusToBool(effect)),
+                    const SizedBox(
+                      width: 8,
+                    ),
+                    ClickableIcon(Icons.home, effect.testLink, primary: false)
+                  ])),
+            ],
+          )
+        ]),
+        padding: EdgeInsets.all(8),
       ),
     );
   }
@@ -72,9 +83,10 @@ Widget clickableIcon(BuildContext context, IconData icon, String url,
 }
 
 @swidget
-Widget effectCardScaffold({required Widget child}) {
-  return Card(
-      shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(10)),
-      elevation: 3,
+Widget effectCardScaffold({required Widget child,required Color tileColor}) {
+  return Container(
+      decoration: BoxDecoration(
+          color: tileColor,
+          borderRadius: BorderRadius.circular(10)),
       child: child);
 }
