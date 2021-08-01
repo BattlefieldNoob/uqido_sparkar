@@ -7,9 +7,9 @@ import 'package:uqido_sparkar/utils/facebook_password_encrypt_util.dart';
 import 'package:uqido_sparkar/view/common/logging.dart';
 
 class SparkARBloc extends Bloc<SparkARAction, SparkARState> {
-  final List<AbstractDB> _dbs;
+  final AbstractDB _db;
 
-  SparkARBloc(this._dbs) : super(SparkARState.loading()) {
+  SparkARBloc(this._db) : super(SparkARState.loading()) {
     add(SparkARAction.login());
   }
 
@@ -32,18 +32,15 @@ class SparkARBloc extends Bloc<SparkARAction, SparkARState> {
 
       List<SparkARUser>? users = [];
 
-      for (final db in _dbs) {
-        users = await db.getAllUsers(); //try login with cached data
-        if (users != null) {
-          if (users.isNotEmpty) {
-            print(db.toString() + " Runned successfully");
-            break;
-          } else {
-            print(db.toString() + " Returned no data");
-          }
+      users = await _db.getAllUsers(); //try login with cached data
+      if (users != null) {
+        if (users.isNotEmpty) {
+          print(_db.toString() + " Runned successfully");
         } else {
-          print(db.toString() + " Raised an error, could not retrieve data");
+          print(_db.toString() + " Returned no data");
         }
+      } else {
+        print(_db.toString() + " Raised an error, could not retrieve data");
       }
 
       if (users == null || users.isEmpty)
@@ -52,18 +49,16 @@ class SparkARBloc extends Bloc<SparkARAction, SparkARState> {
         yield SparkARState.valid(users, selected: 0);
     } else if (email != null && loginData != null && email.isNotEmpty) {
       //login with new credentials
-
-      final db = _dbs.first;
       List<SparkARUser>? users =
-          await db.getAllUsers(email: email, loginData: loginData);
+          await _db.getAllUsers(email: email, loginData: loginData);
       if (users != null) {
         if (users.isNotEmpty) {
-          print(db.toString() + " Runned successfully");
+          print(_db.toString() + " Runned successfully");
         } else {
-          print(db.toString() + " Returned no data");
+          print(_db.toString() + " Returned no data");
         }
       } else {
-        print(db.toString() + " Raised an error, could not retrieve data");
+        print(_db.toString() + " Raised an error, could not retrieve data");
       }
 
       if (users == null || users.isEmpty)
@@ -129,19 +124,15 @@ class SparkARBloc extends Bloc<SparkARAction, SparkARState> {
     yield SparkARState.loading();
 
     List<SparkARUser>? users = [];
-
-    for (final db in _dbs) {
-      users = await db.getAllUsers();
-      if (users != null) {
-        if (users.isNotEmpty) {
-          print(db.toString() + " Runned successfully");
-          break;
-        } else {
-          print(db.toString() + " Returned no data");
-        }
+    users = await _db.getAllUsers();
+    if (users != null) {
+      if (users.isNotEmpty) {
+        print(_db.toString() + " Runned successfully");
       } else {
-        print(db.toString() + " Raised an error, could not retrieve data");
+        print(_db.toString() + " Returned no data");
       }
+    } else {
+      print(_db.toString() + " Raised an error, could not retrieve data");
     }
 
     if (users == null || users.isEmpty)

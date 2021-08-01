@@ -91,14 +91,14 @@ packages:
       name: build_config
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "0.4.7"
+    version: "1.0.0"
   build_daemon:
     dependency: transitive
     description:
       name: build_daemon
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "2.1.10"
+    version: "3.0.0"
   build_resolvers:
     dependency: transitive
     description:
@@ -112,14 +112,14 @@ packages:
       name: build_runner
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "1.12.2"
+    version: "2.0.6"
   build_runner_core:
     dependency: transitive
     description:
       name: build_runner_core
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "6.1.12"
+    version: "7.0.1"
   built_collection:
     dependency: transitive
     description:
@@ -175,7 +175,7 @@ packages:
       name: code_builder
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "3.7.0"
+    version: "4.1.0"
   collection:
     dependency: transitive
     description:
@@ -302,7 +302,7 @@ packages:
       name: freezed
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "0.14.1+2"
+    version: "0.14.2"
   freezed_annotation:
     dependency: "direct main"
     description:
@@ -310,23 +310,26 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "0.14.2"
+  frontend_server_client:
+    dependency: transitive
+    description:
+      name: frontend_server_client
+      url: "https://pub.dartlang.org"
+    source: hosted
+    version: "2.1.0"
   functional_widget:
     dependency: "direct dev"
     description:
-      path: "packages/functional_widget"
-      ref: ad7f47788160137fe17c9038ab0298e89b4a6f34
-      resolved-ref: ad7f47788160137fe17c9038ab0298e89b4a6f34
-      url: "git://github.com/tim-smart/functional_widget.git"
-    source: git
-    version: "0.9.0"
+      name: functional_widget
+      url: "https://pub.dartlang.org"
+    source: hosted
+    version: "0.9.0+2"
   functional_widget_annotation:
     dependency: "direct main"
     description:
-      path: "packages/functional_widget_annotation"
-      ref: ad7f47788160137fe17c9038ab0298e89b4a6f34
-      resolved-ref: ad7f47788160137fe17c9038ab0298e89b4a6f34
-      url: "git://github.com/tim-smart/functional_widget.git"
-    source: git
+      name: functional_widget_annotation
+      url: "https://pub.dartlang.org"
+    source: hosted
     version: "0.9.0"
   glob:
     dependency: transitive
@@ -341,7 +344,7 @@ packages:
       name: graphs
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "1.0.0"
+    version: "2.0.0"
   hsluv:
     dependency: transitive
     description:
@@ -565,7 +568,7 @@ packages:
       name: retrofit_generator
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "2.0.0-beta3"
+    version: "2.0.1"
   shared_preferences:
     dependency: transitive
     description:

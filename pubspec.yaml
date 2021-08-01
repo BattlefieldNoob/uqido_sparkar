@@ -48,31 +48,11 @@ dependencies:
 dev_dependencies:
   flutter_test:
     sdk: flutter
-  functional_widget: ^0.9.0
+  functional_widget: ^0.9.0+2
   freezed: ^0.14.0-nullsafety.0
   retrofit_generator: ^2.0.0-beta3
-  build_runner: ^1.11.0
+  build_runner: ^2.0.6
   json_serializable: ^4.0.2
-
-dependency_overrides:
-
-  #webcrypto:
-  #  git:
-  #    url: git://github.com/tauu/webcrypto.dart.git
-  #    ref: "6831b9e682823b61ebacb706e032883e420d9840"
-  #    path: .
-
-  functional_widget_annotation:
-    git:
-      url: git://github.com/tim-smart/functional_widget.git
-      ref: "ad7f47788160137fe17c9038ab0298e89b4a6f34" # https://github.com/rrousselGit/functional_widget/pull/86
-      path: packages/functional_widget_annotation
-
-  functional_widget:
-    git:
-      url: git://github.com/tim-smart/functional_widget.git
-      ref: "ad7f47788160137fe17c9038ab0298e89b4a6f34" # https://github.com/rrousselGit/functional_widget/pull/86
-      path: packages/functional_widget
 
 
 # For information on the generic Dart part of this file, see the

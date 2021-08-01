@@ -154,6 +154,7 @@ class __$SparkARValidStateCopyWithImpl<$Res>
 }
 
 /// @nodoc
+
 class _$_SparkARValidState implements _SparkARValidState {
   _$_SparkARValidState(this.networkUserList,
       {this.filteredUserList = const [],
@@ -300,6 +301,7 @@ class __$SparkARLoadingStateCopyWithImpl<$Res>
 }
 
 /// @nodoc
+
 class _$_SparkARLoadingState implements _SparkARLoadingState {
   _$_SparkARLoadingState();
 
@@ -397,6 +399,7 @@ class __$SparkARErrorStateCopyWithImpl<$Res>
 }
 
 /// @nodoc
+
 class _$_SparkARErrorState implements _SparkARErrorState {
   _$_SparkARErrorState();
 
@@ -494,6 +497,7 @@ class __$SparkARLogoutStateCopyWithImpl<$Res>
 }
 
 /// @nodoc
+
 class _$_SparkARLogoutState implements _SparkARLogoutState {
   _$_SparkARLogoutState();
 

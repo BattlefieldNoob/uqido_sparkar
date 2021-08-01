@@ -216,9 +216,8 @@ class __$SparkAREffectCopyWithImpl<$Res>
   }
 }
 
-@JsonSerializable()
-
 /// @nodoc
+@JsonSerializable()
 class _$_SparkAREffect implements _SparkAREffect {
   _$_SparkAREffect(
       this.id,

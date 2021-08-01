@@ -119,6 +119,7 @@ class __$UpdateActionCopyWithImpl<$Res>
 }
 
 /// @nodoc
+
 class _$_UpdateAction implements _UpdateAction {
   const _$_UpdateAction();
 
@@ -226,6 +227,7 @@ class __$SelectActionCopyWithImpl<$Res>
 }
 
 /// @nodoc
+
 class _$_SelectAction implements _SelectAction {
   const _$_SelectAction(this.selectedUser);
 
@@ -351,6 +353,7 @@ class __$SearchActionCopyWithImpl<$Res>
 }
 
 /// @nodoc
+
 class _$_SearchAction implements _SearchAction {
   const _$_SearchAction(this.keyword);
 
@@ -479,6 +482,7 @@ class __$LoginActionCopyWithImpl<$Res> extends _$SparkARActionCopyWithImpl<$Res>
 }
 
 /// @nodoc
+
 class _$_LoginAction implements _LoginAction {
   const _$_LoginAction({this.email, this.loginData});
 

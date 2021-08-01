@@ -1,78 +1,66 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
-import 'package:uqido_sparkar/blocs/sparkar_bloc.state.dart';
 import 'package:uqido_sparkar/model/sparkar_user.dart';
-import 'package:uqido_sparkar/view/common/home_app_bar.dart';
-import 'package:uqido_sparkar/view/sparkar/user_effects_detail.dart';
-
-import 'mobile_bottom_sheet_body.dart';
+import 'package:uqido_sparkar/view/platform/mobile/mobile_effects_grid.dart';
+import 'package:uqido_sparkar/view/platform/mobile/spark_ar_custom_tab_bar.dart';
 
 class MobileHomePage extends StatelessWidget {
-  final List<NavigationRailDestination> destinations;
-  final SparkARState state;
+  final List<SparkARUser> users;
 
-  MobileHomePage(this.state, this.destinations) : super(key: null);
+  MobileHomePage(this.users) : super(key: null);
 
   @override
   Widget build(BuildContext context) {
-    final scaffoldBody = state.map(
-        valid: (validState) {
-          return validState.userList.length != 0
-              ? UserEffectDetail(validState.userList[validState.selected])
-              : SizedBox();
-        },
-        loading: (loadingState) => Container(),
-        logout: (value) => Text("Error, please logout/login again"),
-        error: (errorState) => Text("Error, please reload"));
-
-    final bottomAppBarTitle = state.maybeMap(
-        valid: (validState) {
-          validState.selected < 0 || validState.userList.length == 0
-              ? Text("")
-              : Text(
-                  validState.userList[validState.selected].name,
-                  style: TextStyle(fontSize: 20, fontWeight: FontWeight.w500),
-                );
-        },
-        orElse: () => Text(""));
-
-    return Scaffold(
-      extendBody: true,
-      appBar: HomeAppBar(),
-      body: scaffoldBody,
-      bottomNavigationBar: BottomAppBar(
-        notchMargin: 6,
-        child: Container(
-          height: kToolbarHeight,
-          child: Stack(
-            children: [
-              Align(
-                  alignment: Alignment.centerLeft,
-                  child: FlatButton.icon(
-                    icon: Icon(Icons.arrow_drop_up),
-                    label: Text("Account"),
-                    onPressed: () => showBottomDrawer(context, state),
-                  )),
-              Center(child: bottomAppBarTitle)
-            ],
+    return DefaultTabController(
+        length: users.length,
+        child: Scaffold(
+          appBar: PreferredSize(
+            preferredSize: Size.fromHeight(260),
+            child: AppBar(
+              automaticallyImplyLeading: false,
+              leading: Icon(Icons.menu),
+              actions: [Icon(Icons.account_circle)],
+              backgroundColor: Theme.of(context).scaffoldBackgroundColor,
+              elevation: 0,
+              bottom: SparkARCustomTabBar(
+                accounts: users,
+              ),
+            ),
           ),
-        ),
-      ),
-    );
+          body: AppBody(
+            accounts: users,
+          ),
+        ));
   }
+}
 
-  void showBottomDrawer(final BuildContext context, final SparkARState state) {
-    final userList = state.maybeMap(
-        orElse: () => List<SparkARUser>.empty(),
-        valid: (validState) => validState.userList);
+class AppBody extends StatelessWidget {
+  const AppBody({
+    Key? key,
+    required this.accounts,
+  }) : super(key: key);
 
-    final selected = state.maybeMap(
-        orElse: () => -1, valid: (validState) => validState.selected);
+  final List<SparkARUser> accounts;
 
-    showModalBottomSheet<void>(
-        context: context,
-        shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(10)),
-        builder: (context) => MobileBottomSheetBody(userList, selected));
+  @override
+  Widget build(BuildContext context) {
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: [
+        Padding(
+          child: Text("Effects",
+              style: TextStyle(
+                  fontWeight: FontWeight.bold,
+                  fontSize: 18,
+                  color: Colors.blueGrey.shade800)),
+          padding: EdgeInsets.symmetric(horizontal: 24, vertical: 8),
+        ),
+        Expanded(
+            child: TabBarView(
+          children: [...accounts.map((e) => MobileEffectsGrid(e))],
+        ))
+      ],
+    );
   }
 }

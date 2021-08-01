@@ -145,9 +145,8 @@ class __$SparkARUserCopyWithImpl<$Res> extends _$SparkARUserCopyWithImpl<$Res>
   }
 }
 
-@JsonSerializable()
-
 /// @nodoc
+@JsonSerializable()
 class _$_SparkARUser implements _SparkARUser {
   _$_SparkARUser(this.id, this.name, this.iconUrl, this.effects);
 
