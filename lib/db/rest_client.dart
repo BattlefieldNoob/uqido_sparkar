@@ -15,7 +15,7 @@ abstract class RestClient {
       @Query("email") String email);
 
   @GET("/facebook_get_users_and_effects")
-  Future<dynamic> getUsersAndEffectWithCookie(@Query("cookie") cookie);
+  Future<dynamic> getUsersAndEffectWithCookie(@Query("cookie") String cookie);
 
   @GET("/facebook_public_keys")
   Future<dynamic> getPublicKeys();

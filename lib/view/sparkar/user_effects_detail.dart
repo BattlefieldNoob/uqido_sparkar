@@ -18,7 +18,7 @@ class UserEffectDetail extends StatelessWidget {
         padding: const EdgeInsets.fromLTRB(16, 6, 16, 64),
         itemCount: effects.length,
         itemBuilder: (context, index) => EffectListItem(
-              effect: effects[index],
+              effect: effects[index], tileColor: Colors.amberAccent,
             ));
   }
 }

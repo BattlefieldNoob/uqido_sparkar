@@ -28,8 +28,7 @@ class EffectListItem extends StatelessWidget {
       child: Padding(
         child: Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
           Image.network(
-            //effect.iconUrl,
-            "https://scontent.fqpa1-1.fna.fbcdn.net/v/t39.10260-6/69280886_712740072508099_7234937689319931904_n.png?_nc_cat=1&ccb=1-3&_nc_sid=df6b83&_nc_eui2=AeGwXNUlA1dgAe7jJ3NvdcULEtuQ4RYVs-YS25DhFhWz5qyVJnEIkbPgS-PmSsVT4kI&_nc_ohc=VUz9j6DBZ8kAX-xiosD&_nc_ht=scontent.fqpa1-1.fna&oh=c92d8ee64f35e54d8c8e6d2ec5666da7&oe=610303FE",
+            effect.iconUrl,
             width: 48,
             height: 48,
           ),

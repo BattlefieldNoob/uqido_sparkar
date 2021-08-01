@@ -33,14 +33,15 @@ class SparkARDB with DBCache implements AbstractDB {
 
     try {
       var tokenCookie = (await checkCache<Map<String, dynamic>>(
-              'spark-ar-user-cookie', () async {
+          'spark-ar-user-cookie', () async {
         if (loginData == null) return [];
         final encpass = loginData.encpass;
         final lsd = loginData.lsd;
         print(encpass);
-        var cookies =
-            await client.getCookiesWithEncryptedLoginData(encpass, lsd, email!);
+        var result =
+        await client.getCookiesWithEncryptedLoginData(encpass, lsd, email!);
 
+        final cookies = (result as Map<String, dynamic>)["data"];
         print(cookies);
         return [cookies as Map<String, dynamic>];
       }, customCacheDuration: Duration(days: 3)))
@@ -79,7 +80,7 @@ class SparkARDB with DBCache implements AbstractDB {
     //print("Print data");
     //print(response.data);
     //final data = jsonDecode(response.data) as List<dynamic>;
-    final data = response['data'] as List<dynamic>;
+    final data = response['data']['usersAndEffects'] as List<dynamic>;
     //final cookie = response.data['cookie'] as List<dynamic>;
     //print(data);
     var list = data.map((e) => e as Map<String, dynamic>).toList();
@@ -87,8 +88,8 @@ class SparkARDB with DBCache implements AbstractDB {
     return list;
   }
 
-  Future<List<Map<String, dynamic>>> getUsersAndEffectsByRequest(
-      String cookie, String token) async {
+  Future<List<Map<String, dynamic>>> getUsersAndEffectsByRequest(String cookie,
+      String token) async {
     print("getUsersAndEffectsByRequest");
     print(cookie);
     print(token);
@@ -109,7 +110,7 @@ class SparkARDB with DBCache implements AbstractDB {
     var parsed = jsonDecode(effectQuery);
 
     var owners = parsed['data']['ar_hub_effects_query']['ar_hub_settings']
-        ['owners'] as List<dynamic>;
+    ['owners'] as List<dynamic>;
 
     print(owners);
     var users = owners.map((item) {
@@ -122,8 +123,8 @@ class SparkARDB with DBCache implements AbstractDB {
     return usersAndEffects.map((e) => e.toJson()).toList();
   }
 
-  Future<List<SparkARUser>> getEffectsForUsers(
-      List<SparkARUser> usersList, cookie, token) async {
+  Future<List<SparkARUser>> getEffectsForUsers(List<SparkARUser> usersList,
+      cookie, token) async {
     final usersAndEffects = List<SparkARUser>.empty(growable: true);
 
     var body = {'doc_id': '', 'variables': '{}', 'fb_dtsg': '', '__a': 1};
@@ -138,7 +139,8 @@ class SparkARDB with DBCache implements AbstractDB {
 
     for (final user in usersList) {
       final variables =
-          '{"selectedOwnerID":"${user.id}","filters":{"effect_name_contains_ci":"","visibility_statuses":[],"review_statuses":[],"surfaces":[],"exclude_surfaces":["AR_ADS"]},"orderby":["LAST_MODIFIED_TIME_DESC"]}';
+          '{"selectedOwnerID":"${user
+          .id}","filters":{"effect_name_contains_ci":"","visibility_statuses":[],"review_statuses":[],"surfaces":[],"exclude_surfaces":["AR_ADS"]},"orderby":["LAST_MODIFIED_TIME_DESC"]}';
       body['variables'] = variables;
 
       final effectQuery = await client.facebookRequest(body, cookies);
@@ -147,7 +149,7 @@ class SparkARDB with DBCache implements AbstractDB {
       var parsed = jsonDecode(effectQuery);
       print(parsed);
       final effects =
-          parsed['data']['ar_hub_effects_query']['owner']['effects'];
+      parsed['data']['ar_hub_effects_query']['owner']['effects'];
       print(effects);
       if (effects == null) continue;
 
@@ -159,7 +161,7 @@ class SparkARDB with DBCache implements AbstractDB {
         if (studioEffect['submission_status'] != 'NOT_REVIEWED' &&
             studioEffect['submission_status'] != 'NOT_APPROVED') {
           isDeprecated =
-              studioEffect['latest_active_arexport_file']['is_deprecated'];
+          studioEffect['latest_active_arexport_file']['is_deprecated'];
         }
         return SparkAREffect(
           effect['node']['id'],

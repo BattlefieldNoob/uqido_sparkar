@@ -20,7 +20,7 @@ class LoginPage extends StatelessWidget {
       onSignup: (LoginData r) => Future.value(null),
       //showDebugButtons: true,
       messages: LoginMessages(
-        usernameHint: 'Username',
+        userHint: 'Username',
         passwordHint: 'Pass',
         confirmPasswordHint: 'Confirm',
         loginButton: 'LOG IN',

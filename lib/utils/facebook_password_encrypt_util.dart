@@ -17,7 +17,7 @@ Future<EncryptedLoginData> getEncryptedPasswordAndLoginData(
   final RestClient client = RestClient(Dio());
 
   //get public keys for encrypt
-  var encryptdata = await client.getPublicKeys();
+  var encryptdata = (await client.getPublicKeys() as Map<String,dynamic>)["data"];
   var data = encryptdata;
 
   var encpass = await _passwordEncrypt(unencryptedPassword, data);

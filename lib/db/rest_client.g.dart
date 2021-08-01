@@ -8,7 +8,8 @@ part of 'rest_client.dart';
 
 class _RestClient implements RestClient {
   _RestClient(this._dio, {this.baseUrl}) {
-    baseUrl ??= 'https://sparkar-token-crawler.netlify.app/.netlify/functions/';
+    baseUrl ??=
+        'https://sparkar-data-extractor.netlify.app/.netlify/functions/';
   }
 
   final Dio _dio;
@@ -36,7 +37,7 @@ class _RestClient implements RestClient {
   @override
   Future<dynamic> getUsersAndEffectWithCookie(cookie) async {
     const _extra = <String, dynamic>{};
-    final queryParameters = <String, dynamic>{r'cookie': cookie.toJson()};
+    final queryParameters = <String, dynamic>{r'cookie': cookie};
     final _data = <String, dynamic>{};
     final _result = await _dio.fetch(_setStreamType<dynamic>(
         Options(method: 'GET', headers: <String, dynamic>{}, extra: _extra)
