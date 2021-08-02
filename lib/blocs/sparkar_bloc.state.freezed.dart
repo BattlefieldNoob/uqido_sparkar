@@ -135,17 +135,26 @@ class __$SparkARValidStateCopyWithImpl<$Res>
     return _then(_SparkARValidState(
       networkUserList == freezed
           ? _value.networkUserList
-          : networkUserList as List<SparkARUser>,
+          : networkUserList // ignore: cast_nullable_to_non_nullable
+              as List<SparkARUser>,
       filteredUserList: filteredUserList == freezed
           ? _value.filteredUserList
-          : filteredUserList as List<SparkARUser>,
-      selected: selected == freezed ? _value.selected : selected as int,
-      searchKey: searchKey == freezed ? _value.searchKey : searchKey as String,
+          : filteredUserList // ignore: cast_nullable_to_non_nullable
+              as List<SparkARUser>,
+      selected: selected == freezed
+          ? _value.selected
+          : selected // ignore: cast_nullable_to_non_nullable
+              as int,
+      searchKey: searchKey == freezed
+          ? _value.searchKey
+          : searchKey // ignore: cast_nullable_to_non_nullable
+              as String,
     ));
   }
 }
 
 /// @nodoc
+
 class _$_SparkARValidState implements _SparkARValidState {
   _$_SparkARValidState(this.networkUserList,
       {this.filteredUserList = const [],
@@ -292,6 +301,7 @@ class __$SparkARLoadingStateCopyWithImpl<$Res>
 }
 
 /// @nodoc
+
 class _$_SparkARLoadingState implements _SparkARLoadingState {
   _$_SparkARLoadingState();
 
@@ -389,6 +399,7 @@ class __$SparkARErrorStateCopyWithImpl<$Res>
 }
 
 /// @nodoc
+
 class _$_SparkARErrorState implements _SparkARErrorState {
   _$_SparkARErrorState();
 
@@ -486,6 +497,7 @@ class __$SparkARLogoutStateCopyWithImpl<$Res>
 }
 
 /// @nodoc
+
 class _$_SparkARLogoutState implements _SparkARLogoutState {
   _$_SparkARLogoutState();
 
