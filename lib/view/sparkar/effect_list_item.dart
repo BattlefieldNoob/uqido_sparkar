@@ -10,16 +10,17 @@ import 'package:url_launcher/url_launcher.dart';
 import 'effect_visibility_status.dart';
 
 part 'effect_list_item.g.dart';
-
 part 'effect_list_item.viewmodel.dart';
 
 const Color disabledColor = const Color.fromRGBO(48, 46, 50, 1.0);
 
-class EffectListItem extends StatelessWidget {
+class EffectGridItem extends StatelessWidget {
   final SparkAREffect effect;
   final Color tileColor;
 
-  const EffectListItem({Key? key, required this.effect, required this.tileColor}) : super(key: key);
+  const EffectGridItem(
+      {Key? key, required this.effect, required this.tileColor})
+      : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -32,7 +33,8 @@ class EffectListItem extends StatelessWidget {
             width: 48,
             height: 48,
           ),
-          Text(effect.name,style: TextStyle(fontWeight: FontWeight.bold, fontSize: 16)),
+          Text(effect.name,
+              style: TextStyle(fontWeight: FontWeight.bold, fontSize: 16)),
           EffectVisibilityStatus(effect.submissionStatus,
               effect.visibilityStatus, effect.isDeprecated),
           Spacer(),
@@ -65,11 +67,8 @@ Widget clickableIcon(BuildContext context, IconData icon, String url,
   return OutlinedButton(
       style: OutlinedButton.styleFrom(
           shape: RoundedRectangleBorder(
-            borderRadius: BorderRadius.circular(8.0),
+            borderRadius: BorderRadius.circular(20),
           ),
-          side: enabled
-              ? BorderSide(width: 3, color: enabledColor)
-              : const BorderSide(width: 3, color: disabledColor),
           backgroundColor: primary
               ? enabled
                   ? enabledColor
@@ -82,10 +81,9 @@ Widget clickableIcon(BuildContext context, IconData icon, String url,
 }
 
 @swidget
-Widget effectCardScaffold({required Widget child,required Color tileColor}) {
+Widget effectCardScaffold({required Widget child, required Color tileColor}) {
   return Container(
       decoration: BoxDecoration(
-          color: tileColor,
-          borderRadius: BorderRadius.circular(10)),
+          color: tileColor, borderRadius: BorderRadius.circular(10)),
       child: child);
 }

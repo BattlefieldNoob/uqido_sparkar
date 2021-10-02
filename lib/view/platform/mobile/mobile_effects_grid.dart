@@ -28,9 +28,9 @@ class MobileEffectsGrid extends StatelessWidget {
             final color = snapshot.data?.dominantColor?.color ?? Colors.red;
             return ColoredGridView(user.effects, color);
           } else {
-            return Center(
-              child: SizedBox(
-                child: CircularProgressIndicator.adaptive(),
+            return const Center(
+              child: const SizedBox(
+                child: const CircularProgressIndicator.adaptive(),
               ),
             );
           }
@@ -41,10 +41,10 @@ class MobileEffectsGrid extends StatelessWidget {
 @swidget
 Widget coloredGridView(List<SparkAREffect> effects, Color tileColor) {
   return GridView(
-      padding: EdgeInsets.fromLTRB(16, 8, 16, 0),
-      gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+      padding: const EdgeInsets.fromLTRB(16, 8, 16, 0),
+      gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
           crossAxisCount: 2, crossAxisSpacing: 16, mainAxisSpacing: 16),
       children: [
-        ...effects.map((e) => EffectListItem(effect: e, tileColor: tileColor))
+        ...effects.map((e) => EffectGridItem(effect: e, tileColor: tileColor))
       ]);
 }

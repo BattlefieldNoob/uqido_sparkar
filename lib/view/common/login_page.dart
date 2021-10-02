@@ -7,6 +7,8 @@ import 'package:uqido_sparkar/blocs/sparkar_bloc.dart';
 import 'package:uqido_sparkar/utils/facebook_password_encrypt_util.dart';
 
 class LoginPage extends StatelessWidget {
+  const LoginPage();
+
   @override
   Widget build(BuildContext context) {
     return FlutterLogin(
