@@ -13,10 +13,12 @@ class HomeAppBar extends StatelessWidget implements PreferredSizeWidget {
 
   @override
   Widget build(BuildContext context) {
+    final theme=Theme.of(context).colorScheme;
+
     return SearchAppBar(
-        primary: Theme.of(context).primaryColor,
+        primary: theme.primary,
         searchHint: "Cerca un effetto...",
-        mainTextColor: Colors.white,
+        mainTextColor: theme.onPrimary,
         onSubmit: (String value) {
           context.read<SparkARBloc>().add(SparkARAction.search(value));
         },

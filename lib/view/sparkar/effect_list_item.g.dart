@@ -23,17 +23,3 @@ class ClickableIcon extends StatelessWidget {
   Widget build(BuildContext _context) =>
       clickableIcon(_context, icon, url, enabled: enabled, primary: primary);
 }
-
-class EffectCardScaffold extends StatelessWidget {
-  const EffectCardScaffold(
-      {Key? key, required this.child, required this.tileColor})
-      : super(key: key);
-
-  final Widget child;
-
-  final Color tileColor;
-
-  @override
-  Widget build(BuildContext _context) =>
-      effectCardScaffold(child: child, tileColor: tileColor);
-}

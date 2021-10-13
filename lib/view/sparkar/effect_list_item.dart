@@ -2,60 +2,50 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
+import 'package:flutter/services.dart';
 import 'package:flutter/widgets.dart';
 import 'package:functional_widget_annotation/functional_widget_annotation.dart';
 import 'package:uqido_sparkar/model/sparkar_effect.dart';
+import 'package:uqido_sparkar/utils/extensions.dart';
+import 'package:uqido_sparkar/view/platform/mobile/widgets/squared_card.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 import 'effect_visibility_status.dart';
 
 part 'effect_list_item.g.dart';
-part 'effect_list_item.viewmodel.dart';
 
-const Color disabledColor = const Color.fromRGBO(48, 46, 50, 1.0);
+part 'effect_list_item.viewmodel.dart';
 
 class EffectGridItem extends StatelessWidget {
   final SparkAREffect effect;
-  final Color tileColor;
 
-  const EffectGridItem(
-      {Key? key, required this.effect, required this.tileColor})
+  const EffectGridItem({Key? key, required this.effect})
       : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    return EffectCardScaffold(
-      tileColor: tileColor,
-      child: Padding(
-        child: Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
-          Image.network(
-            effect.iconUrl,
-            width: 48,
-            height: 48,
-          ),
-          Text(effect.name,
-              style: TextStyle(fontWeight: FontWeight.bold, fontSize: 16)),
+    return SquaredCard(
+      body: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          SizedBox.square(child: Image.network(
+            effect.iconUrl
+          ),dimension: 48,),
+          const SizedBox.square(dimension: 8,),
+          effect.name.b1,
+          const SizedBox.square(dimension: 8,),
           EffectVisibilityStatus(effect.submissionStatus,
               effect.visibilityStatus, effect.isDeprecated),
-          Spacer(),
-          Row(
-            children: [
-              Spacer(),
-              FittedBox(
-                  alignment: Alignment.centerRight,
-                  child: Row(children: [
-                    ClickableIcon(Icons.public_rounded, effect.publicLink,
-                        enabled: mapStatusToBool(effect)),
-                    const SizedBox(
-                      width: 8,
-                    ),
-                    ClickableIcon(Icons.home, effect.testLink, primary: false)
-                  ])),
-            ],
-          )
-        ]),
-        padding: EdgeInsets.all(8),
+        ],
       ),
+      footerWidgets: [
+        ClickableIcon(Icons.public_rounded, effect.publicLink,
+            enabled: mapStatusToBool(effect)),
+        const SizedBox(
+          width: 8,
+        ),
+        ClickableIcon(Icons.home, effect.testLink, primary: false)
+      ],
     );
   }
 }
@@ -63,7 +53,8 @@ class EffectGridItem extends StatelessWidget {
 @swidget
 Widget clickableIcon(BuildContext context, IconData icon, String url,
     {bool enabled = true, bool primary = true}) {
-  var enabledColor = Theme.of(context).accentColor;
+  var colorScheme = Theme.of(context).colorScheme;
+  var enabledColor = colorScheme.secondary;
   return OutlinedButton(
       style: OutlinedButton.styleFrom(
           shape: RoundedRectangleBorder(
@@ -72,18 +63,10 @@ Widget clickableIcon(BuildContext context, IconData icon, String url,
           backgroundColor: primary
               ? enabled
                   ? enabledColor
-                  : disabledColor
+                  : enabledColor.withOpacity(0.3)
               : null,
           minimumSize: const Size(54, 54)),
       child: Center(
-          child: Icon(icon, color: enabled ? Colors.white70 : Colors.white30)),
+          child: Icon(icon, color: colorScheme.onSecondary)),
       onPressed: enabled ? () => launch(url) : null);
-}
-
-@swidget
-Widget effectCardScaffold({required Widget child, required Color tileColor}) {
-  return Container(
-      decoration: BoxDecoration(
-          color: tileColor, borderRadius: BorderRadius.circular(10)),
-      child: child);
 }

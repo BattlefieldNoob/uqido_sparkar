@@ -42,7 +42,7 @@ dependencies:
   cupertino_icons: ^1.0.0
   functional_widget_annotation: ^0.9.0
   freezed_annotation: ^0.14.2
-  palette_generator: ^0.3.0
+  one_context: ^1.1.1
 
 
 dev_dependencies:

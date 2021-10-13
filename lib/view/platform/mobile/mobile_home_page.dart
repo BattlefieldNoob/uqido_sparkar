@@ -6,6 +6,7 @@ import 'package:functional_widget_annotation/functional_widget_annotation.dart';
 import 'package:uqido_sparkar/blocs/sparkar_bloc.dart';
 import 'package:uqido_sparkar/blocs/sparkar_bloc.state.dart';
 import 'package:uqido_sparkar/model/sparkar_user.dart';
+import 'package:uqido_sparkar/utils/extensions.dart';
 import 'package:uqido_sparkar/view/common/login_page.dart';
 import 'package:uqido_sparkar/view/platform/mobile/mobile_effects_grid.dart';
 import 'package:uqido_sparkar/view/platform/mobile/spark_ar_custom_tab_bar.dart';
@@ -22,10 +23,8 @@ class MobileHomePage extends StatelessWidget {
           valid: (state) =>
               MobileHomePageTabController(state.userList, state.selected),
           logout: (state) => Scaffold(body: const LoginPage()),
-          loading: (state) =>
-              Scaffold(body: const Center(child: const Text("Loading"))),
-          error: (state) =>
-              Scaffold(body: const Center(child: const Text("Error"))));
+          loading: (state) => Scaffold(body: Center(child: "Loading".h2)),
+          error: (state) => Scaffold(body: Center(child: "Error".h2)));
     });
   }
 }
@@ -37,7 +36,7 @@ Widget mobileHomePageTabController(
       length: users.length,
       child: Scaffold(
           appBar: PreferredSize(
-              preferredSize: Size.fromHeight(260),
+              preferredSize: Size.fromHeight(220),
               child: MobileHomePageAppBar(users)),
           body: MobileHomePageBody(users, selected)));
 }
@@ -46,9 +45,13 @@ Widget mobileHomePageTabController(
 Widget mobileHomePageAppBar(BuildContext context, List<SparkARUser> users) {
   return AppBar(
     automaticallyImplyLeading: false,
-    leading: Icon(Icons.menu),
-    actions: [Icon(Icons.account_circle)],
-    backgroundColor: Theme.of(context).scaffoldBackgroundColor,
+    leading: const Icon(Icons.menu),
+    actions: [
+      Padding(
+          padding: EdgeInsets.only(right: 8),
+          child: IconButton(
+              onPressed: () => {}, icon: const Icon(Icons.account_circle)))
+    ],
     elevation: 0,
     bottom: SparkARCustomTabBar(
       accounts: users,
@@ -63,16 +66,12 @@ Widget mobileHomePageBody(
     crossAxisAlignment: CrossAxisAlignment.start,
     children: [
       Padding(
-        child: Text("Effects",
-            style: TextStyle(
-                fontWeight: FontWeight.bold,
-                fontSize: 18,
-                color: Colors.blueGrey.shade800)),
+        child: "Effects".h2,
         padding: EdgeInsets.symmetric(horizontal: 24, vertical: 8),
       ),
       Expanded(
           child: TabBarView(
-        children: [...users.map((e) => MobileEffectsGrid(e))],
+        children: [...users.map((e) => MobileEffectsGrid(e.effects))],
       ))
     ],
   );
