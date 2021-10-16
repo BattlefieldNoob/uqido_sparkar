@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:functional_widget_annotation/functional_widget_annotation.dart';
 import 'package:uqido_sparkar/blocs/sparkar_bloc.actions.dart';
 import 'package:uqido_sparkar/blocs/sparkar_bloc.dart';
@@ -44,8 +43,8 @@ class _DesktopNavigationRailState extends State<DesktopNavigationRail> {
                 });
               }),
         labelType: NavigationRailLabelType.none,
-        onDestinationSelected: (index) =>
-            context.read<SparkARBloc>().add(SparkARAction.selectUser(index)),
+        onDestinationSelected: (index) {},
+            //context.read<SparkARBloc>().add(SparkARAction.selectUser(index)),
         selectedIndex: widget.selected);
   }
 }

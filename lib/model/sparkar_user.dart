@@ -12,4 +12,9 @@ class SparkARUser with _$SparkARUser {
 
   factory SparkARUser.fromJson(Map<String, dynamic> json) =>
       _$SparkARUserFromJson(json);
+
+  @override
+  String toString() {
+    return "SparkARUser($id,$name,[$effects])";
+  }
 }

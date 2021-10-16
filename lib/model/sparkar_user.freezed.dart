@@ -163,11 +163,6 @@ class _$_SparkARUser implements _SparkARUser {
   final List<SparkAREffect> effects;
 
   @override
-  String toString() {
-    return 'SparkARUser(id: $id, name: $name, iconUrl: $iconUrl, effects: $effects)';
-  }
-
-  @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other is _SparkARUser &&

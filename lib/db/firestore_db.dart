@@ -16,7 +16,7 @@ class FirestoreDB with DBCache implements AbstractDB {
   }
 
   @override
-  Future<List<SparkARUser>?> getAllUsers(
+  Future<List<SparkARUser>> getAllUsers(
       {String? email, EncryptedLoginData? loginData}) async {
     try {
       final data =
@@ -24,7 +24,7 @@ class FirestoreDB with DBCache implements AbstractDB {
       return List.unmodifiable(data.map((e) => SparkARUser.fromJson(e)));
     } catch (e) {
       print(e);
-      return null;
+      return [];
     }
   }
 

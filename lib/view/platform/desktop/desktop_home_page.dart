@@ -1,7 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:functional_widget_annotation/functional_widget_annotation.dart';
 import 'package:uqido_sparkar/blocs/sparkar_bloc.dart';
 import 'package:uqido_sparkar/blocs/sparkar_bloc.state.dart';
@@ -24,7 +23,7 @@ class DesktopHomePage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
         appBar: HomeAppBar(),
-        body: BlocBuilder<SparkARBloc, SparkARState>(
+        body: /*BlocBuilder<SparkARBloc, SparkARState>(
           builder: (context, state) {
             return state.map(
                 valid: (state) => DesktopHomePageBody(
@@ -33,7 +32,7 @@ class DesktopHomePage extends StatelessWidget {
                 loading: (state) => const Center(child: const Text("Loading")),
                 error: (state) => const Center(child: const Text("Error")));
           },
-        ));
+        )*/Container());
   }
 }
 

@@ -18,11 +18,13 @@ class _$SparkARStateTearOff {
 
   _SparkARValidState valid(List<SparkARUser> networkUserList,
       {List<SparkARUser> filteredUserList = const [],
+      List<SparkAREffect> preferredList = const [],
       int selected = -1,
       String searchKey = ""}) {
     return _SparkARValidState(
       networkUserList,
       filteredUserList: filteredUserList,
+      preferredList: preferredList,
       selected: selected,
       searchKey: searchKey,
     );
@@ -48,8 +50,12 @@ const $SparkARState = _$SparkARStateTearOff();
 mixin _$SparkARState {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function(List<SparkARUser> networkUserList,
-            List<SparkARUser> filteredUserList, int selected, String searchKey)
+    required TResult Function(
+            List<SparkARUser> networkUserList,
+            List<SparkARUser> filteredUserList,
+            List<SparkAREffect> preferredList,
+            int selected,
+            String searchKey)
         valid,
     required TResult Function() loading,
     required TResult Function() error,
@@ -58,8 +64,12 @@ mixin _$SparkARState {
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function(List<SparkARUser> networkUserList,
-            List<SparkARUser> filteredUserList, int selected, String searchKey)?
+    TResult Function(
+            List<SparkARUser> networkUserList,
+            List<SparkARUser> filteredUserList,
+            List<SparkAREffect> preferredList,
+            int selected,
+            String searchKey)?
         valid,
     TResult Function()? loading,
     TResult Function()? error,
@@ -110,6 +120,7 @@ abstract class _$SparkARValidStateCopyWith<$Res> {
   $Res call(
       {List<SparkARUser> networkUserList,
       List<SparkARUser> filteredUserList,
+      List<SparkAREffect> preferredList,
       int selected,
       String searchKey});
 }
@@ -129,6 +140,7 @@ class __$SparkARValidStateCopyWithImpl<$Res>
   $Res call({
     Object? networkUserList = freezed,
     Object? filteredUserList = freezed,
+    Object? preferredList = freezed,
     Object? selected = freezed,
     Object? searchKey = freezed,
   }) {
@@ -141,6 +153,10 @@ class __$SparkARValidStateCopyWithImpl<$Res>
           ? _value.filteredUserList
           : filteredUserList // ignore: cast_nullable_to_non_nullable
               as List<SparkARUser>,
+      preferredList: preferredList == freezed
+          ? _value.preferredList
+          : preferredList // ignore: cast_nullable_to_non_nullable
+              as List<SparkAREffect>,
       selected: selected == freezed
           ? _value.selected
           : selected // ignore: cast_nullable_to_non_nullable
@@ -158,6 +174,7 @@ class __$SparkARValidStateCopyWithImpl<$Res>
 class _$_SparkARValidState implements _SparkARValidState {
   _$_SparkARValidState(this.networkUserList,
       {this.filteredUserList = const [],
+      this.preferredList = const [],
       this.selected = -1,
       this.searchKey = ""});
 
@@ -166,6 +183,9 @@ class _$_SparkARValidState implements _SparkARValidState {
   @JsonKey(defaultValue: const [])
   @override
   final List<SparkARUser> filteredUserList;
+  @JsonKey(defaultValue: const [])
+  @override
+  final List<SparkAREffect> preferredList;
   @JsonKey(defaultValue: -1)
   @override
   final int selected;
@@ -175,7 +195,7 @@ class _$_SparkARValidState implements _SparkARValidState {
 
   @override
   String toString() {
-    return 'SparkARState.valid(networkUserList: $networkUserList, filteredUserList: $filteredUserList, selected: $selected, searchKey: $searchKey)';
+    return 'SparkARState.valid(networkUserList: $networkUserList, filteredUserList: $filteredUserList, preferredList: $preferredList, selected: $selected, searchKey: $searchKey)';
   }
 
   @override
@@ -188,6 +208,9 @@ class _$_SparkARValidState implements _SparkARValidState {
             (identical(other.filteredUserList, filteredUserList) ||
                 const DeepCollectionEquality()
                     .equals(other.filteredUserList, filteredUserList)) &&
+            (identical(other.preferredList, preferredList) ||
+                const DeepCollectionEquality()
+                    .equals(other.preferredList, preferredList)) &&
             (identical(other.selected, selected) ||
                 const DeepCollectionEquality()
                     .equals(other.selected, selected)) &&
@@ -201,6 +224,7 @@ class _$_SparkARValidState implements _SparkARValidState {
       runtimeType.hashCode ^
       const DeepCollectionEquality().hash(networkUserList) ^
       const DeepCollectionEquality().hash(filteredUserList) ^
+      const DeepCollectionEquality().hash(preferredList) ^
       const DeepCollectionEquality().hash(selected) ^
       const DeepCollectionEquality().hash(searchKey);
 
@@ -212,21 +236,30 @@ class _$_SparkARValidState implements _SparkARValidState {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function(List<SparkARUser> networkUserList,
-            List<SparkARUser> filteredUserList, int selected, String searchKey)
+    required TResult Function(
+            List<SparkARUser> networkUserList,
+            List<SparkARUser> filteredUserList,
+            List<SparkAREffect> preferredList,
+            int selected,
+            String searchKey)
         valid,
     required TResult Function() loading,
     required TResult Function() error,
     required TResult Function() logout,
   }) {
-    return valid(networkUserList, filteredUserList, selected, searchKey);
+    return valid(
+        networkUserList, filteredUserList, preferredList, selected, searchKey);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function(List<SparkARUser> networkUserList,
-            List<SparkARUser> filteredUserList, int selected, String searchKey)?
+    TResult Function(
+            List<SparkARUser> networkUserList,
+            List<SparkARUser> filteredUserList,
+            List<SparkAREffect> preferredList,
+            int selected,
+            String searchKey)?
         valid,
     TResult Function()? loading,
     TResult Function()? error,
@@ -234,7 +267,8 @@ class _$_SparkARValidState implements _SparkARValidState {
     required TResult orElse(),
   }) {
     if (valid != null) {
-      return valid(networkUserList, filteredUserList, selected, searchKey);
+      return valid(networkUserList, filteredUserList, preferredList, selected,
+          searchKey);
     }
     return orElse();
   }
@@ -269,11 +303,13 @@ class _$_SparkARValidState implements _SparkARValidState {
 abstract class _SparkARValidState implements SparkARState {
   factory _SparkARValidState(List<SparkARUser> networkUserList,
       {List<SparkARUser> filteredUserList,
+      List<SparkAREffect> preferredList,
       int selected,
       String searchKey}) = _$_SparkARValidState;
 
   List<SparkARUser> get networkUserList => throw _privateConstructorUsedError;
   List<SparkARUser> get filteredUserList => throw _privateConstructorUsedError;
+  List<SparkAREffect> get preferredList => throw _privateConstructorUsedError;
   int get selected => throw _privateConstructorUsedError;
   String get searchKey => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -321,8 +357,12 @@ class _$_SparkARLoadingState implements _SparkARLoadingState {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function(List<SparkARUser> networkUserList,
-            List<SparkARUser> filteredUserList, int selected, String searchKey)
+    required TResult Function(
+            List<SparkARUser> networkUserList,
+            List<SparkARUser> filteredUserList,
+            List<SparkAREffect> preferredList,
+            int selected,
+            String searchKey)
         valid,
     required TResult Function() loading,
     required TResult Function() error,
@@ -334,8 +374,12 @@ class _$_SparkARLoadingState implements _SparkARLoadingState {
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function(List<SparkARUser> networkUserList,
-            List<SparkARUser> filteredUserList, int selected, String searchKey)?
+    TResult Function(
+            List<SparkARUser> networkUserList,
+            List<SparkARUser> filteredUserList,
+            List<SparkAREffect> preferredList,
+            int selected,
+            String searchKey)?
         valid,
     TResult Function()? loading,
     TResult Function()? error,
@@ -419,8 +463,12 @@ class _$_SparkARErrorState implements _SparkARErrorState {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function(List<SparkARUser> networkUserList,
-            List<SparkARUser> filteredUserList, int selected, String searchKey)
+    required TResult Function(
+            List<SparkARUser> networkUserList,
+            List<SparkARUser> filteredUserList,
+            List<SparkAREffect> preferredList,
+            int selected,
+            String searchKey)
         valid,
     required TResult Function() loading,
     required TResult Function() error,
@@ -432,8 +480,12 @@ class _$_SparkARErrorState implements _SparkARErrorState {
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function(List<SparkARUser> networkUserList,
-            List<SparkARUser> filteredUserList, int selected, String searchKey)?
+    TResult Function(
+            List<SparkARUser> networkUserList,
+            List<SparkARUser> filteredUserList,
+            List<SparkAREffect> preferredList,
+            int selected,
+            String searchKey)?
         valid,
     TResult Function()? loading,
     TResult Function()? error,
@@ -517,8 +569,12 @@ class _$_SparkARLogoutState implements _SparkARLogoutState {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function(List<SparkARUser> networkUserList,
-            List<SparkARUser> filteredUserList, int selected, String searchKey)
+    required TResult Function(
+            List<SparkARUser> networkUserList,
+            List<SparkARUser> filteredUserList,
+            List<SparkAREffect> preferredList,
+            int selected,
+            String searchKey)
         valid,
     required TResult Function() loading,
     required TResult Function() error,
@@ -530,8 +586,12 @@ class _$_SparkARLogoutState implements _SparkARLogoutState {
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function(List<SparkARUser> networkUserList,
-            List<SparkARUser> filteredUserList, int selected, String searchKey)?
+    TResult Function(
+            List<SparkARUser> networkUserList,
+            List<SparkARUser> filteredUserList,
+            List<SparkAREffect> preferredList,
+            int selected,
+            String searchKey)?
         valid,
     TResult Function()? loading,
     TResult Function()? error,

@@ -28,7 +28,8 @@ class _$SparkAREffectTearOff {
       bool isDeprecated,
       String testLink,
       String publicLink,
-      String iconUrl) {
+      String iconUrl,
+      {bool isPreferite = false}) {
     return _SparkAREffect(
       id,
       name,
@@ -38,6 +39,7 @@ class _$SparkAREffectTearOff {
       testLink,
       publicLink,
       iconUrl,
+      isPreferite: isPreferite,
     );
   }
 
@@ -59,6 +61,7 @@ mixin _$SparkAREffect {
   String get testLink => throw _privateConstructorUsedError;
   String get publicLink => throw _privateConstructorUsedError;
   String get iconUrl => throw _privateConstructorUsedError;
+  bool get isPreferite => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -79,7 +82,8 @@ abstract class $SparkAREffectCopyWith<$Res> {
       bool isDeprecated,
       String testLink,
       String publicLink,
-      String iconUrl});
+      String iconUrl,
+      bool isPreferite});
 }
 
 /// @nodoc
@@ -101,6 +105,7 @@ class _$SparkAREffectCopyWithImpl<$Res>
     Object? testLink = freezed,
     Object? publicLink = freezed,
     Object? iconUrl = freezed,
+    Object? isPreferite = freezed,
   }) {
     return _then(_value.copyWith(
       id: id == freezed
@@ -135,6 +140,10 @@ class _$SparkAREffectCopyWithImpl<$Res>
           ? _value.iconUrl
           : iconUrl // ignore: cast_nullable_to_non_nullable
               as String,
+      isPreferite: isPreferite == freezed
+          ? _value.isPreferite
+          : isPreferite // ignore: cast_nullable_to_non_nullable
+              as bool,
     ));
   }
 }
@@ -154,7 +163,8 @@ abstract class _$SparkAREffectCopyWith<$Res>
       bool isDeprecated,
       String testLink,
       String publicLink,
-      String iconUrl});
+      String iconUrl,
+      bool isPreferite});
 }
 
 /// @nodoc
@@ -178,6 +188,7 @@ class __$SparkAREffectCopyWithImpl<$Res>
     Object? testLink = freezed,
     Object? publicLink = freezed,
     Object? iconUrl = freezed,
+    Object? isPreferite = freezed,
   }) {
     return _then(_SparkAREffect(
       id == freezed
@@ -212,13 +223,17 @@ class __$SparkAREffectCopyWithImpl<$Res>
           ? _value.iconUrl
           : iconUrl // ignore: cast_nullable_to_non_nullable
               as String,
+      isPreferite: isPreferite == freezed
+          ? _value.isPreferite
+          : isPreferite // ignore: cast_nullable_to_non_nullable
+              as bool,
     ));
   }
 }
 
 /// @nodoc
 @JsonSerializable()
-class _$_SparkAREffect implements _SparkAREffect {
+class _$_SparkAREffect with DiagnosticableTreeMixin implements _SparkAREffect {
   _$_SparkAREffect(
       this.id,
       this.name,
@@ -227,7 +242,8 @@ class _$_SparkAREffect implements _SparkAREffect {
       this.isDeprecated,
       this.testLink,
       this.publicLink,
-      this.iconUrl);
+      this.iconUrl,
+      {this.isPreferite = false});
 
   factory _$_SparkAREffect.fromJson(Map<String, dynamic> json) =>
       _$_$_SparkAREffectFromJson(json);
@@ -248,10 +264,24 @@ class _$_SparkAREffect implements _SparkAREffect {
   final String publicLink;
   @override
   final String iconUrl;
+  @JsonKey(defaultValue: false)
+  @override
+  final bool isPreferite;
 
   @override
-  String toString() {
-    return 'SparkAREffect(id: $id, name: $name, submissionStatus: $submissionStatus, visibilityStatus: $visibilityStatus, isDeprecated: $isDeprecated, testLink: $testLink, publicLink: $publicLink, iconUrl: $iconUrl)';
+  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
+    super.debugFillProperties(properties);
+    properties
+      ..add(DiagnosticsProperty('type', 'SparkAREffect'))
+      ..add(DiagnosticsProperty('id', id))
+      ..add(DiagnosticsProperty('name', name))
+      ..add(DiagnosticsProperty('submissionStatus', submissionStatus))
+      ..add(DiagnosticsProperty('visibilityStatus', visibilityStatus))
+      ..add(DiagnosticsProperty('isDeprecated', isDeprecated))
+      ..add(DiagnosticsProperty('testLink', testLink))
+      ..add(DiagnosticsProperty('publicLink', publicLink))
+      ..add(DiagnosticsProperty('iconUrl', iconUrl))
+      ..add(DiagnosticsProperty('isPreferite', isPreferite));
   }
 
   @override
@@ -278,7 +308,11 @@ class _$_SparkAREffect implements _SparkAREffect {
                 const DeepCollectionEquality()
                     .equals(other.publicLink, publicLink)) &&
             (identical(other.iconUrl, iconUrl) ||
-                const DeepCollectionEquality().equals(other.iconUrl, iconUrl)));
+                const DeepCollectionEquality()
+                    .equals(other.iconUrl, iconUrl)) &&
+            (identical(other.isPreferite, isPreferite) ||
+                const DeepCollectionEquality()
+                    .equals(other.isPreferite, isPreferite)));
   }
 
   @override
@@ -291,7 +325,8 @@ class _$_SparkAREffect implements _SparkAREffect {
       const DeepCollectionEquality().hash(isDeprecated) ^
       const DeepCollectionEquality().hash(testLink) ^
       const DeepCollectionEquality().hash(publicLink) ^
-      const DeepCollectionEquality().hash(iconUrl);
+      const DeepCollectionEquality().hash(iconUrl) ^
+      const DeepCollectionEquality().hash(isPreferite);
 
   @JsonKey(ignore: true)
   @override
@@ -313,7 +348,8 @@ abstract class _SparkAREffect implements SparkAREffect {
       bool isDeprecated,
       String testLink,
       String publicLink,
-      String iconUrl) = _$_SparkAREffect;
+      String iconUrl,
+      {bool isPreferite}) = _$_SparkAREffect;
 
   factory _SparkAREffect.fromJson(Map<String, dynamic> json) =
       _$_SparkAREffect.fromJson;
@@ -334,6 +370,8 @@ abstract class _SparkAREffect implements SparkAREffect {
   String get publicLink => throw _privateConstructorUsedError;
   @override
   String get iconUrl => throw _privateConstructorUsedError;
+  @override
+  bool get isPreferite => throw _privateConstructorUsedError;
   @override
   @JsonKey(ignore: true)
   _$SparkAREffectCopyWith<_SparkAREffect> get copyWith =>

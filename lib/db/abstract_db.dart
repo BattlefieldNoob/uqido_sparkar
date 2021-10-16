@@ -4,7 +4,7 @@ import 'package:uqido_sparkar/model/sparkar_user.dart';
 import 'package:uqido_sparkar/utils/facebook_password_encrypt_util.dart';
 
 abstract class AbstractDB {
-  Future<List<SparkARUser>?> getAllUsers(
+  Future<List<SparkARUser>> getAllUsers(
       {String? email, EncryptedLoginData? loginData});
 }
 

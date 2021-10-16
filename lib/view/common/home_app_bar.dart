@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:uqido_sparkar/blocs/sparkar_bloc.actions.dart';
 import 'package:uqido_sparkar/blocs/sparkar_bloc.dart';
 import 'package:uqido_sparkar/view/common/home_loading_bar.dart';
@@ -20,7 +19,7 @@ class HomeAppBar extends StatelessWidget implements PreferredSizeWidget {
         searchHint: "Cerca un effetto...",
         mainTextColor: theme.onPrimary,
         onSubmit: (String value) {
-          context.read<SparkARBloc>().add(SparkARAction.search(value));
+          //context.read<SparkARBloc>().add(SparkARAction.search(value));
         },
         //Will show when SEARCH MODE wasn't active
         mainAppBar: (stream, keyword) {

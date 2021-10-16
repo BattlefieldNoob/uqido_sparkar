@@ -38,6 +38,13 @@ class _$SparkARActionTearOff {
       loginData: loginData,
     );
   }
+
+  _SetPreferredAction setPreferred(SparkAREffect effect, bool preferred) {
+    return _SetPreferredAction(
+      effect,
+      preferred,
+    );
+  }
 }
 
 /// @nodoc
@@ -52,6 +59,8 @@ mixin _$SparkARAction {
     required TResult Function(String keyword) search,
     required TResult Function(String? email, EncryptedLoginData? loginData)
         login,
+    required TResult Function(SparkAREffect effect, bool preferred)
+        setPreferred,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -60,6 +69,7 @@ mixin _$SparkARAction {
     TResult Function(int selectedUser)? selectUser,
     TResult Function(String keyword)? search,
     TResult Function(String? email, EncryptedLoginData? loginData)? login,
+    TResult Function(SparkAREffect effect, bool preferred)? setPreferred,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -69,6 +79,7 @@ mixin _$SparkARAction {
     required TResult Function(_SelectAction value) selectUser,
     required TResult Function(_SearchAction value) search,
     required TResult Function(_LoginAction value) login,
+    required TResult Function(_SetPreferredAction value) setPreferred,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -77,6 +88,7 @@ mixin _$SparkARAction {
     TResult Function(_SelectAction value)? selectUser,
     TResult Function(_SearchAction value)? search,
     TResult Function(_LoginAction value)? login,
+    TResult Function(_SetPreferredAction value)? setPreferred,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -144,6 +156,8 @@ class _$_UpdateAction implements _UpdateAction {
     required TResult Function(String keyword) search,
     required TResult Function(String? email, EncryptedLoginData? loginData)
         login,
+    required TResult Function(SparkAREffect effect, bool preferred)
+        setPreferred,
   }) {
     return update();
   }
@@ -155,6 +169,7 @@ class _$_UpdateAction implements _UpdateAction {
     TResult Function(int selectedUser)? selectUser,
     TResult Function(String keyword)? search,
     TResult Function(String? email, EncryptedLoginData? loginData)? login,
+    TResult Function(SparkAREffect effect, bool preferred)? setPreferred,
     required TResult orElse(),
   }) {
     if (update != null) {
@@ -170,6 +185,7 @@ class _$_UpdateAction implements _UpdateAction {
     required TResult Function(_SelectAction value) selectUser,
     required TResult Function(_SearchAction value) search,
     required TResult Function(_LoginAction value) login,
+    required TResult Function(_SetPreferredAction value) setPreferred,
   }) {
     return update(this);
   }
@@ -181,6 +197,7 @@ class _$_UpdateAction implements _UpdateAction {
     TResult Function(_SelectAction value)? selectUser,
     TResult Function(_SearchAction value)? search,
     TResult Function(_LoginAction value)? login,
+    TResult Function(_SetPreferredAction value)? setPreferred,
     required TResult orElse(),
   }) {
     if (update != null) {
@@ -265,6 +282,8 @@ class _$_SelectAction implements _SelectAction {
     required TResult Function(String keyword) search,
     required TResult Function(String? email, EncryptedLoginData? loginData)
         login,
+    required TResult Function(SparkAREffect effect, bool preferred)
+        setPreferred,
   }) {
     return selectUser(selectedUser);
   }
@@ -276,6 +295,7 @@ class _$_SelectAction implements _SelectAction {
     TResult Function(int selectedUser)? selectUser,
     TResult Function(String keyword)? search,
     TResult Function(String? email, EncryptedLoginData? loginData)? login,
+    TResult Function(SparkAREffect effect, bool preferred)? setPreferred,
     required TResult orElse(),
   }) {
     if (selectUser != null) {
@@ -291,6 +311,7 @@ class _$_SelectAction implements _SelectAction {
     required TResult Function(_SelectAction value) selectUser,
     required TResult Function(_SearchAction value) search,
     required TResult Function(_LoginAction value) login,
+    required TResult Function(_SetPreferredAction value) setPreferred,
   }) {
     return selectUser(this);
   }
@@ -302,6 +323,7 @@ class _$_SelectAction implements _SelectAction {
     TResult Function(_SelectAction value)? selectUser,
     TResult Function(_SearchAction value)? search,
     TResult Function(_LoginAction value)? login,
+    TResult Function(_SetPreferredAction value)? setPreferred,
     required TResult orElse(),
   }) {
     if (selectUser != null) {
@@ -390,6 +412,8 @@ class _$_SearchAction implements _SearchAction {
     required TResult Function(String keyword) search,
     required TResult Function(String? email, EncryptedLoginData? loginData)
         login,
+    required TResult Function(SparkAREffect effect, bool preferred)
+        setPreferred,
   }) {
     return search(keyword);
   }
@@ -401,6 +425,7 @@ class _$_SearchAction implements _SearchAction {
     TResult Function(int selectedUser)? selectUser,
     TResult Function(String keyword)? search,
     TResult Function(String? email, EncryptedLoginData? loginData)? login,
+    TResult Function(SparkAREffect effect, bool preferred)? setPreferred,
     required TResult orElse(),
   }) {
     if (search != null) {
@@ -416,6 +441,7 @@ class _$_SearchAction implements _SearchAction {
     required TResult Function(_SelectAction value) selectUser,
     required TResult Function(_SearchAction value) search,
     required TResult Function(_LoginAction value) login,
+    required TResult Function(_SetPreferredAction value) setPreferred,
   }) {
     return search(this);
   }
@@ -427,6 +453,7 @@ class _$_SearchAction implements _SearchAction {
     TResult Function(_SelectAction value)? selectUser,
     TResult Function(_SearchAction value)? search,
     TResult Function(_LoginAction value)? login,
+    TResult Function(_SetPreferredAction value)? setPreferred,
     required TResult orElse(),
   }) {
     if (search != null) {
@@ -526,6 +553,8 @@ class _$_LoginAction implements _LoginAction {
     required TResult Function(String keyword) search,
     required TResult Function(String? email, EncryptedLoginData? loginData)
         login,
+    required TResult Function(SparkAREffect effect, bool preferred)
+        setPreferred,
   }) {
     return login(email, loginData);
   }
@@ -537,6 +566,7 @@ class _$_LoginAction implements _LoginAction {
     TResult Function(int selectedUser)? selectUser,
     TResult Function(String keyword)? search,
     TResult Function(String? email, EncryptedLoginData? loginData)? login,
+    TResult Function(SparkAREffect effect, bool preferred)? setPreferred,
     required TResult orElse(),
   }) {
     if (login != null) {
@@ -552,6 +582,7 @@ class _$_LoginAction implements _LoginAction {
     required TResult Function(_SelectAction value) selectUser,
     required TResult Function(_SearchAction value) search,
     required TResult Function(_LoginAction value) login,
+    required TResult Function(_SetPreferredAction value) setPreferred,
   }) {
     return login(this);
   }
@@ -563,6 +594,7 @@ class _$_LoginAction implements _LoginAction {
     TResult Function(_SelectAction value)? selectUser,
     TResult Function(_SearchAction value)? search,
     TResult Function(_LoginAction value)? login,
+    TResult Function(_SetPreferredAction value)? setPreferred,
     required TResult orElse(),
   }) {
     if (login != null) {
@@ -580,5 +612,158 @@ abstract class _LoginAction implements SparkARAction {
   EncryptedLoginData? get loginData => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
   _$LoginActionCopyWith<_LoginAction> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$SetPreferredActionCopyWith<$Res> {
+  factory _$SetPreferredActionCopyWith(
+          _SetPreferredAction value, $Res Function(_SetPreferredAction) then) =
+      __$SetPreferredActionCopyWithImpl<$Res>;
+  $Res call({SparkAREffect effect, bool preferred});
+
+  $SparkAREffectCopyWith<$Res> get effect;
+}
+
+/// @nodoc
+class __$SetPreferredActionCopyWithImpl<$Res>
+    extends _$SparkARActionCopyWithImpl<$Res>
+    implements _$SetPreferredActionCopyWith<$Res> {
+  __$SetPreferredActionCopyWithImpl(
+      _SetPreferredAction _value, $Res Function(_SetPreferredAction) _then)
+      : super(_value, (v) => _then(v as _SetPreferredAction));
+
+  @override
+  _SetPreferredAction get _value => super._value as _SetPreferredAction;
+
+  @override
+  $Res call({
+    Object? effect = freezed,
+    Object? preferred = freezed,
+  }) {
+    return _then(_SetPreferredAction(
+      effect == freezed
+          ? _value.effect
+          : effect // ignore: cast_nullable_to_non_nullable
+              as SparkAREffect,
+      preferred == freezed
+          ? _value.preferred
+          : preferred // ignore: cast_nullable_to_non_nullable
+              as bool,
+    ));
+  }
+
+  @override
+  $SparkAREffectCopyWith<$Res> get effect {
+    return $SparkAREffectCopyWith<$Res>(_value.effect, (value) {
+      return _then(_value.copyWith(effect: value));
+    });
+  }
+}
+
+/// @nodoc
+
+class _$_SetPreferredAction implements _SetPreferredAction {
+  const _$_SetPreferredAction(this.effect, this.preferred);
+
+  @override
+  final SparkAREffect effect;
+  @override
+  final bool preferred;
+
+  @override
+  String toString() {
+    return 'SparkARAction.setPreferred(effect: $effect, preferred: $preferred)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other is _SetPreferredAction &&
+            (identical(other.effect, effect) ||
+                const DeepCollectionEquality().equals(other.effect, effect)) &&
+            (identical(other.preferred, preferred) ||
+                const DeepCollectionEquality()
+                    .equals(other.preferred, preferred)));
+  }
+
+  @override
+  int get hashCode =>
+      runtimeType.hashCode ^
+      const DeepCollectionEquality().hash(effect) ^
+      const DeepCollectionEquality().hash(preferred);
+
+  @JsonKey(ignore: true)
+  @override
+  _$SetPreferredActionCopyWith<_SetPreferredAction> get copyWith =>
+      __$SetPreferredActionCopyWithImpl<_SetPreferredAction>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() update,
+    required TResult Function(int selectedUser) selectUser,
+    required TResult Function(String keyword) search,
+    required TResult Function(String? email, EncryptedLoginData? loginData)
+        login,
+    required TResult Function(SparkAREffect effect, bool preferred)
+        setPreferred,
+  }) {
+    return setPreferred(effect, preferred);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? update,
+    TResult Function(int selectedUser)? selectUser,
+    TResult Function(String keyword)? search,
+    TResult Function(String? email, EncryptedLoginData? loginData)? login,
+    TResult Function(SparkAREffect effect, bool preferred)? setPreferred,
+    required TResult orElse(),
+  }) {
+    if (setPreferred != null) {
+      return setPreferred(effect, preferred);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_UpdateAction value) update,
+    required TResult Function(_SelectAction value) selectUser,
+    required TResult Function(_SearchAction value) search,
+    required TResult Function(_LoginAction value) login,
+    required TResult Function(_SetPreferredAction value) setPreferred,
+  }) {
+    return setPreferred(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_UpdateAction value)? update,
+    TResult Function(_SelectAction value)? selectUser,
+    TResult Function(_SearchAction value)? search,
+    TResult Function(_LoginAction value)? login,
+    TResult Function(_SetPreferredAction value)? setPreferred,
+    required TResult orElse(),
+  }) {
+    if (setPreferred != null) {
+      return setPreferred(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _SetPreferredAction implements SparkARAction {
+  const factory _SetPreferredAction(SparkAREffect effect, bool preferred) =
+      _$_SetPreferredAction;
+
+  SparkAREffect get effect => throw _privateConstructorUsedError;
+  bool get preferred => throw _privateConstructorUsedError;
+  @JsonKey(ignore: true)
+  _$SetPreferredActionCopyWith<_SetPreferredAction> get copyWith =>
       throw _privateConstructorUsedError;
 }

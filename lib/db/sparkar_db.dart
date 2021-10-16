@@ -22,7 +22,7 @@ class SparkARDB with DBCache implements AbstractDB {
   }
 
   @override
-  Future<List<SparkARUser>?> getAllUsers(
+  Future<List<SparkARUser>> getAllUsers(
       {String? email, EncryptedLoginData? loginData}) async {
     //if (email != null && loginData != null) {
     //  //i must delete login data from cache
@@ -69,7 +69,7 @@ class SparkARDB with DBCache implements AbstractDB {
       }
     } catch (e) {
       print(e);
-      return null;
+      return [];
     }
   }
 

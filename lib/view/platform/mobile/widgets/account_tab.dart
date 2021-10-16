@@ -1,17 +1,17 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:uqido_sparkar/providers/spark_ar_data_provider.dart';
 import 'circle_image.dart';
 
-class AccountTab extends StatelessWidget {
-  final name;
-  final imageUrl;
-
-  const AccountTab(this.name, this.imageUrl, {Key? key}) : super(key: key);
+class AccountTab extends ConsumerWidget {
+  const AccountTab({Key? key}) : super(key: key);
 
   @override
-  Widget build(BuildContext context) {
+  Widget build(BuildContext context, WidgetRef ref) {
+    final user = ref.watch(currentUser);
     return Tab(
-      icon: CircleImage(imageUrl),
-      text: name,
+      icon: CircleImage(user.iconUrl),
+      text: user.name,
     );
   }
 }

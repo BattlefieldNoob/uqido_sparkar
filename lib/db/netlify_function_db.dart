@@ -25,7 +25,7 @@ BbWXekxzuZqxHmt/YECtUAodpn7EbRR8jzEnDyVQvqw+/q59gv4dOBkCAwEAAQ==
   }
 
   @override
-  Future<List<SparkARUser>?> getAllUsers(
+  Future<List<SparkARUser>> getAllUsers(
       {String? email, EncryptedLoginData? loginData}) async {
     //if (email == null || loginData == null) return null;
 
@@ -36,7 +36,7 @@ BbWXekxzuZqxHmt/YECtUAodpn7EbRR8jzEnDyVQvqw+/q59gv4dOBkCAwEAAQ==
       return List.unmodifiable(data.map((e) => SparkARUser.fromJson(e)));
     } catch (e) {
       print(e);
-      return null;
+      return [];
     }
   }
 

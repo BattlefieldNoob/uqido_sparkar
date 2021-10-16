@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_login/flutter_login.dart';
 import 'package:uqido_sparkar/blocs/sparkar_bloc.actions.dart';
 import 'package:uqido_sparkar/blocs/sparkar_bloc.dart';
@@ -16,7 +15,7 @@ class LoginPage extends StatelessWidget {
       logo: 'assets/images/Icon-512.png',
       onLogin: (data) async => await _authUser(data, context),
       onSubmitAnimationCompleted: () {
-        context.read<SparkARBloc>();
+        //context.read<SparkARBloc>();
       },
       onRecoverPassword: (String a) => Future.value(null),
       onSignup: (LoginData r) => Future.value(null),
@@ -41,13 +40,13 @@ class LoginPage extends StatelessWidget {
   Future<String?> _authUser(LoginData data, BuildContext context) async {
     var encryptedData = await getEncryptedPasswordAndLoginData(data.password);
 
-    context
-        .read<SparkARBloc>()
-        .add(SparkARAction.login(email: data.name, loginData: encryptedData));
+    //context
+    //    .read<SparkARBloc>()
+    //    .add(SparkARAction.login(email: data.name, loginData: encryptedData));
 
     await Future.delayed(Duration(seconds: 6));
 
-    return context.read<SparkARBloc>().state.maybeMap(
-        orElse: () => null, logout: (state) => "Email or Password are wrong!");
+    //return context.read<SparkARBloc>().state.maybeMap(
+    //    orElse: () => null, logout: (state) => "Email or Password are wrong!");
   }
 }

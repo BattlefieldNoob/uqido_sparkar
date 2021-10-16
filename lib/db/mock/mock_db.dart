@@ -21,7 +21,7 @@ class MockDB with DBCache implements AbstractDB {
   }
 
   @override
-  Future<List<SparkARUser>?> getAllUsers(
+  Future<List<SparkARUser>> getAllUsers(
       {String? email, EncryptedLoginData? loginData}) async {
     String data = await rootBundle.loadString('assets/mock_data.json');
     final jsonResult = json.decode(data);
