@@ -5,8 +5,6 @@ import 'package:flutter/rendering.dart';
 import 'package:flutter/widgets.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:functional_widget_annotation/functional_widget_annotation.dart';
-import 'package:uqido_sparkar/blocs/sparkar_bloc.actions.dart';
-import 'package:uqido_sparkar/blocs/sparkar_bloc.dart';
 import 'package:uqido_sparkar/model/sparkar_effect.dart';
 import 'package:uqido_sparkar/providers/spark_ar_data_provider.dart';
 import 'package:uqido_sparkar/utils/extensions.dart';
@@ -25,7 +23,6 @@ class EffectGridItem extends ConsumerWidget {
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     final effect = ref.watch(currentEffect);
-    final userId = ref.read(currentUserId);
 
     return SquaredCard(
       body: Column(
@@ -39,7 +36,7 @@ class EffectGridItem extends ConsumerWidget {
             IconButton(
                 onPressed: () => ref
                     .read(sparkARDataProvider.notifier)
-                    .toggleFavorite(userId, effect.id),
+                    .toggleFavorite(effect.id),
                 icon: Icon(effect.isPreferite ? Icons.star : Icons.star_border))
           ]),
           const SizedBox.square(

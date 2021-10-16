@@ -1,6 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:uqido_sparkar/blocs/sparkar_bloc.dart';
-import 'package:uqido_sparkar/blocs/sparkar_bloc.state.dart';
 
 class HomeLoadingBar extends StatelessWidget implements PreferredSizeWidget {
   @override

@@ -2,8 +2,6 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:functional_widget_annotation/functional_widget_annotation.dart';
-import 'package:uqido_sparkar/blocs/sparkar_bloc.dart';
-import 'package:uqido_sparkar/blocs/sparkar_bloc.state.dart';
 import 'package:uqido_sparkar/model/sparkar_user.dart';
 import 'package:uqido_sparkar/utils/extensions.dart';
 import 'package:uqido_sparkar/view/common/home_app_bar.dart';

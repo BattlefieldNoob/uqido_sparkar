@@ -8,21 +8,23 @@ import 'package:uqido_sparkar/view/sparkar/effect_list_item.dart';
 class MobileEffectsGrid extends StatelessWidget {
   final List<SparkAREffect> effects;
 
-  final String userId;
-
-  const MobileEffectsGrid(this.userId, this.effects) : super(key: null);
+  const MobileEffectsGrid(this.effects) : super(key: null);
 
   @override
   Widget build(BuildContext context) {
-    return GridView.builder(
-      padding: const EdgeInsets.fromLTRB(16, 8, 16, 0),
-      gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-          crossAxisCount: 2, crossAxisSpacing: 16, mainAxisSpacing: 16),
-      itemCount: effects.length,
-      itemBuilder: (context, index) => ProviderScope(overrides: [
-        currentUserId.overrideWithValue(userId),
-        currentEffect.overrideWithValue(effects[index])
-      ], child: const EffectGridItem()),
-    );
+    if (effects.isEmpty)
+      return Center(
+        child: Text("No Elements!"),
+      );
+    else
+      return GridView.builder(
+        padding: const EdgeInsets.fromLTRB(16, 8, 16, 0),
+        gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+            crossAxisCount: 2, crossAxisSpacing: 16, mainAxisSpacing: 16),
+        itemCount: effects.length,
+        itemBuilder: (context, index) => ProviderScope(overrides: [
+          currentEffect.overrideWithValue(effects[index])
+        ], child: const EffectGridItem()),
+      );
   }
 }

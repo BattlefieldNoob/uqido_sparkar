@@ -3,8 +3,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:functional_widget_annotation/functional_widget_annotation.dart';
-import 'package:uqido_sparkar/blocs/sparkar_bloc.dart';
-import 'package:uqido_sparkar/blocs/sparkar_bloc.state.dart';
 import 'package:uqido_sparkar/model/sparkar_user.dart';
 import 'package:uqido_sparkar/providers/spark_ar_data_provider.dart';
 import 'package:uqido_sparkar/utils/extensions.dart';
@@ -22,7 +20,8 @@ class MobileHomePage extends ConsumerWidget {
   Widget build(BuildContext context, WidgetRef ref) {
     final users = ref.watch(usersCount);
     return DefaultTabController(
-        length: users,
+        length: users + 1,
+        initialIndex: users == 0 ? 0 : 1,
         child: Scaffold(
             appBar: PreferredSize(
                 preferredSize: Size.fromHeight(220),

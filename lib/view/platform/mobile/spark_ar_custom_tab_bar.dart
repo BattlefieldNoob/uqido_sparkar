@@ -22,7 +22,7 @@ class SparkARCustomTabBar extends StatelessWidget
       child: Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
         Padding(
           padding: const EdgeInsets.fromLTRB(24.0, 0.0, 100.0, 0.0),
-          child: Test()//"Good Evening".h1,
+          child: "Good Evening".h1,
         ),
         Padding(
           child: "Accounts".h2,
@@ -35,17 +35,5 @@ class SparkARCustomTabBar extends StatelessWidget
       ]),
       preferredSize: preferredSize,
     );
-  }
-}
-
-class Test extends ConsumerWidget {
-  const Test({
-    Key? key,
-  }) : super(key: key);
-
-  @override
-  Widget build(BuildContext context, WidgetRef ref) {
-    final preferites = ref.watch(preferiteEffects);
-    return Text("Preferites:${preferites.length}");
   }
 }

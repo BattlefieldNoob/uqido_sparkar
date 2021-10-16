@@ -1,8 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:flutter_login/flutter_login.dart';
-import 'package:uqido_sparkar/blocs/sparkar_bloc.actions.dart';
-import 'package:uqido_sparkar/blocs/sparkar_bloc.dart';
 import 'package:uqido_sparkar/utils/facebook_password_encrypt_util.dart';
 
 class LoginPage extends StatelessWidget {

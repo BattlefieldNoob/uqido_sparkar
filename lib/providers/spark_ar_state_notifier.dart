@@ -16,7 +16,7 @@ class SparkARStateNotifier extends StateNotifier<SparkARNetworkData> {
     state = state.copyWith(users: data.users, effects: data.effects);
   }
 
-  void toggleFavorite(String userId, String effectId) {
+  void toggleFavorite(String effectId) {
     final editedEffects = [
       for (SparkAREffect effect in state.effects)
         effect.id != effectId

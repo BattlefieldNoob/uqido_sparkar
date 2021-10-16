@@ -15,3 +15,16 @@ class AccountTab extends ConsumerWidget {
     );
   }
 }
+
+
+class PreferredAccountTab extends StatelessWidget {
+  const PreferredAccountTab({Key? key}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Tab(
+      icon: CircleAvatar(backgroundImage: AssetImage("assets/images/starred.png"),radius: 22,),
+      text: "Preferred",
+    );
+  }
+}

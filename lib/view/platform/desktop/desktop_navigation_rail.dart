@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:functional_widget_annotation/functional_widget_annotation.dart';
-import 'package:uqido_sparkar/blocs/sparkar_bloc.actions.dart';
-import 'package:uqido_sparkar/blocs/sparkar_bloc.dart';
 
 part 'desktop_navigation_rail.g.dart';
 

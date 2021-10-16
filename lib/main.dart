@@ -5,11 +5,9 @@ import 'package:uqido_sparkar/db/firestore_db.dart';
 import 'package:uqido_sparkar/db/netlify_function_db.dart';
 import 'package:uqido_sparkar/view/common/app_breakpoints.dart';
 import 'package:uqido_sparkar/view/common/app_theme.dart';
+import 'package:uqido_sparkar/view/platform/mobile/mobile_home_page.dart';
 
-import 'blocs/sparkar_bloc.dart';
-import 'db/sparkar_db.dart';
 import 'mock_main.dart';
-import 'view/home_page.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -18,5 +16,5 @@ void main() async {
       child: MaterialApp(
           builder: OneContext().builder,
           theme: getTheme(),
-          home: const HomePage())));
+          home: const MobileHomePage())));
 }

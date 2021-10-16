@@ -173,7 +173,7 @@ class SparkARDB with DBCache implements AbstractDB {
           isDeprecated,
           studioEffect['test_link'],
           studioEffect['share_link'],
-          studioEffect['thumbnail_uri'],
+          studioEffect['thumbnail_uri']
         );
       }).toList();
       if (effectsForUser.length != 0) {
