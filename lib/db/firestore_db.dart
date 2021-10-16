@@ -2,6 +2,7 @@ import 'dart:async';
 
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:uqido_sparkar/db/abstract_db.dart';
+import 'package:uqido_sparkar/model/sparkar_network_data.dart';
 import 'package:uqido_sparkar/model/sparkar_user.dart';
 import 'package:uqido_sparkar/utils/facebook_password_encrypt_util.dart';
 
@@ -16,16 +17,17 @@ class FirestoreDB with DBCache implements AbstractDB {
   }
 
   @override
-  Future<List<SparkARUser>> getAllUsers(
+  Future<SparkARNetworkData> getUsersAndEffectsData(
       {String? email, EncryptedLoginData? loginData}) async {
-    try {
-      final data =
-          await checkCache('spark-ar-users-firestone', getDataFromFirestone);
-      return List.unmodifiable(data.map((e) => SparkARUser.fromJson(e)));
-    } catch (e) {
-      print(e);
-      return [];
-    }
+    //try {
+    //  final data =
+    //      await checkCache('spark-ar-users-firestone', getDataFromFirestone);
+    //  return List.unmodifiable(data.map((e) => SparkARUser.fromJson(e)));
+    //} catch (e) {
+    //  print(e);
+    //  return [];
+    //}
+    return SparkARNetworkData.empty();
   }
 
   Future<List<Map<String, dynamic>>> getDataFromFirestone() async {

@@ -25,6 +25,11 @@ final users = Provider<List<SparkARUser>>(
     name: "Users Provider",
     dependencies: [sparkARDataProvider]);
 
+final effects = Provider<List<SparkAREffect>>(
+    (ref) => ref.watch(sparkARDataProvider).effects,
+    name: "Effects Provider",
+    dependencies: [sparkARDataProvider]);
+
 final preferiteEffects = Provider(
     (ref) => ref
         .watch(sparkARDataProvider)

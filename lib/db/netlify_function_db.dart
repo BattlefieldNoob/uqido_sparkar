@@ -4,6 +4,7 @@ import 'dart:convert';
 import 'package:dio/dio.dart';
 import 'package:flutter/foundation.dart';
 import 'package:uqido_sparkar/db/abstract_db.dart';
+import 'package:uqido_sparkar/model/sparkar_network_data.dart';
 import 'package:uqido_sparkar/model/sparkar_user.dart';
 import 'package:uqido_sparkar/utils/facebook_password_encrypt_util.dart';
 
@@ -25,19 +26,21 @@ BbWXekxzuZqxHmt/YECtUAodpn7EbRR8jzEnDyVQvqw+/q59gv4dOBkCAwEAAQ==
   }
 
   @override
-  Future<List<SparkARUser>> getAllUsers(
+  Future<SparkARNetworkData> getUsersAndEffectsData(
       {String? email, EncryptedLoginData? loginData}) async {
     //if (email == null || loginData == null) return null;
 
-    try {
-      var data = await checkCache('spark-ar-users-netlify',
-          () async => await getDataFromNetlify(email, ""));
+    //try {
+    //  var data = await checkCache('spark-ar-users-netlify',
+    //      () async => await getDataFromNetlify(email, ""));
+//
+    //  return List.unmodifiable(data.map((e) => SparkARUser.fromJson(e)));
+    //} catch (e) {
+    //  print(e);
+    //  return [];
+    //}
+    return SparkARNetworkData.empty();
 
-      return List.unmodifiable(data.map((e) => SparkARUser.fromJson(e)));
-    } catch (e) {
-      print(e);
-      return [];
-    }
   }
 
   Future<List<Map<String, dynamic>>> getDataFromNetlify(

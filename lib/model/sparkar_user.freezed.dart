@@ -21,7 +21,7 @@ class _$SparkARUserTearOff {
   const _$SparkARUserTearOff();
 
   _SparkARUser call(
-      String id, String name, String iconUrl, List<SparkAREffect> effects) {
+      String id, String name, String iconUrl, List<String> effects) {
     return _SparkARUser(
       id,
       name,
@@ -43,7 +43,7 @@ mixin _$SparkARUser {
   String get id => throw _privateConstructorUsedError;
   String get name => throw _privateConstructorUsedError;
   String get iconUrl => throw _privateConstructorUsedError;
-  List<SparkAREffect> get effects => throw _privateConstructorUsedError;
+  List<String> get effects => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -56,8 +56,7 @@ abstract class $SparkARUserCopyWith<$Res> {
   factory $SparkARUserCopyWith(
           SparkARUser value, $Res Function(SparkARUser) then) =
       _$SparkARUserCopyWithImpl<$Res>;
-  $Res call(
-      {String id, String name, String iconUrl, List<SparkAREffect> effects});
+  $Res call({String id, String name, String iconUrl, List<String> effects});
 }
 
 /// @nodoc
@@ -91,7 +90,7 @@ class _$SparkARUserCopyWithImpl<$Res> implements $SparkARUserCopyWith<$Res> {
       effects: effects == freezed
           ? _value.effects
           : effects // ignore: cast_nullable_to_non_nullable
-              as List<SparkAREffect>,
+              as List<String>,
     ));
   }
 }
@@ -103,8 +102,7 @@ abstract class _$SparkARUserCopyWith<$Res>
           _SparkARUser value, $Res Function(_SparkARUser) then) =
       __$SparkARUserCopyWithImpl<$Res>;
   @override
-  $Res call(
-      {String id, String name, String iconUrl, List<SparkAREffect> effects});
+  $Res call({String id, String name, String iconUrl, List<String> effects});
 }
 
 /// @nodoc
@@ -140,7 +138,7 @@ class __$SparkARUserCopyWithImpl<$Res> extends _$SparkARUserCopyWithImpl<$Res>
       effects == freezed
           ? _value.effects
           : effects // ignore: cast_nullable_to_non_nullable
-              as List<SparkAREffect>,
+              as List<String>,
     ));
   }
 }
@@ -160,7 +158,7 @@ class _$_SparkARUser implements _SparkARUser {
   @override
   final String iconUrl;
   @override
-  final List<SparkAREffect> effects;
+  final List<String> effects;
 
   @override
   bool operator ==(dynamic other) {
@@ -198,7 +196,7 @@ class _$_SparkARUser implements _SparkARUser {
 
 abstract class _SparkARUser implements SparkARUser {
   factory _SparkARUser(
-          String id, String name, String iconUrl, List<SparkAREffect> effects) =
+          String id, String name, String iconUrl, List<String> effects) =
       _$_SparkARUser;
 
   factory _SparkARUser.fromJson(Map<String, dynamic> json) =
@@ -211,7 +209,7 @@ abstract class _SparkARUser implements SparkARUser {
   @override
   String get iconUrl => throw _privateConstructorUsedError;
   @override
-  List<SparkAREffect> get effects => throw _privateConstructorUsedError;
+  List<String> get effects => throw _privateConstructorUsedError;
   @override
   @JsonKey(ignore: true)
   _$SparkARUserCopyWith<_SparkARUser> get copyWith =>

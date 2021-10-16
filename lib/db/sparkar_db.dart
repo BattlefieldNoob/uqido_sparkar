@@ -7,6 +7,7 @@ import 'package:flutter/foundation.dart';
 import 'package:uqido_sparkar/db/abstract_db.dart';
 import 'package:uqido_sparkar/db/rest_client.dart';
 import 'package:uqido_sparkar/model/sparkar_effect.dart';
+import 'package:uqido_sparkar/model/sparkar_network_data.dart';
 import 'package:uqido_sparkar/model/sparkar_user.dart';
 import 'package:uqido_sparkar/utils/facebook_password_encrypt_util.dart';
 
@@ -22,7 +23,7 @@ class SparkARDB with DBCache implements AbstractDB {
   }
 
   @override
-  Future<List<SparkARUser>> getAllUsers(
+  Future<SparkARNetworkData> getUsersAndEffectsData(
       {String? email, EncryptedLoginData? loginData}) async {
     //if (email != null && loginData != null) {
     //  //i must delete login data from cache
@@ -31,7 +32,7 @@ class SparkARDB with DBCache implements AbstractDB {
     //}
     //get actual facebook public keys from netlify function
 
-    try {
+    /*try {
       var tokenCookie = (await checkCache<Map<String, dynamic>>(
           'spark-ar-user-cookie', () async {
         if (loginData == null) return [];
@@ -70,7 +71,8 @@ class SparkARDB with DBCache implements AbstractDB {
     } catch (e) {
       print(e);
       return [];
-    }
+    }*/
+    return SparkARNetworkData.empty();
   }
 
   Future<List<Map<String, dynamic>>> getUsersAndEffectsByNetlify(
@@ -175,7 +177,7 @@ class SparkARDB with DBCache implements AbstractDB {
         );
       }).toList();
       if (effectsForUser.length != 0) {
-        usersAndEffects.add(user.copyWith(effects: effectsForUser));
+        //usersAndEffects.add(user.copyWith(effects: effectsForUser));
       }
     }
     return usersAndEffects;

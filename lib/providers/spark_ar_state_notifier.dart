@@ -11,23 +11,9 @@ class SparkARStateNotifier extends StateNotifier<SparkARNetworkData> {
   }
 
   Future<void> updateSparkARData() async {
-    List<SparkARUser>? users = [];
-    users = await db.getAllUsers();
-    if (users != null) {
-      if (users.isNotEmpty) {
-        print(db.toString() + " Runned successfully");
-      } else {
-        print(db.toString() + " Returned no data");
-      }
-    } else {
-      print(db.toString() + " Raised an error, could not retrieve data");
-    }
+    SparkARNetworkData data = await db.getUsersAndEffectsData();
 
-    if (users != null) {
-      final effects = users.expand((e) => e.effects).toList();
-
-      state = state.copyWith(users: users, effects: effects);
-    }
+    state = state.copyWith(users: data.users, effects: data.effects);
   }
 
   void toggleFavorite(String userId, String effectId) {

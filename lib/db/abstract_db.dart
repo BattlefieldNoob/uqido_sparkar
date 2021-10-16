@@ -1,10 +1,11 @@
 import 'package:flutter/foundation.dart';
 import 'package:flutter_cache/flutter_cache.dart' as cache;
+import 'package:uqido_sparkar/model/sparkar_network_data.dart';
 import 'package:uqido_sparkar/model/sparkar_user.dart';
 import 'package:uqido_sparkar/utils/facebook_password_encrypt_util.dart';
 
 abstract class AbstractDB {
-  Future<List<SparkARUser>> getAllUsers(
+  Future<SparkARNetworkData> getUsersAndEffectsData(
       {String? email, EncryptedLoginData? loginData});
 }
 

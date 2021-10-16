@@ -11,9 +11,12 @@ class AccountsTabBarView extends ConsumerWidget {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-    final state = ref.watch(sparkARDataProvider);
-    return TabBarView(
-      children: [...state.users.map((e) => MobileEffectsGrid(e.id, e.effects))],
-    );
+    final user = ref.read(users);
+    final effect = ref.watch(effects);
+
+    final tabViews = user.map((e) => MobileEffectsGrid(e.id,
+        effect.where((effect) => e.effects.contains(effect.id)).toList()));
+
+    return TabBarView(children: tabViews.toList());
   }
 }
