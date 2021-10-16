@@ -1,11 +1,12 @@
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:uqido_sparkar/model/sparkar_effect.dart';
+import 'package:uqido_sparkar/model/sparkar_network_data.dart';
 import 'package:uqido_sparkar/model/sparkar_user.dart';
 
-class SparkARStateNotifier extends StateNotifier<List<SparkARUser>> {
+class SparkARStateNotifier extends StateNotifier<SparkARNetworkData> {
   final db;
 
-  SparkARStateNotifier({required this.db}) : super([]) {
+  SparkARStateNotifier({required this.db}) : super(SparkARNetworkData.empty()) {
     updateSparkARData();
   }
 
@@ -22,20 +23,20 @@ class SparkARStateNotifier extends StateNotifier<List<SparkARUser>> {
       print(db.toString() + " Raised an error, could not retrieve data");
     }
 
-    if (users != null && users.isNotEmpty) state = users;
+    if (users != null) {
+      final effects = users.expand((e) => e.effects).toList();
+
+      state = state.copyWith(users: users, effects: effects);
+    }
   }
 
   void toggleFavorite(String userId, String effectId) {
-    state = [
-      for (SparkARUser user in state)
-        user.id != userId
-            ? user
-            : user.copyWith(effects: [
-                for (SparkAREffect effect in user.effects)
-                  effect.id != effectId
-                      ? effect
-                      : effect.copyWith(isPreferite: !effect.isPreferite)
-              ])
+    final editedEffects = [
+      for (SparkAREffect effect in state.effects)
+        effect.id != effectId
+            ? effect
+            : effect.copyWith(isPreferite: !effect.isPreferite)
     ];
+    state = state.copyWith(effects: editedEffects);
   }
 }

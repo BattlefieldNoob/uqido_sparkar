@@ -13,7 +13,7 @@ class AccountsTabBarView extends ConsumerWidget {
   Widget build(BuildContext context, WidgetRef ref) {
     final state = ref.watch(sparkARDataProvider);
     return TabBarView(
-      children: [...state.map((e) => MobileEffectsGrid(e.id, e.effects))],
+      children: [...state.users.map((e) => MobileEffectsGrid(e.id, e.effects))],
     );
   }
 }

@@ -26,55 +26,6 @@ void main() async {
 //      child: MaterialApp(theme: getTheme(), home: const Example())));
 //}
 
-class Example extends ConsumerWidget {
-  const Example();
-
-  @override
-  Widget build(BuildContext context, WidgetRef ref) {
-    return Material(
-        child: Column(children: [
-      IconButton(
-          onPressed: () =>
-              ref.read(sparkARDataProvider.notifier).updateSparkARData(),
-          icon: Icon(Icons.add)),
-      const Counter()
-    ]));
-  }
-}
-
-class Counter extends ConsumerWidget {
-  const Counter();
-
-  @override
-  Widget build(BuildContext context, WidgetRef ref) {
-    final state = ref.watch(sparkARDataProvider);
-    return SizedBox.square(
-        dimension: 200,
-        child: ListView.builder(
-          itemBuilder: (context, i) => ProviderScope(overrides: [
-            currentUserId.overrideWithValue(state[i].id),
-            currentEffect.overrideWithValue(state[i].effects[0])
-          ], child: const MyText()),
-          itemCount: state.length,
-        ));
-  }
-}
-
-class MyText extends ConsumerWidget {
-  const MyText();
-
-  @override
-  Widget build(BuildContext context, WidgetRef ref) {
-    final effect = ref.watch(currentEffect);
-    final userId = ref.read(currentUserId);
-    return GestureDetector(
-        onTap: () => ref
-            .read(sparkARDataProvider.notifier)
-            .toggleFavorite(userId, effect.id),
-        child: Text("${effect.name} ${effect.isPreferite}"));
-  }
-}
-
 class Logger extends ProviderObserver {
   @override
   void didUpdateProvider(

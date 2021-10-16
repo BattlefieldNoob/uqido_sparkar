@@ -10,7 +10,7 @@ class AccountsTabBar extends ConsumerWidget {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-    final state = ref.watch(sparkARDataProvider);
+    final state = ref.watch(users);
     final colorScheme = Theme
         .of(context)
         .colorScheme;
