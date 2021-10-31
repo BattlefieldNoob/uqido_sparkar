@@ -4,6 +4,8 @@ import 'dart:convert';
 import 'package:dio/dio.dart';
 import 'package:flutter/foundation.dart';
 import 'package:uqido_sparkar/db/abstract_db.dart';
+import 'package:uqido_sparkar/db/rest_client.dart';
+import 'package:uqido_sparkar/model/sparkar_effect.dart';
 import 'package:uqido_sparkar/model/sparkar_network_data.dart';
 import 'package:uqido_sparkar/model/sparkar_user.dart';
 import 'package:uqido_sparkar/utils/facebook_password_encrypt_util.dart';
@@ -19,7 +21,9 @@ BbWXekxzuZqxHmt/YECtUAodpn7EbRR8jzEnDyVQvqw+/q59gv4dOBkCAwEAAQ==
 
   static final NetlifyFunctionDB _instance = NetlifyFunctionDB._internal();
 
-  NetlifyFunctionDB._internal();
+  final RestClient _restClient;
+
+  NetlifyFunctionDB._internal() : _restClient = RestClient(Dio());
 
   factory NetlifyFunctionDB.getInstance() {
     return _instance;
@@ -28,26 +32,27 @@ BbWXekxzuZqxHmt/YECtUAodpn7EbRR8jzEnDyVQvqw+/q59gv4dOBkCAwEAAQ==
   @override
   Future<SparkARNetworkData> getUsersAndEffectsData(
       {String? email, EncryptedLoginData? loginData}) async {
-    //if (email == null || loginData == null) return null;
+    if (email == null || loginData == null) return SparkARNetworkData.empty();
 
-    //try {
-    //  var data = await checkCache('spark-ar-users-netlify',
-    //      () async => await getDataFromNetlify(email, ""));
-//
-    //  return List.unmodifiable(data.map((e) => SparkARUser.fromJson(e)));
-    //} catch (e) {
-    //  print(e);
-    //  return [];
-    //}
-    return SparkARNetworkData.empty();
+    try {
+      //var data = await checkCache('spark-ar-users-netlify',
+      //    () async => await getDataFromNetlify(email, ""));
 
-  }
+      final cookies = await _restClient.getCookiesWithEncryptedLoginData(loginData.encpass, loginData.lsd, email);
+      print(cookies);
+      if(cookies.data==null)
+        return SparkARNetworkData.empty();
 
-  Future<List<Map<String, dynamic>>> getDataFromNetlify(
-      String? encryptedEmail, String? encryptedPassword) async {
-      debugPrint("aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa");
-      final body = FAKE_DATA;
-      final data = jsonDecode(body) as List<dynamic>;
-      return data.map((e) => e as Map<String, dynamic>).toList();
+      final data = await _restClient.getUsersAndEffectWithCookie(cookies.data!.cookie);
+      print(data);
+
+      if(data.data!=null)
+        return data.data!;
+      else
+        return SparkARNetworkData.empty();
+    } catch (e) {
+      print(e);
+      return SparkARNetworkData.empty();
+    }
   }
 }

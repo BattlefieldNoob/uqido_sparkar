@@ -48,14 +48,19 @@ Widget mobileHomePageAppBar(BuildContext context) {
 
 @swidget
 Widget mobileHomePageBody(BuildContext context) {
-  return Column(
-    crossAxisAlignment: CrossAxisAlignment.start,
-    children: [
-      Padding(
-        child: "Effects".h2,
-        padding: EdgeInsets.symmetric(horizontal: 24, vertical: 8),
-      ),
-      Expanded(child: const AccountsTabBarView())
-    ],
-  );
+
+  return Center(
+      child: ConstrainedBox(
+          //constraints: BoxConstraints.tightFor(width: 85.w),
+          constraints: BoxConstraints.tightFor(width: 1532),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Padding(
+                child: "Effects".h2,
+                padding: EdgeInsets.symmetric(horizontal: 24, vertical: 8),
+              ),
+              Expanded(child: const AccountsTabBarView())
+            ],
+          )));
 }

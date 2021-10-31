@@ -18,4 +18,26 @@ class SparkARNetworkData with _$SparkARNetworkData {
   String toString() {
     return "SparkARNetworkData($users,$effects)";
   }
+
+  factory SparkARNetworkData.fromJson(Map<String, dynamic> json) {
+    final jsonResult = json['usersAndEffects'] as List<dynamic>;
+
+    final users = jsonResult
+        .map((user) => SparkARUser(
+            user.id,
+            user.name,
+            user.iconUrl,
+            (user['effects'] as List<dynamic>)
+                .map((e) => e['id'] as String)
+                .toList()))
+        .toList();
+
+    //TODO remove after editing BE
+    final effects = jsonResult
+        .expand((user) => user['effects'] as List<dynamic>)
+        .map((effect) => SparkAREffect.fromJson(effect))
+        .toList();
+
+    return SparkARNetworkData(users, effects);
+  }
 }

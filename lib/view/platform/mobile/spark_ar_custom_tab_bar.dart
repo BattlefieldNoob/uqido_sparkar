@@ -19,7 +19,10 @@ class SparkARCustomTabBar extends StatelessWidget
   @override
   Widget build(BuildContext context) {
     return PreferredSize(
-      child: Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
+      child: ConstrainedBox(
+        //constraints: BoxConstraints.tightFor(width: 85.w),
+        constraints: BoxConstraints.tightFor(width: 1532),
+          child:Column(crossAxisAlignment: CrossAxisAlignment.stretch, children: [
         Padding(
           padding: const EdgeInsets.fromLTRB(24.0, 0.0, 100.0, 0.0),
           child: "Good Evening".h1,
@@ -28,11 +31,11 @@ class SparkARCustomTabBar extends StatelessWidget
           child: "Accounts".h2,
           padding: const EdgeInsets.symmetric(horizontal: 24, vertical: 16),
         ),
-        const AccountsTabBar(),
+        Center(child:const AccountsTabBar()),
         const SizedBox(
           height: 8,
         )
-      ]),
+      ])),
       preferredSize: preferredSize,
     );
   }

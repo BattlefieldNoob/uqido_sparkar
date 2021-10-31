@@ -2,6 +2,7 @@ import 'dart:convert';
 import 'dart:typed_data';
 
 import 'package:dio/dio.dart';
+import 'package:uqido_sparkar/db/models/public_keys_response.dart';
 import 'package:uqido_sparkar/db/rest_client.dart';
 import 'package:webcrypto/webcrypto.dart';
 
@@ -17,30 +18,27 @@ Future<EncryptedLoginData> getEncryptedPasswordAndLoginData(
   final RestClient client = RestClient(Dio());
 
   //get public keys for encrypt
-  var encryptdata = (await client.getPublicKeys() as Map<String,dynamic>)["data"];
-  var data = encryptdata;
+  var encryptdata = await client.getPublicKeys();
+  var data = encryptdata.data;
+  print(data);
+  var encpass = await _passwordEncrypt(unencryptedPassword, data!);
 
-  var encpass = await _passwordEncrypt(unencryptedPassword, data);
-
-  return EncryptedLoginData(data['lsd'], encpass);
+  return EncryptedLoginData(data.lsd, encpass);
 }
 
-Future<String> _passwordEncrypt(String password, dynamic encryption) async {
-  final publicKey = (encryption['encryption'] as dynamic)!['publickey'];
-  final keyId =
-      int.parse((encryption['encryption'] as dynamic)!['keyId'] as String);
-  final seal =
-      (encryption['seal'] as Map<dynamic, dynamic>).values.cast<int>().toList();
-  final key = encryption['generatedKey'];
-  final raw =
-      (encryption['raw'] as Map<dynamic, dynamic>).values.cast<int>().toList();
+Future<String> _passwordEncrypt(String password, PublicKeysResponse encryption) async {
+  final publicKey = encryption.encryption.publicKey;
+  final keyId = encryption.encryption.keyId;
+  final seal = encryption.seal.values.cast<int>().toList();
+  final key = encryption.generatedKey;
+  final raw = encryption.raw.values.cast<int>().toList();
   var date = (DateTime.now().millisecondsSinceEpoch / 1e3).floor().toString();
   return await _encryptPassword(
-      keyId, publicKey, password, date, seal, key, raw);
+      int.parse(keyId), publicKey, password, date, seal, key, raw);
 }
 
-Future<String> _encryptPassword(a, publicKey, String password, String date,
-    List<int> seal, keyy, List<int> raw) async {
+Future<String> _encryptPassword(int a, String publicKey, String password, String date,
+    List<int> seal, GeneratedKeyField keyy, List<int> raw) async {
   var f, g, passwordBytes, dateBytes;
   f = "#PWD_BROWSER";
   g = 5;
@@ -51,8 +49,8 @@ Future<String> _encryptPassword(a, publicKey, String password, String date,
   return [f, g, date, base64Encode(key)].join(":");
 }
 
-Future<Uint8List> _encrypt(a, publicKey, passwordBytes, dateBytes,
-    List<int> seal, key, List<int> raw) async {
+Future<Uint8List> _encrypt(int a, String publicKey, List<int> passwordBytes, List<int> dateBytes,
+    List<int> seal, GeneratedKeyField key, List<int> raw) async {
   var f, s, u, v, w, x;
   var h = 64,
       i = 1,
@@ -90,10 +88,10 @@ Future<Uint8List> _encrypt(a, publicKey, passwordBytes, dateBytes,
   if (end < 0) {
     end = b.length - o;
   }
-  a = b.sublist(b.length - o);
+  final c = b.sublist(b.length - o);
   b = b.sublist(0, b.length - o);
   //t.set(a, u);
-  t.setAll(u, a);
+  t.setAll(u, c);
   u += o;
   //t.set(b, u);
   t.setAll(u, b);

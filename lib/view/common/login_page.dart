@@ -36,7 +36,7 @@ class LoginPage extends StatelessWidget {
   }
 
   Future<String?> _authUser(LoginData data, BuildContext context) async {
-    var encryptedData = await getEncryptedPasswordAndLoginData(data.password);
+    //var encryptedData = await getEncryptedPasswordAndLoginData(data.password);
 
     //context
     //    .read<SparkARBloc>()

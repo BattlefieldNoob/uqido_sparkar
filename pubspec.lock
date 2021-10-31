@@ -596,7 +596,7 @@ packages:
       name: responsive_framework
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "0.1.4"
+    version: "0.1.5"
   retrofit:
     dependency: "direct main"
     description:
@@ -829,9 +829,11 @@ packages:
   webcrypto:
     dependency: "direct main"
     description:
-      name: webcrypto
-      url: "https://pub.dartlang.org"
-    source: hosted
+      path: "."
+      ref: "0.5.2-fix"
+      resolved-ref: "9717a4ad367053a31d0a2fda308d98e83466636f"
+      url: "https://github.com/tauu/webcrypto.dart"
+    source: git
     version: "0.5.2"
   win32:
     dependency: transitive

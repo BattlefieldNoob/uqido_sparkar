@@ -1,28 +1,46 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:one_context/one_context.dart';
+import 'package:uqido_sparkar/db/abstract_db.dart';
 import 'package:uqido_sparkar/db/mock/mock_db.dart';
+import 'package:uqido_sparkar/db/netlify_function_db.dart';
 import 'package:uqido_sparkar/providers/spark_ar_data_provider.dart';
+import 'package:uqido_sparkar/utils/facebook_password_encrypt_util.dart';
 import 'package:uqido_sparkar/view/common/app_breakpoints.dart';
 import 'package:uqido_sparkar/view/common/app_theme.dart';
 import 'package:uqido_sparkar/view/platform/mobile/mobile_home_page.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
-  runApp(ProviderScope(
-      observers: [Logger()],
-      child: MaterialApp(
-          builder: OneContext().builder,
-          theme: getTheme(),
-          home: const MobileHomePage())));
+  runApp(ProviderScope(observers: [
+    Logger()
+  ], overrides: [
+    repositoryProvider.overrideWithValue(NetlifyFunctionDB.getInstance())
+  ], child: MaterialApp(home: Example())));
 }
 
-//void main() async {
-//  WidgetsFlutterBinding.ensureInitialized();
-//  runApp(ProviderScope(
-//      observers: [Logger()],
-//      child: MaterialApp(theme: getTheme(), home: const Example())));
-//}
+class Example extends ConsumerWidget {
+  @override
+  Widget build(BuildContext context, WidgetRef ref) {
+    final repo = ref.read(repositoryProvider);
+
+    return FutureBuilder(
+        future: getData(repo), builder: (context, snapshot) => Text("HELLO!"));
+  }
+
+  Future<void> getData(AbstractDB db) async {
+    final encryptedData =
+        await getEncryptedPasswordAndLoginData("b]an<A5}]2wX[PM=");
+
+    print(encryptedData.encpass);
+    print(encryptedData.lsd);
+
+    final result = await db.getUsersAndEffectsData(
+        email: "antonio.ruggiero93@hotmail.it", loginData: encryptedData);
+
+    print(result);
+  }
+}
 
 class Logger extends ProviderObserver {
   @override

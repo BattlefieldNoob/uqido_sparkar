@@ -14,7 +14,11 @@ void main() async {
   runApp(ProviderScope(
       observers: [Logger()],
       child: MaterialApp(
-          builder: OneContext().builder,
+          builder: (context, child) {
+            child = OneContext().builder(context, child);
+            child = getResponsiveBreakpointsBuilder()(context, child);
+            return child;
+          },
           theme: getTheme(),
           home: const MobileHomePage())));
 }

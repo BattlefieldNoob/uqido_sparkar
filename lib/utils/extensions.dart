@@ -27,3 +27,8 @@ extension TextWidgets on String {
 
   Widget themeB2(ThemeData theme) => Text(this, style: theme.textTheme.bodyText2);
 }
+
+
+extension Doubles on int{
+  double get w => (OneContext().mediaQuery.size.width * this) / 100;
+}
