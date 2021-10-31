@@ -17,8 +17,6 @@ class UserEffectDetail extends StatelessWidget {
     return ListView.builder(
         padding: const EdgeInsets.fromLTRB(16, 6, 16, 64),
         itemCount: effects.length,
-        itemBuilder: (context, index) => EffectListItem(
-              effect: effects[index],
-            ));
+        itemBuilder: (context, index) => EffectGridItem());
   }
 }

@@ -1,16 +1,19 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
+import 'package:uqido_sparkar/utils/extensions.dart';
 
 part 'effect_visibility_status.viewmodel.dart';
 
 class EffectVisibilityStatus extends StatelessWidget {
-  final String submissionStatus;
-  final String visibilityStatus;
-  final bool isDeprecated;
+  final Color circleColor;
+  final String status;
 
   EffectVisibilityStatus(
-      this.submissionStatus, this.visibilityStatus, this.isDeprecated);
+      String submissionStatus, String visibilityStatus, bool isDeprecated):
+      circleColor = mapStatusToColor(visibilityStatus, submissionStatus, isDeprecated),
+      status = mapStatusToText(visibilityStatus, submissionStatus, isDeprecated);
+
 
   @override
   Widget build(BuildContext context) {
@@ -19,15 +22,13 @@ class EffectVisibilityStatus extends StatelessWidget {
         width: 1,
       ),
       CircleAvatar(
-        backgroundColor:
-            mapStatusToColor(visibilityStatus, submissionStatus, isDeprecated),
-        radius: 4,
+        backgroundColor: circleColor,
+        radius: 5,
       ),
       const SizedBox(
         width: 4,
       ),
-      Text(mapStatusToText(visibilityStatus, submissionStatus, isDeprecated),
-          style: const TextStyle(height: 1.1, fontSize: 12))
+      status.b2
     ]);
   }
 }

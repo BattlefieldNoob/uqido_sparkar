@@ -16,6 +16,7 @@ _$_SparkAREffect _$_$_SparkAREffectFromJson(Map<String, dynamic> json) {
     json['testLink'] as String,
     json['publicLink'] as String,
     json['iconUrl'] as String,
+    isPreferite: json['isPreferite'] as bool? ?? false,
   );
 }
 
@@ -29,4 +30,5 @@ Map<String, dynamic> _$_$_SparkAREffectToJson(_$_SparkAREffect instance) =>
       'testLink': instance.testLink,
       'publicLink': instance.publicLink,
       'iconUrl': instance.iconUrl,
+      'isPreferite': instance.isPreferite,
     };

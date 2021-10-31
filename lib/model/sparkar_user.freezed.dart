@@ -12,26 +12,18 @@ T _$identity<T>(T value) => value;
 final _privateConstructorUsedError = UnsupportedError(
     'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more informations: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
 
-SparkARUser _$SparkARUserFromJson(Map<String, dynamic> json) {
-  return _SparkARUser.fromJson(json);
-}
-
 /// @nodoc
 class _$SparkARUserTearOff {
   const _$SparkARUserTearOff();
 
   _SparkARUser call(
-      String id, String name, String iconUrl, List<SparkAREffect> effects) {
+      String id, String name, String iconUrl, List<String> effects) {
     return _SparkARUser(
       id,
       name,
       iconUrl,
       effects,
     );
-  }
-
-  SparkARUser fromJson(Map<String, Object> json) {
-    return SparkARUser.fromJson(json);
   }
 }
 
@@ -43,9 +35,8 @@ mixin _$SparkARUser {
   String get id => throw _privateConstructorUsedError;
   String get name => throw _privateConstructorUsedError;
   String get iconUrl => throw _privateConstructorUsedError;
-  List<SparkAREffect> get effects => throw _privateConstructorUsedError;
+  List<String> get effects => throw _privateConstructorUsedError;
 
-  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
   $SparkARUserCopyWith<SparkARUser> get copyWith =>
       throw _privateConstructorUsedError;
@@ -56,8 +47,7 @@ abstract class $SparkARUserCopyWith<$Res> {
   factory $SparkARUserCopyWith(
           SparkARUser value, $Res Function(SparkARUser) then) =
       _$SparkARUserCopyWithImpl<$Res>;
-  $Res call(
-      {String id, String name, String iconUrl, List<SparkAREffect> effects});
+  $Res call({String id, String name, String iconUrl, List<String> effects});
 }
 
 /// @nodoc
@@ -76,11 +66,22 @@ class _$SparkARUserCopyWithImpl<$Res> implements $SparkARUserCopyWith<$Res> {
     Object? effects = freezed,
   }) {
     return _then(_value.copyWith(
-      id: id == freezed ? _value.id : id as String,
-      name: name == freezed ? _value.name : name as String,
-      iconUrl: iconUrl == freezed ? _value.iconUrl : iconUrl as String,
-      effects:
-          effects == freezed ? _value.effects : effects as List<SparkAREffect>,
+      id: id == freezed
+          ? _value.id
+          : id // ignore: cast_nullable_to_non_nullable
+              as String,
+      name: name == freezed
+          ? _value.name
+          : name // ignore: cast_nullable_to_non_nullable
+              as String,
+      iconUrl: iconUrl == freezed
+          ? _value.iconUrl
+          : iconUrl // ignore: cast_nullable_to_non_nullable
+              as String,
+      effects: effects == freezed
+          ? _value.effects
+          : effects // ignore: cast_nullable_to_non_nullable
+              as List<String>,
     ));
   }
 }
@@ -92,8 +93,7 @@ abstract class _$SparkARUserCopyWith<$Res>
           _SparkARUser value, $Res Function(_SparkARUser) then) =
       __$SparkARUserCopyWithImpl<$Res>;
   @override
-  $Res call(
-      {String id, String name, String iconUrl, List<SparkAREffect> effects});
+  $Res call({String id, String name, String iconUrl, List<String> effects});
 }
 
 /// @nodoc
@@ -114,22 +114,30 @@ class __$SparkARUserCopyWithImpl<$Res> extends _$SparkARUserCopyWithImpl<$Res>
     Object? effects = freezed,
   }) {
     return _then(_SparkARUser(
-      id == freezed ? _value.id : id as String,
-      name == freezed ? _value.name : name as String,
-      iconUrl == freezed ? _value.iconUrl : iconUrl as String,
-      effects == freezed ? _value.effects : effects as List<SparkAREffect>,
+      id == freezed
+          ? _value.id
+          : id // ignore: cast_nullable_to_non_nullable
+              as String,
+      name == freezed
+          ? _value.name
+          : name // ignore: cast_nullable_to_non_nullable
+              as String,
+      iconUrl == freezed
+          ? _value.iconUrl
+          : iconUrl // ignore: cast_nullable_to_non_nullable
+              as String,
+      effects == freezed
+          ? _value.effects
+          : effects // ignore: cast_nullable_to_non_nullable
+              as List<String>,
     ));
   }
 }
 
-@JsonSerializable()
-
 /// @nodoc
+
 class _$_SparkARUser implements _SparkARUser {
   _$_SparkARUser(this.id, this.name, this.iconUrl, this.effects);
-
-  factory _$_SparkARUser.fromJson(Map<String, dynamic> json) =>
-      _$_$_SparkARUserFromJson(json);
 
   @override
   final String id;
@@ -138,12 +146,7 @@ class _$_SparkARUser implements _SparkARUser {
   @override
   final String iconUrl;
   @override
-  final List<SparkAREffect> effects;
-
-  @override
-  String toString() {
-    return 'SparkARUser(id: $id, name: $name, iconUrl: $iconUrl, effects: $effects)';
-  }
+  final List<String> effects;
 
   @override
   bool operator ==(dynamic other) {
@@ -172,20 +175,12 @@ class _$_SparkARUser implements _SparkARUser {
   @override
   _$SparkARUserCopyWith<_SparkARUser> get copyWith =>
       __$SparkARUserCopyWithImpl<_SparkARUser>(this, _$identity);
-
-  @override
-  Map<String, dynamic> toJson() {
-    return _$_$_SparkARUserToJson(this);
-  }
 }
 
 abstract class _SparkARUser implements SparkARUser {
   factory _SparkARUser(
-          String id, String name, String iconUrl, List<SparkAREffect> effects) =
+          String id, String name, String iconUrl, List<String> effects) =
       _$_SparkARUser;
-
-  factory _SparkARUser.fromJson(Map<String, dynamic> json) =
-      _$_SparkARUser.fromJson;
 
   @override
   String get id => throw _privateConstructorUsedError;
@@ -194,7 +189,7 @@ abstract class _SparkARUser implements SparkARUser {
   @override
   String get iconUrl => throw _privateConstructorUsedError;
   @override
-  List<SparkAREffect> get effects => throw _privateConstructorUsedError;
+  List<String> get effects => throw _privateConstructorUsedError;
   @override
   @JsonKey(ignore: true)
   _$SparkARUserCopyWith<_SparkARUser> get copyWith =>

@@ -1,9 +1,10 @@
 import 'dart:async';
-import 'dart:convert';
 
-import 'package:http/http.dart' as http;
+import 'package:dio/dio.dart';
 import 'package:uqido_sparkar/db/abstract_db.dart';
-import 'package:uqido_sparkar/model/sparkar_user.dart';
+import 'package:uqido_sparkar/db/rest_client.dart';
+import 'package:uqido_sparkar/model/sparkar_network_data.dart';
+import 'package:uqido_sparkar/utils/facebook_password_encrypt_util.dart';
 
 class NetlifyFunctionDB with DBCache implements AbstractDB {
   static const String FAKE_DATA =
@@ -16,42 +17,38 @@ BbWXekxzuZqxHmt/YECtUAodpn7EbRR8jzEnDyVQvqw+/q59gv4dOBkCAwEAAQ==
 
   static final NetlifyFunctionDB _instance = NetlifyFunctionDB._internal();
 
-  NetlifyFunctionDB._internal();
+  final RestClient _restClient;
+
+  NetlifyFunctionDB._internal() : _restClient = RestClient(Dio());
 
   factory NetlifyFunctionDB.getInstance() {
     return _instance;
   }
 
   @override
-  Future<List<SparkARUser>?> getAllUsers(
-      String encryptedEmail, String encryptedPassword) async {
-    try {
-      var data = await checkCache(
-          'spark-ar-users-netlify',
-          () async =>
-              await getDataFromNetlify(encryptedEmail, encryptedPassword));
+  Future<SparkARNetworkData> getUsersAndEffectsData(
+      {String? email, EncryptedLoginData? loginData}) async {
+    if (email == null || loginData == null) return SparkARNetworkData.empty();
 
-      return List.unmodifiable(data.map((e) => SparkARUser.fromJson(e)));
+    try {
+      //var data = await checkCache('spark-ar-users-netlify',
+      //    () async => await getDataFromNetlify(email, ""));
+
+      final cookies = await _restClient.getCookiesWithEncryptedLoginData(loginData.encpass, loginData.lsd, email);
+      print(cookies);
+      if(cookies.data==null)
+        return SparkARNetworkData.empty();
+
+      final data = await _restClient.getUsersAndEffectWithCookie(cookies.data!.cookie);
+      print(data);
+
+      if(data.data!=null)
+        return data.data!;
+      else
+        return SparkARNetworkData.empty();
     } catch (e) {
       print(e);
-      return null;
+      return SparkARNetworkData.empty();
     }
-  }
-
-  Future<List<Map<String, dynamic>>> getDataFromNetlify(
-      String encryptedEmail, String encryptedPassword) async {
-    //if (kReleaseMode) {
-    final response = await http.get(Uri.https(
-        'sparkar-token-crawler.netlify.app',
-        '.netlify/functions/sparkar_fetch',
-        {"encemail": encryptedEmail, "encpass": encryptedPassword}));
-
-    final data = jsonDecode(response.body) as List<dynamic>;
-    return data.map((e) => e as Map<String, dynamic>).toList();
-    /*} else {
-      final body = FAKE_DATA;
-      final data = jsonDecode(body) as List<dynamic>;
-      return data.map((e) => e as Map<String, dynamic>).toList();
-    }*/
   }
 }

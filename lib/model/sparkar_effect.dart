@@ -1,7 +1,9 @@
+import 'package:flutter/foundation.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:json_annotation/json_annotation.dart';
 
 part 'sparkar_effect.freezed.dart';
+
 part 'sparkar_effect.g.dart';
 
 @freezed
@@ -14,8 +16,14 @@ class SparkAREffect with _$SparkAREffect {
       bool isDeprecated,
       String testLink,
       String publicLink,
-      String iconUrl) = _SparkAREffect;
+      String iconUrl,
+      {@Default(false) bool isPreferite}) = _SparkAREffect;
 
   factory SparkAREffect.fromJson(Map<String, dynamic> json) =>
       _$SparkAREffectFromJson(json);
+
+  @override
+  String toString() {
+    return "SparkAREffect($id,$name)";
+  }
 }
