@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:uqido_sparkar/model/sparkar_user.dart';
 import 'package:uqido_sparkar/utils/extensions.dart';
-import 'package:uqido_sparkar/view/platform/mobile/accounts_tab_bar.dart';
+import 'package:uqido_sparkar/view/widgets/accounts_tab_bar.dart';
 
 part 'spark_ar_custom_tab_bar.viewmodel.dart';
 

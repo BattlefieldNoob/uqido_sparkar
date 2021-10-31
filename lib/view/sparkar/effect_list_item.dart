@@ -8,7 +8,7 @@ import 'package:functional_widget_annotation/functional_widget_annotation.dart';
 import 'package:uqido_sparkar/model/sparkar_effect.dart';
 import 'package:uqido_sparkar/providers/spark_ar_data_provider.dart';
 import 'package:uqido_sparkar/utils/extensions.dart';
-import 'package:uqido_sparkar/view/platform/mobile/widgets/squared_card.dart';
+import 'package:uqido_sparkar/view/widgets/squared_card.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 import 'effect_visibility_status.dart';
