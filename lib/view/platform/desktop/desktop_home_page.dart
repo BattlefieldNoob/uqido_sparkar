@@ -5,7 +5,6 @@ import 'package:functional_widget_annotation/functional_widget_annotation.dart';
 import 'package:uqido_sparkar/model/sparkar_user.dart';
 import 'package:uqido_sparkar/utils/extensions.dart';
 import 'package:uqido_sparkar/view/common/home_app_bar.dart';
-import 'package:uqido_sparkar/view/common/login_page.dart';
 import 'package:uqido_sparkar/view/sparkar/user_effects_detail.dart';
 
 import 'desktop_navigation_rail.dart';

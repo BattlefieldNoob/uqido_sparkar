@@ -3,12 +3,9 @@ import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:functional_widget_annotation/functional_widget_annotation.dart';
-import 'package:uqido_sparkar/model/sparkar_user.dart';
 import 'package:uqido_sparkar/providers/spark_ar_data_provider.dart';
 import 'package:uqido_sparkar/utils/extensions.dart';
-import 'package:uqido_sparkar/view/common/login_page.dart';
 import 'package:uqido_sparkar/view/platform/mobile/accounts_tab_bar_view.dart';
-import 'package:uqido_sparkar/view/platform/mobile/mobile_effects_grid.dart';
 import 'package:uqido_sparkar/view/platform/mobile/spark_ar_custom_tab_bar.dart';
 
 part 'mobile_home_page.g.dart';
@@ -42,13 +39,17 @@ Widget mobileHomePageAppBar(BuildContext context) {
               onPressed: () => {}, icon: const Icon(Icons.account_circle)))
     ],
     elevation: 0,
-    bottom: SparkARCustomTabBar(),
+    bottom: PreferredSize(
+      preferredSize: Size(0.0, 80.0),
+        child: ConstrainedBox(
+            //constraints: BoxConstraints.tightFor(width: 85.w),
+            constraints: BoxConstraints.tightFor(width: 1532),
+            child: SparkARCustomTabBar())),
   );
 }
 
 @swidget
 Widget mobileHomePageBody(BuildContext context) {
-
   return Center(
       child: ConstrainedBox(
           //constraints: BoxConstraints.tightFor(width: 85.w),

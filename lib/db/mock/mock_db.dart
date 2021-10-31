@@ -2,11 +2,8 @@ import 'dart:async';
 import 'dart:convert';
 import 'dart:core';
 
-import 'package:dio/dio.dart';
-import 'package:flutter/foundation.dart';
 import 'package:flutter/services.dart';
 import 'package:uqido_sparkar/db/abstract_db.dart';
-import 'package:uqido_sparkar/db/rest_client.dart';
 import 'package:uqido_sparkar/model/sparkar_effect.dart';
 import 'package:uqido_sparkar/model/sparkar_network_data.dart';
 import 'package:uqido_sparkar/model/sparkar_user.dart';

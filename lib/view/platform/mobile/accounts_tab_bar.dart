@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:uqido_sparkar/model/sparkar_user.dart';
 import 'package:uqido_sparkar/providers/spark_ar_data_provider.dart';
 import 'package:uqido_sparkar/view/platform/mobile/widgets/account_tab.dart';
 

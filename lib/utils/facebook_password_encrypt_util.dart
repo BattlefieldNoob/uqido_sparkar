@@ -51,9 +51,8 @@ Future<String> _encryptPassword(int a, String publicKey, String password, String
 
 Future<Uint8List> _encrypt(int a, String publicKey, List<int> passwordBytes, List<int> dateBytes,
     List<int> seal, GeneratedKeyField key, List<int> raw) async {
-  var f, s, u, v, w, x;
-  var h = 64,
-      i = 1,
+  var f, u;
+  var i = 1,
       j = 1,
       k = 1,
       l = 48,

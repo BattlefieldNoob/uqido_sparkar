@@ -3,7 +3,6 @@ import 'dart:async';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:uqido_sparkar/db/abstract_db.dart';
 import 'package:uqido_sparkar/model/sparkar_network_data.dart';
-import 'package:uqido_sparkar/model/sparkar_user.dart';
 import 'package:uqido_sparkar/utils/facebook_password_encrypt_util.dart';
 
 class FirestoreDB with DBCache implements AbstractDB {

@@ -1,5 +1,4 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
-import 'package:uqido_sparkar/model/sparkar_effect.dart';
 
 part 'sparkar_user.freezed.dart';
 

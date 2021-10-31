@@ -30,7 +30,10 @@ class MobileEffectsGrid extends StatelessWidget {
       return GridView.builder(
         padding: const EdgeInsets.fromLTRB(16, 8, 16, 0),
         gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-            crossAxisCount: columns, crossAxisSpacing: 16, mainAxisSpacing: 16),
+            crossAxisCount: columns,
+            crossAxisSpacing: 16,
+            mainAxisSpacing: 16,
+            childAspectRatio: 1.2),
         itemCount: effects.length,
         itemBuilder: (context, index) => ProviderScope(
             overrides: [currentEffect.overrideWithValue(effects[index])],

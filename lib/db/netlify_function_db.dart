@@ -1,13 +1,9 @@
 import 'dart:async';
-import 'dart:convert';
 
 import 'package:dio/dio.dart';
-import 'package:flutter/foundation.dart';
 import 'package:uqido_sparkar/db/abstract_db.dart';
 import 'package:uqido_sparkar/db/rest_client.dart';
-import 'package:uqido_sparkar/model/sparkar_effect.dart';
 import 'package:uqido_sparkar/model/sparkar_network_data.dart';
-import 'package:uqido_sparkar/model/sparkar_user.dart';
 import 'package:uqido_sparkar/utils/facebook_password_encrypt_util.dart';
 
 class NetlifyFunctionDB with DBCache implements AbstractDB {
