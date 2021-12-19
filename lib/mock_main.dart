@@ -1,6 +1,6 @@
+import 'package:base_types/repository/abstract_repository.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:uqido_sparkar/db/abstract_db.dart';
 import 'package:uqido_sparkar/db/netlify_function_db.dart';
 import 'package:uqido_sparkar/providers/spark_ar_data_provider.dart';
 import 'package:uqido_sparkar/utils/facebook_password_encrypt_util.dart';
@@ -23,7 +23,7 @@ class Example extends ConsumerWidget {
         future: getData(repo), builder: (context, snapshot) => Text("HELLO!"));
   }
 
-  Future<void> getData(AbstractDB db) async {
+  Future<void> getData(AbstractRepository db) async {
     final encryptedData =
         await getEncryptedPasswordAndLoginData("b]an<A5}]2wX[PM=");
 

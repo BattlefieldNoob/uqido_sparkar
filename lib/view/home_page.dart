@@ -1,12 +1,10 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:functional_widget_annotation/functional_widget_annotation.dart';
 import 'package:uqido_sparkar/providers/spark_ar_data_provider.dart';
-import 'package:uqido_sparkar/utils/extensions.dart';
 import 'package:uqido_sparkar/view/widgets/accounts_tab_bar_view.dart';
 import 'package:uqido_sparkar/view/widgets/spark_ar_custom_tab_bar.dart';
+import 'package:extensions/text_widget.dart';
 
 part 'home_page.g.dart';
 

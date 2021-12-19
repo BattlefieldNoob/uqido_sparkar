@@ -1,15 +1,11 @@
-import 'package:flutter/cupertino.dart';
-import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/rendering.dart';
-import 'package:flutter/widgets.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:functional_widget_annotation/functional_widget_annotation.dart';
 import 'package:uqido_sparkar/model/sparkar_effect.dart';
 import 'package:uqido_sparkar/providers/spark_ar_data_provider.dart';
-import 'package:uqido_sparkar/utils/extensions.dart';
-import 'package:uqido_sparkar/view/widgets/squared_card.dart';
+import 'package:extensions/text_widget.dart';
 import 'package:url_launcher/url_launcher.dart';
+import 'package:widgets/squared_card.dart';
 
 import 'effect_visibility_status.dart';
 
@@ -39,13 +35,9 @@ class EffectGridItem extends ConsumerWidget {
                     .toggleFavorite(effect.id),
                 icon: Icon(effect.isPreferite ? Icons.star : Icons.star_border))
           ]),
-          const SizedBox.square(
-            dimension: 8,
-          ),
+          spacing(),
           effect.name.b1,
-          const SizedBox.square(
-            dimension: 8,
-          ),
+          spacing(),
           EffectVisibilityStatus(effect.submissionStatus,
               effect.visibilityStatus, effect.isDeprecated),
         ],
@@ -59,6 +51,12 @@ class EffectGridItem extends ConsumerWidget {
         ClickableIcon(Icons.home, effect.testLink, primary: false)
       ],
     );
+  }
+
+  SizedBox spacing() {
+    return const SizedBox.square(
+          dimension: 8,
+        );
   }
 }
 

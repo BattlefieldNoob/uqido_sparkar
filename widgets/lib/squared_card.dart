@@ -1,11 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 
 class SquaredCard extends StatelessWidget {
   final Widget body;
   final List<Widget> footerWidgets;
 
-  SquaredCard({Key? key, required this.body, required this.footerWidgets})
+  const SquaredCard({Key? key, required this.body, required this.footerWidgets})
       : super(key: key);
 
   @override

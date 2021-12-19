@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 class CircleImage extends StatelessWidget {
-  final url;
+  final String url;
 
   const CircleImage(this.url, {Key? key}) : super(key: key);
 

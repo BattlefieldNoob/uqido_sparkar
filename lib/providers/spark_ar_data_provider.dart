@@ -1,12 +1,12 @@
+import 'package:base_types/repository/abstract_repository.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:uqido_sparkar/db/abstract_db.dart';
 import 'package:uqido_sparkar/db/mock/mock_db.dart';
 import 'package:uqido_sparkar/model/sparkar_effect.dart';
 import 'package:uqido_sparkar/model/sparkar_network_data.dart';
 import 'package:uqido_sparkar/model/sparkar_user.dart';
 import 'package:uqido_sparkar/providers/spark_ar_state_notifier.dart';
 
-final repositoryProvider = Provider<AbstractDB>((ref) => MockDB.getInstance(),
+final repositoryProvider = Provider<AbstractRepository>((ref) => MockDB.getInstance(),
     name: "Repository Provider");
 
 final sparkARDataProvider =
@@ -20,12 +20,12 @@ final usersCount = Provider<int>(
     name: "User count Provider",
     dependencies: [sparkARDataProvider]);
 
-final users = Provider<List<SparkARUser>>(
+final usersProvider = Provider<List<SparkARUser>>(
     (ref) => ref.watch(sparkARDataProvider).users,
     name: "Users Provider",
     dependencies: [sparkARDataProvider]);
 
-final effects = Provider<List<SparkAREffect>>(
+final effectsProvider = Provider<List<SparkAREffect>>(
     (ref) => ref.watch(sparkARDataProvider).effects,
     name: "Effects Provider",
     dependencies: [sparkARDataProvider]);

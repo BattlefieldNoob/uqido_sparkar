@@ -1,19 +1,18 @@
 import 'package:flutter/foundation.dart';
+import '../model/encrypted_login_data.dart';
 import 'package:flutter_cache/flutter_cache.dart' as cache;
-import 'package:uqido_sparkar/model/sparkar_network_data.dart';
-import 'package:uqido_sparkar/utils/facebook_password_encrypt_util.dart';
 
-abstract class AbstractDB {
-  Future<SparkARNetworkData> getUsersAndEffectsData(
+abstract class AbstractRepository<T> {
+  Future<T> getUsersAndEffectsData(
       {String? email, EncryptedLoginData? loginData});
 }
 
 mixin DBCache {
   Duration get defaultCacheDuration {
     if (kReleaseMode) {
-      return Duration(hours: 4); //4 hours
+      return const Duration(hours: 4); //4 hours
     } else {
-      return Duration(minutes: 1);
+      return const Duration(minutes: 1);
     }
   }
 
@@ -24,7 +23,9 @@ mixin DBCache {
         await cache.remember(key, f, cacheDuration.inSeconds) as List<dynamic>;
 
     if (data.isEmpty) {
-      print("DELETE KEY, DATA IS EMPTY");
+      if (kDebugMode) {
+        print("DELETE KEY, DATA IS EMPTY");
+      }
       cache.destroy(key); //i don't want to cache empty data
     }
     return data;

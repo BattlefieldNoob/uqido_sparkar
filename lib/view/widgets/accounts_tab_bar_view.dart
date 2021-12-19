@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:uqido_sparkar/providers/spark_ar_data_provider.dart';
-
-import 'mobile_effects_grid.dart';
+import 'package:uqido_sparkar/view/sparkar/effect_list_item.dart';
+import 'package:widgets/widgets_grid.dart';
 
 class AccountsTabBarView extends ConsumerWidget {
   const AccountsTabBarView({
@@ -11,13 +11,21 @@ class AccountsTabBarView extends ConsumerWidget {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-    final user = ref.read(users);
-    final effect = ref.watch(effects);
+    final user = ref.read(usersProvider);
+    final effect = ref.watch(effectsProvider);
+
+    final userEffects = user.map((u) => u.effects);
 
     final tabViews = [
       const PreferiteTabBarView(),
-      ...user.map((e) => MobileEffectsGrid(
-          effect.where((effect) => e.effects.contains(effect.id)).toList()))
+      ...userEffects.map((effectForUser) {
+        final effects =
+            effect.where((e) => effectForUser.contains(e.id)).toList();
+        final builder = (context, index) => ProviderScope(
+            overrides: [currentEffect.overrideWithValue(effects[index])],
+            child: const EffectGridItem());
+        return WidgetsGrid(builder, effects.length);
+      })
     ];
 
     return TabBarView(children: tabViews);
@@ -31,6 +39,10 @@ class PreferiteTabBarView extends ConsumerWidget {
   Widget build(BuildContext context, WidgetRef ref) {
     final preferites = ref.watch(preferiteEffects);
 
-    return MobileEffectsGrid(preferites);
+    final builder = (context, index) => ProviderScope(
+        overrides: [currentEffect.overrideWithValue(preferites[index])],
+        child: const EffectGridItem());
+
+    return WidgetsGrid(builder, preferites.length);
   }
 }

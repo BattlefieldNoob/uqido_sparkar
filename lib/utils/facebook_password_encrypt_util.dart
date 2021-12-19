@@ -1,17 +1,11 @@
 import 'dart:convert';
 import 'dart:typed_data';
 
+import 'package:base_types/model/encrypted_login_data.dart';
 import 'package:dio/dio.dart';
 import 'package:uqido_sparkar/db/models/public_keys_response.dart';
 import 'package:uqido_sparkar/db/rest_client.dart';
 import 'package:webcrypto/webcrypto.dart';
-
-class EncryptedLoginData {
-  final String lsd;
-  final String encpass;
-
-  EncryptedLoginData(this.lsd, this.encpass);
-}
 
 Future<EncryptedLoginData> getEncryptedPasswordAndLoginData(
     String unencryptedPassword) async {

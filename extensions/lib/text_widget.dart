@@ -1,14 +1,6 @@
+
 import 'package:flutter/material.dart';
 import 'package:one_context/one_context.dart';
-
-extension StringExtension on String {
-  String toLowerCapitalize() {
-    return "${this[0].toUpperCase()}${this.substring(1).toLowerCase()}";
-  }
-
-  String truncateTo(final int maxLength) =>
-      (this.length <= maxLength) ? this : '${this.substring(0, maxLength)}...';
-}
 
 extension TextWidgets on String {
   Widget get h1 => Text(this, style: OneContext().textTheme.headline1);
@@ -26,9 +18,4 @@ extension TextWidgets on String {
   Widget themeB1(ThemeData theme) => Text(this, style: theme.textTheme.bodyText1);
 
   Widget themeB2(ThemeData theme) => Text(this, style: theme.textTheme.bodyText2);
-}
-
-
-extension Doubles on int{
-  double get w => (OneContext().mediaQuery.size.width * this) / 100;
 }

@@ -1,11 +1,11 @@
 import 'dart:async';
 
+import 'package:base_types/model/encrypted_login_data.dart';
+import 'package:base_types/repository/abstract_repository.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
-import 'package:uqido_sparkar/db/abstract_db.dart';
 import 'package:uqido_sparkar/model/sparkar_network_data.dart';
-import 'package:uqido_sparkar/utils/facebook_password_encrypt_util.dart';
 
-class FirestoreDB with DBCache implements AbstractDB {
+class FirestoreDB with DBCache implements AbstractRepository<SparkARNetworkData> {
   static final FirestoreDB _instance = FirestoreDB._internal();
   final FirebaseFirestore firestore = FirebaseFirestore.instance;
 

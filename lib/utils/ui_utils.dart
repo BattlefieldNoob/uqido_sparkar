@@ -1,5 +1,5 @@
 //import 'package:adaptive_breakpoints/adaptive_breakpoints.dart';
-//import 'package:flutter/widgets.dart';
+//import 'package:flutter/text_widget.dart';
 //
 ///// Returns a boolean if we are on a medium or larger screen. Used to
 ///// build adaptive and responsive layouts.

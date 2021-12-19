@@ -1,24 +1,21 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
-import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:responsive_framework/responsive_wrapper.dart';
-import 'package:uqido_sparkar/model/sparkar_effect.dart';
-import 'package:uqido_sparkar/providers/spark_ar_data_provider.dart';
-import 'package:uqido_sparkar/view/sparkar/effect_list_item.dart';
 
-class MobileEffectsGrid extends StatelessWidget {
-  final List<SparkAREffect> effects;
+class WidgetsGrid extends StatelessWidget {
+  final Widget Function(BuildContext,int) builder;
+  final int itemCount;
 
-  const MobileEffectsGrid(this.effects) : super(key: null);
+  const WidgetsGrid(this.builder,this.itemCount) : super(key: null);
 
   @override
   Widget build(BuildContext context) {
-    if (effects.isEmpty)
-      return Center(
+    if (itemCount==0) {
+      return const Center(
         child: Text("No Elements!"),
       );
-    else {
+    } else {
       final layoutData = ResponsiveWrapper.of(context);
 
       final columns = layoutData.isMobile
@@ -34,10 +31,8 @@ class MobileEffectsGrid extends StatelessWidget {
             crossAxisSpacing: 16,
             mainAxisSpacing: 16,
             childAspectRatio: 1.2),
-        itemCount: effects.length,
-        itemBuilder: (context, index) => ProviderScope(
-            overrides: [currentEffect.overrideWithValue(effects[index])],
-            child: const EffectGridItem()),
+        itemCount: itemCount,
+        itemBuilder: builder,
       );
     }
   }
