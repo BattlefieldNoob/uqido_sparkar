@@ -1,11 +1,14 @@
 import 'package:flutter/material.dart';
-import 'package:uqido_sparkar/view/common/home_loading_bar.dart';
-import 'package:uqido_sparkar/view/common/search_app_bar.dart';
+import 'package:sparkar_viewmodel/common/search_app_bar.dart';
+
+import 'home_loading_bar.dart';
 
 class HomeAppBar extends StatelessWidget implements PreferredSizeWidget {
+  const HomeAppBar({Key? key}) : super(key: key);
+
   @override
   Size get preferredSize {
-    return Size.fromHeight(60.0);
+    return const Size.fromHeight(60.0);
   }
 
   @override

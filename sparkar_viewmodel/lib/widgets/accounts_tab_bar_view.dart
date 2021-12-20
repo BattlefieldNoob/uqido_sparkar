@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:uqido_sparkar/providers/spark_ar_data_provider.dart';
-import 'package:uqido_sparkar/view/sparkar/effect_list_item.dart';
+import 'package:sparkar_providers/spark_ar_data_provider.dart';
+import '../sparkar/effect_list_item.dart';
 import 'package:widgets/widgets_grid.dart';
 
 class AccountsTabBarView extends ConsumerWidget {

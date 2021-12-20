@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:functional_widget_annotation/functional_widget_annotation.dart';
 import 'package:sparkar_data_model/sparkar_effect.dart';
-import 'package:uqido_sparkar/providers/spark_ar_data_provider.dart';
+import 'package:sparkar_providers/spark_ar_data_provider.dart';
 import 'package:url_launcher/url_launcher.dart';
 import 'package:widgets/squared_card.dart';
 

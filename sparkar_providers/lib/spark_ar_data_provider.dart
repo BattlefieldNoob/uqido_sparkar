@@ -4,7 +4,7 @@ import 'package:sparkar_data_model/sparkar_effect.dart';
 import 'package:sparkar_data_model/sparkar_network_data.dart';
 import 'package:sparkar_data_model/sparkar_user.dart';
 import 'package:sparkar_repository/mock/mock_db.dart';
-import 'package:uqido_sparkar/providers/spark_ar_state_notifier.dart';
+import 'spark_ar_state_notifier.dart';
 
 final repositoryProvider = Provider<AbstractRepository>((ref) => MockDB.getInstance(),
     name: "Repository Provider");

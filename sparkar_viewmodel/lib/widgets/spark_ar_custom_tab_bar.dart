@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:sparkar_data_model/sparkar_user.dart';
-import 'package:uqido_sparkar/view/widgets/accounts_tab_bar.dart';
+import 'accounts_tab_bar.dart';
 import 'package:extensions/text_widget.dart';
 
 part 'spark_ar_custom_tab_bar.viewmodel.dart';
