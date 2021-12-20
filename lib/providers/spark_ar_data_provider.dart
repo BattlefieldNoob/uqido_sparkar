@@ -1,9 +1,9 @@
 import 'package:base_types/repository/abstract_repository.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:uqido_sparkar/db/mock/mock_db.dart';
-import 'package:uqido_sparkar/model/sparkar_effect.dart';
-import 'package:uqido_sparkar/model/sparkar_network_data.dart';
-import 'package:uqido_sparkar/model/sparkar_user.dart';
+import 'package:sparkar_data_model/sparkar_effect.dart';
+import 'package:sparkar_data_model/sparkar_network_data.dart';
+import 'package:sparkar_data_model/sparkar_user.dart';
+import 'package:sparkar_repository/mock/mock_db.dart';
 import 'package:uqido_sparkar/providers/spark_ar_state_notifier.dart';
 
 final repositoryProvider = Provider<AbstractRepository>((ref) => MockDB.getInstance(),

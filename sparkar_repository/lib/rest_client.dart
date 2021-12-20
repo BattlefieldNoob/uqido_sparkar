@@ -1,8 +1,8 @@
 import 'package:dio/dio.dart' hide Headers;
 import 'package:retrofit/http.dart';
-import 'package:uqido_sparkar/db/models/cookie_response.dart';
-import 'package:uqido_sparkar/db/models/public_keys_response.dart';
-import 'package:uqido_sparkar/model/sparkar_network_data.dart';
+import 'package:sparkar_data_model/sparkar_network_data.dart';
+import 'models/cookie_response.dart';
+import 'models/public_keys_response.dart';
 
 import 'models/netlify_response.dart';
 
@@ -20,9 +20,9 @@ abstract class RestClient {
       @Query("email") String email);
 
   @GET("/facebook_get_users_and_effects")
-  Future<NetlifyResponse<SparkARNetworkData>> getUsersAndEffectWithCookie(@Query("cookie") String cookie);
+  Future<NetlifyResponse<SparkARNetworkData>> getUsersAndEffectWithCookie(
+      @Query("cookie") String cookie);
 
   @GET("/facebook_public_keys")
-  //Future<dynamic> getPublicKeys();
   Future<NetlifyResponse<PublicKeysResponse>> getPublicKeys();
 }

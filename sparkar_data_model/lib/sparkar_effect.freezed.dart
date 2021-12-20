@@ -1,5 +1,6 @@
+// coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
-// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides
+// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target
 
 part of 'sparkar_effect.dart';
 
@@ -233,7 +234,7 @@ class __$SparkAREffectCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$_SparkAREffect with DiagnosticableTreeMixin implements _SparkAREffect {
+class _$_SparkAREffect implements _SparkAREffect {
   _$_SparkAREffect(
       this.id,
       this.name,
@@ -246,7 +247,7 @@ class _$_SparkAREffect with DiagnosticableTreeMixin implements _SparkAREffect {
       {this.isPreferite = false});
 
   factory _$_SparkAREffect.fromJson(Map<String, dynamic> json) =>
-      _$_$_SparkAREffectFromJson(json);
+      _$$_SparkAREffectFromJson(json);
 
   @override
   final String id;
@@ -267,22 +268,6 @@ class _$_SparkAREffect with DiagnosticableTreeMixin implements _SparkAREffect {
   @JsonKey(defaultValue: false)
   @override
   final bool isPreferite;
-
-  @override
-  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
-    super.debugFillProperties(properties);
-    properties
-      ..add(DiagnosticsProperty('type', 'SparkAREffect'))
-      ..add(DiagnosticsProperty('id', id))
-      ..add(DiagnosticsProperty('name', name))
-      ..add(DiagnosticsProperty('submissionStatus', submissionStatus))
-      ..add(DiagnosticsProperty('visibilityStatus', visibilityStatus))
-      ..add(DiagnosticsProperty('isDeprecated', isDeprecated))
-      ..add(DiagnosticsProperty('testLink', testLink))
-      ..add(DiagnosticsProperty('publicLink', publicLink))
-      ..add(DiagnosticsProperty('iconUrl', iconUrl))
-      ..add(DiagnosticsProperty('isPreferite', isPreferite));
-  }
 
   @override
   bool operator ==(dynamic other) {
@@ -335,7 +320,7 @@ class _$_SparkAREffect with DiagnosticableTreeMixin implements _SparkAREffect {
 
   @override
   Map<String, dynamic> toJson() {
-    return _$_$_SparkAREffectToJson(this);
+    return _$$_SparkAREffectToJson(this);
   }
 }
 

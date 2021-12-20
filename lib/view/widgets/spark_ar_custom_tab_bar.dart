@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:uqido_sparkar/model/sparkar_user.dart';
+import 'package:sparkar_data_model/sparkar_user.dart';
 import 'package:uqido_sparkar/view/widgets/accounts_tab_bar.dart';
 import 'package:extensions/text_widget.dart';
 

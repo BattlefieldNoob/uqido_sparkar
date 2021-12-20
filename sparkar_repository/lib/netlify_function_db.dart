@@ -3,8 +3,8 @@ import 'dart:async';
 import 'package:base_types/model/encrypted_login_data.dart';
 import 'package:base_types/repository/abstract_repository.dart';
 import 'package:dio/dio.dart';
-import 'package:uqido_sparkar/db/rest_client.dart';
-import 'package:uqido_sparkar/model/sparkar_network_data.dart';
+import 'package:sparkar_data_model/sparkar_network_data.dart';
+import 'rest_client.dart';
 
 class NetlifyFunctionDB with DBCache implements AbstractRepository<SparkARNetworkData> {
   static const String FAKE_DATA =

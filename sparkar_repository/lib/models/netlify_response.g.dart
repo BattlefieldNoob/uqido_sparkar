@@ -9,11 +9,10 @@ part of 'netlify_response.dart';
 NetlifyResponse<T> _$NetlifyResponseFromJson<T>(
   Map<String, dynamic> json,
   T Function(Object? json) fromJsonT,
-) {
-  return NetlifyResponse<T>(
-    _$nullableGenericFromJson(json['data'], fromJsonT),
-  );
-}
+) =>
+    NetlifyResponse<T>(
+      _$nullableGenericFromJson(json['data'], fromJsonT),
+    );
 
 Map<String, dynamic> _$NetlifyResponseToJson<T>(
   NetlifyResponse<T> instance,

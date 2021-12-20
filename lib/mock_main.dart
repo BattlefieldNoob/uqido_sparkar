@@ -1,7 +1,7 @@
 import 'package:base_types/repository/abstract_repository.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:uqido_sparkar/db/netlify_function_db.dart';
+import 'package:sparkar_repository/netlify_function_db.dart';
 import 'package:uqido_sparkar/providers/spark_ar_data_provider.dart';
 import 'package:uqido_sparkar/utils/facebook_password_encrypt_util.dart';
 

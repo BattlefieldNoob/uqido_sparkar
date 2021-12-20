@@ -1,6 +1,6 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
-import 'package:uqido_sparkar/model/sparkar_effect.dart';
-import 'package:uqido_sparkar/model/sparkar_user.dart';
+import 'sparkar_effect.dart';
+import 'sparkar_user.dart';
 
 part 'sparkar_network_data.freezed.dart';
 

@@ -6,21 +6,20 @@ part of 'sparkar_effect.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$_SparkAREffect _$_$_SparkAREffectFromJson(Map<String, dynamic> json) {
-  return _$_SparkAREffect(
-    json['id'] as String,
-    json['name'] as String,
-    json['submissionStatus'] as String,
-    json['visibilityStatus'] as String,
-    json['isDeprecated'] as bool,
-    json['testLink'] as String,
-    json['publicLink'] as String,
-    json['iconUrl'] as String,
-    isPreferite: json['isPreferite'] as bool? ?? false,
-  );
-}
+_$_SparkAREffect _$$_SparkAREffectFromJson(Map<String, dynamic> json) =>
+    _$_SparkAREffect(
+      json['id'] as String,
+      json['name'] as String,
+      json['submissionStatus'] as String,
+      json['visibilityStatus'] as String,
+      json['isDeprecated'] as bool,
+      json['testLink'] as String,
+      json['publicLink'] as String,
+      json['iconUrl'] as String,
+      isPreferite: json['isPreferite'] as bool? ?? false,
+    );
 
-Map<String, dynamic> _$_$_SparkAREffectToJson(_$_SparkAREffect instance) =>
+Map<String, dynamic> _$$_SparkAREffectToJson(_$_SparkAREffect instance) =>
     <String, dynamic>{
       'id': instance.id,
       'name': instance.name,

@@ -4,9 +4,9 @@ import 'dart:core';
 import 'package:base_types/model/encrypted_login_data.dart';
 import 'package:base_types/repository/abstract_repository.dart';
 import 'package:flutter/services.dart';
-import 'package:uqido_sparkar/model/sparkar_effect.dart';
-import 'package:uqido_sparkar/model/sparkar_network_data.dart';
-import 'package:uqido_sparkar/model/sparkar_user.dart';
+import 'package:sparkar_data_model/sparkar_effect.dart';
+import 'package:sparkar_data_model/sparkar_network_data.dart';
+import 'package:sparkar_data_model/sparkar_user.dart';
 
 class MockDB with DBCache implements AbstractRepository<SparkARNetworkData> {
   static final MockDB _instance = MockDB._internal();

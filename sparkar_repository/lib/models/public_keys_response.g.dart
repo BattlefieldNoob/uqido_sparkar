@@ -6,15 +6,14 @@ part of 'public_keys_response.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-PublicKeysResponse _$PublicKeysResponseFromJson(Map<String, dynamic> json) {
-  return PublicKeysResponse(
-    GeneratedKeyField.fromJson(json['generatedKey'] as Map<String, dynamic>),
-    json['lsd'] as String,
-    Map<String, int>.from(json['seal'] as Map),
-    Map<String, int>.from(json['raw'] as Map),
-    EncryptionField.fromJson(json['encryption'] as Map<String, dynamic>),
-  );
-}
+PublicKeysResponse _$PublicKeysResponseFromJson(Map<String, dynamic> json) =>
+    PublicKeysResponse(
+      GeneratedKeyField.fromJson(json['generatedKey'] as Map<String, dynamic>),
+      json['lsd'] as String,
+      Map<String, int>.from(json['seal'] as Map),
+      Map<String, int>.from(json['raw'] as Map),
+      EncryptionField.fromJson(json['encryption'] as Map<String, dynamic>),
+    );
 
 Map<String, dynamic> _$PublicKeysResponseToJson(PublicKeysResponse instance) =>
     <String, dynamic>{
@@ -25,12 +24,11 @@ Map<String, dynamic> _$PublicKeysResponseToJson(PublicKeysResponse instance) =>
       'encryption': instance.encryption,
     };
 
-EncryptionField _$EncryptionFieldFromJson(Map<String, dynamic> json) {
-  return EncryptionField(
-    json['publickey'] as String,
-    json['keyId'] as String,
-  );
-}
+EncryptionField _$EncryptionFieldFromJson(Map<String, dynamic> json) =>
+    EncryptionField(
+      json['publickey'] as String,
+      json['keyId'] as String,
+    );
 
 Map<String, dynamic> _$EncryptionFieldToJson(EncryptionField instance) =>
     <String, dynamic>{
@@ -38,14 +36,13 @@ Map<String, dynamic> _$EncryptionFieldToJson(EncryptionField instance) =>
       'keyId': instance.keyId,
     };
 
-GeneratedKeyField _$GeneratedKeyFieldFromJson(Map<String, dynamic> json) {
-  return GeneratedKeyField(
-    AlgorithmField.fromJson(json['algorithm'] as Map<String, dynamic>),
-    json['type'] as String,
-    json['extractable'] as bool,
-    (json['usages'] as List<dynamic>).map((e) => e as String).toList(),
-  );
-}
+GeneratedKeyField _$GeneratedKeyFieldFromJson(Map<String, dynamic> json) =>
+    GeneratedKeyField(
+      AlgorithmField.fromJson(json['algorithm'] as Map<String, dynamic>),
+      json['type'] as String,
+      json['extractable'] as bool,
+      (json['usages'] as List<dynamic>).map((e) => e as String).toList(),
+    );
 
 Map<String, dynamic> _$GeneratedKeyFieldToJson(GeneratedKeyField instance) =>
     <String, dynamic>{
@@ -55,12 +52,11 @@ Map<String, dynamic> _$GeneratedKeyFieldToJson(GeneratedKeyField instance) =>
       'usages': instance.usages,
     };
 
-AlgorithmField _$AlgorithmFieldFromJson(Map<String, dynamic> json) {
-  return AlgorithmField(
-    json['name'] as String,
-    json['length'] as int,
-  );
-}
+AlgorithmField _$AlgorithmFieldFromJson(Map<String, dynamic> json) =>
+    AlgorithmField(
+      json['name'] as String,
+      json['length'] as int,
+    );
 
 Map<String, dynamic> _$AlgorithmFieldToJson(AlgorithmField instance) =>
     <String, dynamic>{

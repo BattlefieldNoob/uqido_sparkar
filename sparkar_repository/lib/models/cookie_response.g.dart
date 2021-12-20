@@ -6,11 +6,10 @@ part of 'cookie_response.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-CookieResponse _$CookieResponseFromJson(Map<String, dynamic> json) {
-  return CookieResponse(
-    json['cookie'] as String,
-  );
-}
+CookieResponse _$CookieResponseFromJson(Map<String, dynamic> json) =>
+    CookieResponse(
+      json['cookie'] as String,
+    );
 
 Map<String, dynamic> _$CookieResponseToJson(CookieResponse instance) =>
     <String, dynamic>{

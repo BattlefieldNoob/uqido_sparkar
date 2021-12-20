@@ -1,7 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
-import 'package:uqido_sparkar/model/sparkar_user.dart';
+import 'package:sparkar_data_model/sparkar_user.dart';
 
 import 'effect_list_item.dart';
 

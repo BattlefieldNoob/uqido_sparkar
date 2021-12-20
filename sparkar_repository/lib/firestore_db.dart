@@ -3,7 +3,7 @@ import 'dart:async';
 import 'package:base_types/model/encrypted_login_data.dart';
 import 'package:base_types/repository/abstract_repository.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
-import 'package:uqido_sparkar/model/sparkar_network_data.dart';
+import 'package:sparkar_data_model/sparkar_network_data.dart';
 
 class FirestoreDB with DBCache implements AbstractRepository<SparkARNetworkData> {
   static final FirestoreDB _instance = FirestoreDB._internal();

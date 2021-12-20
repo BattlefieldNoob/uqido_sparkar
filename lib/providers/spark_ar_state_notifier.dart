@@ -1,6 +1,6 @@
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:uqido_sparkar/model/sparkar_effect.dart';
-import 'package:uqido_sparkar/model/sparkar_network_data.dart';
+import 'package:sparkar_data_model/sparkar_effect.dart';
+import 'package:sparkar_data_model/sparkar_network_data.dart';
 
 class SparkARStateNotifier extends StateNotifier<SparkARNetworkData> {
   final db;
