@@ -1,10 +1,11 @@
 import 'package:dio/dio.dart' hide Headers;
 import 'package:retrofit/http.dart';
 import 'package:sparkar_data_model/sparkar_network_data.dart';
+
 import 'models/cookie_response.dart';
+import 'models/netlify_response.dart';
 import 'models/public_keys_response.dart';
 
-import 'models/netlify_response.dart';
 
 part 'rest_client.g.dart';
 

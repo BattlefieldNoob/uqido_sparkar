@@ -1,14 +1,14 @@
 import 'dart:convert';
 import 'dart:core';
 
-import 'package:base_types/model/encrypted_login_data.dart';
 import 'package:base_types/repository/abstract_repository.dart';
 import 'package:flutter/services.dart';
 import 'package:sparkar_data_model/sparkar_effect.dart';
 import 'package:sparkar_data_model/sparkar_network_data.dart';
 import 'package:sparkar_data_model/sparkar_user.dart';
+import 'package:sparkar_data_model/sparkar_repository.dart';
 
-class MockDB with DBCache implements AbstractRepository<SparkARNetworkData> {
+class MockDB extends CachedBaseRepository<SparkARNetworkData> with SparkARDataSource{
   static final MockDB _instance = MockDB._internal();
 
   MockDB._internal();
@@ -18,8 +18,7 @@ class MockDB with DBCache implements AbstractRepository<SparkARNetworkData> {
   }
 
   @override
-  Future<SparkARNetworkData> getUsersAndEffectsData(
-      {String? email, EncryptedLoginData? loginData}) async {
+  Future<SparkARNetworkData> getData() async {
     String data = await rootBundle.loadString('assets/mock_data.json');
     final jsonResult = json.decode(data) as List<dynamic>; //array of SparkARUser
 
@@ -38,5 +37,11 @@ class MockDB with DBCache implements AbstractRepository<SparkARNetworkData> {
         .map((effect) => SparkAREffect.fromJson(effect)).toList();
 
     return SparkARNetworkData(users, effects);
+  }
+
+  @override
+  Future<List<String>> getPreferred() {
+    // TODO: implement getPreferred
+    throw UnimplementedError();
   }
 }

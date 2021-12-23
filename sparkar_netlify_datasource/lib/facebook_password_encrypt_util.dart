@@ -3,8 +3,8 @@ import 'dart:typed_data';
 
 import 'package:base_types/model/encrypted_login_data.dart';
 import 'package:dio/dio.dart';
-import 'package:sparkar_repository/models/public_keys_response.dart';
-import 'package:sparkar_repository/rest_client.dart';
+import 'models/public_keys_response.dart';
+import 'rest_client.dart';
 import 'package:webcrypto/webcrypto.dart';
 
 Future<EncryptedLoginData> getEncryptedPasswordAndLoginData(
@@ -20,7 +20,8 @@ Future<EncryptedLoginData> getEncryptedPasswordAndLoginData(
   return EncryptedLoginData(data.lsd, encpass);
 }
 
-Future<String> _passwordEncrypt(String password, PublicKeysResponse encryption) async {
+Future<String> _passwordEncrypt(
+    String password, PublicKeysResponse encryption) async {
   final publicKey = encryption.encryption.publicKey;
   final keyId = encryption.encryption.keyId;
   final seal = encryption.seal.values.cast<int>().toList();
@@ -31,8 +32,8 @@ Future<String> _passwordEncrypt(String password, PublicKeysResponse encryption) 
       int.parse(keyId), publicKey, password, date, seal, key, raw);
 }
 
-Future<String> _encryptPassword(int a, String publicKey, String password, String date,
-    List<int> seal, GeneratedKeyField keyy, List<int> raw) async {
+Future<String> _encryptPassword(int a, String publicKey, String password,
+    String date, List<int> seal, GeneratedKeyField keyy, List<int> raw) async {
   var f, g, passwordBytes, dateBytes;
   f = "#PWD_BROWSER";
   g = 5;
@@ -43,8 +44,14 @@ Future<String> _encryptPassword(int a, String publicKey, String password, String
   return [f, g, date, base64Encode(key)].join(":");
 }
 
-Future<Uint8List> _encrypt(int a, String publicKey, List<int> passwordBytes, List<int> dateBytes,
-    List<int> seal, GeneratedKeyField key, List<int> raw) async {
+Future<Uint8List> _encrypt(
+    int a,
+    String publicKey,
+    List<int> passwordBytes,
+    List<int> dateBytes,
+    List<int> seal,
+    GeneratedKeyField key,
+    List<int> raw) async {
   var f, u;
   var i = 1,
       j = 1,

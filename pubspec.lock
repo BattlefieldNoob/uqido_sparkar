@@ -707,17 +707,24 @@ packages:
       relative: true
     source: path
     version: "1.0.0+1"
+  sparkar_firestone_datasource:
+    dependency: "direct main"
+    description:
+      path: sparkar_firestone_datasource
+      relative: true
+    source: path
+    version: "1.0.0+1"
+  sparkar_netlify_datasource:
+    dependency: "direct main"
+    description:
+      path: sparkar_netlify_datasource
+      relative: true
+    source: path
+    version: "1.0.0+1"
   sparkar_providers:
     dependency: "direct main"
     description:
       path: sparkar_providers
-      relative: true
-    source: path
-    version: "1.0.0+1"
-  sparkar_repository:
-    dependency: transitive
-    description:
-      path: sparkar_repository
       relative: true
     source: path
     version: "1.0.0+1"

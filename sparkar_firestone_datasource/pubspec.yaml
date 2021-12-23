@@ -1,5 +1,5 @@
-name: sparkar_providers
-description: A new flutter module project.
+name: sparkar_firestone_datasource
+description: A new Flutter project.
 
 # The following defines the version and build number for your application.
 # A version number is three numbers separated by dots, like 1.2.43
@@ -30,13 +30,11 @@ dependencies:
   # The following adds the Cupertino Icons font to your application.
   # Use with the CupertinoIcons class for iOS style icons.
   cupertino_icons: ^1.0.2
-  flutter_riverpod: ^1.0.0-dev.11
+  cloud_firestore: ^1.0.0
   base_types:
     path: ../base_types
   sparkar_data_model:
     path: ../sparkar_data_model
-  sparkar_firestone_datasource:
-    path: ../sparkar_firestone_datasource
 
 dev_dependencies:
   flutter_test:
@@ -93,5 +91,5 @@ flutter:
   # identifiers, which may be completely independent or the same as these.
   module:
     androidX: true
-    androidPackage: com.antonio.sparkar_providers.sparkar_providers
-    iosBundleIdentifier: com.antonio.sparkarproviders.sparkarProviders
+    androidPackage: com.antonio.sparkar_firestone_datasource.sparkar_firestone_datasource
+    iosBundleIdentifier: com.antonio.sparkarfirestonedatasource.sparkarFirestoneDatasource

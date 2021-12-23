@@ -2,8 +2,8 @@ import 'package:flutter/material.dart';
 
 final ThemeData theme = ThemeData.dark();
 
-final _primary = const Color.fromRGBO(38, 44, 50, .9);
-final _secondary = const Color.fromRGBO(20, 92, 150, 1);
+const _primary = Color.fromRGBO(38, 44, 50, .9);
+const _secondary = Color.fromRGBO(20, 92, 150, 1);
 
 final _colorScheme =
     theme.colorScheme.copyWith(primary: _primary, secondary: _secondary);
@@ -24,13 +24,13 @@ ThemeData getTheme() {
       appBarTheme: _appBarTheme,
       textTheme: _textTheme,
       scaffoldBackgroundColor: _primary,
-      backgroundColor: Color.fromRGBO(30, 38, 45, .9),
-      cardColor: Color.fromRGBO(48, 54, 60, .9),
-      bottomAppBarColor: Color.fromRGBO(48, 54, 60, .9),
-      navigationRailTheme: NavigationRailThemeData(
+      backgroundColor: const Color.fromRGBO(30, 38, 45, .9),
+      cardColor: const Color.fromRGBO(48, 54, 60, .9),
+      bottomAppBarColor: const Color.fromRGBO(48, 54, 60, .9),
+      navigationRailTheme: const NavigationRailThemeData(
           backgroundColor: Color.fromRGBO(48, 54, 60, .9)),
       textButtonTheme: TextButtonThemeData(
           style: ButtonStyle(
-              padding: MaterialStateProperty.all(EdgeInsets.all(24)),
+              padding: MaterialStateProperty.all(const EdgeInsets.all(24)),
               foregroundColor: MaterialStateProperty.all(Colors.white))));
 }

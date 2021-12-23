@@ -3,10 +3,13 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:sparkar_data_model/sparkar_effect.dart';
 import 'package:sparkar_data_model/sparkar_network_data.dart';
 import 'package:sparkar_data_model/sparkar_user.dart';
-import 'package:sparkar_repository/mock/mock_db.dart';
+import 'package:sparkar_firestone_datasource/firestore_db.dart';
+import 'mock_db.dart';
 import 'spark_ar_state_notifier.dart';
 
-final repositoryProvider = Provider<AbstractRepository>((ref) => MockDB.getInstance(),
+//final repositoryProvider = Provider<BaseRepository>((ref) => MockDB.getInstance(),
+//    name: "Repository Provider");
+final repositoryProvider = Provider<BaseRepository>((ref) => FirestoreDB.getInstance(),
     name: "Repository Provider");
 
 final sparkARDataProvider =

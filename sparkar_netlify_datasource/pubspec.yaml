@@ -1,5 +1,5 @@
-name: sparkar_repository
-description: A new Flutter project.
+name: sparkar_netlify_datasource
+description: A new flutter module project.
 
 # The following defines the version and build number for your application.
 # A version number is three numbers separated by dots, like 1.2.43
@@ -31,12 +31,18 @@ dependencies:
   # Use with the CupertinoIcons class for iOS style icons.
   cupertino_icons: ^1.0.2
   retrofit: ^2.0.0-beta1
-  cloud_firestore: ^1.0.0
   json_annotation: ^4.4.0
+  webcrypto: ^0.5.2
   base_types:
     path: ../base_types
   sparkar_data_model:
     path: ../sparkar_data_model
+
+dependency_overrides:
+  webcrypto:
+    git:
+      url: https://github.com/tauu/webcrypto.dart
+      ref: 0.5.2-fix
 
 dev_dependencies:
   flutter_test:
@@ -96,5 +102,5 @@ flutter:
   # identifiers, which may be completely independent or the same as these.
   module:
     androidX: true
-    androidPackage: com.antonio.sparkar_repository.sparkar_repository
-    iosBundleIdentifier: com.antonio.sparkarrepository.sparkarRepository
+    androidPackage: com.antonio.sparkar_netlify_datasource.sparkar_netlify_datasource
+    iosBundleIdentifier: com.antonio.sparkarnetlifydatasource.sparkarNetlifyDatasource

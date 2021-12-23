@@ -1,9 +1,11 @@
 import 'package:base_types/repository/abstract_repository.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:sparkar_netlify_datasource/facebook_password_encrypt_util.dart';
+import 'package:sparkar_netlify_datasource/netlify_function_db.dart';
 import 'package:sparkar_providers/spark_ar_data_provider.dart';
-import 'package:sparkar_repository/netlify_function_db.dart';
-import 'package:uqido_sparkar/utils/facebook_password_encrypt_util.dart';
+import 'package:sparkar_data_model/sparkar_repository.dart';
+
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -19,19 +21,27 @@ class Example extends ConsumerWidget {
   Widget build(BuildContext context, WidgetRef ref) {
     final repo = ref.read(repositoryProvider);
 
-    return FutureBuilder(
-        future: getData(repo), builder: (context, snapshot) => Text("HELLO!"));
+    if(repo is SparkARDataSource) {
+      return FutureBuilder(
+          future: getData(repo as SparkARDataSource),
+          builder: (context, snapshot) => Text("HELLO!"));
+    }else{
+      return Container();
+    }
   }
 
-  Future<void> getData(AbstractRepository db) async {
+  Future<void> getData(SparkARDataSource db) async {
     final encryptedData =
         await getEncryptedPasswordAndLoginData("b]an<A5}]2wX[PM=");
 
     print(encryptedData.encpass);
     print(encryptedData.lsd);
 
-    final result = await db.getUsersAndEffectsData(
-        email: "antonio.ruggiero93@hotmail.it", loginData: encryptedData);
+
+
+
+    final result = await db.getData();
+        //email: "antonio.ruggiero93@hotmail.it", loginData: encryptedData);
 
     print(result);
   }
