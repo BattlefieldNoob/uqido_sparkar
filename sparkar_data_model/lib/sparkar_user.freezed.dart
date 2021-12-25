@@ -13,6 +13,10 @@ T _$identity<T>(T value) => value;
 final _privateConstructorUsedError = UnsupportedError(
     'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more informations: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
 
+SparkARUser _$SparkARUserFromJson(Map<String, dynamic> json) {
+  return _SparkARUser.fromJson(json);
+}
+
 /// @nodoc
 class _$SparkARUserTearOff {
   const _$SparkARUserTearOff();
@@ -26,6 +30,10 @@ class _$SparkARUserTearOff {
       effects,
     );
   }
+
+  SparkARUser fromJson(Map<String, Object> json) {
+    return SparkARUser.fromJson(json);
+  }
 }
 
 /// @nodoc
@@ -38,6 +46,7 @@ mixin _$SparkARUser {
   String get iconUrl => throw _privateConstructorUsedError;
   List<String> get effects => throw _privateConstructorUsedError;
 
+  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
   $SparkARUserCopyWith<SparkARUser> get copyWith =>
       throw _privateConstructorUsedError;
@@ -136,9 +145,12 @@ class __$SparkARUserCopyWithImpl<$Res> extends _$SparkARUserCopyWithImpl<$Res>
 }
 
 /// @nodoc
-
+@JsonSerializable()
 class _$_SparkARUser implements _SparkARUser {
   _$_SparkARUser(this.id, this.name, this.iconUrl, this.effects);
+
+  factory _$_SparkARUser.fromJson(Map<String, dynamic> json) =>
+      _$$_SparkARUserFromJson(json);
 
   @override
   final String id;
@@ -176,12 +188,20 @@ class _$_SparkARUser implements _SparkARUser {
   @override
   _$SparkARUserCopyWith<_SparkARUser> get copyWith =>
       __$SparkARUserCopyWithImpl<_SparkARUser>(this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$$_SparkARUserToJson(this);
+  }
 }
 
 abstract class _SparkARUser implements SparkARUser {
   factory _SparkARUser(
           String id, String name, String iconUrl, List<String> effects) =
       _$_SparkARUser;
+
+  factory _SparkARUser.fromJson(Map<String, dynamic> json) =
+      _$_SparkARUser.fromJson;
 
   @override
   String get id => throw _privateConstructorUsedError;

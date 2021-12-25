@@ -1,14 +1,12 @@
-import 'package:freezed_annotation/freezed_annotation.dart';
 import 'sparkar_effect.dart';
 import 'sparkar_user.dart';
 
-part 'sparkar_network_data.freezed.dart';
+class SparkARNetworkData {
 
-@freezed
-class SparkARNetworkData with _$SparkARNetworkData {
-  factory SparkARNetworkData(
-          List<SparkARUser> users, List<SparkAREffect> effects) =
-      _SparkARNetworkData;
+  final List<SparkARUser> users;
+  final List<SparkAREffect> effects;
+
+  SparkARNetworkData(this.users, this.effects);
 
   factory SparkARNetworkData.empty() {
     return SparkARNetworkData([], []);
@@ -19,25 +17,41 @@ class SparkARNetworkData with _$SparkARNetworkData {
     return "SparkARNetworkData($users,$effects)";
   }
 
-  factory SparkARNetworkData.fromJson(Map<String, dynamic> json) {
-    final jsonResult = json['usersAndEffects'] as List<dynamic>;
+  factory SparkARNetworkData.fromJson(Map<String, dynamic> json) => _$$SparkARNetworkDataFromJson(json);
 
-    final users = jsonResult
-        .map((user) => SparkARUser(
-            user.id,
-            user.name,
-            user.iconUrl,
-            (user['effects'] as List<dynamic>)
-                .map((e) => e['id'] as String)
-                .toList()))
-        .toList();
+  Map<String, dynamic> toJson() => _$$SparkARNetworkDataToJson(this);
 
-    //TODO remove after editing BE
-    final effects = jsonResult
-        .expand((user) => user['effects'] as List<dynamic>)
-        .map((effect) => SparkAREffect.fromJson(effect))
-        .toList();
+}
 
-    return SparkARNetworkData(users, effects);
+Map<String, dynamic> _$$SparkARNetworkDataToJson(SparkARNetworkData data) {
+  final usersMap = data.users.map((e) => e.toJson()).toList();
+  final effectMap = data.effects.map((e) => e.toJson()).toList();
+
+  for (var currentUser in usersMap) {
+    final userEffects=(currentUser["effects"] as List<String>).map((e) => effectMap.firstWhere((element) => element["id"]==e));
+    currentUser.addAll({"effects":userEffects.toList()});
   }
+  return {"usersAndEffects":usersMap};
+}
+
+SparkARNetworkData _$$SparkARNetworkDataFromJson(Map<String, dynamic> json) {
+  final jsonResult = json['usersAndEffects'] as List<dynamic>;
+
+  final users = jsonResult
+      .map((user) => SparkARUser(
+      user['id'],
+      user['name'],
+      user['iconUrl'],
+      (user['effects'] as List<dynamic>)
+          .map((e) => e['id'] as String)
+          .toList()))
+      .toList();
+
+  //TODO remove after editing BE
+  final effects = jsonResult
+      .expand((user) => user['effects'] as List<dynamic>)
+      .map((effect) => SparkAREffect.fromJson(effect))
+      .toList();
+
+  return SparkARNetworkData(users, effects);
 }

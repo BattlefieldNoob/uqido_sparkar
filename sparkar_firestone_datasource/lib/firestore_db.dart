@@ -20,9 +20,7 @@ class FirestoreDB extends CachedBaseRepository<SparkARNetworkData> with SparkARD
   Future<List<Map<String,dynamic>>> _getDataFromFirestone() async {
     var snapshot = await firestore.collection("spark-ar-users").get();
 
-    final a = snapshot.docs.where((e) => e.exists).map((e) => e.data()).toList();
-
-    return a;
+    return snapshot.docs.where((e) => e.exists).map((e) => e.data()).toList();
   }
 
   @override
@@ -42,8 +40,6 @@ class FirestoreDB extends CachedBaseRepository<SparkARNetworkData> with SparkARD
     final effects = jsonResult
         .expand((user) => user['effects'] as List<dynamic>)
         .map((effect) => SparkAREffect.fromJson(effect)).toList();
-
-
 
     return SparkARNetworkData(users, effects);
   }

@@ -31,19 +31,19 @@ class Example extends ConsumerWidget {
   }
 
   Future<void> getData(SparkARDataSource db) async {
-    final encryptedData =
-        await getEncryptedPasswordAndLoginData("b]an<A5}]2wX[PM=");
-
-    print(encryptedData.encpass);
-    print(encryptedData.lsd);
-
-
-
-
-    final result = await db.getData();
-        //email: "antonio.ruggiero93@hotmail.it", loginData: encryptedData);
-
-    print(result);
+   // final encryptedData =
+   //     await getEncryptedPasswordAndLoginData("b]an<A5}]2wX[PM=");
+//
+   // print(encryptedData.encpass);
+   // print(encryptedData.lsd);
+//
+//
+//
+//
+   // final result = await db.getData();
+   //     //email: "antonio.ruggiero93@hotmail.it", loginData: encryptedData);
+//
+   // print(result);
   }
 }
 

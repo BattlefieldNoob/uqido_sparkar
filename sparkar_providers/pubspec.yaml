@@ -37,6 +37,8 @@ dependencies:
     path: ../sparkar_data_model
   sparkar_firestone_datasource:
     path: ../sparkar_firestone_datasource
+  sparkar_netlify_datasource:
+    path: ../sparkar_netlify_datasource
 
 dev_dependencies:
   flutter_test:

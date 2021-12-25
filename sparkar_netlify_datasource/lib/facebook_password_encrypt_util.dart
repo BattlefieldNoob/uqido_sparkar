@@ -1,26 +1,10 @@
 import 'dart:convert';
 import 'dart:typed_data';
 
-import 'package:base_types/model/encrypted_login_data.dart';
-import 'package:dio/dio.dart';
 import 'models/public_keys_response.dart';
-import 'rest_client.dart';
 import 'package:webcrypto/webcrypto.dart';
 
-Future<EncryptedLoginData> getEncryptedPasswordAndLoginData(
-    String unencryptedPassword) async {
-  final RestClient client = RestClient(Dio());
-
-  //get public keys for encrypt
-  var encryptdata = await client.getPublicKeys();
-  var data = encryptdata.data;
-  print(data);
-  var encpass = await _passwordEncrypt(unencryptedPassword, data!);
-
-  return EncryptedLoginData(data.lsd, encpass);
-}
-
-Future<String> _passwordEncrypt(
+Future<String> passwordEncrypt(
     String password, PublicKeysResponse encryption) async {
   final publicKey = encryption.encryption.publicKey;
   final keyId = encryption.encryption.keyId;

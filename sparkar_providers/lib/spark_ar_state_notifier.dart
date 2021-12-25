@@ -3,6 +3,7 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:sparkar_data_model/sparkar_effect.dart';
 import 'package:sparkar_data_model/sparkar_network_data.dart';
 import 'package:sparkar_data_model/sparkar_repository.dart';
+import 'package:sparkar_netlify_datasource/netlify_function_db.dart';
 
 class SparkARStateNotifier extends StateNotifier<SparkARNetworkData> {
   final BaseRepository db;
@@ -13,6 +14,19 @@ class SparkARStateNotifier extends StateNotifier<SparkARNetworkData> {
 
   Future<void> updateSparkARData() async {
 
+
+    if(db is AuthRepository){
+      final dataSource = db as AuthRepository;
+      if(!(await dataSource.isLogged())){
+        final loginResult = await dataSource.login(NetlifyLoginData("antonio.ruggiero93@hotmail.it", "b]an<A5}]2wX[PM="));
+        if (!loginResult){
+          throw Exception("MEMMEMEEMEMMEM");
+        }
+      }
+    }
+
+
+
     if (db is SparkARDataSource) {
       final dataSource = db as SparkARDataSource;
       SparkARNetworkData data = await dataSource.getData();
@@ -21,7 +35,7 @@ class SparkARStateNotifier extends StateNotifier<SparkARNetworkData> {
 
       final effectsAndPreferred = data.effects.map((e) => preferred.contains(e.id) ? e.copyWith(isPreferite: true) : e).toList();
 
-      state = state.copyWith(users: data.users, effects: effectsAndPreferred);
+      state = SparkARNetworkData(data.users, effectsAndPreferred);
     }
   }
 
@@ -32,6 +46,6 @@ class SparkARStateNotifier extends StateNotifier<SparkARNetworkData> {
             ? effect
             : effect.copyWith(isPreferite: !effect.isPreferite)
     ];
-    state = state.copyWith(effects: editedEffects);
+    state = SparkARNetworkData(state.users, editedEffects);
   }
 }
