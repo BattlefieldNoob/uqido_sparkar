@@ -1,16 +1,20 @@
+import 'package:base_types/repository/abstract_repository.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:flutter_login/flutter_login.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:sparkar_netlify_datasource/netlify_function_db.dart';
+import 'package:sparkar_providers/spark_ar_data_provider.dart';
 
-class LoginPage extends StatelessWidget {
-  const LoginPage();
+class LoginPage extends ConsumerWidget {
+  const LoginPage(): super(key: null);
 
   @override
-  Widget build(BuildContext context) {
+  Widget build(BuildContext context, WidgetRef ref) {
     return FlutterLogin(
       title: 'Spark AR',
       logo: 'assets/images/Icon-512.png',
-      onLogin: (data) async => await _authUser(data, context),
+      onLogin: (data) async => await _authUser(data, context, ref),
       onSubmitAnimationCompleted: () {
         //context.read<SparkARBloc>();
       },
@@ -34,16 +38,23 @@ class LoginPage extends StatelessWidget {
     );
   }
 
-  Future<String?> _authUser(LoginData data, BuildContext context) async {
-    //var encryptedData = await getEncryptedPasswordAndLoginData(data.password);
+  Future<String?> _authUser(LoginData data, BuildContext context, WidgetRef ref) async {
 
-    //context
-    //    .read<SparkARBloc>()
-    //    .add(SparkARAction.login(email: data.name, loginData: encryptedData));
+    final db = ref.read(repositoryProvider);
 
-    await Future.delayed(Duration(seconds: 6));
-
-    //return context.read<SparkARBloc>().state.maybeMap(
-    //    orElse: () => null, logout: (state) => "Email or Password are wrong!");
+    if(db is AuthRepository){
+      final dataSource = db as AuthRepository;
+      if(await dataSource.isLogged()) {
+        await dataSource.logout();
+      }
+      if(await dataSource.login(NetlifyLoginData(data.name, data.password))){
+        ref.refresh(authProvider);
+        return null;
+      }else{
+        return "Wrong username or password!";
+      }
+    } else {
+      return "Something wrong! Please reload page";
+    }
   }
 }

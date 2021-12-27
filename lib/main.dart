@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:one_context/one_context.dart';
+import 'package:sparkar_viewmodel/app.dart';
 import 'package:sparkar_viewmodel/common/app_breakpoints.dart';
 import 'package:sparkar_viewmodel/common/app_theme.dart';
 import 'package:sparkar_viewmodel/home_page.dart';
@@ -18,5 +19,5 @@ void main() async {
             return child;
           },
           theme: getTheme(),
-          home: const HomePage())));
+          home: const App())));
 }

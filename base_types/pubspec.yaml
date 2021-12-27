@@ -29,6 +29,12 @@ dependencies:
   cupertino_icons: ^1.0.2
   flutter_cache: ^0.1.0
 
+dependency_overrides:
+  flutter_cache:
+    git:
+      url: https://github.com/BattlefieldNoob/flutter_cache.git
+      ref: feature/check-if-key-exist-before-destroy
+
 dev_dependencies:
   flutter_test:
     sdk: flutter

@@ -13,20 +13,6 @@ class SparkARStateNotifier extends StateNotifier<SparkARNetworkData> {
   }
 
   Future<void> updateSparkARData() async {
-
-
-    if(db is AuthRepository){
-      final dataSource = db as AuthRepository;
-      if(!(await dataSource.isLogged())){
-        final loginResult = await dataSource.login(NetlifyLoginData("antonio.ruggiero93@hotmail.it", "b]an<A5}]2wX[PM="));
-        if (!loginResult){
-          throw Exception("MEMMEMEEMEMMEM");
-        }
-      }
-    }
-
-
-
     if (db is SparkARDataSource) {
       final dataSource = db as SparkARDataSource;
       SparkARNetworkData data = await dataSource.getData();

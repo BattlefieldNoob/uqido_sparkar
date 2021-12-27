@@ -1,3 +1,4 @@
+import 'package:base_types/repository/abstract_repository.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:extensions/text_widget.dart';
@@ -17,16 +18,16 @@ class HomePage extends ConsumerWidget {
     return DefaultTabController(
         length: users + 1,
         initialIndex: users == 0 ? 0 : 1,
-        child: const Scaffold(
+        child: Scaffold(
             appBar: PreferredSize(
                 preferredSize: Size.fromHeight(220),
-                child: MobileHomePageAppBar()),
+                child: MobileHomePageAppBar(ref)),
             body: MobileHomePageBody()));
   }
 }
 
 @swidget
-Widget mobileHomePageAppBar(BuildContext context) {
+Widget mobileHomePageAppBar(BuildContext context, WidgetRef ref) {
   return AppBar(
     automaticallyImplyLeading: false,
     leading: const Icon(Icons.menu),
@@ -34,7 +35,14 @@ Widget mobileHomePageAppBar(BuildContext context) {
       Padding(
           padding: const EdgeInsets.only(right: 8),
           child: IconButton(
-              onPressed: () => {}, icon: const Icon(Icons.account_circle)))
+              onPressed: () async {
+                final a = ref.read(repositoryProvider);
+                if (a is AuthRepository){
+                  final ds=a as AuthRepository;
+                  await ds.logout();
+                  ref.refresh(authProvider);
+                }
+              }, icon: const Icon(Icons.account_circle)))
     ],
     elevation: 0,
     bottom: PreferredSize(

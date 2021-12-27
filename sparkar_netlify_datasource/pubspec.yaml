@@ -39,6 +39,10 @@ dependencies:
     path: ../sparkar_data_model
 
 dependency_overrides:
+  flutter_cache:
+    git:
+      url: https://github.com/BattlefieldNoob/flutter_cache.git
+      ref: feature/check-if-key-exist-before-destroy
   webcrypto:
     git:
       url: https://github.com/tauu/webcrypto.dart

@@ -44,7 +44,7 @@ packages:
     source: hosted
     version: "2.8.2"
   base_types:
-    dependency: transitive
+    dependency: "direct main"
     description:
       path: "../base_types"
       relative: true
@@ -574,17 +574,24 @@ packages:
       relative: true
     source: path
     version: "1.0.0+1"
+  sparkar_firestone_datasource:
+    dependency: transitive
+    description:
+      path: "../sparkar_firestone_datasource"
+      relative: true
+    source: path
+    version: "1.0.0+1"
+  sparkar_netlify_datasource:
+    dependency: "direct main"
+    description:
+      path: "../sparkar_netlify_datasource"
+      relative: true
+    source: path
+    version: "1.0.0+1"
   sparkar_providers:
     dependency: "direct main"
     description:
       path: "../sparkar_providers"
-      relative: true
-    source: path
-    version: "1.0.0+1"
-  sparkar_repository:
-    dependency: transitive
-    description:
-      path: "../sparkar_repository"
       relative: true
     source: path
     version: "1.0.0+1"
@@ -707,6 +714,13 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "1.0.1"
+  webcrypto:
+    dependency: transitive
+    description:
+      name: webcrypto
+      url: "https://pub.dartlang.org"
+    source: hosted
+    version: "0.5.2"
   widgets:
     dependency: "direct main"
     description:

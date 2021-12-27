@@ -7,13 +7,16 @@ part of 'home_page.dart';
 // **************************************************************************
 
 class MobileHomePageAppBar extends StatelessWidget {
-  const MobileHomePageAppBar({Key? key}) : super(key: key);
+
+  final WidgetRef ref;
+  const MobileHomePageAppBar(this.ref,{Key? key}) : super(key: key);
 
   @override
-  Widget build(BuildContext _context) => mobileHomePageAppBar(_context);
+  Widget build(BuildContext _context) => mobileHomePageAppBar(_context,ref);
 }
 
 class MobileHomePageBody extends StatelessWidget {
+
   const MobileHomePageBody({Key? key}) : super(key: key);
 
   @override

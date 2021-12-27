@@ -79,9 +79,11 @@ packages:
   flutter_cache:
     dependency: "direct main"
     description:
-      name: flutter_cache
-      url: "https://pub.dartlang.org"
-    source: hosted
+      path: "."
+      ref: "feature/check-if-key-exist-before-destroy"
+      resolved-ref: f012ca74d066927f6746e71ba422ddccf5057b96
+      url: "https://github.com/BattlefieldNoob/flutter_cache.git"
+    source: git
     version: "0.1.0"
   flutter_lints:
     dependency: "direct dev"

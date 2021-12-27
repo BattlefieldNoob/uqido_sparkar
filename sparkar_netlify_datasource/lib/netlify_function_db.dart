@@ -57,10 +57,7 @@ class NetlifyFunctionDB extends CachedBaseRepository<SparkARNetworkData>
   @override
   Future<bool> login(NetlifyLoginData loginData) async {
     //await logout(); //clear old data
-
     try {
-      await _loginAndReturnCookies(loginData);
-
       await cache.remember(
           "login_cookies", () => _loginAndReturnCookies(loginData));
       //all ok, save cookies to data
@@ -90,10 +87,10 @@ class NetlifyFunctionDB extends CachedBaseRepository<SparkARNetworkData>
   }
 
   @override
-  Future<bool> logout() {
-    cache.destroy("login_cookies");
-    cache.destroy("sparkar_users");
-    cache.destroy("app_user_preferred");
+  Future<bool> logout() async {
+    await cache.destroy("login_cookies");
+    await cache.destroy("sparkar_users");
+    await cache.destroy("app_user_preferred");
     return Future.value(true);
   }
 }

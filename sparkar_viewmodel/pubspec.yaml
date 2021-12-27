@@ -41,6 +41,10 @@ dependencies:
     path: ../extensions
   widgets:
     path: ../widgets
+  base_types:
+    path: ../base_types
+  sparkar_netlify_datasource:
+    path: ../sparkar_netlify_datasource
   sparkar_providers:
     path: ../sparkar_providers
 
