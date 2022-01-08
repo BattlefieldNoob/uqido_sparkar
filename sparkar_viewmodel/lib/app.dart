@@ -1,4 +1,3 @@
-
 import 'package:flutter/cupertino.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:sparkar_providers/spark_ar_data_provider.dart';
@@ -11,10 +10,11 @@ class App extends ConsumerWidget {
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     final asyncLoginState = ref.watch(authProvider);
-    return asyncLoginState.when(data: (logged) {
-      return logged ? const HomePage() : const LoginPage();
-    },
-        error: (o,stack,v) => const LoginPage(),
-        loading: (v) => const Container());
+    return asyncLoginState.when(
+        data: (logged) {
+          return logged ? const HomePage() : const LoginPage();
+        },
+        error: (o, stack) => const LoginPage(),
+        loading: () => const SizedBox());
   }
 }
