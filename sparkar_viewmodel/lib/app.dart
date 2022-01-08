@@ -1,6 +1,5 @@
 
 import 'package:flutter/cupertino.dart';
-import 'package:flutter/src/widgets/framework.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:sparkar_providers/spark_ar_data_provider.dart';
 import 'package:sparkar_viewmodel/common/login_page.dart';
@@ -16,6 +15,6 @@ class App extends ConsumerWidget {
       return logged ? const HomePage() : const LoginPage();
     },
         error: (o,stack,v) => const LoginPage(),
-        loading: (v) => Container());
+        loading: (v) => const Container());
   }
 }
