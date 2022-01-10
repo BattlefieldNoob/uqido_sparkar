@@ -24,6 +24,7 @@ class _$SparkAREffectTearOff {
   _SparkAREffect call(
       String id,
       String name,
+      String ownerId,
       String submissionStatus,
       String visibilityStatus,
       bool isDeprecated,
@@ -34,6 +35,7 @@ class _$SparkAREffectTearOff {
     return _SparkAREffect(
       id,
       name,
+      ownerId,
       submissionStatus,
       visibilityStatus,
       isDeprecated,
@@ -56,6 +58,7 @@ const $SparkAREffect = _$SparkAREffectTearOff();
 mixin _$SparkAREffect {
   String get id => throw _privateConstructorUsedError;
   String get name => throw _privateConstructorUsedError;
+  String get ownerId => throw _privateConstructorUsedError;
   String get submissionStatus => throw _privateConstructorUsedError;
   String get visibilityStatus => throw _privateConstructorUsedError;
   bool get isDeprecated => throw _privateConstructorUsedError;
@@ -78,6 +81,7 @@ abstract class $SparkAREffectCopyWith<$Res> {
   $Res call(
       {String id,
       String name,
+      String ownerId,
       String submissionStatus,
       String visibilityStatus,
       bool isDeprecated,
@@ -100,6 +104,7 @@ class _$SparkAREffectCopyWithImpl<$Res>
   $Res call({
     Object? id = freezed,
     Object? name = freezed,
+    Object? ownerId = freezed,
     Object? submissionStatus = freezed,
     Object? visibilityStatus = freezed,
     Object? isDeprecated = freezed,
@@ -116,6 +121,10 @@ class _$SparkAREffectCopyWithImpl<$Res>
       name: name == freezed
           ? _value.name
           : name // ignore: cast_nullable_to_non_nullable
+              as String,
+      ownerId: ownerId == freezed
+          ? _value.ownerId
+          : ownerId // ignore: cast_nullable_to_non_nullable
               as String,
       submissionStatus: submissionStatus == freezed
           ? _value.submissionStatus
@@ -159,6 +168,7 @@ abstract class _$SparkAREffectCopyWith<$Res>
   $Res call(
       {String id,
       String name,
+      String ownerId,
       String submissionStatus,
       String visibilityStatus,
       bool isDeprecated,
@@ -183,6 +193,7 @@ class __$SparkAREffectCopyWithImpl<$Res>
   $Res call({
     Object? id = freezed,
     Object? name = freezed,
+    Object? ownerId = freezed,
     Object? submissionStatus = freezed,
     Object? visibilityStatus = freezed,
     Object? isDeprecated = freezed,
@@ -199,6 +210,10 @@ class __$SparkAREffectCopyWithImpl<$Res>
       name == freezed
           ? _value.name
           : name // ignore: cast_nullable_to_non_nullable
+              as String,
+      ownerId == freezed
+          ? _value.ownerId
+          : ownerId // ignore: cast_nullable_to_non_nullable
               as String,
       submissionStatus == freezed
           ? _value.submissionStatus
@@ -234,17 +249,19 @@ class __$SparkAREffectCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$_SparkAREffect implements _SparkAREffect {
+class _$_SparkAREffect extends _SparkAREffect {
   _$_SparkAREffect(
       this.id,
       this.name,
+      this.ownerId,
       this.submissionStatus,
       this.visibilityStatus,
       this.isDeprecated,
       this.testLink,
       this.publicLink,
       this.iconUrl,
-      {this.isPreferite = false});
+      {this.isPreferite = false})
+      : super._();
 
   factory _$_SparkAREffect.fromJson(Map<String, dynamic> json) =>
       _$$_SparkAREffectFromJson(json);
@@ -253,6 +270,8 @@ class _$_SparkAREffect implements _SparkAREffect {
   final String id;
   @override
   final String name;
+  @override
+  final String ownerId;
   @override
   final String submissionStatus;
   @override
@@ -277,6 +296,9 @@ class _$_SparkAREffect implements _SparkAREffect {
                 const DeepCollectionEquality().equals(other.id, id)) &&
             (identical(other.name, name) ||
                 const DeepCollectionEquality().equals(other.name, name)) &&
+            (identical(other.ownerId, ownerId) ||
+                const DeepCollectionEquality()
+                    .equals(other.ownerId, ownerId)) &&
             (identical(other.submissionStatus, submissionStatus) ||
                 const DeepCollectionEquality()
                     .equals(other.submissionStatus, submissionStatus)) &&
@@ -305,6 +327,7 @@ class _$_SparkAREffect implements _SparkAREffect {
       runtimeType.hashCode ^
       const DeepCollectionEquality().hash(id) ^
       const DeepCollectionEquality().hash(name) ^
+      const DeepCollectionEquality().hash(ownerId) ^
       const DeepCollectionEquality().hash(submissionStatus) ^
       const DeepCollectionEquality().hash(visibilityStatus) ^
       const DeepCollectionEquality().hash(isDeprecated) ^
@@ -324,10 +347,11 @@ class _$_SparkAREffect implements _SparkAREffect {
   }
 }
 
-abstract class _SparkAREffect implements SparkAREffect {
+abstract class _SparkAREffect extends SparkAREffect {
   factory _SparkAREffect(
       String id,
       String name,
+      String ownerId,
       String submissionStatus,
       String visibilityStatus,
       bool isDeprecated,
@@ -335,6 +359,7 @@ abstract class _SparkAREffect implements SparkAREffect {
       String publicLink,
       String iconUrl,
       {bool isPreferite}) = _$_SparkAREffect;
+  _SparkAREffect._() : super._();
 
   factory _SparkAREffect.fromJson(Map<String, dynamic> json) =
       _$_SparkAREffect.fromJson;
@@ -343,6 +368,8 @@ abstract class _SparkAREffect implements SparkAREffect {
   String get id => throw _privateConstructorUsedError;
   @override
   String get name => throw _privateConstructorUsedError;
+  @override
+  String get ownerId => throw _privateConstructorUsedError;
   @override
   String get submissionStatus => throw _privateConstructorUsedError;
   @override

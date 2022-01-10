@@ -6,9 +6,13 @@ part 'sparkar_effect.g.dart';
 
 @freezed
 class SparkAREffect with _$SparkAREffect {
+
+  const SparkAREffect._();
+
   factory SparkAREffect(
       String id,
       String name,
+      String ownerId,
       String submissionStatus,
       String visibilityStatus,
       bool isDeprecated,
@@ -22,6 +26,6 @@ class SparkAREffect with _$SparkAREffect {
 
   @override
   String toString() {
-    return "SparkAREffect($id,$name)";
+    return "SparkAREffect($id, $name, owner: $ownerId)";
   }
 }

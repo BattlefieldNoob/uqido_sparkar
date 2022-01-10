@@ -7,23 +7,16 @@ part 'sparkar_user.g.dart';
 @freezed
 class SparkARUser with _$SparkARUser {
 
+  const SparkARUser._(); // Added constructor
+
   factory SparkARUser(
           String id, String name, String iconUrl, List<String> effects) =
       _SparkARUser;
 
-  factory SparkARUser.fromJson(Map<String, dynamic> json) => _$$SparkARUserFromJson(json);
+  factory SparkARUser.fromJson(Map<String, dynamic> json) => _$SparkARUserFromJson(json);
 
   @override
   String toString() {
-    return "SparkARUser($id,$name,[$effects])";
+    return "SparkARUser($id, $name, #effects:${effects.length})";
   }
-}
-
-SparkARUser _$$SparkARUserFromJson(Map<String, dynamic> json) {
-  return _$_SparkARUser(
-    json['id'] as String,
-    json['name'] as String,
-    json['iconUrl'] as String,
-    (json['effects'] as List<dynamic>).map((e) => e['id'] as String).toList(),
-  );
 }

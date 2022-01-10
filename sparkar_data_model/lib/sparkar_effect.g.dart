@@ -10,6 +10,7 @@ _$_SparkAREffect _$$_SparkAREffectFromJson(Map<String, dynamic> json) =>
     _$_SparkAREffect(
       json['id'] as String,
       json['name'] as String,
+      json['ownerId'] as String,
       json['submissionStatus'] as String,
       json['visibilityStatus'] as String,
       json['isDeprecated'] as bool,
@@ -23,6 +24,7 @@ Map<String, dynamic> _$$_SparkAREffectToJson(_$_SparkAREffect instance) =>
     <String, dynamic>{
       'id': instance.id,
       'name': instance.name,
+      'ownerId': instance.ownerId,
       'submissionStatus': instance.submissionStatus,
       'visibilityStatus': instance.visibilityStatus,
       'isDeprecated': instance.isDeprecated,

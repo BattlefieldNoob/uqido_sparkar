@@ -17,29 +17,27 @@ class FirestoreDB extends CachedBaseRepository<SparkARNetworkData> with SparkARD
     return _instance;
   }
 
-  Future<List<Map<String,dynamic>>> _getDataFromFirestone() async {
-    var snapshot = await firestore.collection("spark-ar-users").get();
+  Future<List<Map<String,dynamic>>> _getUsersFromFirestone() async {
+    var snapshot = await firestore.collection("users").get();
+
+    return snapshot.docs.where((e) => e.exists).map((e) => e.data()).toList();
+  }
+
+  Future<List<Map<String,dynamic>>> _getEffectsFromFirestone() async {
+    var snapshot = await firestore.collection("effects").get();
 
     return snapshot.docs.where((e) => e.exists).map((e) => e.data()).toList();
   }
 
   @override
   Future<SparkARNetworkData> getData() async {
-    final jsonResult = ((await checkCache('sparkar_users', _getDataFromFirestone)) as List<dynamic>).cast<Map<String,dynamic>>();
+    final usersJson = ((await checkCache('users', _getUsersFromFirestone)) as List<dynamic>).cast<Map<String,dynamic>>();
 
-    //TODO remove after editing BE
-    final users = jsonResult.map((user) => SparkARUser(
-        user['id'] as String,
-        user['name'] as String,
-        user['iconUrl'] as String,
-        (user['effects'] as List<dynamic>)
-            .map((e) => e['id'] as String)
-            .toList())).toList();
+    final users = usersJson.map((user) => SparkARUser.fromJson(user)).toList();
 
-    //TODO remove after editing BE
-    final effects = jsonResult
-        .expand((user) => user['effects'] as List<dynamic>)
-        .map((effect) => SparkAREffect.fromJson(effect)).toList();
+    final effectsJson = ((await checkCache('effects', _getEffectsFromFirestone)) as List<dynamic>).cast<Map<String,dynamic>>();
+
+    final effects = effectsJson.map((effect) => SparkAREffect.fromJson(effect)).toList();
 
     return SparkARNetworkData(users, effects);
   }

@@ -146,8 +146,8 @@ class __$SparkARUserCopyWithImpl<$Res> extends _$SparkARUserCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$_SparkARUser implements _SparkARUser {
-  _$_SparkARUser(this.id, this.name, this.iconUrl, this.effects);
+class _$_SparkARUser extends _SparkARUser {
+  _$_SparkARUser(this.id, this.name, this.iconUrl, this.effects) : super._();
 
   factory _$_SparkARUser.fromJson(Map<String, dynamic> json) =>
       _$$_SparkARUserFromJson(json);
@@ -195,10 +195,11 @@ class _$_SparkARUser implements _SparkARUser {
   }
 }
 
-abstract class _SparkARUser implements SparkARUser {
+abstract class _SparkARUser extends SparkARUser {
   factory _SparkARUser(
           String id, String name, String iconUrl, List<String> effects) =
       _$_SparkARUser;
+  _SparkARUser._() : super._();
 
   factory _SparkARUser.fromJson(Map<String, dynamic> json) =
       _$_SparkARUser.fromJson;
