@@ -25,9 +25,17 @@ class NetlifyFunctionDB extends CachedBaseRepository<SparkARNetworkData>
   Future<Map<String, dynamic>> _getDataFromNetlify() async {
     final cookies = await cache.load("login_cookies", "") as String;
 
-    final data = await _restClient.getUsersAndEffectWithCookie(cookies);
+    final data = await _restClient.getUsersAndEffectWithCookieV2(cookies);
 
-    return data.data!.toJson();
+    if(data.data!.cookie.isNotEmpty){
+      //update cookies
+      await cache.write("login_cookies", data.data!.cookie);
+    }
+
+    final dataToMap=data.data!.toJson();
+    dataToMap.remove("cookie");
+
+    return dataToMap;
   }
 
 
@@ -41,7 +49,7 @@ class NetlifyFunctionDB extends CachedBaseRepository<SparkARNetworkData>
       final jsonCache = await cache.remember(
           "sparkar_users", _getDataFromNetlify);
 
-      return SparkARNetworkData.fromJson(jsonCache);
+      return SparkARNetworkData.fromJsonV2(jsonCache);
     } catch (e){
       print(e);
       return SparkARNetworkData.empty();

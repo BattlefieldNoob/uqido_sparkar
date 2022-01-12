@@ -19,6 +19,8 @@ class SparkARNetworkData {
 
   factory SparkARNetworkData.fromJson(Map<String, dynamic> json) => _$$SparkARNetworkDataFromJson(json);
 
+  factory SparkARNetworkData.fromJsonV2(Map<String, dynamic> json) => _$$SparkARNetworkDataFromJsonV2(json);
+
   Map<String, dynamic> toJson() => _$$SparkARNetworkDataToJson(this);
 
 }
@@ -51,6 +53,18 @@ SparkARNetworkData _$$SparkARNetworkDataFromJson(Map<String, dynamic> json) {
   final effects = jsonResult
       .expand((user) => user['effects'] as List<dynamic>)
       .map((effect) => SparkAREffect.fromJson(effect))
+      .toList();
+
+  return SparkARNetworkData(users, effects);
+}
+
+SparkARNetworkData _$$SparkARNetworkDataFromJsonV2(Map<String, dynamic> json) {
+  final users = json['users']
+      .map((user) => SparkARUser.fromJson(user)).cast<SparkARUser>().toList();
+
+  final effects = json['effects']
+      .map((effect) => SparkAREffect.fromJson(effect))
+      .cast<SparkAREffect>()
       .toList();
 
   return SparkARNetworkData(users, effects);

@@ -1,6 +1,7 @@
 import 'package:dio/dio.dart' hide Headers;
 import 'package:retrofit/http.dart';
 import 'package:sparkar_data_model/sparkar_network_data.dart';
+import 'package:sparkar_netlify_datasource/models/users_effects_cookies.dart';
 
 import 'models/cookie_response.dart';
 import 'models/netlify_response.dart';
@@ -22,6 +23,10 @@ abstract class RestClient {
 
   @GET("/facebook_get_users_and_effects")
   Future<NetlifyResponse<SparkARNetworkData>> getUsersAndEffectWithCookie(
+      @Query("cookie") String cookie);
+
+  @GET("/facebook_get_users_and_effects/v2")
+  Future<NetlifyResponse<UsersEffectsCookies>> getUsersAndEffectWithCookieV2(
       @Query("cookie") String cookie);
 
   @GET("/facebook_public_keys")

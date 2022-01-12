@@ -61,6 +61,26 @@ class _RestClient implements RestClient {
   }
 
   @override
+  Future<NetlifyResponse<UsersEffectsCookies>> getUsersAndEffectWithCookieV2(
+      cookie) async {
+    const _extra = <String, dynamic>{};
+    final queryParameters = <String, dynamic>{r'cookie': cookie};
+    final _headers = <String, dynamic>{};
+    final _data = <String, dynamic>{};
+    final _result = await _dio.fetch<Map<String, dynamic>>(
+        _setStreamType<NetlifyResponse<UsersEffectsCookies>>(
+            Options(method: 'GET', headers: _headers, extra: _extra)
+                .compose(_dio.options, '/facebook_get_users_and_effects/v2',
+                    queryParameters: queryParameters, data: _data)
+                .copyWith(baseUrl: baseUrl ?? _dio.options.baseUrl)));
+    final value = NetlifyResponse<UsersEffectsCookies>.fromJson(
+      _result.data!,
+      (json) => UsersEffectsCookies.fromJson(json as Map<String, dynamic>),
+    );
+    return value;
+  }
+
+  @override
   Future<NetlifyResponse<PublicKeysResponse>> getPublicKeys() async {
     const _extra = <String, dynamic>{};
     final queryParameters = <String, dynamic>{};
