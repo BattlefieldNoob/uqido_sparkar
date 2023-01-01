@@ -266,7 +266,7 @@ packages:
       name: ffi
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "1.1.2"
+    version: "2.0.1"
   file:
     dependency: transitive
     description:
@@ -507,7 +507,7 @@ packages:
       name: path_provider_linux
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "2.1.5"
+    version: "2.1.7"
   path_provider_platform_interface:
     dependency: transitive
     description:
@@ -521,7 +521,7 @@ packages:
       name: path_provider_windows
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "2.0.5"
+    version: "2.1.3"
   pedantic:
     dependency: transitive
     description:
@@ -887,12 +887,10 @@ packages:
   webcrypto:
     dependency: "direct main"
     description:
-      path: "."
-      ref: "0.5.2-fix"
-      resolved-ref: "9717a4ad367053a31d0a2fda308d98e83466636f"
-      url: "https://github.com/tauu/webcrypto.dart"
-    source: git
-    version: "0.5.2"
+      name: webcrypto
+      url: "https://pub.dartlang.org"
+    source: hosted
+    version: "0.5.3"
   widgets:
     dependency: "direct main"
     description:
@@ -906,7 +904,7 @@ packages:
       name: win32
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "2.4.4"
+    version: "3.1.3"
   xdg_directories:
     dependency: transitive
     description:
@@ -922,5 +920,5 @@ packages:
     source: hosted
     version: "3.1.0"
 sdks:
-  dart: ">=2.17.0-0 <3.0.0"
-  flutter: ">=2.10.0"
+  dart: ">=2.17.0 <3.0.0"
+  flutter: ">=3.3.10"
