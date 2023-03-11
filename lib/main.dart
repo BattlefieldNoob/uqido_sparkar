@@ -1,10 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:one_context/one_context.dart';
-import 'package:sparkar_viewmodel/app.dart';
-import 'package:sparkar_viewmodel/common/app_breakpoints.dart';
-import 'package:sparkar_viewmodel/common/app_theme.dart';
-import 'package:sparkar_viewmodel/home_page.dart';
+import 'package:uqido_sparkar/widgets/app.dart';
+import 'package:uqido_sparkar/widgets/common/app_breakpoints.dart';
+import 'package:uqido_sparkar/widgets/common/app_theme.dart';
 
 import 'mock_main.dart';
 

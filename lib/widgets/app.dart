@@ -1,8 +1,8 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:sparkar_providers/spark_ar_data_provider.dart';
-import 'package:sparkar_viewmodel/common/login_page.dart';
-import 'package:sparkar_viewmodel/home_page.dart';
+import 'package:uqido_sparkar/providers/spark_ar_data_provider.dart';
+import 'package:uqido_sparkar/widgets/common/login_page.dart';
+import 'package:uqido_sparkar/widgets/home_page.dart';
 
 class App extends ConsumerWidget {
   const App({Key? key}) : super(key: key);

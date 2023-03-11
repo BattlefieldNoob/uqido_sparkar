@@ -4,10 +4,10 @@ import 'package:flutter/widgets.dart';
 import 'package:flutter_login/flutter_login.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:sparkar_netlify_datasource/netlify_function_db.dart';
-import 'package:sparkar_providers/spark_ar_data_provider.dart';
+import 'package:uqido_sparkar/providers/spark_ar_data_provider.dart';
 
 class LoginPage extends ConsumerWidget {
-  const LoginPage(): super(key: null);
+  const LoginPage() : super(key: null);
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
@@ -38,19 +38,19 @@ class LoginPage extends ConsumerWidget {
     );
   }
 
-  Future<String?> _authUser(LoginData data, BuildContext context, WidgetRef ref) async {
-
+  Future<String?> _authUser(
+      LoginData data, BuildContext context, WidgetRef ref) async {
     final db = ref.read(repositoryProvider);
 
-    if(db is AuthRepository){
+    if (db is AuthRepository) {
       final dataSource = db as AuthRepository;
-      if(await dataSource.isLogged()) {
+      if (await dataSource.isLogged()) {
         await dataSource.logout();
       }
-      if(await dataSource.login(NetlifyLoginData(data.name, data.password))){
+      if (await dataSource.login(NetlifyLoginData(data.name, data.password))) {
         ref.refresh(authProvider);
         return null;
-      }else{
+      } else {
         return "Wrong username or password!";
       }
     } else {

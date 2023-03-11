@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:sparkar_viewmodel/common/search_app_bar.dart';
+import 'package:uqido_sparkar/widgets/common/search_app_bar.dart';
 
 import 'home_loading_bar.dart';
 
@@ -13,7 +13,7 @@ class HomeAppBar extends StatelessWidget implements PreferredSizeWidget {
 
   @override
   Widget build(BuildContext context) {
-    final theme=Theme.of(context).colorScheme;
+    final theme = Theme.of(context).colorScheme;
 
     return SearchAppBar(
         primary: theme.primary,

@@ -3,25 +3,24 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:sparkar_data_model/sparkar_effect.dart';
 import 'package:sparkar_data_model/sparkar_network_data.dart';
 import 'package:sparkar_data_model/sparkar_user.dart';
-import 'package:sparkar_firestone_datasource/firestore_db.dart';
 import 'package:sparkar_netlify_datasource/netlify_function_db.dart';
-import 'spark_ar_state_notifier.dart';
+import 'package:uqido_sparkar/providers/spark_ar_state_notifier.dart';
 
 //final repositoryProvider = Provider<BaseRepository>((ref) => MockDB.getInstance(),
 //    name: "Repository Provider");
-final repositoryProvider = Provider<BaseRepository>((ref) => NetlifyFunctionDB.getInstance(),
+final repositoryProvider = Provider<BaseRepository>(
+    (ref) => NetlifyFunctionDB.getInstance(),
     name: "Repository Provider");
 
 final authProvider = FutureProvider<bool>((ref) async {
-    final db = ref.watch(repositoryProvider);
-    if(db is AuthRepository){
-        final datasource=db as AuthRepository;
-        return datasource.isLogged();
-    }else{
-        return true;
-    }
-},name: "Auth Provider");
-
+  final db = ref.watch(repositoryProvider);
+  if (db is AuthRepository) {
+    final datasource = db as AuthRepository;
+    return datasource.isLogged();
+  } else {
+    return true;
+  }
+}, name: "Auth Provider");
 
 final sparkARDataProvider =
     StateNotifierProvider<SparkARStateNotifier, SparkARNetworkData>(
