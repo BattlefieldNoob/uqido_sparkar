@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:uqido_sparkar/providers/spark_ar_data_provider.dart';
+import 'package:uqido_sparkar/providers/data_provider.dart';
 import 'package:widgets/circle_image.dart';
 
 class AccountTab extends ConsumerWidget {
@@ -10,8 +10,8 @@ class AccountTab extends ConsumerWidget {
   Widget build(BuildContext context, WidgetRef ref) {
     final user = ref.watch(currentUser);
     return Tab(
-      icon: CircleImage(user.iconUrl),
-      text: user.name,
+      icon: CircleImage(user.profilePicture.uri),
+      text: user.displayName,
     );
   }
 }

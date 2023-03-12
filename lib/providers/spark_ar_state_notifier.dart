@@ -1,10 +1,4 @@
-import 'package:base_types/repository/abstract_repository.dart';
-import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:sparkar_data_model/sparkar_effect.dart';
-import 'package:sparkar_data_model/sparkar_network_data.dart';
-import 'package:sparkar_data_model/sparkar_repository.dart';
-import 'package:sparkar_netlify_datasource/netlify_function_db.dart';
-
+/*
 class SparkARStateNotifier extends StateNotifier<SparkARNetworkData> {
   final BaseRepository db;
 
@@ -15,11 +9,14 @@ class SparkARStateNotifier extends StateNotifier<SparkARNetworkData> {
   Future<void> updateSparkARData() async {
     if (db is SparkARDataSource) {
       final dataSource = db as SparkARDataSource;
-      SparkARNetworkData data = await dataSource.getData();
+      SparkARNetworkData data = await dataSource.fetchData();
 
       final preferred = await dataSource.getPreferred();
 
-      final effectsAndPreferred = data.effects.map((e) => preferred.contains(e.id) ? e.copyWith(isPreferite: true) : e).toList();
+      final effectsAndPreferred = data.effects
+          .map((e) =>
+              preferred.contains(e.id) ? e.copyWith(isPreferite: true) : e)
+          .toList();
 
       state = SparkARNetworkData(data.users, effectsAndPreferred);
     }
@@ -27,7 +24,7 @@ class SparkARStateNotifier extends StateNotifier<SparkARNetworkData> {
 
   void toggleFavorite(String effectId) {
     final editedEffects = [
-      for (SparkAREffect effect in state.effects)
+      for (Effect effect in state.effects)
         effect.id != effectId
             ? effect
             : effect.copyWith(isPreferite: !effect.isPreferite)
@@ -35,3 +32,4 @@ class SparkARStateNotifier extends StateNotifier<SparkARNetworkData> {
     state = SparkARNetworkData(state.users, editedEffects);
   }
 }
+*/

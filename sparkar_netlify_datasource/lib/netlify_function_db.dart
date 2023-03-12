@@ -2,15 +2,15 @@ import 'dart:async';
 
 import 'package:base_types/repository/abstract_repository.dart';
 import 'package:dio/dio.dart';
-import 'package:sparkar_data_model/sparkar_network_data.dart';
-import 'package:sparkar_data_model/sparkar_repository.dart';
 import 'package:flutter_cache/flutter_cache.dart' as cache;
+import 'package:sparkar_data_model/owner.dart';
+import 'package:sparkar_data_model/sparkar_repository.dart';
+
 import 'facebook_password_encrypt_util.dart';
 import 'rest_client.dart';
 
-class NetlifyFunctionDB extends CachedBaseRepository<SparkARNetworkData>
+class NetlifyFunctionDB extends CachedBaseRepository<List<Owner>>
     with SparkARDataSource, AuthRepository<NetlifyLoginData> {
-
   static final NetlifyFunctionDB _instance = NetlifyFunctionDB._internal();
 
   final RestClient _restClient;
@@ -21,30 +21,25 @@ class NetlifyFunctionDB extends CachedBaseRepository<SparkARNetworkData>
     return _instance;
   }
 
-
-  Future<Map<String, dynamic>> _getDataFromNetlify() async {
+  Future<List<Owner>> _getDataFromNetlify() async {
     final cookies = await cache.load("login_cookies", "") as String;
 
     final data = await _restClient.getUsersAndEffectWithCookie(cookies);
 
-    return data.data!.toJson();
+    return data.data!;
   }
 
-
   @override
-  Future<SparkARNetworkData> getData() async {
+  Future<List<Owner>> fetchData() async {
     if (!(await isLogged())) {
-      return SparkARNetworkData.empty();
+      return [];
     }
 
     try {
-      final jsonCache = await cache.remember(
-          "sparkar_users", _getDataFromNetlify);
-
-      return SparkARNetworkData.fromJson(jsonCache);
-    } catch (e){
+      return await cache.remember("sparkar_users", _getDataFromNetlify);
+    } catch (e) {
       print(e);
-      return SparkARNetworkData.empty();
+      return [];
     }
   }
 
@@ -52,7 +47,6 @@ class NetlifyFunctionDB extends CachedBaseRepository<SparkARNetworkData>
   Future<List<String>> getPreferred() {
     return Future.value(["429169167683036"]);
   }
-
 
   @override
   Future<bool> login(NetlifyLoginData loginData) async {
@@ -94,7 +88,6 @@ class NetlifyFunctionDB extends CachedBaseRepository<SparkARNetworkData>
     return Future.value(true);
   }
 }
-
 
 class NetlifyLoginData extends BaseLoginData {
   final String email;

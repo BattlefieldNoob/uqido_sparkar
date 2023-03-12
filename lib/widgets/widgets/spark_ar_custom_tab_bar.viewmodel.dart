@@ -1,11 +1,11 @@
 part of 'spark_ar_custom_tab_bar.dart';
 
-Tab userToTab(SparkARUser user) {
+Tab userToTab(Owner user) {
   return Tab(
     icon: CircleAvatar(
         backgroundImage: NetworkImage(
-      user.iconUrl,
+      user.profilePicture.uri,
     )),
-    text: user.name,
+    text: user.displayName,
   );
 }

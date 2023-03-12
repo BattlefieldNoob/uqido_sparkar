@@ -7,9 +7,13 @@ part of 'effect_list_item.dart';
 // **************************************************************************
 
 class ClickableIcon extends StatelessWidget {
-  const ClickableIcon(this.icon, this.url,
-      {Key? key, this.enabled = true, this.primary = true})
-      : super(key: key);
+  const ClickableIcon(
+    this.icon,
+    this.url, {
+    Key? key,
+    this.enabled = true,
+    this.primary = true,
+  }) : super(key: key);
 
   final IconData icon;
 
@@ -20,6 +24,11 @@ class ClickableIcon extends StatelessWidget {
   final bool primary;
 
   @override
-  Widget build(BuildContext _context) =>
-      clickableIcon(_context, icon, url, enabled: enabled, primary: primary);
+  Widget build(BuildContext _context) => clickableIcon(
+        _context,
+        icon,
+        url,
+        enabled: enabled,
+        primary: primary,
+      );
 }

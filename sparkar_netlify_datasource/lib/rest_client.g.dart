@@ -6,8 +6,13 @@ part of 'rest_client.dart';
 // RetrofitGenerator
 // **************************************************************************
 
+// ignore_for_file: unnecessary_brace_in_string_interps,no_leading_underscores_for_local_identifiers
+
 class _RestClient implements RestClient {
-  _RestClient(this._dio, {this.baseUrl}) {
+  _RestClient(
+    this._dio, {
+    this.baseUrl,
+  }) {
     baseUrl ??=
         'https://sparkar-data-extractor.netlify.app/.netlify/functions/';
   }
@@ -18,21 +23,31 @@ class _RestClient implements RestClient {
 
   @override
   Future<NetlifyResponse<CookieResponse>> getCookiesWithEncryptedLoginData(
-      encpass, lsd, email) async {
+    encpass,
+    lsd,
+    email,
+  ) async {
     const _extra = <String, dynamic>{};
     final queryParameters = <String, dynamic>{
       r'encpass': encpass,
       r'lsd': lsd,
-      r'email': email
+      r'email': email,
     };
     final _headers = <String, dynamic>{};
-    final _data = <String, dynamic>{};
+    final Map<String, dynamic>? _data = null;
     final _result = await _dio.fetch<Map<String, dynamic>>(
-        _setStreamType<NetlifyResponse<CookieResponse>>(
-            Options(method: 'GET', headers: _headers, extra: _extra)
-                .compose(_dio.options, '/facebook_get_cookie',
-                    queryParameters: queryParameters, data: _data)
-                .copyWith(baseUrl: baseUrl ?? _dio.options.baseUrl)));
+        _setStreamType<NetlifyResponse<CookieResponse>>(Options(
+      method: 'GET',
+      headers: _headers,
+      extra: _extra,
+    )
+            .compose(
+              _dio.options,
+              '/facebook_get_cookie',
+              queryParameters: queryParameters,
+              data: _data,
+            )
+            .copyWith(baseUrl: baseUrl ?? _dio.options.baseUrl)));
     final value = NetlifyResponse<CookieResponse>.fromJson(
       _result.data!,
       (json) => CookieResponse.fromJson(json as Map<String, dynamic>),
@@ -41,21 +56,32 @@ class _RestClient implements RestClient {
   }
 
   @override
-  Future<NetlifyResponse<SparkARNetworkData>> getUsersAndEffectWithCookie(
+  Future<NetlifyResponse<List<Owner>>> getUsersAndEffectWithCookie(
       cookie) async {
     const _extra = <String, dynamic>{};
     final queryParameters = <String, dynamic>{r'cookie': cookie};
     final _headers = <String, dynamic>{};
-    final _data = <String, dynamic>{};
+    final Map<String, dynamic>? _data = null;
     final _result = await _dio.fetch<Map<String, dynamic>>(
-        _setStreamType<NetlifyResponse<SparkARNetworkData>>(
-            Options(method: 'GET', headers: _headers, extra: _extra)
-                .compose(_dio.options, '/facebook_get_users_and_effects',
-                    queryParameters: queryParameters, data: _data)
-                .copyWith(baseUrl: baseUrl ?? _dio.options.baseUrl)));
-    final value = NetlifyResponse<SparkARNetworkData>.fromJson(
+        _setStreamType<NetlifyResponse<List<Owner>>>(Options(
+      method: 'GET',
+      headers: _headers,
+      extra: _extra,
+    )
+            .compose(
+              _dio.options,
+              '/facebook_get_users_and_effects',
+              queryParameters: queryParameters,
+              data: _data,
+            )
+            .copyWith(baseUrl: baseUrl ?? _dio.options.baseUrl)));
+    final value = NetlifyResponse<List<Owner>>.fromJson(
       _result.data!,
-      (json) => SparkARNetworkData.fromJson(json as Map<String, dynamic>),
+      (json) => json is List<dynamic>
+          ? json
+              .map<Owner>((i) => Owner.fromJson(i as Map<String, dynamic>))
+              .toList()
+          : List.empty(),
     );
     return value;
   }
@@ -65,13 +91,20 @@ class _RestClient implements RestClient {
     const _extra = <String, dynamic>{};
     final queryParameters = <String, dynamic>{};
     final _headers = <String, dynamic>{};
-    final _data = <String, dynamic>{};
+    final Map<String, dynamic>? _data = null;
     final _result = await _dio.fetch<Map<String, dynamic>>(
-        _setStreamType<NetlifyResponse<PublicKeysResponse>>(
-            Options(method: 'GET', headers: _headers, extra: _extra)
-                .compose(_dio.options, '/facebook_public_keys',
-                    queryParameters: queryParameters, data: _data)
-                .copyWith(baseUrl: baseUrl ?? _dio.options.baseUrl)));
+        _setStreamType<NetlifyResponse<PublicKeysResponse>>(Options(
+      method: 'GET',
+      headers: _headers,
+      extra: _extra,
+    )
+            .compose(
+              _dio.options,
+              '/facebook_public_keys',
+              queryParameters: queryParameters,
+              data: _data,
+            )
+            .copyWith(baseUrl: baseUrl ?? _dio.options.baseUrl)));
     final value = NetlifyResponse<PublicKeysResponse>.fromJson(
       _result.data!,
       (json) => PublicKeysResponse.fromJson(json as Map<String, dynamic>),

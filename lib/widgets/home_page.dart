@@ -1,9 +1,8 @@
-import 'package:base_types/repository/abstract_repository.dart';
 import 'package:extensions/text_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:functional_widget_annotation/functional_widget_annotation.dart';
-import 'package:uqido_sparkar/providers/spark_ar_data_provider.dart';
+import 'package:uqido_sparkar/providers/data_provider.dart';
 import 'package:uqido_sparkar/widgets/widgets/accounts_tab_bar_view.dart';
 import 'package:uqido_sparkar/widgets/widgets/spark_ar_custom_tab_bar.dart';
 
@@ -14,37 +13,28 @@ class HomePage extends ConsumerWidget {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-    final users = ref.watch(usersCount);
-    return DefaultTabController(
-        length: users + 1,
-        initialIndex: users == 0 ? 0 : 1,
-        child: Scaffold(
-            appBar: PreferredSize(
-                preferredSize: Size.fromHeight(220),
-                child: MobileHomePageAppBar(ref)),
-            body: MobileHomePageBody()));
+    final owners = ref.watch(fetchDataProvider);
+
+    return owners.maybeWhen(
+        orElse: () => CircularProgressIndicator(),
+        data: (data) {
+          return DefaultTabController(
+              length: data.length,
+              initialIndex: 0,
+              child: Scaffold(
+                  appBar: PreferredSize(
+                      preferredSize: Size.fromHeight(220),
+                      child: MobileHomePageAppBar()),
+                  body: MobileHomePageBody()));
+        });
   }
 }
 
 @swidget
-Widget mobileHomePageAppBar(BuildContext context, WidgetRef ref) {
+Widget mobileHomePageAppBar(BuildContext context) {
   return AppBar(
     automaticallyImplyLeading: false,
     leading: const Icon(Icons.menu),
-    actions: [
-      Padding(
-          padding: const EdgeInsets.only(right: 8),
-          child: IconButton(
-              onPressed: () async {
-                final a = ref.read(repositoryProvider);
-                if (a is AuthRepository) {
-                  final ds = a as AuthRepository;
-                  await ds.logout();
-                  ref.refresh(authProvider);
-                }
-              },
-              icon: const Icon(Icons.account_circle)))
-    ],
     elevation: 0,
     bottom: PreferredSize(
         preferredSize: const Size(0.0, 80.0),

@@ -1,6 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:uqido_sparkar/providers/spark_ar_data_provider.dart';
+import 'package:uqido_sparkar/providers/data_provider.dart';
 import 'package:uqido_sparkar/widgets/common/login_page.dart';
 import 'package:uqido_sparkar/widgets/home_page.dart';
 

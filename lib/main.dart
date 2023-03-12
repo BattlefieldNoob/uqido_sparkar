@@ -5,8 +5,6 @@ import 'package:uqido_sparkar/widgets/app.dart';
 import 'package:uqido_sparkar/widgets/common/app_breakpoints.dart';
 import 'package:uqido_sparkar/widgets/common/app_theme.dart';
 
-import 'mock_main.dart';
-
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   runApp(ProviderScope(
@@ -19,4 +17,20 @@ void main() async {
           },
           theme: getTheme(),
           home: const App())));
+}
+
+class Logger extends ProviderObserver {
+  @override
+  void didUpdateProvider(
+    ProviderBase provider,
+    Object? previousValue,
+    Object? newValue,
+    ProviderContainer container,
+  ) {
+    print('''
+{
+  "provider": "${provider.name ?? provider.runtimeType}",
+  "newValue": "$newValue"
+}''');
+  }
 }

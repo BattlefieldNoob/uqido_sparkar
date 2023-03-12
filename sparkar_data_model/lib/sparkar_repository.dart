@@ -1,9 +1,7 @@
-import 'package:sparkar_data_model/sparkar_network_data.dart';
+import 'package:sparkar_data_model/owner.dart';
 
-mixin SparkARDataSource{
-
-  Future<SparkARNetworkData> getData();
+mixin SparkARDataSource {
+  Future<List<Owner>> fetchData();
 
   Future<List<String>> getPreferred();
-
 }

@@ -1,11 +1,10 @@
 import 'package:dio/dio.dart' hide Headers;
 import 'package:retrofit/http.dart';
-import 'package:sparkar_data_model/sparkar_network_data.dart';
+import 'package:sparkar_data_model/owner.dart';
 
 import 'models/cookie_response.dart';
 import 'models/netlify_response.dart';
 import 'models/public_keys_response.dart';
-
 
 part 'rest_client.g.dart';
 
@@ -21,7 +20,7 @@ abstract class RestClient {
       @Query("email") String email);
 
   @GET("/facebook_get_users_and_effects")
-  Future<NetlifyResponse<SparkARNetworkData>> getUsersAndEffectWithCookie(
+  Future<NetlifyResponse<List<Owner>>> getUsersAndEffectWithCookie(
       @Query("cookie") String cookie);
 
   @GET("/facebook_public_keys")

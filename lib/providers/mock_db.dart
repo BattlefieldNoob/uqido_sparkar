@@ -3,40 +3,26 @@ import 'dart:core';
 
 import 'package:base_types/repository/abstract_repository.dart';
 import 'package:flutter/services.dart';
-import 'package:sparkar_data_model/sparkar_effect.dart';
-import 'package:sparkar_data_model/sparkar_network_data.dart';
-import 'package:sparkar_data_model/sparkar_user.dart';
+import 'package:riverpod_annotation/riverpod_annotation.dart';
+import 'package:sparkar_data_model/owner.dart';
 import 'package:sparkar_data_model/sparkar_repository.dart';
 
-class MockDB extends CachedBaseRepository<SparkARNetworkData> with SparkARDataSource{
-  static final MockDB _instance = MockDB._internal();
+part 'mock_db.g.dart';
 
-  MockDB._internal();
+@riverpod
+SparkARDataSource mockDB(MockDBRef ref) {
+  return MockDB();
+}
 
-  factory MockDB.getInstance() {
-    return _instance;
-  }
+class MockDB extends CachedBaseRepository<List<Owner>> with SparkARDataSource {
+  const MockDB();
 
   @override
-  Future<SparkARNetworkData> getData() async {
-    String data = await rootBundle.loadString('assets/mock_data.json');
-    final jsonResult = json.decode(data) as List<dynamic>; //array of SparkARUser
-
-    //TODO remove after editing BE
-    final users = jsonResult.map((user) => SparkARUser(
-        user['id'] as String,
-        user['name'] as String,
-        user['iconUrl'] as String,
-        (user['effects'] as List<dynamic>)
-            .map((e) => e['id'] as String)
-            .toList())).toList();
-
-    //TODO remove after editing BE
-    final effects = jsonResult
-        .expand((user) => user['effects'] as List<dynamic>)
-        .map((effect) => SparkAREffect.fromJson(effect)).toList();
-
-    return SparkARNetworkData(users, effects);
+  Future<List<Owner>> fetchData() async {
+    String data = await rootBundle.loadString('assets/mock_12_03_2023.json');
+    return (jsonDecode(data) as List<dynamic>)
+        .map((e) => Owner.fromJson(e))
+        .toList();
   }
 
   @override

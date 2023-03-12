@@ -1,11 +1,12 @@
-import 'package:flutter/material.dart';
-import 'package:sparkar_data_model/sparkar_user.dart';
-import 'accounts_tab_bar.dart';
 import 'package:extensions/text_widget.dart';
+import 'package:flutter/material.dart';
+import 'package:sparkar_data_model/owner.dart';
+
+import 'accounts_tab_bar.dart';
 
 part 'spark_ar_custom_tab_bar.viewmodel.dart';
 
-class SparkARCustomTabBar extends StatelessWidget{
+class SparkARCustomTabBar extends StatelessWidget {
   const SparkARCustomTabBar({Key? key}) : super(key: key);
 
   @override

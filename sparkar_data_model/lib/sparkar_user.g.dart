@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-part of 'sparkar_user.dart';
+part of 'owner.dart';
 
 // **************************************************************************
 // JsonSerializableGenerator
