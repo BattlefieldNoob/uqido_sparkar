@@ -39,7 +39,8 @@ Widget homePageEffectsList(BuildContext context, List<Owner> owners) {
       .toList();
 
   return DraggableScrollbar.semicircle(
-      alwaysVisibleScrollThumb: true,
+      //alwaysVisibleScrollThumb: true,
+      labelConstraints: BoxConstraints.tightFor(width: 180, height: 28),
       labelTextBuilder: (offset) {
         final currentItem = controller.hasClients
             ? (controller.offset /
