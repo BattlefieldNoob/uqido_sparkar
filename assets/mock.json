@@ -4,7 +4,7 @@
         "id": "100028894845840",
         "display_name": "Uqido XR",
         "profile_picture": {
-            "uri": "https://scontent-mxp1-1.xx.fbcdn.net/v/t1.6435-1/60090368_201127367527090_394640518782386176_n.jpg?stp=dst-jpg_p100x100&_nc_cat=111&ccb=1-7&_nc_sid=dbb9e7&_nc_ohc=dk__dGICSFoAX8STLte&_nc_ht=scontent-mxp1-1.xx&oh=00_AfDjQ4wJ9dw7bypF2ulgi3HEsyfVJ7ZqfkuoXbA6iDakew&oe=64359B40"
+            "uri": "https://scontent-fco2-1.xx.fbcdn.net/v/t1.6435-1/60090368_201127367527090_394640518782386176_n.jpg?stp=dst-jpg_p100x100&_nc_cat=111&ccb=1-7&_nc_sid=dbb9e7&_nc_ohc=mA4mJDr_jpIAX-FIQmq&_nc_ht=scontent-fco2-1.xx&oh=00_AfAPeADmJcDH6DAYwzVOQtyReSV97t4igQzrPJrQBlvvPQ&oe=643E9D80"
         },
         "username": "uqidoxr",
         "surface_configs": [
@@ -26,7 +26,7 @@
                 "is_enabled": true,
                 "id": "ARStudioEffect:1380362072163096",
                 "name": "UQIDO VTO Make Up",
-                "thumbnail_uri": "https://scontent-mxp1-1.xx.fbcdn.net/v/t39.10260-6/101384342_911789716004067_1379788750992703488_n.png?_nc_cat=110&ccb=1-7&_nc_sid=df6b83&_nc_ohc=0JprJE0v-jkAX9-_wqO&_nc_ht=scontent-mxp1-1.xx&oh=00_AfAYSpjR_wyF_9GixmWehg9Rk3dOtVgxUDtu3vLTDM2tAA&oe=6412807D",
+                "thumbnail_uri": "https://scontent-fco2-1.xx.fbcdn.net/v/t39.10260-6/101384342_911789716004067_1379788750992703488_n.png?_nc_cat=110&ccb=1-7&_nc_sid=df6b83&_nc_ohc=mwNKzL4CsOYAX8Uun6S&_nc_ht=scontent-fco2-1.xx&oh=00_AfDiL3awIS3rEX-Ft7qJj0jzVvJ58ZhKMmwktp4tzVWACg&oe=641C63BD",
                 "submission_status": "NOT_APPROVED",
                 "rejection_data_by_field": [
                     {
@@ -75,7 +75,7 @@
                     "__typename": "ARContentCreator",
                     "name": "Uqido XR",
                     "profile_picture": {
-                        "uri": "https://scontent-mxp1-1.xx.fbcdn.net/v/t1.6435-1/60090368_201127367527090_394640518782386176_n.jpg?stp=cp0_dst-jpg_p32x32&_nc_cat=111&ccb=1-7&_nc_sid=dbb9e7&_nc_ohc=dk__dGICSFoAX8STLte&_nc_ht=scontent-mxp1-1.xx&oh=00_AfDm2lTnWZ-Nne5WEBVE4qeonxMEdUcgmVHaaLVf6rrT5g&oe=64359B40"
+                        "uri": "https://scontent-fco2-1.xx.fbcdn.net/v/t1.6435-1/60090368_201127367527090_394640518782386176_n.jpg?stp=cp0_dst-jpg_p32x32&_nc_cat=111&ccb=1-7&_nc_sid=dbb9e7&_nc_ohc=mA4mJDr_jpIAX-FIQmq&_nc_ht=scontent-fco2-1.xx&oh=00_AfD2B1VqXK6YcdOjQ33cHEyKhu8LCncLDyGCw4gefZlOqA&oe=643E9D80"
                     },
                     "id": null
                 },
@@ -94,7 +94,7 @@
                 "is_enabled": true,
                 "id": "ARStudioEffect:1284804145059231",
                 "name": "AR Shoe",
-                "thumbnail_uri": "https://scontent-mxp1-1.xx.fbcdn.net/v/t39.10260-6/88142915_645216969612963_52427046579601408_n.png?_nc_cat=109&ccb=1-7&_nc_sid=df6b83&_nc_ohc=DusQTyN5-zAAX8fspf4&_nc_ht=scontent-mxp1-1.xx&oh=00_AfATeZ9MlieL75EN2YTXQKeIbZHhx28JtSmNsL0fUnacfg&oe=64135220",
+                "thumbnail_uri": "https://scontent-fco2-1.xx.fbcdn.net/v/t39.10260-6/88142915_645216969612963_52427046579601408_n.png?_nc_cat=109&ccb=1-7&_nc_sid=df6b83&_nc_ohc=A4dtJo_F-iIAX-u97yT&_nc_ht=scontent-fco2-1.xx&oh=00_AfAhq8exXAcsQToUSxUiTeKySeUOleUW-qy7SqXQRmZ6Yw&oe=641B3B20",
                 "submission_status": "APPROVED",
                 "rejection_data_by_field": [],
                 "latest_active_arexport_file": {
@@ -141,7 +141,7 @@
                     "__typename": "ARContentCreator",
                     "name": "Uqido XR",
                     "profile_picture": {
-                        "uri": "https://scontent-mxp1-1.xx.fbcdn.net/v/t1.6435-1/60090368_201127367527090_394640518782386176_n.jpg?stp=cp0_dst-jpg_p32x32&_nc_cat=111&ccb=1-7&_nc_sid=dbb9e7&_nc_ohc=dk__dGICSFoAX8STLte&_nc_ht=scontent-mxp1-1.xx&oh=00_AfDm2lTnWZ-Nne5WEBVE4qeonxMEdUcgmVHaaLVf6rrT5g&oe=64359B40"
+                        "uri": "https://scontent-fco2-1.xx.fbcdn.net/v/t1.6435-1/60090368_201127367527090_394640518782386176_n.jpg?stp=cp0_dst-jpg_p32x32&_nc_cat=111&ccb=1-7&_nc_sid=dbb9e7&_nc_ohc=mA4mJDr_jpIAX-FIQmq&_nc_ht=scontent-fco2-1.xx&oh=00_AfD2B1VqXK6YcdOjQ33cHEyKhu8LCncLDyGCw4gefZlOqA&oe=643E9D80"
                     },
                     "id": null
                 },
@@ -163,7 +163,7 @@
         "id": "17841400615339578",
         "display_name": "Dolomiti Superski",
         "profile_picture": {
-            "uri": "https://scontent-mxp1-1.cdninstagram.com/v/t51.2885-19/311856903_1273368496771846_8003462482521100424_n.jpg?stp=dst-jpg_s96x96&_nc_cat=102&ccb=1-7&_nc_sid=8ae9d6&_nc_ohc=IOqdhWbElAIAX_uf_6H&_nc_ht=scontent-mxp1-1.cdninstagram.com&oh=00_AfBgxklxYHBcplEvILG-iFyH17Sg8ACaIZi5nB_Ygq9A1g&oe=643592E2"
+            "uri": "https://scontent-fco2-1.cdninstagram.com/v/t51.2885-19/311856903_1273368496771846_8003462482521100424_n.jpg?stp=dst-jpg_s96x96&_nc_cat=102&ccb=1-7&_nc_sid=8ae9d6&_nc_ohc=2I7PATa4NloAX8qUYzo&_nc_ht=scontent-fco2-1.cdninstagram.com&oh=00_AfB5GyzELvdrrfIDrchJRM24guJaUevc_1jPGrQydvOyzA&oe=643E9522"
         },
         "username": "@dolomitisuperski",
         "surface_configs": [
@@ -191,7 +191,7 @@
                 "is_enabled": true,
                 "id": "ARStudioEffect:1090446471357549",
                 "name": "Poster Inverno",
-                "thumbnail_uri": "https://scontent-mxp1-1.xx.fbcdn.net/v/t39.10260-6/121626669_891992377997568_1030409748956618487_n.png?_nc_cat=101&ccb=1-7&_nc_sid=df6b83&_nc_ohc=txnLGmAhy-wAX-1cgca&_nc_ht=scontent-mxp1-1.xx&oh=00_AfDcwTou3QPhWqmB0BE2XEaya3clau2YvtQnNwJnM6fZQw&oe=64132947",
+                "thumbnail_uri": "https://scontent-fco2-1.xx.fbcdn.net/v/t39.10260-6/121626669_891992377997568_1030409748956618487_n.png?_nc_cat=101&ccb=1-7&_nc_sid=df6b83&_nc_ohc=IwPsQot6LlEAX9QIEwx&_nc_ht=scontent-fco2-1.xx&oh=00_AfAK4NoiAxbOOtyZ3JWuPMBON5hu8d3mzFKVRgVGAKOb2Q&oe=641D0C87",
                 "submission_status": "APPROVED",
                 "rejection_data_by_field": [],
                 "latest_active_arexport_file": {
@@ -248,7 +248,7 @@
                     "__typename": "ARContentCreator",
                     "name": "Uqido XR",
                     "profile_picture": {
-                        "uri": "https://scontent-mxp1-1.xx.fbcdn.net/v/t1.6435-1/60090368_201127367527090_394640518782386176_n.jpg?stp=cp0_dst-jpg_p32x32&_nc_cat=111&ccb=1-7&_nc_sid=dbb9e7&_nc_ohc=dk__dGICSFoAX8STLte&_nc_ht=scontent-mxp1-1.xx&oh=00_AfDm2lTnWZ-Nne5WEBVE4qeonxMEdUcgmVHaaLVf6rrT5g&oe=64359B40"
+                        "uri": "https://scontent-fco2-1.xx.fbcdn.net/v/t1.6435-1/60090368_201127367527090_394640518782386176_n.jpg?stp=cp0_dst-jpg_p32x32&_nc_cat=111&ccb=1-7&_nc_sid=dbb9e7&_nc_ohc=mA4mJDr_jpIAX-FIQmq&_nc_ht=scontent-fco2-1.xx&oh=00_AfD2B1VqXK6YcdOjQ33cHEyKhu8LCncLDyGCw4gefZlOqA&oe=643E9D80"
                     },
                     "id": null
                 },
@@ -267,7 +267,7 @@
                 "is_enabled": true,
                 "id": "ARStudioEffect:788091585357473",
                 "name": "Poster Estate",
-                "thumbnail_uri": "https://scontent-mxp1-1.xx.fbcdn.net/v/t39.10260-6/121605446_3933607956668585_2780411686082701326_n.png?_nc_cat=103&ccb=1-7&_nc_sid=df6b83&_nc_ohc=WNpyq_0pdSgAX-vKxkc&_nc_ht=scontent-mxp1-1.xx&oh=00_AfBuHdDlnVbojuodA6VvzNIsSVJUumdYg1BYVyCcTdhtgw&oe=64133573",
+                "thumbnail_uri": "https://scontent-fco2-1.xx.fbcdn.net/v/t39.10260-6/121605446_3933607956668585_2780411686082701326_n.png?_nc_cat=103&ccb=1-7&_nc_sid=df6b83&_nc_ohc=Sz69z7BiZzIAX9MwhgU&_nc_ht=scontent-fco2-1.xx&oh=00_AfBt9xQf69biZ1bsBzma_VHlnm1xN2DFasx6QduIdDsq2A&oe=641B1E73",
                 "submission_status": "APPROVED",
                 "rejection_data_by_field": [],
                 "latest_active_arexport_file": {
@@ -324,7 +324,7 @@
                     "__typename": "ARContentCreator",
                     "name": "Uqido XR",
                     "profile_picture": {
-                        "uri": "https://scontent-mxp1-1.xx.fbcdn.net/v/t1.6435-1/60090368_201127367527090_394640518782386176_n.jpg?stp=cp0_dst-jpg_p32x32&_nc_cat=111&ccb=1-7&_nc_sid=dbb9e7&_nc_ohc=dk__dGICSFoAX8STLte&_nc_ht=scontent-mxp1-1.xx&oh=00_AfDm2lTnWZ-Nne5WEBVE4qeonxMEdUcgmVHaaLVf6rrT5g&oe=64359B40"
+                        "uri": "https://scontent-fco2-1.xx.fbcdn.net/v/t1.6435-1/60090368_201127367527090_394640518782386176_n.jpg?stp=cp0_dst-jpg_p32x32&_nc_cat=111&ccb=1-7&_nc_sid=dbb9e7&_nc_ohc=mA4mJDr_jpIAX-FIQmq&_nc_ht=scontent-fco2-1.xx&oh=00_AfD2B1VqXK6YcdOjQ33cHEyKhu8LCncLDyGCw4gefZlOqA&oe=643E9D80"
                     },
                     "id": null
                 },
@@ -343,7 +343,7 @@
                 "is_enabled": true,
                 "id": "ARStudioEffect:810297906448696",
                 "name": "Natura Dolomitica",
-                "thumbnail_uri": "https://scontent-mxp1-1.xx.fbcdn.net/v/t39.10260-6/121624350_778143212963741_755779653685629742_n.png?_nc_cat=103&ccb=1-7&_nc_sid=df6b83&_nc_ohc=r5NcbPYzg2AAX9-_N7A&_nc_oc=AQllsOST-enetDQpmVuCEnOFuunRKoGsXmTAhOSXqh6lQuLHaX9UzNSzPa1exQdIVwQ&_nc_ht=scontent-mxp1-1.xx&oh=00_AfAO_AxIJx2ijV-l6fKbLGENgzUxRL1YVEa06cA36TFFew&oe=6412887F",
+                "thumbnail_uri": "https://scontent-fco2-1.xx.fbcdn.net/v/t39.10260-6/121624350_778143212963741_755779653685629742_n.png?_nc_cat=103&ccb=1-7&_nc_sid=df6b83&_nc_ohc=rtvHEar0XaAAX8vgZzi&_nc_oc=AQn0-9xXQ6O4lmJfZbqXFw-CqkIFa82_28axnwtCXXMK6ntsdCCINHkj9XeVuVLNxDY&_nc_ht=scontent-fco2-1.xx&oh=00_AfB0TW8kpUCR6QWw7B4JE8BZHwE-7ZnvQplJ0KDFqu7NSw&oe=641C6BBF",
                 "submission_status": "APPROVED",
                 "rejection_data_by_field": [],
                 "latest_active_arexport_file": {
@@ -400,7 +400,7 @@
                     "__typename": "ARContentCreator",
                     "name": "Uqido XR",
                     "profile_picture": {
-                        "uri": "https://scontent-mxp1-1.xx.fbcdn.net/v/t1.6435-1/60090368_201127367527090_394640518782386176_n.jpg?stp=cp0_dst-jpg_p32x32&_nc_cat=111&ccb=1-7&_nc_sid=dbb9e7&_nc_ohc=dk__dGICSFoAX8STLte&_nc_ht=scontent-mxp1-1.xx&oh=00_AfDm2lTnWZ-Nne5WEBVE4qeonxMEdUcgmVHaaLVf6rrT5g&oe=64359B40"
+                        "uri": "https://scontent-fco2-1.xx.fbcdn.net/v/t1.6435-1/60090368_201127367527090_394640518782386176_n.jpg?stp=cp0_dst-jpg_p32x32&_nc_cat=111&ccb=1-7&_nc_sid=dbb9e7&_nc_ohc=mA4mJDr_jpIAX-FIQmq&_nc_ht=scontent-fco2-1.xx&oh=00_AfD2B1VqXK6YcdOjQ33cHEyKhu8LCncLDyGCw4gefZlOqA&oe=643E9D80"
                     },
                     "id": null
                 },
@@ -419,7 +419,7 @@
                 "is_enabled": true,
                 "id": "ARStudioEffect:336525940916129",
                 "name": "Panorama Dolomitico",
-                "thumbnail_uri": "https://scontent-mxp1-1.xx.fbcdn.net/v/t39.10260-6/121602218_672468613453331_5598451431964892146_n.png?_nc_cat=105&ccb=1-7&_nc_sid=df6b83&_nc_ohc=FDTKL1LhhhIAX-UZmKq&_nc_oc=AQm3j4znDqlpK4Ry-WWA_r1VViOkEFT1eb7qG3NRpvaTrq6pa_HXnK5jjwEpi2L1g9E&_nc_ht=scontent-mxp1-1.xx&oh=00_AfDK0XPqsdY4a3Th1ThETJXNNM63A1_SuRp_-8Qgxxdo4g&oe=64135728",
+                "thumbnail_uri": "https://scontent-fco2-1.xx.fbcdn.net/v/t39.10260-6/121602218_672468613453331_5598451431964892146_n.png?_nc_cat=105&ccb=1-7&_nc_sid=df6b83&_nc_ohc=6LqD4kHqBRkAX-0gxOb&_nc_oc=AQnNAHQbt1d792JLu6EMbrOt2GtVn5u4GSW5FVvyYD0J4INYF0qArFzBApRQCPt8C7U&_nc_ht=scontent-fco2-1.xx&oh=00_AfAGQHeQvR6v_b0JjKRl-6by-CaV7R4cTgMlbYnhWgmFBQ&oe=641B4028",
                 "submission_status": "APPROVED",
                 "rejection_data_by_field": [],
                 "latest_active_arexport_file": {
@@ -476,7 +476,7 @@
                     "__typename": "ARContentCreator",
                     "name": "Uqido XR",
                     "profile_picture": {
-                        "uri": "https://scontent-mxp1-1.xx.fbcdn.net/v/t1.6435-1/60090368_201127367527090_394640518782386176_n.jpg?stp=cp0_dst-jpg_p32x32&_nc_cat=111&ccb=1-7&_nc_sid=dbb9e7&_nc_ohc=dk__dGICSFoAX8STLte&_nc_ht=scontent-mxp1-1.xx&oh=00_AfDm2lTnWZ-Nne5WEBVE4qeonxMEdUcgmVHaaLVf6rrT5g&oe=64359B40"
+                        "uri": "https://scontent-fco2-1.xx.fbcdn.net/v/t1.6435-1/60090368_201127367527090_394640518782386176_n.jpg?stp=cp0_dst-jpg_p32x32&_nc_cat=111&ccb=1-7&_nc_sid=dbb9e7&_nc_ohc=mA4mJDr_jpIAX-FIQmq&_nc_ht=scontent-fco2-1.xx&oh=00_AfD2B1VqXK6YcdOjQ33cHEyKhu8LCncLDyGCw4gefZlOqA&oe=643E9D80"
                     },
                     "id": null
                 },
@@ -495,7 +495,7 @@
                 "is_enabled": true,
                 "id": "ARStudioEffect:370935607365326",
                 "name": "Mappa Dolomiti",
-                "thumbnail_uri": "https://scontent-mxp1-1.xx.fbcdn.net/v/t39.10260-6/121828973_754873008410550_9019693798562076973_n.png?_nc_cat=108&ccb=1-7&_nc_sid=df6b83&_nc_ohc=Sd7tX9e9TWcAX8GwQON&_nc_ht=scontent-mxp1-1.xx&oh=00_AfBuplBhgXL4FGW8IPxAKj3BCXZIP7CVEVhdLCcaW-MinQ&oe=6412D6B0",
+                "thumbnail_uri": "https://scontent-fco2-1.xx.fbcdn.net/v/t39.10260-6/121828973_754873008410550_9019693798562076973_n.png?_nc_cat=108&ccb=1-7&_nc_sid=df6b83&_nc_ohc=Ng5eB0BhxwYAX8-YyOx&_nc_ht=scontent-fco2-1.xx&oh=00_AfBYL5VvC5wVLVFhHNzGFGN603AmuPtth1u1GTD7g7lp5g&oe=641CB9F0",
                 "submission_status": "APPROVED",
                 "rejection_data_by_field": [],
                 "latest_active_arexport_file": {
@@ -552,7 +552,7 @@
                     "__typename": "ARContentCreator",
                     "name": "Uqido XR",
                     "profile_picture": {
-                        "uri": "https://scontent-mxp1-1.xx.fbcdn.net/v/t1.6435-1/60090368_201127367527090_394640518782386176_n.jpg?stp=cp0_dst-jpg_p32x32&_nc_cat=111&ccb=1-7&_nc_sid=dbb9e7&_nc_ohc=dk__dGICSFoAX8STLte&_nc_ht=scontent-mxp1-1.xx&oh=00_AfDm2lTnWZ-Nne5WEBVE4qeonxMEdUcgmVHaaLVf6rrT5g&oe=64359B40"
+                        "uri": "https://scontent-fco2-1.xx.fbcdn.net/v/t1.6435-1/60090368_201127367527090_394640518782386176_n.jpg?stp=cp0_dst-jpg_p32x32&_nc_cat=111&ccb=1-7&_nc_sid=dbb9e7&_nc_ohc=mA4mJDr_jpIAX-FIQmq&_nc_ht=scontent-fco2-1.xx&oh=00_AfD2B1VqXK6YcdOjQ33cHEyKhu8LCncLDyGCw4gefZlOqA&oe=643E9D80"
                     },
                     "id": null
                 },
@@ -571,7 +571,7 @@
                 "is_enabled": true,
                 "id": "ARStudioEffect:779113592666624",
                 "name": "Selfie con berretto",
-                "thumbnail_uri": "https://scontent-mxp1-1.xx.fbcdn.net/v/t39.10260-6/121669776_430148441300348_1172471562136642610_n.png?_nc_cat=102&ccb=1-7&_nc_sid=df6b83&_nc_ohc=V5W4crMj8CEAX8sQZu0&_nc_ht=scontent-mxp1-1.xx&oh=00_AfBnuVH7s3aRlRoMcI6TiLOa2GZ_rrsTuQSyaN0bRVW9yw&oe=6412E922",
+                "thumbnail_uri": "https://scontent-fco2-1.xx.fbcdn.net/v/t39.10260-6/121669776_430148441300348_1172471562136642610_n.png?_nc_cat=102&ccb=1-7&_nc_sid=df6b83&_nc_ohc=LmO12yRbeQgAX8-27h5&_nc_ht=scontent-fco2-1.xx&oh=00_AfCAa7ZAEx4X4UB8boxw75EiB0Y7iB9RSGmGCK3asRpBNQ&oe=641CCC62",
                 "submission_status": "APPROVED",
                 "rejection_data_by_field": [],
                 "latest_active_arexport_file": {
@@ -628,7 +628,7 @@
                     "__typename": "ARContentCreator",
                     "name": "Uqido XR",
                     "profile_picture": {
-                        "uri": "https://scontent-mxp1-1.xx.fbcdn.net/v/t1.6435-1/60090368_201127367527090_394640518782386176_n.jpg?stp=cp0_dst-jpg_p32x32&_nc_cat=111&ccb=1-7&_nc_sid=dbb9e7&_nc_ohc=dk__dGICSFoAX8STLte&_nc_ht=scontent-mxp1-1.xx&oh=00_AfDm2lTnWZ-Nne5WEBVE4qeonxMEdUcgmVHaaLVf6rrT5g&oe=64359B40"
+                        "uri": "https://scontent-fco2-1.xx.fbcdn.net/v/t1.6435-1/60090368_201127367527090_394640518782386176_n.jpg?stp=cp0_dst-jpg_p32x32&_nc_cat=111&ccb=1-7&_nc_sid=dbb9e7&_nc_ohc=mA4mJDr_jpIAX-FIQmq&_nc_ht=scontent-fco2-1.xx&oh=00_AfD2B1VqXK6YcdOjQ33cHEyKhu8LCncLDyGCw4gefZlOqA&oe=643E9D80"
                     },
                     "id": null
                 },
@@ -647,7 +647,7 @@
                 "is_enabled": true,
                 "id": "ARStudioEffect:392911031705499",
                 "name": "Occhiale Sci",
-                "thumbnail_uri": "https://scontent-mxp1-1.xx.fbcdn.net/v/t39.10260-6/121658458_1056140234825276_4554739736141932443_n.png?_nc_cat=107&ccb=1-7&_nc_sid=df6b83&_nc_ohc=6eJZjnxpyVkAX8lToqa&_nc_ht=scontent-mxp1-1.xx&oh=00_AfAINpqdnq2uJWmtada77z5gydqqbpSP_zh63mbY8nq6lQ&oe=64137BAA",
+                "thumbnail_uri": "https://scontent-fco2-1.xx.fbcdn.net/v/t39.10260-6/121658458_1056140234825276_4554739736141932443_n.png?_nc_cat=107&ccb=1-7&_nc_sid=df6b83&_nc_ohc=Kb3pEFYvoHQAX_gyUeq&_nc_ht=scontent-fco2-1.xx&oh=00_AfCsvrybGfjd56sga6sjgIYa-KEfgn1OM8rcAES4fR80cA&oe=641B64AA",
                 "submission_status": "APPROVED",
                 "rejection_data_by_field": [],
                 "latest_active_arexport_file": {
@@ -704,7 +704,7 @@
                     "__typename": "ARContentCreator",
                     "name": "Uqido XR",
                     "profile_picture": {
-                        "uri": "https://scontent-mxp1-1.xx.fbcdn.net/v/t1.6435-1/60090368_201127367527090_394640518782386176_n.jpg?stp=cp0_dst-jpg_p32x32&_nc_cat=111&ccb=1-7&_nc_sid=dbb9e7&_nc_ohc=dk__dGICSFoAX8STLte&_nc_ht=scontent-mxp1-1.xx&oh=00_AfDm2lTnWZ-Nne5WEBVE4qeonxMEdUcgmVHaaLVf6rrT5g&oe=64359B40"
+                        "uri": "https://scontent-fco2-1.xx.fbcdn.net/v/t1.6435-1/60090368_201127367527090_394640518782386176_n.jpg?stp=cp0_dst-jpg_p32x32&_nc_cat=111&ccb=1-7&_nc_sid=dbb9e7&_nc_ohc=mA4mJDr_jpIAX-FIQmq&_nc_ht=scontent-fco2-1.xx&oh=00_AfD2B1VqXK6YcdOjQ33cHEyKhu8LCncLDyGCw4gefZlOqA&oe=643E9D80"
                     },
                     "id": null
                 },
@@ -723,7 +723,7 @@
                 "is_enabled": true,
                 "id": "ARStudioEffect:570387950367273",
                 "name": "Cabina CWA Carezza",
-                "thumbnail_uri": "https://scontent-mxp1-1.xx.fbcdn.net/v/t39.10260-6/121960002_1703857446458848_7482110182338246356_n.png?_nc_cat=106&ccb=1-7&_nc_sid=df6b83&_nc_ohc=_IyDU9ejuE0AX-KOtgS&_nc_ht=scontent-mxp1-1.xx&oh=00_AfBnSv-Spc-6qWZMUdcMZCMwkjokrmB3Mb3Zy0sSQ7bcbg&oe=641257C5",
+                "thumbnail_uri": "https://scontent-fco2-1.xx.fbcdn.net/v/t39.10260-6/121960002_1703857446458848_7482110182338246356_n.png?_nc_cat=106&ccb=1-7&_nc_sid=df6b83&_nc_ohc=80ZYti2e8TQAX8ndeIk&_nc_ht=scontent-fco2-1.xx&oh=00_AfDU1GPd-fs06vWAj1SunLEJKtbuGZlj3XK6PMPveSvBog&oe=641C3B05",
                 "submission_status": "APPROVED",
                 "rejection_data_by_field": [],
                 "latest_active_arexport_file": {
@@ -780,7 +780,7 @@
                     "__typename": "ARContentCreator",
                     "name": "Uqido XR",
                     "profile_picture": {
-                        "uri": "https://scontent-mxp1-1.xx.fbcdn.net/v/t1.6435-1/60090368_201127367527090_394640518782386176_n.jpg?stp=cp0_dst-jpg_p32x32&_nc_cat=111&ccb=1-7&_nc_sid=dbb9e7&_nc_ohc=dk__dGICSFoAX8STLte&_nc_ht=scontent-mxp1-1.xx&oh=00_AfDm2lTnWZ-Nne5WEBVE4qeonxMEdUcgmVHaaLVf6rrT5g&oe=64359B40"
+                        "uri": "https://scontent-fco2-1.xx.fbcdn.net/v/t1.6435-1/60090368_201127367527090_394640518782386176_n.jpg?stp=cp0_dst-jpg_p32x32&_nc_cat=111&ccb=1-7&_nc_sid=dbb9e7&_nc_ohc=mA4mJDr_jpIAX-FIQmq&_nc_ht=scontent-fco2-1.xx&oh=00_AfD2B1VqXK6YcdOjQ33cHEyKhu8LCncLDyGCw4gefZlOqA&oe=643E9D80"
                     },
                     "id": null
                 },
@@ -799,7 +799,7 @@
                 "is_enabled": true,
                 "id": "ARStudioEffect:2829178447311276",
                 "name": "Mountain Bike Ride",
-                "thumbnail_uri": "https://scontent-mxp1-1.xx.fbcdn.net/v/t39.10260-6/121605164_673911779913016_745895381944918605_n.png?_nc_cat=104&ccb=1-7&_nc_sid=df6b83&_nc_ohc=6ChBhutRNMwAX9oAtk0&_nc_ht=scontent-mxp1-1.xx&oh=00_AfBlkX16VjhZwY_FqYmWK7roTnIyAk_p5_r-9ZLTOwKYgw&oe=641246FC",
+                "thumbnail_uri": "https://scontent-fco2-1.xx.fbcdn.net/v/t39.10260-6/121605164_673911779913016_745895381944918605_n.png?_nc_cat=104&ccb=1-7&_nc_sid=df6b83&_nc_ohc=RzeINMkgCFMAX96XFuj&_nc_ht=scontent-fco2-1.xx&oh=00_AfDZctvtRHHK1XM5bWEH9XI3ReCcJ28IzgoiNQwzcF19Dw&oe=641C2A3C",
                 "submission_status": "APPROVED",
                 "rejection_data_by_field": [],
                 "latest_active_arexport_file": {
@@ -856,7 +856,7 @@
                     "__typename": "ARContentCreator",
                     "name": "Uqido XR",
                     "profile_picture": {
-                        "uri": "https://scontent-mxp1-1.xx.fbcdn.net/v/t1.6435-1/60090368_201127367527090_394640518782386176_n.jpg?stp=cp0_dst-jpg_p32x32&_nc_cat=111&ccb=1-7&_nc_sid=dbb9e7&_nc_ohc=dk__dGICSFoAX8STLte&_nc_ht=scontent-mxp1-1.xx&oh=00_AfDm2lTnWZ-Nne5WEBVE4qeonxMEdUcgmVHaaLVf6rrT5g&oe=64359B40"
+                        "uri": "https://scontent-fco2-1.xx.fbcdn.net/v/t1.6435-1/60090368_201127367527090_394640518782386176_n.jpg?stp=cp0_dst-jpg_p32x32&_nc_cat=111&ccb=1-7&_nc_sid=dbb9e7&_nc_ohc=mA4mJDr_jpIAX-FIQmq&_nc_ht=scontent-fco2-1.xx&oh=00_AfD2B1VqXK6YcdOjQ33cHEyKhu8LCncLDyGCw4gefZlOqA&oe=643E9D80"
                     },
                     "id": null
                 },
@@ -875,7 +875,7 @@
                 "is_enabled": true,
                 "id": "ARStudioEffect:265821481537189",
                 "name": "Sciata",
-                "thumbnail_uri": "https://scontent-mxp1-1.xx.fbcdn.net/v/t39.10260-6/122584067_862768127795120_4489305814544162649_n.png?_nc_cat=110&ccb=1-7&_nc_sid=df6b83&_nc_ohc=1HoBHL8K6AIAX8Qo5M6&_nc_ht=scontent-mxp1-1.xx&oh=00_AfDuAFJXhPFRh-SsLAprXt2cu3vyi0if6RKixX1bNcIiTA&oe=64140395",
+                "thumbnail_uri": "https://scontent-fco2-1.xx.fbcdn.net/v/t39.10260-6/122584067_862768127795120_4489305814544162649_n.png?_nc_cat=110&ccb=1-7&_nc_sid=df6b83&_nc_ohc=IawzT7-5Lv4AX-9skd4&_nc_ht=scontent-fco2-1.xx&oh=00_AfA3bJUXm6jPdPaKLL0exISJY7wYMDhEoB3AmHeikjYREA&oe=641BEC95",
                 "submission_status": "APPROVED",
                 "rejection_data_by_field": [],
                 "latest_active_arexport_file": {
@@ -932,7 +932,7 @@
                     "__typename": "ARContentCreator",
                     "name": "Uqido XR",
                     "profile_picture": {
-                        "uri": "https://scontent-mxp1-1.xx.fbcdn.net/v/t1.6435-1/60090368_201127367527090_394640518782386176_n.jpg?stp=cp0_dst-jpg_p32x32&_nc_cat=111&ccb=1-7&_nc_sid=dbb9e7&_nc_ohc=dk__dGICSFoAX8STLte&_nc_ht=scontent-mxp1-1.xx&oh=00_AfDm2lTnWZ-Nne5WEBVE4qeonxMEdUcgmVHaaLVf6rrT5g&oe=64359B40"
+                        "uri": "https://scontent-fco2-1.xx.fbcdn.net/v/t1.6435-1/60090368_201127367527090_394640518782386176_n.jpg?stp=cp0_dst-jpg_p32x32&_nc_cat=111&ccb=1-7&_nc_sid=dbb9e7&_nc_ohc=mA4mJDr_jpIAX-FIQmq&_nc_ht=scontent-fco2-1.xx&oh=00_AfD2B1VqXK6YcdOjQ33cHEyKhu8LCncLDyGCw4gefZlOqA&oe=643E9D80"
                     },
                     "id": null
                 },
@@ -954,7 +954,7 @@
         "id": "17841415173254836",
         "display_name": "Uqido XR",
         "profile_picture": {
-            "uri": "https://scontent-mxp1-1.cdninstagram.com/v/t51.2885-19/64683548_440760240082943_2055359966755160064_n.jpg?stp=dst-jpg_s96x96&_nc_cat=108&ccb=1-7&_nc_sid=8ae9d6&_nc_ohc=QA-NjXkYATkAX-m839G&_nc_ht=scontent-mxp1-1.cdninstagram.com&oh=00_AfDRxbDEcPUgdEh0g7lLO38iRlE6lvlnmNVzk7T6YhXkXg&oe=6435A6E0"
+            "uri": "https://scontent-fco2-1.cdninstagram.com/v/t51.2885-19/64683548_440760240082943_2055359966755160064_n.jpg?stp=dst-jpg_s96x96&_nc_cat=108&ccb=1-7&_nc_sid=8ae9d6&_nc_ohc=ZMU30NLAIcQAX9i72a8&_nc_ht=scontent-fco2-1.cdninstagram.com&oh=00_AfBg0PizZdngXXoGjNo3yJjTP6y3DRS_9vKNC_gSk-hQkw&oe=643EA920"
         },
         "username": "@xruqido",
         "surface_configs": [
@@ -976,7 +976,7 @@
                 "is_enabled": true,
                 "id": "ARStudioEffect:482942106233764",
                 "name": "PoltronaPolpetta",
-                "thumbnail_uri": "https://scontent-mxp1-1.xx.fbcdn.net/v/t39.10260-6/181150727_830554801181734_9212245249008522377_n.png?_nc_cat=111&ccb=1-7&_nc_sid=df6b83&_nc_ohc=7OIc-NtZjvcAX-2KTtu&_nc_ht=scontent-mxp1-1.xx&oh=00_AfBo8QJXeNp7Xjra9PiroUiYokh1KAo4HiZLhDq7Kisrog&oe=6412B68D",
+                "thumbnail_uri": "https://scontent-fco2-1.xx.fbcdn.net/v/t39.10260-6/181150727_830554801181734_9212245249008522377_n.png?_nc_cat=111&ccb=1-7&_nc_sid=df6b83&_nc_ohc=ADacwSfT5LIAX-wzw7M&_nc_ht=scontent-fco2-1.xx&oh=00_AfAgl02I5OnUQwPvAdxzi2GGAsy1Yg6e_kd2I266Vq_FiA&oe=641C99CD",
                 "submission_status": "APPROVED",
                 "rejection_data_by_field": [],
                 "latest_active_arexport_file": {
@@ -1024,7 +1024,7 @@
                     "__typename": "ARContentCreator",
                     "name": "Uqido XR",
                     "profile_picture": {
-                        "uri": "https://scontent-mxp1-1.xx.fbcdn.net/v/t1.6435-1/60090368_201127367527090_394640518782386176_n.jpg?stp=cp0_dst-jpg_p32x32&_nc_cat=111&ccb=1-7&_nc_sid=dbb9e7&_nc_ohc=dk__dGICSFoAX8STLte&_nc_ht=scontent-mxp1-1.xx&oh=00_AfDm2lTnWZ-Nne5WEBVE4qeonxMEdUcgmVHaaLVf6rrT5g&oe=64359B40"
+                        "uri": "https://scontent-fco2-1.xx.fbcdn.net/v/t1.6435-1/60090368_201127367527090_394640518782386176_n.jpg?stp=cp0_dst-jpg_p32x32&_nc_cat=111&ccb=1-7&_nc_sid=dbb9e7&_nc_ohc=mA4mJDr_jpIAX-FIQmq&_nc_ht=scontent-fco2-1.xx&oh=00_AfD2B1VqXK6YcdOjQ33cHEyKhu8LCncLDyGCw4gefZlOqA&oe=643E9D80"
                     },
                     "id": null
                 },
@@ -1046,7 +1046,7 @@
                 "is_enabled": true,
                 "id": "ARStudioEffect:2527888967522144",
                 "name": "UQIDO VTO Make Up",
-                "thumbnail_uri": "https://scontent-mxp1-1.xx.fbcdn.net/v/t39.10260-6/101027806_1036594540142506_311477938908299264_n.png?_nc_cat=101&ccb=1-7&_nc_sid=df6b83&_nc_ohc=XviYQMjB1ukAX9gLrZS&_nc_ht=scontent-mxp1-1.xx&oh=00_AfBmQ13GrMBiUSZYqQ5xhrHxSsMQc9-IbwEBqmeqpqpgxQ&oe=641361A4",
+                "thumbnail_uri": "https://scontent-fco2-1.xx.fbcdn.net/v/t39.10260-6/101027806_1036594540142506_311477938908299264_n.png?_nc_cat=101&ccb=1-7&_nc_sid=df6b83&_nc_ohc=aGQCQFlh7SsAX_k2g-v&_nc_ht=scontent-fco2-1.xx&oh=00_AfBFkWfa2gizZv9Z0ngIKC39I5rTPq-qaAuTHbFtQrsI2w&oe=641B4AA4",
                 "submission_status": "NOT_APPROVED",
                 "rejection_data_by_field": [
                     {
@@ -1095,7 +1095,7 @@
                     "__typename": "ARContentCreator",
                     "name": "Uqido XR",
                     "profile_picture": {
-                        "uri": "https://scontent-mxp1-1.xx.fbcdn.net/v/t1.6435-1/60090368_201127367527090_394640518782386176_n.jpg?stp=cp0_dst-jpg_p32x32&_nc_cat=111&ccb=1-7&_nc_sid=dbb9e7&_nc_ohc=dk__dGICSFoAX8STLte&_nc_ht=scontent-mxp1-1.xx&oh=00_AfDm2lTnWZ-Nne5WEBVE4qeonxMEdUcgmVHaaLVf6rrT5g&oe=64359B40"
+                        "uri": "https://scontent-fco2-1.xx.fbcdn.net/v/t1.6435-1/60090368_201127367527090_394640518782386176_n.jpg?stp=cp0_dst-jpg_p32x32&_nc_cat=111&ccb=1-7&_nc_sid=dbb9e7&_nc_ohc=mA4mJDr_jpIAX-FIQmq&_nc_ht=scontent-fco2-1.xx&oh=00_AfD2B1VqXK6YcdOjQ33cHEyKhu8LCncLDyGCw4gefZlOqA&oe=643E9D80"
                     },
                     "id": null
                 },
@@ -1117,7 +1117,7 @@
         "id": "17841401803426109",
         "display_name": "Uqido",
         "profile_picture": {
-            "uri": "https://scontent-mxp1-1.cdninstagram.com/v/t51.2885-19/29736879_633876520277971_2700435218203934720_n.jpg?stp=dst-jpg_s96x96&_nc_cat=100&ccb=1-7&_nc_sid=8ae9d6&_nc_ohc=I948m-Gyh_IAX8QaRoB&_nc_ht=scontent-mxp1-1.cdninstagram.com&oh=00_AfCoeTyT3Q2AdxdNCXjYaKxGg2KqnzcoChs4GQFQEZQEJQ&oe=6435C750"
+            "uri": "https://scontent-fco2-1.cdninstagram.com/v/t51.2885-19/29736879_633876520277971_2700435218203934720_n.jpg?stp=dst-jpg_s96x96&_nc_cat=100&ccb=1-7&_nc_sid=8ae9d6&_nc_ohc=UcDBK0apzawAX9LmNFO&_nc_ht=scontent-fco2-1.cdninstagram.com&oh=00_AfAXAMtUYSTnXrJILqSlf_TZ7rfnit9SIE3npZDIvYLveQ&oe=643E9150"
         },
         "username": "@uqido",
         "surface_configs": [
@@ -1145,7 +1145,7 @@
                 "is_enabled": true,
                 "id": "ARStudioEffect:1055567861481088",
                 "name": "Spicy Cecio AR",
-                "thumbnail_uri": "https://scontent-mxp1-1.xx.fbcdn.net/v/t39.10260-6/84394064_392500014943054_1142115126371942400_n.png?_nc_cat=102&ccb=1-7&_nc_sid=df6b83&_nc_ohc=7yxOmU41_PIAX_Poyny&_nc_ht=scontent-mxp1-1.xx&oh=00_AfCJwLyP6cB_25IrAfgBt2v5VB3NyuS6e0Rbi_38Iao_Ww&oe=6413AB33",
+                "thumbnail_uri": "https://scontent-fco2-1.xx.fbcdn.net/v/t39.10260-6/84394064_392500014943054_1142115126371942400_n.png?_nc_cat=102&ccb=1-7&_nc_sid=df6b83&_nc_ohc=3JeMKphxupEAX8FKBuZ&_nc_ht=scontent-fco2-1.xx&oh=00_AfBMRUYv1LGZUhU_35B2dKL1PFrGV5ym79DhgTm6jkAmRw&oe=641B9433",
                 "submission_status": "NOT_REVIEWED",
                 "rejection_data_by_field": [],
                 "latest_active_arexport_file": null,
@@ -1198,7 +1198,7 @@
                     "__typename": "ARContentCreator",
                     "name": "Uqido XR",
                     "profile_picture": {
-                        "uri": "https://scontent-mxp1-1.xx.fbcdn.net/v/t1.6435-1/60090368_201127367527090_394640518782386176_n.jpg?stp=cp0_dst-jpg_p32x32&_nc_cat=111&ccb=1-7&_nc_sid=dbb9e7&_nc_ohc=dk__dGICSFoAX8STLte&_nc_ht=scontent-mxp1-1.xx&oh=00_AfDm2lTnWZ-Nne5WEBVE4qeonxMEdUcgmVHaaLVf6rrT5g&oe=64359B40"
+                        "uri": "https://scontent-fco2-1.xx.fbcdn.net/v/t1.6435-1/60090368_201127367527090_394640518782386176_n.jpg?stp=cp0_dst-jpg_p32x32&_nc_cat=111&ccb=1-7&_nc_sid=dbb9e7&_nc_ohc=mA4mJDr_jpIAX-FIQmq&_nc_ht=scontent-fco2-1.xx&oh=00_AfD2B1VqXK6YcdOjQ33cHEyKhu8LCncLDyGCw4gefZlOqA&oe=643E9D80"
                     },
                     "id": null
                 },
@@ -1217,7 +1217,7 @@
                 "is_enabled": true,
                 "id": "ARStudioEffect:1702712646734167",
                 "name": "Portrait of a Lady",
-                "thumbnail_uri": "https://scontent-mxp1-1.xx.fbcdn.net/v/t39.10260-6/288183988_1157399281499839_3108129412074692992_n.png?_nc_cat=100&ccb=1-7&_nc_sid=df6b83&_nc_ohc=cItUnaYLJvsAX9tb_eB&_nc_ht=scontent-mxp1-1.xx&oh=00_AfCgHksiSirqJM5jNAD70OoialfxkO06ZwK22LCPNrC55w&oe=64123A6C",
+                "thumbnail_uri": "https://scontent-fco2-1.xx.fbcdn.net/v/t39.10260-6/288183988_1157399281499839_3108129412074692992_n.png?_nc_cat=100&ccb=1-7&_nc_sid=df6b83&_nc_ohc=EyXOFQ832F0AX9y6dgK&_nc_ht=scontent-fco2-1.xx&oh=00_AfBa1Iq08XTPFuuNZwwb6Bp_yDvp4eGJTlhJkj4zMLCThA&oe=641C1DAC",
                 "submission_status": "APPROVED",
                 "rejection_data_by_field": [],
                 "latest_active_arexport_file": {
@@ -1274,7 +1274,7 @@
                     "__typename": "ARContentCreator",
                     "name": "Uqido XR",
                     "profile_picture": {
-                        "uri": "https://scontent-mxp1-1.xx.fbcdn.net/v/t1.6435-1/60090368_201127367527090_394640518782386176_n.jpg?stp=cp0_dst-jpg_p32x32&_nc_cat=111&ccb=1-7&_nc_sid=dbb9e7&_nc_ohc=dk__dGICSFoAX8STLte&_nc_ht=scontent-mxp1-1.xx&oh=00_AfDm2lTnWZ-Nne5WEBVE4qeonxMEdUcgmVHaaLVf6rrT5g&oe=64359B40"
+                        "uri": "https://scontent-fco2-1.xx.fbcdn.net/v/t1.6435-1/60090368_201127367527090_394640518782386176_n.jpg?stp=cp0_dst-jpg_p32x32&_nc_cat=111&ccb=1-7&_nc_sid=dbb9e7&_nc_ohc=mA4mJDr_jpIAX-FIQmq&_nc_ht=scontent-fco2-1.xx&oh=00_AfD2B1VqXK6YcdOjQ33cHEyKhu8LCncLDyGCw4gefZlOqA&oe=643E9D80"
                     },
                     "id": null
                 },
@@ -1293,7 +1293,7 @@
                 "is_enabled": true,
                 "id": "ARStudioEffect:839698063633416",
                 "name": "U Be Aware",
-                "thumbnail_uri": "https://scontent-mxp1-1.xx.fbcdn.net/v/t39.10260-6/231963752_192148086290800_8773138054282496928_n.png?_nc_cat=100&ccb=1-7&_nc_sid=df6b83&_nc_ohc=1eosFSh3iC0AX-QkDIh&_nc_ht=scontent-mxp1-1.xx&oh=00_AfAZZQ-HOqXNDzQ9RGcGyzK5oVDpYX35r8Tw1i24qo32qQ&oe=64130DEB",
+                "thumbnail_uri": "https://scontent-fco2-1.xx.fbcdn.net/v/t39.10260-6/231963752_192148086290800_8773138054282496928_n.png?_nc_cat=100&ccb=1-7&_nc_sid=df6b83&_nc_ohc=rkbx6tL3OMQAX-cwgrf&_nc_ht=scontent-fco2-1.xx&oh=00_AfAfDi5x9Kn72Ghwg6NM_S9m0UDGxGykiooiW1MLF6gURw&oe=641CF12B",
                 "submission_status": "APPROVED",
                 "rejection_data_by_field": [],
                 "latest_active_arexport_file": {
@@ -1350,7 +1350,7 @@
                     "__typename": "ARContentCreator",
                     "name": "Uqido XR",
                     "profile_picture": {
-                        "uri": "https://scontent-mxp1-1.xx.fbcdn.net/v/t1.6435-1/60090368_201127367527090_394640518782386176_n.jpg?stp=cp0_dst-jpg_p32x32&_nc_cat=111&ccb=1-7&_nc_sid=dbb9e7&_nc_ohc=dk__dGICSFoAX8STLte&_nc_ht=scontent-mxp1-1.xx&oh=00_AfDm2lTnWZ-Nne5WEBVE4qeonxMEdUcgmVHaaLVf6rrT5g&oe=64359B40"
+                        "uri": "https://scontent-fco2-1.xx.fbcdn.net/v/t1.6435-1/60090368_201127367527090_394640518782386176_n.jpg?stp=cp0_dst-jpg_p32x32&_nc_cat=111&ccb=1-7&_nc_sid=dbb9e7&_nc_ohc=mA4mJDr_jpIAX-FIQmq&_nc_ht=scontent-fco2-1.xx&oh=00_AfD2B1VqXK6YcdOjQ33cHEyKhu8LCncLDyGCw4gefZlOqA&oe=643E9D80"
                     },
                     "id": null
                 },
@@ -1369,7 +1369,7 @@
                 "is_enabled": true,
                 "id": "ARStudioEffect:2253540908283113",
                 "name": "Cherry Bomb AR",
-                "thumbnail_uri": "https://scontent-mxp1-1.xx.fbcdn.net/v/t39.10260-6/84417236_130896751441730_5929184807186595840_n.png?_nc_cat=102&ccb=1-7&_nc_sid=df6b83&_nc_ohc=YvqgX_c5LOwAX81UEE0&_nc_ht=scontent-mxp1-1.xx&oh=00_AfCCE6OIcTd6Qcqk_L_ca4R9Dl-M5J6VjKJO6xU-aCa0HQ&oe=64133FD8",
+                "thumbnail_uri": "https://scontent-fco2-1.xx.fbcdn.net/v/t39.10260-6/84417236_130896751441730_5929184807186595840_n.png?_nc_cat=102&ccb=1-7&_nc_sid=df6b83&_nc_ohc=A6CzxJP1odUAX9W2aff&_nc_ht=scontent-fco2-1.xx&oh=00_AfBw3TDSzzNDuMlz6soXPL5Nj0LA9_w0gQNDQ4ZNPXJvSw&oe=641B28D8",
                 "submission_status": "NOT_REVIEWED",
                 "rejection_data_by_field": [],
                 "latest_active_arexport_file": null,
@@ -1422,7 +1422,7 @@
                     "__typename": "ARContentCreator",
                     "name": "Uqido XR",
                     "profile_picture": {
-                        "uri": "https://scontent-mxp1-1.xx.fbcdn.net/v/t1.6435-1/60090368_201127367527090_394640518782386176_n.jpg?stp=cp0_dst-jpg_p32x32&_nc_cat=111&ccb=1-7&_nc_sid=dbb9e7&_nc_ohc=dk__dGICSFoAX8STLte&_nc_ht=scontent-mxp1-1.xx&oh=00_AfDm2lTnWZ-Nne5WEBVE4qeonxMEdUcgmVHaaLVf6rrT5g&oe=64359B40"
+                        "uri": "https://scontent-fco2-1.xx.fbcdn.net/v/t1.6435-1/60090368_201127367527090_394640518782386176_n.jpg?stp=cp0_dst-jpg_p32x32&_nc_cat=111&ccb=1-7&_nc_sid=dbb9e7&_nc_ohc=mA4mJDr_jpIAX-FIQmq&_nc_ht=scontent-fco2-1.xx&oh=00_AfD2B1VqXK6YcdOjQ33cHEyKhu8LCncLDyGCw4gefZlOqA&oe=643E9D80"
                     },
                     "id": null
                 },
@@ -1441,7 +1441,7 @@
                 "is_enabled": true,
                 "id": "ARStudioEffect:241661941138340",
                 "name": "U Let US Breathe",
-                "thumbnail_uri": "https://scontent-mxp1-1.xx.fbcdn.net/v/t39.10260-6/230913790_154981243321393_9016399429528408202_n.png?_nc_cat=100&ccb=1-7&_nc_sid=df6b83&_nc_ohc=ENxZUO2k6SoAX869-u1&_nc_ht=scontent-mxp1-1.xx&oh=00_AfASy-FiV-S3AEOx911PuRisA8d9CvhMzM-5iEglXz62uA&oe=64127A03",
+                "thumbnail_uri": "https://scontent-fco2-1.xx.fbcdn.net/v/t39.10260-6/230913790_154981243321393_9016399429528408202_n.png?_nc_cat=100&ccb=1-7&_nc_sid=df6b83&_nc_ohc=qtdUnJKuEuYAX_dcyRc&_nc_ht=scontent-fco2-1.xx&oh=00_AfB9UDGwEXeinYlQXN6XtVtV0P_rey3PBBi5HZ-uEWo80A&oe=641C5D43",
                 "submission_status": "APPROVED",
                 "rejection_data_by_field": [],
                 "latest_active_arexport_file": {
@@ -1498,7 +1498,7 @@
                     "__typename": "ARContentCreator",
                     "name": "Uqido XR",
                     "profile_picture": {
-                        "uri": "https://scontent-mxp1-1.xx.fbcdn.net/v/t1.6435-1/60090368_201127367527090_394640518782386176_n.jpg?stp=cp0_dst-jpg_p32x32&_nc_cat=111&ccb=1-7&_nc_sid=dbb9e7&_nc_ohc=dk__dGICSFoAX8STLte&_nc_ht=scontent-mxp1-1.xx&oh=00_AfDm2lTnWZ-Nne5WEBVE4qeonxMEdUcgmVHaaLVf6rrT5g&oe=64359B40"
+                        "uri": "https://scontent-fco2-1.xx.fbcdn.net/v/t1.6435-1/60090368_201127367527090_394640518782386176_n.jpg?stp=cp0_dst-jpg_p32x32&_nc_cat=111&ccb=1-7&_nc_sid=dbb9e7&_nc_ohc=mA4mJDr_jpIAX-FIQmq&_nc_ht=scontent-fco2-1.xx&oh=00_AfD2B1VqXK6YcdOjQ33cHEyKhu8LCncLDyGCw4gefZlOqA&oe=643E9D80"
                     },
                     "id": null
                 },
@@ -1517,7 +1517,7 @@
                 "is_enabled": true,
                 "id": "ARStudioEffect:485761188775342",
                 "name": "Flower Burger AR",
-                "thumbnail_uri": "https://scontent-mxp1-1.xx.fbcdn.net/v/t39.10260-6/84504110_808123243035054_8038179217432641536_n.png?_nc_cat=104&ccb=1-7&_nc_sid=df6b83&_nc_ohc=44CSPwCa_LoAX9V-43J&_nc_oc=AQn40f31iEGMURvFM44SPQGSQZRbJ1V4PGlWKtdkfWUIS9DRYf2f9B9s71QDqsn6MqY&_nc_ht=scontent-mxp1-1.xx&oh=00_AfBE9MGi_4QsrujfsV6ddGA8abaZgzLShlecm2GzRto4tQ&oe=64136CB3",
+                "thumbnail_uri": "https://scontent-fco2-1.xx.fbcdn.net/v/t39.10260-6/84504110_808123243035054_8038179217432641536_n.png?_nc_cat=104&ccb=1-7&_nc_sid=df6b83&_nc_ohc=KFUhOLd9KsIAX_y3Ax0&_nc_oc=AQl53i3LHaCquqMv4OAYI9rKTZDrkrpUIwyDPOh1ywGwTpCReZdegcjIJboubtjqgo4&_nc_ht=scontent-fco2-1.xx&oh=00_AfBRlhS2PEiQmwcwfQNiYMKNk9J-yV0ss58wKXmcFqT0VQ&oe=641B55B3",
                 "submission_status": "NOT_REVIEWED",
                 "rejection_data_by_field": [],
                 "latest_active_arexport_file": null,
@@ -1570,7 +1570,7 @@
                     "__typename": "ARContentCreator",
                     "name": "Uqido XR",
                     "profile_picture": {
-                        "uri": "https://scontent-mxp1-1.xx.fbcdn.net/v/t1.6435-1/60090368_201127367527090_394640518782386176_n.jpg?stp=cp0_dst-jpg_p32x32&_nc_cat=111&ccb=1-7&_nc_sid=dbb9e7&_nc_ohc=dk__dGICSFoAX8STLte&_nc_ht=scontent-mxp1-1.xx&oh=00_AfDm2lTnWZ-Nne5WEBVE4qeonxMEdUcgmVHaaLVf6rrT5g&oe=64359B40"
+                        "uri": "https://scontent-fco2-1.xx.fbcdn.net/v/t1.6435-1/60090368_201127367527090_394640518782386176_n.jpg?stp=cp0_dst-jpg_p32x32&_nc_cat=111&ccb=1-7&_nc_sid=dbb9e7&_nc_ohc=mA4mJDr_jpIAX-FIQmq&_nc_ht=scontent-fco2-1.xx&oh=00_AfD2B1VqXK6YcdOjQ33cHEyKhu8LCncLDyGCw4gefZlOqA&oe=643E9D80"
                     },
                     "id": null
                 },
@@ -1592,7 +1592,7 @@
         "id": "17841454734795973",
         "display_name": "La Memoria dei Ghiacci",
         "profile_picture": {
-            "uri": "https://scontent-mxp1-1.cdninstagram.com/v/t51.2885-19/328165351_838573347235168_1140814138133911992_n.jpg?stp=dst-jpg_s96x96&_nc_cat=110&ccb=1-7&_nc_sid=8ae9d6&_nc_ohc=4bz6pyZiB1wAX9fjAy0&_nc_ht=scontent-mxp1-1.cdninstagram.com&oh=00_AfBu_X5WSPpNAGNMDRSaYU6fmfxcTTwpnY8jTaOGtKK1BQ&oe=6435B40F"
+            "uri": "https://scontent-fco2-1.cdninstagram.com/v/t51.2885-19/328165351_838573347235168_1140814138133911992_n.jpg?stp=dst-jpg_s96x96&_nc_cat=110&ccb=1-7&_nc_sid=8ae9d6&_nc_ohc=wMehLc0FPCcAX_IJxhv&_nc_ht=scontent-fco2-1.cdninstagram.com&oh=00_AfAQTGGWkGHD-eYXGDvl3EjwYj6AQ7EqH6D3nbBv-pSOKA&oe=643E7E0F"
         },
         "username": "@memoriadeighiacci",
         "surface_configs": [
@@ -1620,7 +1620,7 @@
                 "is_enabled": true,
                 "id": "ARStudioEffect:504992067705923",
                 "name": "Glacier Formation",
-                "thumbnail_uri": "https://scontent-mxp1-1.xx.fbcdn.net/v/t39.10260-6/309046817_438992601440110_6331140325352470580_n.png?_nc_cat=110&ccb=1-7&_nc_sid=df6b83&_nc_ohc=gRVyAh_nZpQAX8EKQL4&_nc_ht=scontent-mxp1-1.xx&oh=00_AfBO-pGGNrxwQ4Iv8M2h7PQtctMU8AO9GDvlQjJQ3TX07Q&oe=64141599",
+                "thumbnail_uri": "https://scontent-fco2-1.xx.fbcdn.net/v/t39.10260-6/309046817_438992601440110_6331140325352470580_n.png?_nc_cat=110&ccb=1-7&_nc_sid=df6b83&_nc_ohc=ZXlAShRkfKkAX922Fbb&_nc_ht=scontent-fco2-1.xx&oh=00_AfDzv0ANxj5EOkcJRz_TL_7Ep2sS18lFle1Gz2WRmc4PUA&oe=641BFE99",
                 "submission_status": "APPROVED",
                 "rejection_data_by_field": [],
                 "latest_active_arexport_file": {
@@ -1678,7 +1678,7 @@
                     "__typename": "ARContentCreator",
                     "name": "Uqido XR",
                     "profile_picture": {
-                        "uri": "https://scontent-mxp1-1.xx.fbcdn.net/v/t1.6435-1/60090368_201127367527090_394640518782386176_n.jpg?stp=cp0_dst-jpg_p32x32&_nc_cat=111&ccb=1-7&_nc_sid=dbb9e7&_nc_ohc=dk__dGICSFoAX8STLte&_nc_ht=scontent-mxp1-1.xx&oh=00_AfDm2lTnWZ-Nne5WEBVE4qeonxMEdUcgmVHaaLVf6rrT5g&oe=64359B40"
+                        "uri": "https://scontent-fco2-1.xx.fbcdn.net/v/t1.6435-1/60090368_201127367527090_394640518782386176_n.jpg?stp=cp0_dst-jpg_p32x32&_nc_cat=111&ccb=1-7&_nc_sid=dbb9e7&_nc_ohc=mA4mJDr_jpIAX-FIQmq&_nc_ht=scontent-fco2-1.xx&oh=00_AfD2B1VqXK6YcdOjQ33cHEyKhu8LCncLDyGCw4gefZlOqA&oe=643E9D80"
                     },
                     "id": null
                 },
@@ -1700,7 +1700,7 @@
                 "is_enabled": true,
                 "id": "ARStudioEffect:1158058838477786",
                 "name": "Glacier Reduction",
-                "thumbnail_uri": "https://scontent-mxp1-1.xx.fbcdn.net/v/t39.10260-6/308757396_1415746632250054_4891520834579630109_n.png?_nc_cat=110&ccb=1-7&_nc_sid=df6b83&_nc_ohc=XciRVkUp95AAX95eez_&_nc_ht=scontent-mxp1-1.xx&oh=00_AfCCHobnyUlgU2WvfyMrLNKuZCW4yfQWVvzred9eEN-R1A&oe=64142A94",
+                "thumbnail_uri": "https://scontent-fco2-1.xx.fbcdn.net/v/t39.10260-6/308757396_1415746632250054_4891520834579630109_n.png?_nc_cat=110&ccb=1-7&_nc_sid=df6b83&_nc_ohc=zUBAs2BPeEcAX-MX918&_nc_ht=scontent-fco2-1.xx&oh=00_AfAVkm5uvYSbX2CXzEUenukxh5E8YFBUnewV5Vwb9av09w&oe=641C1394",
                 "submission_status": "APPROVED",
                 "rejection_data_by_field": [],
                 "latest_active_arexport_file": {
@@ -1758,7 +1758,7 @@
                     "__typename": "ARContentCreator",
                     "name": "Uqido XR",
                     "profile_picture": {
-                        "uri": "https://scontent-mxp1-1.xx.fbcdn.net/v/t1.6435-1/60090368_201127367527090_394640518782386176_n.jpg?stp=cp0_dst-jpg_p32x32&_nc_cat=111&ccb=1-7&_nc_sid=dbb9e7&_nc_ohc=dk__dGICSFoAX8STLte&_nc_ht=scontent-mxp1-1.xx&oh=00_AfDm2lTnWZ-Nne5WEBVE4qeonxMEdUcgmVHaaLVf6rrT5g&oe=64359B40"
+                        "uri": "https://scontent-fco2-1.xx.fbcdn.net/v/t1.6435-1/60090368_201127367527090_394640518782386176_n.jpg?stp=cp0_dst-jpg_p32x32&_nc_cat=111&ccb=1-7&_nc_sid=dbb9e7&_nc_ohc=mA4mJDr_jpIAX-FIQmq&_nc_ht=scontent-fco2-1.xx&oh=00_AfD2B1VqXK6YcdOjQ33cHEyKhu8LCncLDyGCw4gefZlOqA&oe=643E9D80"
                     },
                     "id": null
                 },
@@ -1780,7 +1780,7 @@
                 "is_enabled": true,
                 "id": "ARStudioEffect:484703896854131",
                 "name": "Impatto positivo",
-                "thumbnail_uri": "https://scontent-mxp1-1.xx.fbcdn.net/v/t39.10260-6/309622579_1246062149519991_4371943758816924659_n.png?_nc_cat=104&ccb=1-7&_nc_sid=df6b83&_nc_ohc=cX3iKdN_9m4AX9vQs_q&_nc_ht=scontent-mxp1-1.xx&oh=00_AfCMG72CKoxU5-skReb2fdi4qgTnMfZ_7oAjHUjJwQg0tQ&oe=64134128",
+                "thumbnail_uri": "https://scontent-fco2-1.xx.fbcdn.net/v/t39.10260-6/309622579_1246062149519991_4371943758816924659_n.png?_nc_cat=104&ccb=1-7&_nc_sid=df6b83&_nc_ohc=RXhdxfxLEVAAX_v2_qr&_nc_ht=scontent-fco2-1.xx&oh=00_AfAduoqriMGYq441BPgUvk6SqzlVr_flyyz7YYhCOOahNg&oe=641B2A28",
                 "submission_status": "APPROVED",
                 "rejection_data_by_field": [],
                 "latest_active_arexport_file": {
@@ -1838,7 +1838,7 @@
                     "__typename": "ARContentCreator",
                     "name": "Uqido XR",
                     "profile_picture": {
-                        "uri": "https://scontent-mxp1-1.xx.fbcdn.net/v/t1.6435-1/60090368_201127367527090_394640518782386176_n.jpg?stp=cp0_dst-jpg_p32x32&_nc_cat=111&ccb=1-7&_nc_sid=dbb9e7&_nc_ohc=dk__dGICSFoAX8STLte&_nc_ht=scontent-mxp1-1.xx&oh=00_AfDm2lTnWZ-Nne5WEBVE4qeonxMEdUcgmVHaaLVf6rrT5g&oe=64359B40"
+                        "uri": "https://scontent-fco2-1.xx.fbcdn.net/v/t1.6435-1/60090368_201127367527090_394640518782386176_n.jpg?stp=cp0_dst-jpg_p32x32&_nc_cat=111&ccb=1-7&_nc_sid=dbb9e7&_nc_ohc=mA4mJDr_jpIAX-FIQmq&_nc_ht=scontent-fco2-1.xx&oh=00_AfD2B1VqXK6YcdOjQ33cHEyKhu8LCncLDyGCw4gefZlOqA&oe=643E9D80"
                     },
                     "id": null
                 },
@@ -1860,7 +1860,7 @@
                 "is_enabled": true,
                 "id": "ARStudioEffect:420682640165374",
                 "name": "Yesterday & Tomorrow",
-                "thumbnail_uri": "https://scontent-mxp1-1.xx.fbcdn.net/v/t39.10260-6/308866605_645455730311834_2086710076203797025_n.png?_nc_cat=105&ccb=1-7&_nc_sid=df6b83&_nc_ohc=xEeBJL9E4HsAX_r50xH&_nc_ht=scontent-mxp1-1.xx&oh=00_AfB6JdyxfQcehx9oJNMaFW1L2qJzcigPaap8lwwwiSXiCg&oe=64133590",
+                "thumbnail_uri": "https://scontent-fco2-1.xx.fbcdn.net/v/t39.10260-6/308866605_645455730311834_2086710076203797025_n.png?_nc_cat=105&ccb=1-7&_nc_sid=df6b83&_nc_ohc=yA5sF9RC7HgAX8af7uj&_nc_ht=scontent-fco2-1.xx&oh=00_AfC8hlCUZLhtF6SCd6p7HCK4n8fct6Cx6c-pMy5V8a6T0A&oe=641B1E90",
                 "submission_status": "APPROVED",
                 "rejection_data_by_field": [],
                 "latest_active_arexport_file": {
@@ -1918,7 +1918,7 @@
                     "__typename": "ARContentCreator",
                     "name": "Uqido XR",
                     "profile_picture": {
-                        "uri": "https://scontent-mxp1-1.xx.fbcdn.net/v/t1.6435-1/60090368_201127367527090_394640518782386176_n.jpg?stp=cp0_dst-jpg_p32x32&_nc_cat=111&ccb=1-7&_nc_sid=dbb9e7&_nc_ohc=dk__dGICSFoAX8STLte&_nc_ht=scontent-mxp1-1.xx&oh=00_AfDm2lTnWZ-Nne5WEBVE4qeonxMEdUcgmVHaaLVf6rrT5g&oe=64359B40"
+                        "uri": "https://scontent-fco2-1.xx.fbcdn.net/v/t1.6435-1/60090368_201127367527090_394640518782386176_n.jpg?stp=cp0_dst-jpg_p32x32&_nc_cat=111&ccb=1-7&_nc_sid=dbb9e7&_nc_ohc=mA4mJDr_jpIAX-FIQmq&_nc_ht=scontent-fco2-1.xx&oh=00_AfD2B1VqXK6YcdOjQ33cHEyKhu8LCncLDyGCw4gefZlOqA&oe=643E9D80"
                     },
                     "id": null
                 },
@@ -1940,7 +1940,7 @@
                 "is_enabled": true,
                 "id": "ARStudioEffect:780317026412522",
                 "name": "Ice Core",
-                "thumbnail_uri": "https://scontent-mxp1-1.xx.fbcdn.net/v/t39.10260-6/309542179_626235682310722_2502236840415111037_n.png?_nc_cat=110&ccb=1-7&_nc_sid=df6b83&_nc_ohc=8qjxF1ENCIUAX-okh67&_nc_ht=scontent-mxp1-1.xx&oh=00_AfACF3U03D2QczrVRBfOun6RKHQgK6vqx9E2xZXw7Hr9Yg&oe=641235C2",
+                "thumbnail_uri": "https://scontent-fco2-1.xx.fbcdn.net/v/t39.10260-6/309542179_626235682310722_2502236840415111037_n.png?_nc_cat=110&ccb=1-7&_nc_sid=df6b83&_nc_ohc=YhT0p7zMCkQAX-D3q_O&_nc_ht=scontent-fco2-1.xx&oh=00_AfCv-dLSwobZkxfSPIlFlte-cvTnmlQUVcQMvKx0iV5Acw&oe=641C1902",
                 "submission_status": "APPROVED",
                 "rejection_data_by_field": [],
                 "latest_active_arexport_file": {
@@ -1998,7 +1998,7 @@
                     "__typename": "ARContentCreator",
                     "name": "Uqido XR",
                     "profile_picture": {
-                        "uri": "https://scontent-mxp1-1.xx.fbcdn.net/v/t1.6435-1/60090368_201127367527090_394640518782386176_n.jpg?stp=cp0_dst-jpg_p32x32&_nc_cat=111&ccb=1-7&_nc_sid=dbb9e7&_nc_ohc=dk__dGICSFoAX8STLte&_nc_ht=scontent-mxp1-1.xx&oh=00_AfDm2lTnWZ-Nne5WEBVE4qeonxMEdUcgmVHaaLVf6rrT5g&oe=64359B40"
+                        "uri": "https://scontent-fco2-1.xx.fbcdn.net/v/t1.6435-1/60090368_201127367527090_394640518782386176_n.jpg?stp=cp0_dst-jpg_p32x32&_nc_cat=111&ccb=1-7&_nc_sid=dbb9e7&_nc_ohc=mA4mJDr_jpIAX-FIQmq&_nc_ht=scontent-fco2-1.xx&oh=00_AfD2B1VqXK6YcdOjQ33cHEyKhu8LCncLDyGCw4gefZlOqA&oe=643E9D80"
                     },
                     "id": null
                 },
@@ -2020,7 +2020,7 @@
                 "is_enabled": true,
                 "id": "ARStudioEffect:323900386621588",
                 "name": "Global Warming",
-                "thumbnail_uri": "https://scontent-mxp1-1.xx.fbcdn.net/v/t39.10260-6/308785044_836718454406016_2516336969698283050_n.png?_nc_cat=104&ccb=1-7&_nc_sid=df6b83&_nc_ohc=4fVaOotGv-MAX8KjUxl&_nc_ht=scontent-mxp1-1.xx&oh=00_AfB7f8BjTSJh4k1IAnoAuBX4u1L80lUvK4jMOANpldAKTw&oe=6413301C",
+                "thumbnail_uri": "https://scontent-fco2-1.xx.fbcdn.net/v/t39.10260-6/308785044_836718454406016_2516336969698283050_n.png?_nc_cat=104&ccb=1-7&_nc_sid=df6b83&_nc_ohc=TY_StJrnMvwAX-c_Yq6&_nc_ht=scontent-fco2-1.xx&oh=00_AfDtCw_5rVrHqrzMfolhTPBBWjD0a_29FqaD4DOkrFa9ig&oe=641B191C",
                 "submission_status": "APPROVED",
                 "rejection_data_by_field": [],
                 "latest_active_arexport_file": {
@@ -2077,7 +2077,7 @@
                     "__typename": "ARContentCreator",
                     "name": "Uqido XR",
                     "profile_picture": {
-                        "uri": "https://scontent-mxp1-1.xx.fbcdn.net/v/t1.6435-1/60090368_201127367527090_394640518782386176_n.jpg?stp=cp0_dst-jpg_p32x32&_nc_cat=111&ccb=1-7&_nc_sid=dbb9e7&_nc_ohc=dk__dGICSFoAX8STLte&_nc_ht=scontent-mxp1-1.xx&oh=00_AfDm2lTnWZ-Nne5WEBVE4qeonxMEdUcgmVHaaLVf6rrT5g&oe=64359B40"
+                        "uri": "https://scontent-fco2-1.xx.fbcdn.net/v/t1.6435-1/60090368_201127367527090_394640518782386176_n.jpg?stp=cp0_dst-jpg_p32x32&_nc_cat=111&ccb=1-7&_nc_sid=dbb9e7&_nc_ohc=mA4mJDr_jpIAX-FIQmq&_nc_ht=scontent-fco2-1.xx&oh=00_AfD2B1VqXK6YcdOjQ33cHEyKhu8LCncLDyGCw4gefZlOqA&oe=643E9D80"
                     },
                     "id": null
                 },
@@ -2099,7 +2099,7 @@
         "id": "17841412713825494",
         "display_name": "LEITNER",
         "profile_picture": {
-            "uri": "https://scontent-mxp1-1.cdninstagram.com/v/t51.2885-19/214353868_350571986642258_1823598272049759499_n.jpg?stp=dst-jpg_s96x96&_nc_cat=100&ccb=1-7&_nc_sid=8ae9d6&_nc_ohc=WtnhlN6L9boAX_ytk3P&_nc_ht=scontent-mxp1-1.cdninstagram.com&oh=00_AfAxUzwEftNgj0UN2CETV0yyYXU_k_acT9Iy5B_DfTOmdA&oe=6435AF88"
+            "uri": "https://scontent-fco2-1.cdninstagram.com/v/t51.2885-19/214353868_350571986642258_1823598272049759499_n.jpg?stp=dst-jpg_s96x96&_nc_cat=100&ccb=1-7&_nc_sid=8ae9d6&_nc_ohc=4Og0ARwSAZUAX_EZ5jY&_nc_ht=scontent-fco2-1.cdninstagram.com&oh=00_AfCjV-3sm58GqKfthWJ_EIvTh6lwl3jedjrYI7qFN_h9QQ&oe=643E7988"
         },
         "username": "@leitnerofficial",
         "surface_configs": [
@@ -2127,7 +2127,7 @@
                 "is_enabled": true,
                 "id": "ARStudioEffect:390912208746465",
                 "name": "Motore Direct Drive",
-                "thumbnail_uri": "https://scontent-mxp1-1.xx.fbcdn.net/v/t39.10260-6/122717321_1490296324495408_4638032464173508712_n.png?_nc_cat=105&ccb=1-7&_nc_sid=df6b83&_nc_ohc=O806EJa-L8oAX-JzySE&_nc_oc=AQn8BBtZYc1J21O-5ZASZogwIv7zt28mlt2kNDlxoeEHKZ8n85oIWjJUAcmDlvXSCi0&_nc_ht=scontent-mxp1-1.xx&oh=00_AfBQ23kEKp9XkIXX7mxujXhjo2qv5gn40gYCjb1BL-w4pw&oe=64130C2B",
+                "thumbnail_uri": "https://scontent-fco2-1.xx.fbcdn.net/v/t39.10260-6/122717321_1490296324495408_4638032464173508712_n.png?_nc_cat=105&ccb=1-7&_nc_sid=df6b83&_nc_ohc=Ax0q0K-HZHwAX_x_oyi&_nc_oc=AQkYqmM-wkn5Ku5llRrXDgn8JnqU76ixxMLuTe1kO8v1ovrXt8AAIQWkT6JBzoCwIQA&_nc_ht=scontent-fco2-1.xx&oh=00_AfAoEWg3fqn8eQHPRzXSYknIV_eioCDQVtsGGCui8KRYEA&oe=641CEF6B",
                 "submission_status": "APPROVED",
                 "rejection_data_by_field": [],
                 "latest_active_arexport_file": {
@@ -2184,7 +2184,7 @@
                     "__typename": "ARContentCreator",
                     "name": "Uqido XR",
                     "profile_picture": {
-                        "uri": "https://scontent-mxp1-1.xx.fbcdn.net/v/t1.6435-1/60090368_201127367527090_394640518782386176_n.jpg?stp=cp0_dst-jpg_p32x32&_nc_cat=111&ccb=1-7&_nc_sid=dbb9e7&_nc_ohc=dk__dGICSFoAX8STLte&_nc_ht=scontent-mxp1-1.xx&oh=00_AfDm2lTnWZ-Nne5WEBVE4qeonxMEdUcgmVHaaLVf6rrT5g&oe=64359B40"
+                        "uri": "https://scontent-fco2-1.xx.fbcdn.net/v/t1.6435-1/60090368_201127367527090_394640518782386176_n.jpg?stp=cp0_dst-jpg_p32x32&_nc_cat=111&ccb=1-7&_nc_sid=dbb9e7&_nc_ohc=mA4mJDr_jpIAX-FIQmq&_nc_ht=scontent-fco2-1.xx&oh=00_AfD2B1VqXK6YcdOjQ33cHEyKhu8LCncLDyGCw4gefZlOqA&oe=643E9D80"
                     },
                     "id": null
                 },
@@ -2206,7 +2206,7 @@
         "id": "17841404113185698",
         "display_name": "3Bee",
         "profile_picture": {
-            "uri": "https://scontent-mxp1-1.cdninstagram.com/v/t51.2885-19/327762447_164822389632112_4616642835702468698_n.jpg?stp=dst-jpg_s96x96&_nc_cat=103&ccb=1-7&_nc_sid=8ae9d6&_nc_ohc=xmh2wi7Et_wAX8vNbd4&_nc_ht=scontent-mxp1-1.cdninstagram.com&oh=00_AfA_ASxKECfmINMZxaVoL9VtzU6Vra5BT0JA8qthgJ8Mxg&oe=643598A0"
+            "uri": "https://scontent-fco2-1.cdninstagram.com/v/t51.2885-19/327762447_164822389632112_4616642835702468698_n.jpg?stp=dst-jpg_s96x96&_nc_cat=103&ccb=1-7&_nc_sid=8ae9d6&_nc_ohc=sUW-N2eaWUwAX-87HgG&_nc_ht=scontent-fco2-1.cdninstagram.com&oh=00_AfCfrZTOJ6_vq4UoEkRrPbyWsATfofmUv_It_SOGyq5ejw&oe=643E9AE0"
         },
         "username": "@3bee_aworldwithbees",
         "surface_configs": [
@@ -2234,7 +2234,7 @@
                 "is_enabled": true,
                 "id": "ARStudioEffect:998639237286063",
                 "name": "3Bee Ape Acacia",
-                "thumbnail_uri": "https://scontent-mxp1-1.xx.fbcdn.net/v/t39.10260-6/125867610_311425949856113_892714577471961545_n.png?_nc_cat=109&ccb=1-7&_nc_sid=df6b83&_nc_ohc=LliPdMpFwvMAX9KZjFB&_nc_ht=scontent-mxp1-1.xx&oh=00_AfDOJTmxIScXq6xnP3tOxLWiqcGpue967VjfPb9NWX6qbQ&oe=6413A6FC",
+                "thumbnail_uri": "https://scontent-fco2-1.xx.fbcdn.net/v/t39.10260-6/125867610_311425949856113_892714577471961545_n.png?_nc_cat=109&ccb=1-7&_nc_sid=df6b83&_nc_ohc=MtUzsP4tzP0AX-jbMQE&_nc_ht=scontent-fco2-1.xx&oh=00_AfDvsCxIifHxmgnB5FUsGi_jbNF4ca6Oj0flRvwLcTEu-A&oe=641B8FFC",
                 "submission_status": "APPROVED",
                 "rejection_data_by_field": [],
                 "latest_active_arexport_file": {
@@ -2292,7 +2292,7 @@
                     "__typename": "ARContentCreator",
                     "name": "Uqido XR",
                     "profile_picture": {
-                        "uri": "https://scontent-mxp1-1.xx.fbcdn.net/v/t1.6435-1/60090368_201127367527090_394640518782386176_n.jpg?stp=cp0_dst-jpg_p32x32&_nc_cat=111&ccb=1-7&_nc_sid=dbb9e7&_nc_ohc=dk__dGICSFoAX8STLte&_nc_ht=scontent-mxp1-1.xx&oh=00_AfDm2lTnWZ-Nne5WEBVE4qeonxMEdUcgmVHaaLVf6rrT5g&oe=64359B40"
+                        "uri": "https://scontent-fco2-1.xx.fbcdn.net/v/t1.6435-1/60090368_201127367527090_394640518782386176_n.jpg?stp=cp0_dst-jpg_p32x32&_nc_cat=111&ccb=1-7&_nc_sid=dbb9e7&_nc_ohc=mA4mJDr_jpIAX-FIQmq&_nc_ht=scontent-fco2-1.xx&oh=00_AfD2B1VqXK6YcdOjQ33cHEyKhu8LCncLDyGCw4gefZlOqA&oe=643E9D80"
                     },
                     "id": null
                 },
@@ -2317,7 +2317,7 @@
         "id": "17841401411986786",
         "display_name": "DEMACLENKO",
         "profile_picture": {
-            "uri": "https://scontent-mxp1-1.cdninstagram.com/v/t51.2885-19/126310533_1634221706777989_6027816328874042276_n.jpg?stp=dst-jpg_s96x96&_nc_cat=109&ccb=1-7&_nc_sid=8ae9d6&_nc_ohc=cH3wQK4in1EAX-kYUUx&_nc_ht=scontent-mxp1-1.cdninstagram.com&oh=00_AfD-rVAPdXjK_2iH1TeyUB6GbO10SQ-XLgQEboB8kMuZYQ&oe=6435C417"
+            "uri": "https://scontent-fco2-1.cdninstagram.com/v/t51.2885-19/126310533_1634221706777989_6027816328874042276_n.jpg?stp=dst-jpg_s96x96&_nc_cat=109&ccb=1-7&_nc_sid=8ae9d6&_nc_ohc=lhmqE74ehWAAX_0ZWG8&_nc_ht=scontent-fco2-1.cdninstagram.com&oh=00_AfAwAnIkzWRp0Z_6hthVnQje__6rtbjOO3Ep-2P9s7giwA&oe=643E8E17"
         },
         "username": "@demaclenko_thefutureofsnow",
         "surface_configs": [
@@ -2345,7 +2345,7 @@
                 "is_enabled": false,
                 "id": "ARStudioEffect:3674481059240722",
                 "name": "Ventus X-Ray",
-                "thumbnail_uri": "https://scontent-mxp1-1.xx.fbcdn.net/v/t39.10260-6/122486052_2792619320970651_7168430211897627916_n.png?_nc_cat=106&ccb=1-7&_nc_sid=df6b83&_nc_ohc=QV-3PQwlKtoAX8d_9IS&_nc_ht=scontent-mxp1-1.xx&oh=00_AfDQ-xyfDfvz5TMydOqAiF7mSWgIZvDpF5UZvwzyBZ_Dcw&oe=6412D3C4",
+                "thumbnail_uri": "https://scontent-fco2-1.xx.fbcdn.net/v/t39.10260-6/122486052_2792619320970651_7168430211897627916_n.png?_nc_cat=106&ccb=1-7&_nc_sid=df6b83&_nc_ohc=uQGuqJ2EYiAAX8lF6Wc&_nc_ht=scontent-fco2-1.xx&oh=00_AfC_2t1JuJ2VB3CvLmT5YdB1raavA2SUiykJFip5_cETAg&oe=641CB704",
                 "submission_status": "NOT_APPROVED",
                 "rejection_data_by_field": [
                     {
@@ -2409,7 +2409,7 @@
                     "__typename": "ARContentCreator",
                     "name": "Uqido XR",
                     "profile_picture": {
-                        "uri": "https://scontent-mxp1-1.xx.fbcdn.net/v/t1.6435-1/60090368_201127367527090_394640518782386176_n.jpg?stp=cp0_dst-jpg_p32x32&_nc_cat=111&ccb=1-7&_nc_sid=dbb9e7&_nc_ohc=dk__dGICSFoAX8STLte&_nc_ht=scontent-mxp1-1.xx&oh=00_AfDm2lTnWZ-Nne5WEBVE4qeonxMEdUcgmVHaaLVf6rrT5g&oe=64359B40"
+                        "uri": "https://scontent-fco2-1.xx.fbcdn.net/v/t1.6435-1/60090368_201127367527090_394640518782386176_n.jpg?stp=cp0_dst-jpg_p32x32&_nc_cat=111&ccb=1-7&_nc_sid=dbb9e7&_nc_ohc=mA4mJDr_jpIAX-FIQmq&_nc_ht=scontent-fco2-1.xx&oh=00_AfD2B1VqXK6YcdOjQ33cHEyKhu8LCncLDyGCw4gefZlOqA&oe=643E9D80"
                     },
                     "id": null
                 },
@@ -2428,7 +2428,7 @@
                 "is_enabled": false,
                 "id": "ARStudioEffect:805162856965467",
                 "name": "Generatore Neve",
-                "thumbnail_uri": "https://scontent-mxp1-1.xx.fbcdn.net/v/t39.10260-6/123008191_735527357035664_1181062309263618291_n.png?_nc_cat=111&ccb=1-7&_nc_sid=df6b83&_nc_ohc=sKUS6VV9BSIAX8RAqDc&_nc_ht=scontent-mxp1-1.xx&oh=00_AfDBhbI5N324nhK1lLJGWSz2B52fBPNPZHwNfLtKvEk1Ig&oe=6413BC9A",
+                "thumbnail_uri": "https://scontent-fco2-1.xx.fbcdn.net/v/t39.10260-6/123008191_735527357035664_1181062309263618291_n.png?_nc_cat=111&ccb=1-7&_nc_sid=df6b83&_nc_ohc=T46erv22-2EAX8dSi3K&_nc_ht=scontent-fco2-1.xx&oh=00_AfAcKexWJf2cnnA81Hnc2k2RDxUbyRTRMo3WqQWcHt4aqA&oe=641BA59A",
                 "submission_status": "APPROVED",
                 "rejection_data_by_field": [],
                 "latest_active_arexport_file": {
@@ -2485,7 +2485,7 @@
                     "__typename": "ARContentCreator",
                     "name": "Uqido XR",
                     "profile_picture": {
-                        "uri": "https://scontent-mxp1-1.xx.fbcdn.net/v/t1.6435-1/60090368_201127367527090_394640518782386176_n.jpg?stp=cp0_dst-jpg_p32x32&_nc_cat=111&ccb=1-7&_nc_sid=dbb9e7&_nc_ohc=dk__dGICSFoAX8STLte&_nc_ht=scontent-mxp1-1.xx&oh=00_AfDm2lTnWZ-Nne5WEBVE4qeonxMEdUcgmVHaaLVf6rrT5g&oe=64359B40"
+                        "uri": "https://scontent-fco2-1.xx.fbcdn.net/v/t1.6435-1/60090368_201127367527090_394640518782386176_n.jpg?stp=cp0_dst-jpg_p32x32&_nc_cat=111&ccb=1-7&_nc_sid=dbb9e7&_nc_ohc=mA4mJDr_jpIAX-FIQmq&_nc_ht=scontent-fco2-1.xx&oh=00_AfD2B1VqXK6YcdOjQ33cHEyKhu8LCncLDyGCw4gefZlOqA&oe=643E9D80"
                     },
                     "id": null
                 },
@@ -2507,7 +2507,7 @@
         "id": "17841439342045921",
         "display_name": "AquaGranda",
         "profile_picture": {
-            "uri": "https://scontent-mxp1-1.cdninstagram.com/v/t51.2885-19/131349221_233393314866708_6631636717484592626_n.jpg?stp=dst-jpg_s96x96&_nc_cat=104&ccb=1-7&_nc_sid=8ae9d6&_nc_ohc=Vie_Q_s2GaQAX8u2Mwd&_nc_ht=scontent-mxp1-1.cdninstagram.com&oh=00_AfDbgzdeT2kA7IP1vIvcqVxbHPhbQ7ySkRpKhqpflqT_hA&oe=64359615"
+            "uri": "https://scontent-fco2-1.cdninstagram.com/v/t51.2885-19/131349221_233393314866708_6631636717484592626_n.jpg?stp=dst-jpg_s96x96&_nc_cat=104&ccb=1-7&_nc_sid=8ae9d6&_nc_ohc=BEfOVQCdtMUAX-q8Vz8&_nc_ht=scontent-fco2-1.cdninstagram.com&oh=00_AfBLMC3NNMi53LtBO_eo-6EAg-v0-ZgbJ5PKD14ct0LlsA&oe=643E9855"
         },
         "username": "@aqua_granda",
         "surface_configs": [
@@ -2535,7 +2535,7 @@
                 "is_enabled": true,
                 "id": "ARStudioEffect:449783940600740",
                 "name": "Water level",
-                "thumbnail_uri": "https://scontent-mxp1-1.xx.fbcdn.net/v/t39.10260-6/313202038_844061363400194_3778173612061764626_n.png?_nc_cat=100&ccb=1-7&_nc_sid=df6b83&_nc_ohc=2AaG-q1Y65sAX-aonXD&_nc_ht=scontent-mxp1-1.xx&oh=00_AfCkE82Gy9qGTwK-lweJ6fw4ZOp-x1DD0apFUXdjCqAc6w&oe=64140DBD",
+                "thumbnail_uri": "https://scontent-fco2-1.xx.fbcdn.net/v/t39.10260-6/313202038_844061363400194_3778173612061764626_n.png?_nc_cat=100&ccb=1-7&_nc_sid=df6b83&_nc_ohc=G_S_lGTYGSsAX-VCWQ6&_nc_ht=scontent-fco2-1.xx&oh=00_AfD16JBliYlkuDLAS-GuiDVFHSRM8HXdzjEpNw_95hL2ug&oe=641BF6BD",
                 "submission_status": "APPROVED",
                 "rejection_data_by_field": [],
                 "latest_active_arexport_file": {
@@ -2593,7 +2593,7 @@
                     "__typename": "ARContentCreator",
                     "name": "Uqido XR",
                     "profile_picture": {
-                        "uri": "https://scontent-mxp1-1.xx.fbcdn.net/v/t1.6435-1/60090368_201127367527090_394640518782386176_n.jpg?stp=cp0_dst-jpg_p32x32&_nc_cat=111&ccb=1-7&_nc_sid=dbb9e7&_nc_ohc=dk__dGICSFoAX8STLte&_nc_ht=scontent-mxp1-1.xx&oh=00_AfDm2lTnWZ-Nne5WEBVE4qeonxMEdUcgmVHaaLVf6rrT5g&oe=64359B40"
+                        "uri": "https://scontent-fco2-1.xx.fbcdn.net/v/t1.6435-1/60090368_201127367527090_394640518782386176_n.jpg?stp=cp0_dst-jpg_p32x32&_nc_cat=111&ccb=1-7&_nc_sid=dbb9e7&_nc_ohc=mA4mJDr_jpIAX-FIQmq&_nc_ht=scontent-fco2-1.xx&oh=00_AfD2B1VqXK6YcdOjQ33cHEyKhu8LCncLDyGCw4gefZlOqA&oe=643E9D80"
                     },
                     "id": null
                 },
@@ -2618,7 +2618,7 @@
         "id": "161073737264211",
         "display_name": "Uqido",
         "profile_picture": {
-            "uri": "https://scontent-mxp1-1.xx.fbcdn.net/v/t39.30808-1/309610924_511426414324763_1158485152914478078_n.jpg?stp=dst-jpg_p100x100&_nc_cat=105&ccb=1-7&_nc_sid=dbb9e7&_nc_ohc=yMZm3JhsYQ0AX9TLPla&_nc_ht=scontent-mxp1-1.xx&oh=00_AfAK-RFUyA7tZyh-Jjm6n801R_DaOchHWO3uDkeL7dEgQQ&oe=64141327"
+            "uri": "https://scontent-fco2-1.xx.fbcdn.net/v/t39.30808-1/309610924_511426414324763_1158485152914478078_n.jpg?stp=dst-jpg_p100x100&_nc_cat=105&ccb=1-7&_nc_sid=dbb9e7&_nc_ohc=hV1jFgRqV30AX92kzUJ&_nc_ht=scontent-fco2-1.xx&oh=00_AfAA4osdgN8hd_MDzgSw8SdpIcEq9p2TGwJBa0xDqFBN1g&oe=641BFC27"
         },
         "username": "uqido",
         "surface_configs": [
@@ -2646,7 +2646,7 @@
                 "is_enabled": true,
                 "id": "ARStudioEffect:542684949588019",
                 "name": "RiedlAR",
-                "thumbnail_uri": "https://scontent-mxp1-1.xx.fbcdn.net/v/t39.10260-6/56712968_2113896195313927_1282426893273923584_n.png?_nc_cat=106&ccb=1-7&_nc_sid=df6b83&_nc_ohc=tAflg38uxEEAX9Y6PiZ&_nc_ht=scontent-mxp1-1.xx&oh=00_AfD24fKpgI9VFVkugE3QEzmoRASQc7YQ4NN5K51W6v0QRg&oe=6412470B",
+                "thumbnail_uri": "https://scontent-fco2-1.xx.fbcdn.net/v/t39.10260-6/56712968_2113896195313927_1282426893273923584_n.png?_nc_cat=106&ccb=1-7&_nc_sid=df6b83&_nc_ohc=XvOvVuC_lJoAX_kobUH&_nc_ht=scontent-fco2-1.xx&oh=00_AfC3O4RLQ9TcaDTelY0r4v_0EuaXnKBX3H6ppRq8JZ9g2g&oe=641C2A4B",
                 "submission_status": "UPDATE_REJECTED",
                 "rejection_data_by_field": [
                     {
@@ -2714,7 +2714,7 @@
                     "__typename": "ARContentCreator",
                     "name": "Uqido XR",
                     "profile_picture": {
-                        "uri": "https://scontent-mxp1-1.xx.fbcdn.net/v/t1.6435-1/60090368_201127367527090_394640518782386176_n.jpg?stp=cp0_dst-jpg_p32x32&_nc_cat=111&ccb=1-7&_nc_sid=dbb9e7&_nc_ohc=dk__dGICSFoAX8STLte&_nc_ht=scontent-mxp1-1.xx&oh=00_AfDm2lTnWZ-Nne5WEBVE4qeonxMEdUcgmVHaaLVf6rrT5g&oe=64359B40"
+                        "uri": "https://scontent-fco2-1.xx.fbcdn.net/v/t1.6435-1/60090368_201127367527090_394640518782386176_n.jpg?stp=cp0_dst-jpg_p32x32&_nc_cat=111&ccb=1-7&_nc_sid=dbb9e7&_nc_ohc=mA4mJDr_jpIAX-FIQmq&_nc_ht=scontent-fco2-1.xx&oh=00_AfD2B1VqXK6YcdOjQ33cHEyKhu8LCncLDyGCw4gefZlOqA&oe=643E9D80"
                     },
                     "id": null
                 },
@@ -2733,7 +2733,7 @@
                 "is_enabled": true,
                 "id": "ARStudioEffect:1924394917647080",
                 "name": "Stefano Ricci Demo",
-                "thumbnail_uri": "https://scontent-mxp1-1.xx.fbcdn.net/v/t39.10260-6/41996848_254499675405444_2880303711211487232_n.png?_nc_cat=102&ccb=1-7&_nc_sid=df6b83&_nc_ohc=UmjzD0l6rooAX-jIFmJ&_nc_ht=scontent-mxp1-1.xx&oh=00_AfDHfwab-xkugeH1mU32eHAs-iRKa2mY6xRKkBSIayp-5A&oe=6412900C",
+                "thumbnail_uri": "https://scontent-fco2-1.xx.fbcdn.net/v/t39.10260-6/41996848_254499675405444_2880303711211487232_n.png?_nc_cat=102&ccb=1-7&_nc_sid=df6b83&_nc_ohc=0wvL9kolUqcAX9w8GY4&_nc_ht=scontent-fco2-1.xx&oh=00_AfBf290tcwEx5AfO4XnFItX1iTM6CGyPoQIRRShHirnPwA&oe=641C734C",
                 "submission_status": "NOT_APPROVED",
                 "rejection_data_by_field": [],
                 "latest_active_arexport_file": null,
@@ -2786,7 +2786,7 @@
                     "__typename": "ARContentCreator",
                     "name": "Antonio Ruggiero",
                     "profile_picture": {
-                        "uri": "https://scontent-mxp1-1.xx.fbcdn.net/v/t39.30808-1/322710152_1239390706934468_2694343467332743219_n.jpg?stp=cp0_dst-jpg_p32x32&_nc_cat=109&ccb=1-7&_nc_sid=dbb9e7&_nc_ohc=lmoO6RO_UiwAX-_Wnjm&_nc_ht=scontent-mxp1-1.xx&oh=00_AfAQ_LjL02kmOxfT4yqBkL1Hnb3b2xwLkipM3ooErHBcPQ&oe=641389B0"
+                        "uri": "https://scontent-fco2-1.xx.fbcdn.net/v/t39.30808-1/336549619_1394132584671511_2488301457171069933_n.jpg?stp=cp0_dst-jpg_p32x32&_nc_cat=108&ccb=1-7&_nc_sid=dbb9e7&_nc_ohc=q-ovstSqdm0AX-eZdXV&_nc_ht=scontent-fco2-1.xx&oh=00_AfBs5oxmzDK-fYVuFvkv_3-PwAC620mhThGKWs97g8X6aw&oe=641BA4B8"
                     },
                     "id": null
                 },
@@ -2805,7 +2805,7 @@
                 "is_enabled": true,
                 "id": "ARStudioEffect:266998703934915",
                 "name": "Venezia 1920",
-                "thumbnail_uri": "https://scontent-mxp1-1.xx.fbcdn.net/v/t39.10260-6/42500505_280460599456106_3829742163688685568_n.png?_nc_cat=104&ccb=1-7&_nc_sid=df6b83&_nc_ohc=aXLniwfcSSQAX9atI5u&_nc_ht=scontent-mxp1-1.xx&oh=00_AfA5ZPGDVfoHoj1nzBDDKW1pwbPh2cj4jL8qL_3ZPfz3qg&oe=64132D55",
+                "thumbnail_uri": "https://scontent-fco2-1.xx.fbcdn.net/v/t39.10260-6/42500505_280460599456106_3829742163688685568_n.png?_nc_cat=104&ccb=1-7&_nc_sid=df6b83&_nc_ohc=gRmgQ2QpkPsAX-9_UCT&_nc_ht=scontent-fco2-1.xx&oh=00_AfBVTV1el8rMSkxf7RL9SAi4Fo3-w-FZ1B22wyGJrP7xdw&oe=641B1655",
                 "submission_status": "UPDATE_REJECTED",
                 "rejection_data_by_field": [
                     {
@@ -2868,7 +2868,7 @@
                     "__typename": "ARContentCreator",
                     "name": "Antonio Ruggiero",
                     "profile_picture": {
-                        "uri": "https://scontent-mxp1-1.xx.fbcdn.net/v/t39.30808-1/322710152_1239390706934468_2694343467332743219_n.jpg?stp=cp0_dst-jpg_p32x32&_nc_cat=109&ccb=1-7&_nc_sid=dbb9e7&_nc_ohc=lmoO6RO_UiwAX-_Wnjm&_nc_ht=scontent-mxp1-1.xx&oh=00_AfAQ_LjL02kmOxfT4yqBkL1Hnb3b2xwLkipM3ooErHBcPQ&oe=641389B0"
+                        "uri": "https://scontent-fco2-1.xx.fbcdn.net/v/t39.30808-1/336549619_1394132584671511_2488301457171069933_n.jpg?stp=cp0_dst-jpg_p32x32&_nc_cat=108&ccb=1-7&_nc_sid=dbb9e7&_nc_ohc=q-ovstSqdm0AX-eZdXV&_nc_ht=scontent-fco2-1.xx&oh=00_AfBs5oxmzDK-fYVuFvkv_3-PwAC620mhThGKWs97g8X6aw&oe=641BA4B8"
                     },
                     "id": null
                 },
@@ -2887,7 +2887,7 @@
                 "is_enabled": true,
                 "id": "ARStudioEffect:532442770496126",
                 "name": "GlassesAR",
-                "thumbnail_uri": "https://scontent-mxp1-1.xx.fbcdn.net/v/t39.10260-6/53580255_1284113731742105_6593570154288775168_n.png?_nc_cat=103&ccb=1-7&_nc_sid=df6b83&_nc_ohc=smoLPw01qwoAX9wp7d-&_nc_ht=scontent-mxp1-1.xx&oh=00_AfAaiBjT0o-CRUM4PYXp7HvKKmScK-sIHenhvmTxIAhbNg&oe=6412E9CA",
+                "thumbnail_uri": "https://scontent-fco2-1.xx.fbcdn.net/v/t39.10260-6/53580255_1284113731742105_6593570154288775168_n.png?_nc_cat=103&ccb=1-7&_nc_sid=df6b83&_nc_ohc=4otiXEzNPekAX8SglFj&_nc_ht=scontent-fco2-1.xx&oh=00_AfDVNDInO_acBPm1f21gdMrviKE6cVZA6D_dQXMnPjnK1Q&oe=641CCD0A",
                 "submission_status": "APPROVED",
                 "rejection_data_by_field": [],
                 "latest_active_arexport_file": {
@@ -2944,7 +2944,7 @@
                     "__typename": "ARContentCreator",
                     "name": "Uqido XR",
                     "profile_picture": {
-                        "uri": "https://scontent-mxp1-1.xx.fbcdn.net/v/t1.6435-1/60090368_201127367527090_394640518782386176_n.jpg?stp=cp0_dst-jpg_p32x32&_nc_cat=111&ccb=1-7&_nc_sid=dbb9e7&_nc_ohc=dk__dGICSFoAX8STLte&_nc_ht=scontent-mxp1-1.xx&oh=00_AfDm2lTnWZ-Nne5WEBVE4qeonxMEdUcgmVHaaLVf6rrT5g&oe=64359B40"
+                        "uri": "https://scontent-fco2-1.xx.fbcdn.net/v/t1.6435-1/60090368_201127367527090_394640518782386176_n.jpg?stp=cp0_dst-jpg_p32x32&_nc_cat=111&ccb=1-7&_nc_sid=dbb9e7&_nc_ohc=mA4mJDr_jpIAX-FIQmq&_nc_ht=scontent-fco2-1.xx&oh=00_AfD2B1VqXK6YcdOjQ33cHEyKhu8LCncLDyGCw4gefZlOqA&oe=643E9D80"
                     },
                     "id": null
                 },
@@ -2963,7 +2963,7 @@
                 "is_enabled": true,
                 "id": "ARStudioEffect:2322858771314072",
                 "name": "Bicycle Helmet",
-                "thumbnail_uri": "https://scontent-mxp1-1.xx.fbcdn.net/v/t39.10260-6/65702725_409388089664909_3301142272074055680_n.png?_nc_cat=106&ccb=1-7&_nc_sid=df6b83&_nc_ohc=JgAVJSIZpvkAX9Y_MNn&_nc_ht=scontent-mxp1-1.xx&oh=00_AfDEcKjCo3aKDXV_4v64eficH0j9PjgnCA4rgQLDvR7lwA&oe=641304AF",
+                "thumbnail_uri": "https://scontent-fco2-1.xx.fbcdn.net/v/t39.10260-6/65702725_409388089664909_3301142272074055680_n.png?_nc_cat=106&ccb=1-7&_nc_sid=df6b83&_nc_ohc=xxSSvZ36jH0AX_z_7Ra&_nc_ht=scontent-fco2-1.xx&oh=00_AfAUpSbpBl6uD-ShCE-Xg3rOgeWh64r_1FXQtY3O5veMlQ&oe=641CE7EF",
                 "submission_status": "UPDATE_REJECTED",
                 "rejection_data_by_field": [
                     {
@@ -3026,7 +3026,7 @@
                     "__typename": "ARContentCreator",
                     "name": "Uqido XR",
                     "profile_picture": {
-                        "uri": "https://scontent-mxp1-1.xx.fbcdn.net/v/t1.6435-1/60090368_201127367527090_394640518782386176_n.jpg?stp=cp0_dst-jpg_p32x32&_nc_cat=111&ccb=1-7&_nc_sid=dbb9e7&_nc_ohc=dk__dGICSFoAX8STLte&_nc_ht=scontent-mxp1-1.xx&oh=00_AfDm2lTnWZ-Nne5WEBVE4qeonxMEdUcgmVHaaLVf6rrT5g&oe=64359B40"
+                        "uri": "https://scontent-fco2-1.xx.fbcdn.net/v/t1.6435-1/60090368_201127367527090_394640518782386176_n.jpg?stp=cp0_dst-jpg_p32x32&_nc_cat=111&ccb=1-7&_nc_sid=dbb9e7&_nc_ohc=mA4mJDr_jpIAX-FIQmq&_nc_ht=scontent-fco2-1.xx&oh=00_AfD2B1VqXK6YcdOjQ33cHEyKhu8LCncLDyGCw4gefZlOqA&oe=643E9D80"
                     },
                     "id": null
                 },
@@ -3045,7 +3045,7 @@
                 "is_enabled": true,
                 "id": "ARStudioEffect:1891246777657819",
                 "name": "ESA",
-                "thumbnail_uri": "https://scontent-mxp1-1.xx.fbcdn.net/v/t39.10260-6/45598028_309015373252669_7693093567455035392_n.png?_nc_cat=101&ccb=1-7&_nc_sid=df6b83&_nc_ohc=7plDcmxwXtAAX_u9KB7&_nc_ht=scontent-mxp1-1.xx&oh=00_AfDABZ7D6fH3YM6XYAlV6Vzh9c_Q6QMFLKzGHtucyAb30Q&oe=6412C616",
+                "thumbnail_uri": "https://scontent-fco2-1.xx.fbcdn.net/v/t39.10260-6/45598028_309015373252669_7693093567455035392_n.png?_nc_cat=101&ccb=1-7&_nc_sid=df6b83&_nc_ohc=OAPaAbkMiyoAX-UDXXv&_nc_ht=scontent-fco2-1.xx&oh=00_AfAAKvHiZaxm1kE1yvW_9bh7LjE2Px7uWwrptd1vEUikGA&oe=641CA956",
                 "submission_status": "UPDATE_REJECTED",
                 "rejection_data_by_field": [
                     {
@@ -3108,7 +3108,7 @@
                     "__typename": "ARContentCreator",
                     "name": "Uqido XR",
                     "profile_picture": {
-                        "uri": "https://scontent-mxp1-1.xx.fbcdn.net/v/t1.6435-1/60090368_201127367527090_394640518782386176_n.jpg?stp=cp0_dst-jpg_p32x32&_nc_cat=111&ccb=1-7&_nc_sid=dbb9e7&_nc_ohc=dk__dGICSFoAX8STLte&_nc_ht=scontent-mxp1-1.xx&oh=00_AfDm2lTnWZ-Nne5WEBVE4qeonxMEdUcgmVHaaLVf6rrT5g&oe=64359B40"
+                        "uri": "https://scontent-fco2-1.xx.fbcdn.net/v/t1.6435-1/60090368_201127367527090_394640518782386176_n.jpg?stp=cp0_dst-jpg_p32x32&_nc_cat=111&ccb=1-7&_nc_sid=dbb9e7&_nc_ohc=mA4mJDr_jpIAX-FIQmq&_nc_ht=scontent-fco2-1.xx&oh=00_AfD2B1VqXK6YcdOjQ33cHEyKhu8LCncLDyGCw4gefZlOqA&oe=643E9D80"
                     },
                     "id": null
                 },
@@ -3127,7 +3127,7 @@
                 "is_enabled": true,
                 "id": "ARStudioEffect:609533056208082",
                 "name": "Salomon Winter Sports",
-                "thumbnail_uri": "https://scontent-mxp1-1.xx.fbcdn.net/v/t39.10260-6/65583768_2492984744256125_7461290579012354048_n.png?_nc_cat=107&ccb=1-7&_nc_sid=df6b83&_nc_ohc=AXSKRy-doAEAX9at4Hf&_nc_ht=scontent-mxp1-1.xx&oh=00_AfBXvvOUzgUWNFLpYG1VwNp10brzjPc0DrXBbXtkEUJv7w&oe=641241A8",
+                "thumbnail_uri": "https://scontent-fco2-1.xx.fbcdn.net/v/t39.10260-6/65583768_2492984744256125_7461290579012354048_n.png?_nc_cat=107&ccb=1-7&_nc_sid=df6b83&_nc_ohc=RLIP7IuojU0AX-5RtqM&_nc_ht=scontent-fco2-1.xx&oh=00_AfAWeJJQeinFDK2z0ZqeCpB9pc7qVva6gi71pVaSktfLIQ&oe=641C24E8",
                 "submission_status": "UPDATE_REJECTED",
                 "rejection_data_by_field": [
                     {
@@ -3190,7 +3190,7 @@
                     "__typename": "ARContentCreator",
                     "name": "Uqido XR",
                     "profile_picture": {
-                        "uri": "https://scontent-mxp1-1.xx.fbcdn.net/v/t1.6435-1/60090368_201127367527090_394640518782386176_n.jpg?stp=cp0_dst-jpg_p32x32&_nc_cat=111&ccb=1-7&_nc_sid=dbb9e7&_nc_ohc=dk__dGICSFoAX8STLte&_nc_ht=scontent-mxp1-1.xx&oh=00_AfDm2lTnWZ-Nne5WEBVE4qeonxMEdUcgmVHaaLVf6rrT5g&oe=64359B40"
+                        "uri": "https://scontent-fco2-1.xx.fbcdn.net/v/t1.6435-1/60090368_201127367527090_394640518782386176_n.jpg?stp=cp0_dst-jpg_p32x32&_nc_cat=111&ccb=1-7&_nc_sid=dbb9e7&_nc_ohc=mA4mJDr_jpIAX-FIQmq&_nc_ht=scontent-fco2-1.xx&oh=00_AfD2B1VqXK6YcdOjQ33cHEyKhu8LCncLDyGCw4gefZlOqA&oe=643E9D80"
                     },
                     "id": null
                 },
@@ -3209,7 +3209,7 @@
                 "is_enabled": true,
                 "id": "ARStudioEffect:2311426908924213",
                 "name": "Nine Helmet Ski",
-                "thumbnail_uri": "https://scontent-mxp1-1.xx.fbcdn.net/v/t39.10260-6/65637706_378286086374876_8941586748756983808_n.png?_nc_cat=110&ccb=1-7&_nc_sid=df6b83&_nc_ohc=UoKvPXl8wa0AX-fpxu7&_nc_ht=scontent-mxp1-1.xx&oh=00_AfB8VUL5ai9_cbtkx3q0QfNVeA9OZNTDLjEmsC6SQfCpow&oe=6413E01D",
+                "thumbnail_uri": "https://scontent-fco2-1.xx.fbcdn.net/v/t39.10260-6/65637706_378286086374876_8941586748756983808_n.png?_nc_cat=110&ccb=1-7&_nc_sid=df6b83&_nc_ohc=TvdYWS59qJIAX_3XZXZ&_nc_ht=scontent-fco2-1.xx&oh=00_AfAIMLKgUFBPseJ3Ud0FnMLgCUAzku_qxBZ9hy3jtp0deg&oe=641BC91D",
                 "submission_status": "UPDATE_REJECTED",
                 "rejection_data_by_field": [
                     {
@@ -3272,7 +3272,7 @@
                     "__typename": "ARContentCreator",
                     "name": "Uqido XR",
                     "profile_picture": {
-                        "uri": "https://scontent-mxp1-1.xx.fbcdn.net/v/t1.6435-1/60090368_201127367527090_394640518782386176_n.jpg?stp=cp0_dst-jpg_p32x32&_nc_cat=111&ccb=1-7&_nc_sid=dbb9e7&_nc_ohc=dk__dGICSFoAX8STLte&_nc_ht=scontent-mxp1-1.xx&oh=00_AfDm2lTnWZ-Nne5WEBVE4qeonxMEdUcgmVHaaLVf6rrT5g&oe=64359B40"
+                        "uri": "https://scontent-fco2-1.xx.fbcdn.net/v/t1.6435-1/60090368_201127367527090_394640518782386176_n.jpg?stp=cp0_dst-jpg_p32x32&_nc_cat=111&ccb=1-7&_nc_sid=dbb9e7&_nc_ohc=mA4mJDr_jpIAX-FIQmq&_nc_ht=scontent-fco2-1.xx&oh=00_AfD2B1VqXK6YcdOjQ33cHEyKhu8LCncLDyGCw4gefZlOqA&oe=643E9D80"
                     },
                     "id": null
                 },
@@ -3291,7 +3291,7 @@
                 "is_enabled": true,
                 "id": "ARStudioEffect:397126360865303",
                 "name": "PlanetIdea",
-                "thumbnail_uri": "https://scontent-mxp1-1.xx.fbcdn.net/v/t39.10260-6/55109433_2230998350498639_3820184869317640192_n.png?_nc_cat=111&ccb=1-7&_nc_sid=df6b83&_nc_ohc=z-UXiyMWbgEAX9yIXu1&_nc_ht=scontent-mxp1-1.xx&oh=00_AfBRgKEF3PLdLwLHQTt4unHPuAEPwLnkWAIwt1nhXpZUsQ&oe=6412DCEF",
+                "thumbnail_uri": "https://scontent-fco2-1.xx.fbcdn.net/v/t39.10260-6/55109433_2230998350498639_3820184869317640192_n.png?_nc_cat=111&ccb=1-7&_nc_sid=df6b83&_nc_ohc=Yy3z_XeoNCoAX-9eJBJ&_nc_ht=scontent-fco2-1.xx&oh=00_AfCdjUTObwGT9ZvyCCv6UTmyOlYkltgBmCUDCOy3MBB8eA&oe=641CC02F",
                 "submission_status": "NOT_APPROVED",
                 "rejection_data_by_field": [],
                 "latest_active_arexport_file": null,
@@ -3344,7 +3344,7 @@
                     "__typename": "ARContentCreator",
                     "name": "Uqido XR",
                     "profile_picture": {
-                        "uri": "https://scontent-mxp1-1.xx.fbcdn.net/v/t1.6435-1/60090368_201127367527090_394640518782386176_n.jpg?stp=cp0_dst-jpg_p32x32&_nc_cat=111&ccb=1-7&_nc_sid=dbb9e7&_nc_ohc=dk__dGICSFoAX8STLte&_nc_ht=scontent-mxp1-1.xx&oh=00_AfDm2lTnWZ-Nne5WEBVE4qeonxMEdUcgmVHaaLVf6rrT5g&oe=64359B40"
+                        "uri": "https://scontent-fco2-1.xx.fbcdn.net/v/t1.6435-1/60090368_201127367527090_394640518782386176_n.jpg?stp=cp0_dst-jpg_p32x32&_nc_cat=111&ccb=1-7&_nc_sid=dbb9e7&_nc_ohc=mA4mJDr_jpIAX-FIQmq&_nc_ht=scontent-fco2-1.xx&oh=00_AfD2B1VqXK6YcdOjQ33cHEyKhu8LCncLDyGCw4gefZlOqA&oe=643E9D80"
                     },
                     "id": null
                 },
@@ -3363,7 +3363,7 @@
                 "is_enabled": true,
                 "id": "ARStudioEffect:2259318010950048",
                 "name": "SoccerballAR",
-                "thumbnail_uri": "https://scontent-mxp1-1.xx.fbcdn.net/v/t39.10260-6/56965117_409274586532936_5707238953371828224_n.png?_nc_cat=111&ccb=1-7&_nc_sid=df6b83&_nc_ohc=yrCKZWZyuZkAX-l-r6z&_nc_ht=scontent-mxp1-1.xx&oh=00_AfAQka8yh9PN1wrLCZ7t5qkzvW7uwLq3W431PIdkSphqjQ&oe=6413C469",
+                "thumbnail_uri": "https://scontent-fco2-1.xx.fbcdn.net/v/t39.10260-6/56965117_409274586532936_5707238953371828224_n.png?_nc_cat=111&ccb=1-7&_nc_sid=df6b83&_nc_ohc=Y6iVyY-r6K8AX_fy5SD&_nc_ht=scontent-fco2-1.xx&oh=00_AfAeCN7fjJ0wV8vlVal7wpjOWgefu2kQfYQ1P43MaclCNA&oe=641BAD69",
                 "submission_status": "UPDATE_REJECTED",
                 "rejection_data_by_field": [
                     {
@@ -3426,7 +3426,7 @@
                     "__typename": "ARContentCreator",
                     "name": "Uqido XR",
                     "profile_picture": {
-                        "uri": "https://scontent-mxp1-1.xx.fbcdn.net/v/t1.6435-1/60090368_201127367527090_394640518782386176_n.jpg?stp=cp0_dst-jpg_p32x32&_nc_cat=111&ccb=1-7&_nc_sid=dbb9e7&_nc_ohc=dk__dGICSFoAX8STLte&_nc_ht=scontent-mxp1-1.xx&oh=00_AfDm2lTnWZ-Nne5WEBVE4qeonxMEdUcgmVHaaLVf6rrT5g&oe=64359B40"
+                        "uri": "https://scontent-fco2-1.xx.fbcdn.net/v/t1.6435-1/60090368_201127367527090_394640518782386176_n.jpg?stp=cp0_dst-jpg_p32x32&_nc_cat=111&ccb=1-7&_nc_sid=dbb9e7&_nc_ohc=mA4mJDr_jpIAX-FIQmq&_nc_ht=scontent-fco2-1.xx&oh=00_AfD2B1VqXK6YcdOjQ33cHEyKhu8LCncLDyGCw4gefZlOqA&oe=643E9D80"
                     },
                     "id": null
                 },
@@ -3445,7 +3445,7 @@
                 "is_enabled": true,
                 "id": "ARStudioEffect:2167310253321312",
                 "name": "TedX Treviso",
-                "thumbnail_uri": "https://scontent-mxp1-1.xx.fbcdn.net/v/t39.10260-6/46294717_1770825393046459_2698498063399387136_n.png?_nc_cat=107&ccb=1-7&_nc_sid=df6b83&_nc_ohc=o4_aIADRPOMAX8wt5CP&_nc_ht=scontent-mxp1-1.xx&oh=00_AfD6JjFly-UHC5x3hG7LX9Q3-Urp5kmObLGGJDw5TuC4cg&oe=64134B14",
+                "thumbnail_uri": "https://scontent-fco2-1.xx.fbcdn.net/v/t39.10260-6/46294717_1770825393046459_2698498063399387136_n.png?_nc_cat=107&ccb=1-7&_nc_sid=df6b83&_nc_ohc=U5msa-iu06kAX9Czg7y&_nc_ht=scontent-fco2-1.xx&oh=00_AfBSJNPp3kXUKVj6QYCUSN3wEj5reklqe1MqqcDAylW1lw&oe=641B3414",
                 "submission_status": "UPDATE_REJECTED",
                 "rejection_data_by_field": [
                     {
@@ -3508,7 +3508,7 @@
                     "__typename": "ARContentCreator",
                     "name": "Uqido XR",
                     "profile_picture": {
-                        "uri": "https://scontent-mxp1-1.xx.fbcdn.net/v/t1.6435-1/60090368_201127367527090_394640518782386176_n.jpg?stp=cp0_dst-jpg_p32x32&_nc_cat=111&ccb=1-7&_nc_sid=dbb9e7&_nc_ohc=dk__dGICSFoAX8STLte&_nc_ht=scontent-mxp1-1.xx&oh=00_AfDm2lTnWZ-Nne5WEBVE4qeonxMEdUcgmVHaaLVf6rrT5g&oe=64359B40"
+                        "uri": "https://scontent-fco2-1.xx.fbcdn.net/v/t1.6435-1/60090368_201127367527090_394640518782386176_n.jpg?stp=cp0_dst-jpg_p32x32&_nc_cat=111&ccb=1-7&_nc_sid=dbb9e7&_nc_ohc=mA4mJDr_jpIAX-FIQmq&_nc_ht=scontent-fco2-1.xx&oh=00_AfD2B1VqXK6YcdOjQ33cHEyKhu8LCncLDyGCw4gefZlOqA&oe=643E9D80"
                     },
                     "id": null
                 },
@@ -3527,7 +3527,7 @@
                 "is_enabled": true,
                 "id": "ARStudioEffect:281228793332465",
                 "name": "Dancer",
-                "thumbnail_uri": "https://scontent-mxp1-1.xx.fbcdn.net/v/t39.10260-6/125433526_137563364400879_6419523467572389261_n.png?_nc_cat=103&ccb=1-7&_nc_sid=df6b83&_nc_ohc=iUMVEdhpdX0AX-E0jsE&_nc_ht=scontent-mxp1-1.xx&oh=00_AfAFKDq1Sx2E29pdye8mQYNhgYxkMR4i6SX7xlld5-UR0A&oe=64130F64",
+                "thumbnail_uri": "https://scontent-fco2-1.xx.fbcdn.net/v/t39.10260-6/125433526_137563364400879_6419523467572389261_n.png?_nc_cat=103&ccb=1-7&_nc_sid=df6b83&_nc_ohc=o2O59WkX7nEAX-1i9rX&_nc_ht=scontent-fco2-1.xx&oh=00_AfDI9g-WZ2ta_HZ5ZatzWdChx5kf39T7EC_llLLoHeyagw&oe=641CF2A4",
                 "submission_status": "APPROVED",
                 "rejection_data_by_field": [],
                 "latest_active_arexport_file": {
@@ -3584,7 +3584,7 @@
                     "__typename": "ARContentCreator",
                     "name": "Uqido XR",
                     "profile_picture": {
-                        "uri": "https://scontent-mxp1-1.xx.fbcdn.net/v/t1.6435-1/60090368_201127367527090_394640518782386176_n.jpg?stp=cp0_dst-jpg_p32x32&_nc_cat=111&ccb=1-7&_nc_sid=dbb9e7&_nc_ohc=dk__dGICSFoAX8STLte&_nc_ht=scontent-mxp1-1.xx&oh=00_AfDm2lTnWZ-Nne5WEBVE4qeonxMEdUcgmVHaaLVf6rrT5g&oe=64359B40"
+                        "uri": "https://scontent-fco2-1.xx.fbcdn.net/v/t1.6435-1/60090368_201127367527090_394640518782386176_n.jpg?stp=cp0_dst-jpg_p32x32&_nc_cat=111&ccb=1-7&_nc_sid=dbb9e7&_nc_ohc=mA4mJDr_jpIAX-FIQmq&_nc_ht=scontent-fco2-1.xx&oh=00_AfD2B1VqXK6YcdOjQ33cHEyKhu8LCncLDyGCw4gefZlOqA&oe=643E9D80"
                     },
                     "id": null
                 },
@@ -3603,7 +3603,7 @@
                 "is_enabled": true,
                 "id": "ARStudioEffect:451328412310221",
                 "name": "AGV Planet",
-                "thumbnail_uri": "https://scontent-mxp1-1.xx.fbcdn.net/v/t39.10260-6/65573094_375502473094318_7922360244565442560_n.png?_nc_cat=106&ccb=1-7&_nc_sid=df6b83&_nc_ohc=-nV1Vzq8TVEAX9I7IXj&_nc_ht=scontent-mxp1-1.xx&oh=00_AfCFUtOluAQo1Js6FcmtnDlg70l958KhBED9qm3u3PA2rw&oe=641318F0",
+                "thumbnail_uri": "https://scontent-fco2-1.xx.fbcdn.net/v/t39.10260-6/65573094_375502473094318_7922360244565442560_n.png?_nc_cat=106&ccb=1-7&_nc_sid=df6b83&_nc_ohc=jN0b2KkH7uEAX8ChvYx&_nc_ht=scontent-fco2-1.xx&oh=00_AfBOTsab2uUry2hGl17v-ne0MfQ4zYNU-MVtKy_tCbFkng&oe=641CFC30",
                 "submission_status": "UPDATE_REJECTED",
                 "rejection_data_by_field": [
                     {
@@ -3666,7 +3666,7 @@
                     "__typename": "ARContentCreator",
                     "name": "Uqido XR",
                     "profile_picture": {
-                        "uri": "https://scontent-mxp1-1.xx.fbcdn.net/v/t1.6435-1/60090368_201127367527090_394640518782386176_n.jpg?stp=cp0_dst-jpg_p32x32&_nc_cat=111&ccb=1-7&_nc_sid=dbb9e7&_nc_ohc=dk__dGICSFoAX8STLte&_nc_ht=scontent-mxp1-1.xx&oh=00_AfDm2lTnWZ-Nne5WEBVE4qeonxMEdUcgmVHaaLVf6rrT5g&oe=64359B40"
+                        "uri": "https://scontent-fco2-1.xx.fbcdn.net/v/t1.6435-1/60090368_201127367527090_394640518782386176_n.jpg?stp=cp0_dst-jpg_p32x32&_nc_cat=111&ccb=1-7&_nc_sid=dbb9e7&_nc_ohc=mA4mJDr_jpIAX-FIQmq&_nc_ht=scontent-fco2-1.xx&oh=00_AfD2B1VqXK6YcdOjQ33cHEyKhu8LCncLDyGCw4gefZlOqA&oe=643E9D80"
                     },
                     "id": null
                 },
@@ -3685,7 +3685,7 @@
                 "is_enabled": false,
                 "id": "ARStudioEffect:414121925842221",
                 "name": "MAO Marco Polo",
-                "thumbnail_uri": "https://scontent-mxp1-1.xx.fbcdn.net/v/t39.10260-6/64450614_404030587119765_4686407540160856064_n.png?_nc_cat=103&ccb=1-7&_nc_sid=df6b83&_nc_ohc=S6-HFRgy6hIAX-8q6Xa&_nc_ht=scontent-mxp1-1.xx&oh=00_AfAwpqE4QdqUvRiNAzwzc71R6AnuXNrxD5hSVf_rfPlpuw&oe=6413CA0C",
+                "thumbnail_uri": "https://scontent-fco2-1.xx.fbcdn.net/v/t39.10260-6/64450614_404030587119765_4686407540160856064_n.png?_nc_cat=103&ccb=1-7&_nc_sid=df6b83&_nc_ohc=pYVaIi_Y69MAX8msJUg&_nc_ht=scontent-fco2-1.xx&oh=00_AfB7YcfdUqj9dSoBOvPBJhL3J9DsB_dQ5vCIfJyGadnLww&oe=641BB30C",
                 "submission_status": "UPDATE_REJECTED",
                 "rejection_data_by_field": [
                     {
@@ -3748,7 +3748,7 @@
                     "__typename": "ARContentCreator",
                     "name": "Uqido XR",
                     "profile_picture": {
-                        "uri": "https://scontent-mxp1-1.xx.fbcdn.net/v/t1.6435-1/60090368_201127367527090_394640518782386176_n.jpg?stp=cp0_dst-jpg_p32x32&_nc_cat=111&ccb=1-7&_nc_sid=dbb9e7&_nc_ohc=dk__dGICSFoAX8STLte&_nc_ht=scontent-mxp1-1.xx&oh=00_AfDm2lTnWZ-Nne5WEBVE4qeonxMEdUcgmVHaaLVf6rrT5g&oe=64359B40"
+                        "uri": "https://scontent-fco2-1.xx.fbcdn.net/v/t1.6435-1/60090368_201127367527090_394640518782386176_n.jpg?stp=cp0_dst-jpg_p32x32&_nc_cat=111&ccb=1-7&_nc_sid=dbb9e7&_nc_ohc=mA4mJDr_jpIAX-FIQmq&_nc_ht=scontent-fco2-1.xx&oh=00_AfD2B1VqXK6YcdOjQ33cHEyKhu8LCncLDyGCw4gefZlOqA&oe=643E9D80"
                     },
                     "id": null
                 },
@@ -3767,7 +3767,7 @@
                 "is_enabled": true,
                 "id": "ARStudioEffect:684128175755553",
                 "name": "Demo Segmentation",
-                "thumbnail_uri": "https://scontent-mxp1-1.xx.fbcdn.net/v/t39.10260-6/98164033_639845036599097_309559256758091776_n.png?_nc_cat=110&ccb=1-7&_nc_sid=df6b83&_nc_ohc=Kz6LN3VldKQAX9Ksay4&_nc_ht=scontent-mxp1-1.xx&oh=00_AfDUdYIpJCVk-48ufLP3_BTP5k6xIEEIIQSRviq0jlLGGA&oe=64136A0C",
+                "thumbnail_uri": "https://scontent-fco2-1.xx.fbcdn.net/v/t39.10260-6/98164033_639845036599097_309559256758091776_n.png?_nc_cat=110&ccb=1-7&_nc_sid=df6b83&_nc_ohc=eQBjrDUqQgQAX-jSFE8&_nc_ht=scontent-fco2-1.xx&oh=00_AfDBS6G3T-Cpn5ZKWtnDrd5GXAPjlWH_tPsdIV2n3QrAmw&oe=641B530C",
                 "submission_status": "NOT_APPROVED",
                 "rejection_data_by_field": [
                     {
@@ -3826,7 +3826,7 @@
                     "__typename": "ARContentCreator",
                     "name": "Uqido XR",
                     "profile_picture": {
-                        "uri": "https://scontent-mxp1-1.xx.fbcdn.net/v/t1.6435-1/60090368_201127367527090_394640518782386176_n.jpg?stp=cp0_dst-jpg_p32x32&_nc_cat=111&ccb=1-7&_nc_sid=dbb9e7&_nc_ohc=dk__dGICSFoAX8STLte&_nc_ht=scontent-mxp1-1.xx&oh=00_AfDm2lTnWZ-Nne5WEBVE4qeonxMEdUcgmVHaaLVf6rrT5g&oe=64359B40"
+                        "uri": "https://scontent-fco2-1.xx.fbcdn.net/v/t1.6435-1/60090368_201127367527090_394640518782386176_n.jpg?stp=cp0_dst-jpg_p32x32&_nc_cat=111&ccb=1-7&_nc_sid=dbb9e7&_nc_ohc=mA4mJDr_jpIAX-FIQmq&_nc_ht=scontent-fco2-1.xx&oh=00_AfD2B1VqXK6YcdOjQ33cHEyKhu8LCncLDyGCw4gefZlOqA&oe=643E9D80"
                     },
                     "id": null
                 },
@@ -3845,7 +3845,7 @@
                 "is_enabled": true,
                 "id": "ARStudioEffect:315820269353062",
                 "name": "Hard Hat Helm",
-                "thumbnail_uri": "https://scontent-mxp1-1.xx.fbcdn.net/v/t39.10260-6/65877709_441220266699629_8564005582376271872_n.png?_nc_cat=105&ccb=1-7&_nc_sid=df6b83&_nc_ohc=WfwrV54rcOMAX_OYiyi&_nc_ht=scontent-mxp1-1.xx&oh=00_AfDqUh7lM8bsqMACeGo7uyBNkRhMleqsJQPp7A7sDW_AKg&oe=6413F202",
+                "thumbnail_uri": "https://scontent-fco2-1.xx.fbcdn.net/v/t39.10260-6/65877709_441220266699629_8564005582376271872_n.png?_nc_cat=105&ccb=1-7&_nc_sid=df6b83&_nc_ohc=66r_FIKtaVMAX-_ZM9T&_nc_ht=scontent-fco2-1.xx&oh=00_AfBIDDujf12xYOEZSWuBD5zUWs6tVTh0O0w-vZ4gsOCw5Q&oe=641BDB02",
                 "submission_status": "UPDATE_REJECTED",
                 "rejection_data_by_field": [
                     {
@@ -3908,7 +3908,7 @@
                     "__typename": "ARContentCreator",
                     "name": "Uqido XR",
                     "profile_picture": {
-                        "uri": "https://scontent-mxp1-1.xx.fbcdn.net/v/t1.6435-1/60090368_201127367527090_394640518782386176_n.jpg?stp=cp0_dst-jpg_p32x32&_nc_cat=111&ccb=1-7&_nc_sid=dbb9e7&_nc_ohc=dk__dGICSFoAX8STLte&_nc_ht=scontent-mxp1-1.xx&oh=00_AfDm2lTnWZ-Nne5WEBVE4qeonxMEdUcgmVHaaLVf6rrT5g&oe=64359B40"
+                        "uri": "https://scontent-fco2-1.xx.fbcdn.net/v/t1.6435-1/60090368_201127367527090_394640518782386176_n.jpg?stp=cp0_dst-jpg_p32x32&_nc_cat=111&ccb=1-7&_nc_sid=dbb9e7&_nc_ohc=mA4mJDr_jpIAX-FIQmq&_nc_ht=scontent-fco2-1.xx&oh=00_AfD2B1VqXK6YcdOjQ33cHEyKhu8LCncLDyGCw4gefZlOqA&oe=643E9D80"
                     },
                     "id": null
                 },
@@ -3927,7 +3927,7 @@
                 "is_enabled": true,
                 "id": "ARStudioEffect:303611670250816",
                 "name": "WineAR",
-                "thumbnail_uri": "https://scontent-mxp1-1.xx.fbcdn.net/v/t39.10260-6/46775429_1964985260228386_5720094000942153728_n.png?_nc_cat=100&ccb=1-7&_nc_sid=df6b83&_nc_ohc=WVozaH7I7q4AX97Y9Iz&_nc_ht=scontent-mxp1-1.xx&oh=00_AfCuMwR0oTsm_n2n1VoF4DlcXfY57o4bBch3xy_O3OwmQA&oe=6413DF5E",
+                "thumbnail_uri": "https://scontent-fco2-1.xx.fbcdn.net/v/t39.10260-6/46775429_1964985260228386_5720094000942153728_n.png?_nc_cat=100&ccb=1-7&_nc_sid=df6b83&_nc_ohc=yDc0OL8k1SgAX_nEjuK&_nc_ht=scontent-fco2-1.xx&oh=00_AfBqEXnEItVctUhcBO0kA3IFz9dZSU4q4oYsiMySYsYZtQ&oe=641BC85E",
                 "submission_status": "UPDATE_REJECTED",
                 "rejection_data_by_field": [
                     {
@@ -4005,7 +4005,7 @@
                     "__typename": "ARContentCreator",
                     "name": "Uqido XR",
                     "profile_picture": {
-                        "uri": "https://scontent-mxp1-1.xx.fbcdn.net/v/t1.6435-1/60090368_201127367527090_394640518782386176_n.jpg?stp=cp0_dst-jpg_p32x32&_nc_cat=111&ccb=1-7&_nc_sid=dbb9e7&_nc_ohc=dk__dGICSFoAX8STLte&_nc_ht=scontent-mxp1-1.xx&oh=00_AfDm2lTnWZ-Nne5WEBVE4qeonxMEdUcgmVHaaLVf6rrT5g&oe=64359B40"
+                        "uri": "https://scontent-fco2-1.xx.fbcdn.net/v/t1.6435-1/60090368_201127367527090_394640518782386176_n.jpg?stp=cp0_dst-jpg_p32x32&_nc_cat=111&ccb=1-7&_nc_sid=dbb9e7&_nc_ohc=mA4mJDr_jpIAX-FIQmq&_nc_ht=scontent-fco2-1.xx&oh=00_AfD2B1VqXK6YcdOjQ33cHEyKhu8LCncLDyGCw4gefZlOqA&oe=643E9D80"
                     },
                     "id": null
                 },
@@ -4024,7 +4024,7 @@
                 "is_enabled": true,
                 "id": "ARStudioEffect:667586447001662",
                 "name": "Kask Protone",
-                "thumbnail_uri": "https://scontent-mxp1-1.xx.fbcdn.net/v/t39.10260-6/65593040_443080409849709_7234452950720970752_n.png?_nc_cat=100&ccb=1-7&_nc_sid=df6b83&_nc_ohc=IukynIxFlLMAX8MSc6z&_nc_oc=AQkD7y2rtqk1ZlHKsyCyIE1NIPVoUsGkpAvsJ6EP5q5SrKA1Ue1Qwb0zJKJwwG1nElU&_nc_ht=scontent-mxp1-1.xx&oh=00_AfDmCt-stj_XPPrDijOf6gZbQEdy8pA-iEgJaUsjD8EcGw&oe=6413A7B8",
+                "thumbnail_uri": "https://scontent-fco2-1.xx.fbcdn.net/v/t39.10260-6/65593040_443080409849709_7234452950720970752_n.png?_nc_cat=100&ccb=1-7&_nc_sid=df6b83&_nc_ohc=xThEImQHXmAAX_IuIJH&_nc_oc=AQlws64MEJvYd5G3uWIxO85xUiJysJD4fIBR37w_ZSMvXgo_h1dch5dzk0OClbRvXsg&_nc_ht=scontent-fco2-1.xx&oh=00_AfAHzsCTnn-NAG2eEESaH7oeaFV7fXRW3y7HRRqYo_KcTA&oe=641B90B8",
                 "submission_status": "UPDATE_REJECTED",
                 "rejection_data_by_field": [
                     {
@@ -4087,7 +4087,7 @@
                     "__typename": "ARContentCreator",
                     "name": "Uqido XR",
                     "profile_picture": {
-                        "uri": "https://scontent-mxp1-1.xx.fbcdn.net/v/t1.6435-1/60090368_201127367527090_394640518782386176_n.jpg?stp=cp0_dst-jpg_p32x32&_nc_cat=111&ccb=1-7&_nc_sid=dbb9e7&_nc_ohc=dk__dGICSFoAX8STLte&_nc_ht=scontent-mxp1-1.xx&oh=00_AfDm2lTnWZ-Nne5WEBVE4qeonxMEdUcgmVHaaLVf6rrT5g&oe=64359B40"
+                        "uri": "https://scontent-fco2-1.xx.fbcdn.net/v/t1.6435-1/60090368_201127367527090_394640518782386176_n.jpg?stp=cp0_dst-jpg_p32x32&_nc_cat=111&ccb=1-7&_nc_sid=dbb9e7&_nc_ohc=mA4mJDr_jpIAX-FIQmq&_nc_ht=scontent-fco2-1.xx&oh=00_AfD2B1VqXK6YcdOjQ33cHEyKhu8LCncLDyGCw4gefZlOqA&oe=643E9D80"
                     },
                     "id": null
                 },
@@ -4109,7 +4109,7 @@
         "id": "161620450521406",
         "display_name": "Scrinium",
         "profile_picture": {
-            "uri": "https://scontent-mxp1-1.xx.fbcdn.net/v/t39.30808-1/307672943_446835204144265_6509636669623527990_n.jpg?stp=dst-jpg_p100x100&_nc_cat=101&ccb=1-7&_nc_sid=dbb9e7&_nc_ohc=eHtK5gZhlB0AX8Y0j0w&_nc_ht=scontent-mxp1-1.xx&oh=00_AfBlNFOKc_cxXFSpyVLrVB9kaMraJt-czaCD4rSMF07L1A&oe=6412762C"
+            "uri": "https://scontent-fco2-1.xx.fbcdn.net/v/t39.30808-1/307672943_446835204144265_6509636669623527990_n.jpg?stp=dst-jpg_p100x100&_nc_cat=101&ccb=1-7&_nc_sid=dbb9e7&_nc_ohc=Zoj22NH--G4AX9faOCV&_nc_ht=scontent-fco2-1.xx&oh=00_AfCewgmWmoswJoHJmAI0ArofR_j-jneIAFQhFTb8usDtPw&oe=641C596C"
         },
         "username": "Scrinivm",
         "surface_configs": [
@@ -4137,7 +4137,7 @@
                 "is_enabled": true,
                 "id": "ARStudioEffect:848588905523438",
                 "name": "MAO Marco Polo",
-                "thumbnail_uri": "https://scontent-mxp1-1.xx.fbcdn.net/v/t39.10260-6/65151653_403873217140955_6134078571389386752_n.png?_nc_cat=107&ccb=1-7&_nc_sid=df6b83&_nc_ohc=_hFkgwNjHtYAX-njxow&_nc_ht=scontent-mxp1-1.xx&oh=00_AfDWgFGRBj5ebNmX1Sdf32UKINDBu8AWQcS0ZnGmym7aog&oe=6413F159",
+                "thumbnail_uri": "https://scontent-fco2-1.xx.fbcdn.net/v/t39.10260-6/65151653_403873217140955_6134078571389386752_n.png?_nc_cat=107&ccb=1-7&_nc_sid=df6b83&_nc_ohc=E1ioYF2EBtEAX8UVOtP&_nc_ht=scontent-fco2-1.xx&oh=00_AfApjkjWt8iFbzg9fwzkvzmeTAdqo1zNxsadheObUPTgRw&oe=641BDA59",
                 "submission_status": "APPROVED",
                 "rejection_data_by_field": [],
                 "latest_active_arexport_file": {
@@ -4194,7 +4194,7 @@
                     "__typename": "ARContentCreator",
                     "name": "Uqido XR",
                     "profile_picture": {
-                        "uri": "https://scontent-mxp1-1.xx.fbcdn.net/v/t1.6435-1/60090368_201127367527090_394640518782386176_n.jpg?stp=cp0_dst-jpg_p32x32&_nc_cat=111&ccb=1-7&_nc_sid=dbb9e7&_nc_ohc=dk__dGICSFoAX8STLte&_nc_ht=scontent-mxp1-1.xx&oh=00_AfDm2lTnWZ-Nne5WEBVE4qeonxMEdUcgmVHaaLVf6rrT5g&oe=64359B40"
+                        "uri": "https://scontent-fco2-1.xx.fbcdn.net/v/t1.6435-1/60090368_201127367527090_394640518782386176_n.jpg?stp=cp0_dst-jpg_p32x32&_nc_cat=111&ccb=1-7&_nc_sid=dbb9e7&_nc_ohc=mA4mJDr_jpIAX-FIQmq&_nc_ht=scontent-fco2-1.xx&oh=00_AfD2B1VqXK6YcdOjQ33cHEyKhu8LCncLDyGCw4gefZlOqA&oe=643E9D80"
                     },
                     "id": null
                 },
@@ -4216,7 +4216,7 @@
         "id": "670235443076053",
         "display_name": "Campus Party",
         "profile_picture": {
-            "uri": "https://scontent-mxp1-1.xx.fbcdn.net/v/t1.6435-1/89454076_2354615067971407_6843505004301516800_n.png?stp=dst-png_p100x100&_nc_cat=107&ccb=1-7&_nc_sid=dbb9e7&_nc_ohc=CqI2LUnsC24AX9z-ZbG&_nc_ht=scontent-mxp1-1.xx&oh=00_AfC7koddRKdSXARETwgYcvnwL8eNanzv-OJe5KEnZoxR4w&oe=6435B24B"
+            "uri": "https://scontent-fco2-1.xx.fbcdn.net/v/t1.6435-1/89454076_2354615067971407_6843505004301516800_n.png?stp=dst-png_p100x100&_nc_cat=107&ccb=1-7&_nc_sid=dbb9e7&_nc_ohc=gPTcyTy2yOMAX-j1qZH&_nc_ht=scontent-fco2-1.xx&oh=00_AfDdmK9E0BL6oMqW4j2n-oWTXhMKnJdexNQ-xGgUEm7BBA&oe=643E7C4B"
         },
         "username": "campuspartyitalia",
         "surface_configs": [
@@ -4244,7 +4244,7 @@
                 "is_enabled": true,
                 "id": "ARStudioEffect:1695944890550309",
                 "name": "Campus Party AR",
-                "thumbnail_uri": "https://scontent-mxp1-1.xx.fbcdn.net/v/t39.10260-6/67551527_467621017384988_1980369833472032768_n.png?_nc_cat=102&ccb=1-7&_nc_sid=df6b83&_nc_ohc=Q8omnwiyj98AX8Pr7RY&_nc_ht=scontent-mxp1-1.xx&oh=00_AfDIJBy3ukpVx7_D5aSEYB8-kQz27EqCC0y0hOUkCPRF0w&oe=64132E04",
+                "thumbnail_uri": "https://scontent-fco2-1.xx.fbcdn.net/v/t39.10260-6/67551527_467621017384988_1980369833472032768_n.png?_nc_cat=102&ccb=1-7&_nc_sid=df6b83&_nc_ohc=2KBhcjtGS2QAX-g8E4Z&_nc_ht=scontent-fco2-1.xx&oh=00_AfBE2XZLs6cXHVijOrd5u7vWXHogj1oN_KJbnO_GkfoTcQ&oe=641B1704",
                 "submission_status": "APPROVED",
                 "rejection_data_by_field": [],
                 "latest_active_arexport_file": {
@@ -4301,7 +4301,7 @@
                     "__typename": "ARContentCreator",
                     "name": "Uqido XR",
                     "profile_picture": {
-                        "uri": "https://scontent-mxp1-1.xx.fbcdn.net/v/t1.6435-1/60090368_201127367527090_394640518782386176_n.jpg?stp=cp0_dst-jpg_p32x32&_nc_cat=111&ccb=1-7&_nc_sid=dbb9e7&_nc_ohc=dk__dGICSFoAX8STLte&_nc_ht=scontent-mxp1-1.xx&oh=00_AfDm2lTnWZ-Nne5WEBVE4qeonxMEdUcgmVHaaLVf6rrT5g&oe=64359B40"
+                        "uri": "https://scontent-fco2-1.xx.fbcdn.net/v/t1.6435-1/60090368_201127367527090_394640518782386176_n.jpg?stp=cp0_dst-jpg_p32x32&_nc_cat=111&ccb=1-7&_nc_sid=dbb9e7&_nc_ohc=mA4mJDr_jpIAX-FIQmq&_nc_ht=scontent-fco2-1.xx&oh=00_AfD2B1VqXK6YcdOjQ33cHEyKhu8LCncLDyGCw4gefZlOqA&oe=643E9D80"
                     },
                     "id": null
                 },
