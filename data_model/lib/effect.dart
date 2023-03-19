@@ -1,5 +1,5 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
-import 'package:sparkar_data_model/ar_export_file.dart';
+import 'package:data_model/ar_export_file.dart';
 
 part 'effect.freezed.dart';
 part 'effect.g.dart';

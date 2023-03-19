@@ -3,8 +3,8 @@ import 'dart:convert';
 
 import 'package:base_types/repository/abstract_repository.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
-import 'package:sparkar_data_model/owner.dart';
-import 'package:sparkar_data_model/sparkar_repository.dart';
+import 'package:data_model/owner.dart';
+import 'package:data_model/sparkar_repository.dart';
 
 class FirestoreDB extends CachedBaseRepository<List<Owner>>
     with SparkARDataSource {

@@ -184,6 +184,13 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "2.2.5"
+  data_model:
+    dependency: "direct main"
+    description:
+      path: "../data_model"
+      relative: true
+    source: path
+    version: "1.0.0+1"
   dio:
     dependency: "direct main"
     description:
@@ -589,13 +596,6 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "1.9.1"
-  sparkar_data_model:
-    dependency: "direct main"
-    description:
-      path: "../sparkar_data_model"
-      relative: true
-    source: path
-    version: "1.0.0+1"
   stack_trace:
     dependency: transitive
     description:

@@ -37,8 +37,8 @@ dependencies:
     path: ./extensions
   #sparkar_firestone_datasource:
   #  path: ./sparkar_firestone_datasource
-  sparkar_netlify_datasource:
-    path: ./sparkar_netlify_datasource
+  netlify_datasource:
+    path: ./netlify_datasource
   riverpod_annotation: ^2.0.1
   draggable_scrollbar: ^0.1.0
 

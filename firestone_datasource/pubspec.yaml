@@ -1,4 +1,4 @@
-name: sparkar_firestone_datasource
+name: firestone_datasource
 description: A new Flutter project.
 
 # The following defines the version and build number for your application.
@@ -29,8 +29,8 @@ dependencies:
   cloud_firestore: ^4.4.4
   base_types:
     path: ../base_types
-  sparkar_data_model:
-    path: ../sparkar_data_model
+  data_model:
+    path: ../data_model
 
 dev_dependencies:
   flutter_test:

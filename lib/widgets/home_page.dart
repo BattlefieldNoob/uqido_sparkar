@@ -1,10 +1,10 @@
 import 'dart:math';
 
+import 'package:data_model/owner.dart';
 import 'package:draggable_scrollbar/draggable_scrollbar.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:functional_widget_annotation/functional_widget_annotation.dart';
-import 'package:sparkar_data_model/owner.dart';
 import 'package:uqido_sparkar/providers/data_provider.dart';
 import 'package:uqido_sparkar/widgets/list_items_widgets/effect_list_item.dart';
 import 'package:uqido_sparkar/widgets/list_items_widgets/owner_list_item.dart';

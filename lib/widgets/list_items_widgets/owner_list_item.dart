@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:sparkar_data_model/owner.dart';
+import 'package:data_model/owner.dart';
 
 class OwnerListItem extends StatelessWidget {
   final Owner owner;

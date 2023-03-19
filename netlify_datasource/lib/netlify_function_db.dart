@@ -3,8 +3,8 @@ import 'dart:async';
 import 'package:base_types/repository/abstract_repository.dart';
 import 'package:dio/dio.dart';
 import 'package:flutter_cache/flutter_cache.dart' as cache;
-import 'package:sparkar_data_model/owner.dart';
-import 'package:sparkar_data_model/sparkar_repository.dart';
+import 'package:data_model/owner.dart';
+import 'package:data_model/sparkar_repository.dart';
 
 import 'facebook_password_encrypt_util.dart';
 import 'rest_client.dart';

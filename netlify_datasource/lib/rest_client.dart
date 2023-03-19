@@ -1,6 +1,6 @@
 import 'package:dio/dio.dart' hide Headers;
 import 'package:retrofit/http.dart';
-import 'package:sparkar_data_model/owner.dart';
+import 'package:data_model/owner.dart';
 
 import 'models/cookie_response.dart';
 import 'models/netlify_response.dart';

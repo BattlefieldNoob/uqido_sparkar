@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:functional_widget_annotation/functional_widget_annotation.dart';
-import 'package:sparkar_data_model/effect.dart';
+import 'package:data_model/effect.dart';
 import 'package:url_launcher/url_launcher_string.dart';
 
 import 'effect_visibility_status.dart';

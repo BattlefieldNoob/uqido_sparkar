@@ -1,4 +1,4 @@
-name: sparkar_netlify_datasource
+name: netlify_datasource
 description: A new flutter module project.
 
 # The following defines the version and build number for your application.
@@ -32,8 +32,8 @@ dependencies:
   webcrypto: ^0.5.2
   base_types:
     path: ../base_types
-  sparkar_data_model:
-    path: ../sparkar_data_model
+  data_model:
+    path: ../data_model
   dio: ^5.0.2
 
 dependency_overrides:

@@ -1,6 +1,6 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
-import 'package:sparkar_data_model/effect.dart';
-import 'package:sparkar_data_model/owner.dart';
+import 'package:data_model/effect.dart';
+import 'package:data_model/owner.dart';
 
 part 'home_page_list_item.freezed.dart';
 
