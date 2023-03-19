@@ -1,13 +1,14 @@
 import 'dart:math';
 
 import 'package:draggable_scrollbar/draggable_scrollbar.dart';
-import 'package:extensions/text_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:functional_widget_annotation/functional_widget_annotation.dart';
+import 'package:sparkar_data_model/owner.dart';
 import 'package:uqido_sparkar/providers/data_provider.dart';
-import 'package:uqido_sparkar/widgets/widgets/accounts_tab_bar_view.dart';
-import 'package:uqido_sparkar/widgets/widgets/spark_ar_custom_tab_bar.dart';
+import 'package:uqido_sparkar/widgets/list_items_widgets/effect_list_item.dart';
+import 'package:uqido_sparkar/widgets/list_items_widgets/owner_list_item.dart';
+import 'package:uqido_sparkar/widgets/models/home_page_list_item.dart';
 
 part 'home_page.g.dart';
 
@@ -18,70 +19,52 @@ class HomePage extends ConsumerWidget {
   Widget build(BuildContext context, WidgetRef ref) {
     final owners = ref.watch(fetchDataProvider);
 
-    final controller = ScrollController();
     return owners.maybeWhen(
         orElse: () => CircularProgressIndicator(),
-        data: (data) {
-          return DraggableScrollbar.semicircle(
-              alwaysVisibleScrollThumb: true,
-              labelTextBuilder: (offset) {
-                final currentItem = controller.hasClients
-                    ? (controller.offset /
-                            controller.position.maxScrollExtent *
-                            data.length)
-                        .floor()
-                    : 0;
-
-                final name =
-                    data[min(currentItem, data.length - 1)].displayName;
-                return Text(
-                  "$name",
-                  style: TextStyle(color: Colors.black),
-                );
-              },
-              child: ListView.builder(
-                controller: controller,
-                itemBuilder: (context, index) => Text(
-                  data[index].displayName,
-                  style: TextStyle(fontSize: 60),
-                ),
-                itemCount: data.length,
-              ),
-              controller: controller);
-        });
+        data: (data) => HomePageEffectsList(data));
   }
 }
 
 @swidget
-Widget mobileHomePageAppBar(BuildContext context) {
-  return AppBar(
-    automaticallyImplyLeading: false,
-    leading: const Icon(Icons.menu),
-    elevation: 0,
-    bottom: PreferredSize(
-        preferredSize: const Size(0.0, 80.0),
-        child: ConstrainedBox(
-            //constraints: BoxConstraints.tightFor(width: 85.w),
-            constraints: const BoxConstraints.tightFor(width: 1532),
-            child: const SparkARCustomTabBar())),
-  );
-}
+Widget homePageEffectsList(BuildContext context, List<Owner> owners) {
+  final controller = ScrollController();
 
-@swidget
-Widget mobileHomePageBody(BuildContext context) {
-  return Center(
-      child: ConstrainedBox(
-          //constraints: BoxConstraints.tightFor(width: 85.w),
-          constraints: const BoxConstraints.tightFor(width: 1532),
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              Padding(
-                child: "Effects".h2,
-                padding:
-                    const EdgeInsets.symmetric(horizontal: 24, vertical: 8),
-              ),
-              const Expanded(child: AccountsTabBarView())
-            ],
-          )));
+  final List<HomePageListItem> listItems = owners
+      .map((owner) => [
+            HomePageListItem.header(owner),
+            ...owner.effects
+                .map((effect) => HomePageListItem.effect(effect, owner))
+          ])
+      .expand((element) => element)
+      .toList();
+
+  return DraggableScrollbar.semicircle(
+      alwaysVisibleScrollThumb: true,
+      labelTextBuilder: (offset) {
+        final currentItem = controller.hasClients
+            ? (controller.offset /
+                    controller.position.maxScrollExtent *
+                    listItems.length)
+                .floor()
+            : 0;
+
+        final displayName =
+            listItems[min(currentItem, listItems.length - 1)].map(
+          header: (h) => h.owner.displayName,
+          effect: (e) => e.owner.displayName,
+        );
+        return Text(
+          "$displayName",
+          style: TextStyle(color: Colors.black),
+        );
+      },
+      child: ListView.builder(
+        controller: controller,
+        itemBuilder: (context, index) => listItems[index].map(
+          header: (h) => OwnerListItem(h.owner),
+          effect: (e) => EffectListItem(e.effect),
+        ),
+        itemCount: listItems.length,
+      ),
+      controller: controller);
 }

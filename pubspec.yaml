@@ -26,12 +26,6 @@ dependencies:
     sdk: flutter
   json_annotation: ^4.0.1
   freezed_annotation: ^2.2.0
-  random_color_scheme: ^0.1.3
-  responsive_framework: ^0.2.0
-  #adaptive_breakpoints: ^0.0.2
-  animations: ^2.0.0
-  webcrypto: ^0.5.3
-  encrypt: ^5.0.0-beta.1
   functional_widget_annotation: ^0.10.0
   flutter_riverpod: ^2.3.1
   one_context: ^2.1.0
@@ -41,8 +35,6 @@ dependencies:
     path: ./base_types
   extensions:
     path: ./extensions
-  widgets:
-    path: ./widgets
   #sparkar_firestone_datasource:
   #  path: ./sparkar_firestone_datasource
   sparkar_netlify_datasource:
@@ -81,7 +73,7 @@ flutter:
   assets:
     - assets/images/Icon-512.png
     - assets/images/starred.png
-    - assets/mock_12_03_2023.json
+    - assets/mock.json
   #   - images/a_dot_ham.jpeg
 
   # An image asset can refer to one or more resolution-specific "variants", see

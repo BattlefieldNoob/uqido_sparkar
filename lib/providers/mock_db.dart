@@ -19,7 +19,7 @@ class MockDB extends CachedBaseRepository<List<Owner>> with SparkARDataSource {
 
   @override
   Future<List<Owner>> fetchData() async {
-    String data = await rootBundle.loadString('assets/mock_12_03_2023.json');
+    String data = await rootBundle.loadString('assets/mock.json');
     return (jsonDecode(data) as List<dynamic>)
         .map((e) => Owner.fromJson(e))
         .toList();

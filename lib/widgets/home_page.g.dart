@@ -6,16 +6,17 @@ part of 'home_page.dart';
 // FunctionalWidgetGenerator
 // **************************************************************************
 
-class MobileHomePageAppBar extends StatelessWidget {
-  const MobileHomePageAppBar({Key? key}) : super(key: key);
+class HomePageEffectsList extends StatelessWidget {
+  const HomePageEffectsList(
+    this.owners, {
+    Key? key,
+  }) : super(key: key);
+
+  final List<Owner> owners;
 
   @override
-  Widget build(BuildContext _context) => mobileHomePageAppBar(_context);
-}
-
-class MobileHomePageBody extends StatelessWidget {
-  const MobileHomePageBody({Key? key}) : super(key: key);
-
-  @override
-  Widget build(BuildContext _context) => mobileHomePageBody(_context);
+  Widget build(BuildContext _context) => homePageEffectsList(
+        _context,
+        owners,
+      );
 }
