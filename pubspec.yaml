@@ -48,6 +48,7 @@ dependencies:
   sparkar_netlify_datasource:
     path: ./sparkar_netlify_datasource
   riverpod_annotation: ^2.0.1
+  draggable_scrollbar: ^0.1.0
 
 dependency_overrides:
   flutter_cache:
