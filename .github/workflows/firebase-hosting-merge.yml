@@ -3,23 +3,27 @@
 
 name: Deploy to Firebase Hosting on merge
 'on':
+  workflow_dispatch: {}
   push:
     branches:
       - master
       - develop
 jobs:
-  build_and_deploy:
+  build:
     runs-on: ubuntu-latest
-    container: 
-      image: "ghcr.io/battlefieldnoob/flutter-web:latest"
+    container:
+      image: "cirrusci/flutter:3.7.7"
     steps:
       - uses: actions/checkout@v2
 
-      - name: Copy cache from /root into HOME (without root folder itself)
-        run: cp -r /root/. $HOME 
+      - name: Cache flutter pub-cache
+        uses: actions/cache@v2
+        with:
+          path: ~/.pub-cache
+          key: ${{ runner.os }}-${{ github.event.repository.name }}-pub-cache-3.7.7
 
       - name: flutter build
-        run: flutter build web
+        run: flutter build web --release
 
       - name: prepare deploy folder
         run: cp -R ./build ./deploy/build

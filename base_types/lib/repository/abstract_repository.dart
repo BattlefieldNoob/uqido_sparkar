@@ -1,25 +1,20 @@
 import 'package:flutter/foundation.dart';
 import 'package:flutter_cache/flutter_cache.dart' as cache;
 
-
-abstract class BaseLoginData{
-
-}
+abstract class BaseLoginData {}
 
 abstract class BaseRepository {
-
+  const BaseRepository();
 }
 
 mixin AuthRepository<T extends BaseLoginData> {
-
   Future<bool> login(T loginData);
   Future<bool> isLogged();
   Future<bool> logout();
-
 }
 
-
 abstract class CachedBaseRepository<T> extends BaseRepository {
+  const CachedBaseRepository();
 
   Duration get defaultCacheDuration {
     if (kReleaseMode) {
