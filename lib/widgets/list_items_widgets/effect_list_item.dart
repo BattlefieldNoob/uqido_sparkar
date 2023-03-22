@@ -44,7 +44,7 @@ class EffectListItem extends StatelessWidget {
             ClickableIcon(Icons.home, effect.testLink, primary: false)
           ],
         ),
-        onTap: () => context.router.push(EffectRoute()),
+        onTap: () => context.router.push(EffectRoute(effectId: effect.id)),
       ),
     );
   }

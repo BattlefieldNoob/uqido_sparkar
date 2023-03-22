@@ -21,9 +21,12 @@ abstract class _$AppRouter extends RootStackRouter {
       );
     },
     EffectRoute.name: (routeData) {
+      final pathParams = routeData.inheritedPathParams;
+      final args = routeData.argsAs<EffectRouteArgs>(
+          orElse: () => EffectRouteArgs(effectId: pathParams.getString('id')));
       return AutoRoutePage<dynamic>(
         routeData: routeData,
-        child: const EffectPage(),
+        child: EffectPage(effectId: args.effectId),
       );
     },
   };
@@ -45,14 +48,29 @@ class HomeRoute extends PageRouteInfo<void> {
 
 /// generated route for
 /// [EffectPage]
-class EffectRoute extends PageRouteInfo<void> {
-  const EffectRoute({List<PageRouteInfo>? children})
-      : super(
+class EffectRoute extends PageRouteInfo<EffectRouteArgs> {
+  EffectRoute({
+    required String effectId,
+    List<PageRouteInfo>? children,
+  }) : super(
           EffectRoute.name,
+          args: EffectRouteArgs(effectId: effectId),
+          rawPathParams: {'id': effectId},
           initialChildren: children,
         );
 
   static const String name = 'EffectRoute';
 
-  static const PageInfo<void> page = PageInfo<void>(name);
+  static const PageInfo<EffectRouteArgs> page = PageInfo<EffectRouteArgs>(name);
+}
+
+class EffectRouteArgs {
+  const EffectRouteArgs({required this.effectId});
+
+  final String effectId;
+
+  @override
+  String toString() {
+    return 'EffectRouteArgs{effectId: $effectId}';
+  }
 }

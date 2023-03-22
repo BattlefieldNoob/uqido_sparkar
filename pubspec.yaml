@@ -28,13 +28,10 @@ dependencies:
   freezed_annotation: ^2.2.0
   functional_widget_annotation: ^0.10.0
   flutter_riverpod: ^2.3.1
-  one_context: ^2.1.0
   url_launcher: ^6.0.2
   flutter_login: ^4.1.1
   base_types:
     path: ./base_types
-  extensions:
-    path: ./extensions
   #sparkar_firestone_datasource:
   #  path: ./sparkar_firestone_datasource
   netlify_datasource:

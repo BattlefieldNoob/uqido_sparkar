@@ -21,9 +21,10 @@ class HomePage extends ConsumerWidget {
   Widget build(BuildContext context, WidgetRef ref) {
     final owners = ref.watch(fetchDataProvider);
 
-    return owners.maybeWhen(
-        orElse: () => CircularProgressIndicator(),
-        data: (data) => HomePageEffectsList(data));
+    return Scaffold(
+        body: owners.maybeWhen(
+            orElse: () => CircularProgressIndicator(),
+            data: (data) => HomePageEffectsList(data)));
   }
 }
 

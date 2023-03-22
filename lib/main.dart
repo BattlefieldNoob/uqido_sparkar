@@ -1,27 +1,28 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:one_context/one_context.dart';
 import 'package:uqido_sparkar/widgets/common/app_theme.dart';
 
 import 'navigation/app_router.dart';
 
 void main() async {
-  WidgetsFlutterBinding.ensureInitialized();
+  runApp(MyApp());
+}
+
+class MyApp extends StatelessWidget {
   final _appRoute = AppRouter();
 
-  runApp(
-    ProviderScope(
-      observers: [Logger()],
+  // This widget is the root of your application.
+  @override
+  Widget build(BuildContext context) {
+    return ProviderScope(
       child: MaterialApp.router(
-        builder: (context, child) {
-          child = OneContext().builder(context, child);
-          return child;
-        },
+        title: 'Flutter Demo',
         theme: getTheme(),
         routerConfig: _appRoute.config(),
       ),
-    ),
-  );
+      observers: [Logger()],
+    );
+  }
 }
 
 class Logger extends ProviderObserver {
