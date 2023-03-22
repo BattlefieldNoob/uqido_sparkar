@@ -1,6 +1,8 @@
+import 'package:auto_route/auto_route.dart';
+import 'package:data_model/effect.dart';
 import 'package:flutter/material.dart';
 import 'package:functional_widget_annotation/functional_widget_annotation.dart';
-import 'package:data_model/effect.dart';
+import 'package:uqido_sparkar/navigation/app_router.dart';
 import 'package:url_launcher/url_launcher_string.dart';
 
 import 'effect_visibility_status.dart';
@@ -16,33 +18,35 @@ class EffectListItem extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-        padding: const EdgeInsets.all(8),
-        child: ListTile(
-          dense: false,
-          contentPadding: const EdgeInsets.all(16),
-          leading: SizedBox.square(
-            child: Image.network(effect.thumbnailUri),
-            dimension: 48,
-          ),
-          tileColor: Theme.of(context).backgroundColor,
-          shape: RoundedRectangleBorder(
-            borderRadius: BorderRadius.circular(10),
-          ),
-          title: Text(effect.name, style: TextStyle(fontSize: 16)),
-          subtitle: EffectVisibilityStatus(effect.submissionStatus,
-              effect.visibilityStatus, /* effect.isDeprecated*/ false),
-          trailing: Row(
-            mainAxisSize: MainAxisSize.min,
-            children: [
-              ClickableIcon(Icons.public_rounded, effect.shareLink,
-                  enabled: mapStatusToBool(effect)),
-              const SizedBox(
-                width: 8,
-              ),
-              ClickableIcon(Icons.home, effect.testLink, primary: false)
-            ],
-          ),
-        ));
+      padding: const EdgeInsets.all(8),
+      child: ListTile(
+        dense: false,
+        contentPadding: const EdgeInsets.all(16),
+        leading: SizedBox.square(
+          child: Image.network(effect.thumbnailUri),
+          dimension: 48,
+        ),
+        tileColor: Theme.of(context).backgroundColor,
+        shape: RoundedRectangleBorder(
+          borderRadius: BorderRadius.circular(10),
+        ),
+        title: Text(effect.name, style: TextStyle(fontSize: 16)),
+        subtitle: EffectVisibilityStatus(effect.submissionStatus,
+            effect.visibilityStatus, /* effect.isDeprecated*/ false),
+        trailing: Row(
+          mainAxisSize: MainAxisSize.min,
+          children: [
+            ClickableIcon(Icons.public_rounded, effect.shareLink,
+                enabled: mapStatusToBool(effect)),
+            const SizedBox(
+              width: 8,
+            ),
+            ClickableIcon(Icons.home, effect.testLink, primary: false)
+          ],
+        ),
+        onTap: () => context.router.push(EffectRoute()),
+      ),
+    );
   }
 }
 
