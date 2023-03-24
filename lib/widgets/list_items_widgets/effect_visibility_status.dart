@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:extensions/text_widget.dart';
 
 part 'effect_visibility_status.viewmodel.dart';
 
@@ -8,10 +7,11 @@ class EffectVisibilityStatus extends StatelessWidget {
   final String status;
 
   EffectVisibilityStatus(
-      String submissionStatus, String visibilityStatus, bool isDeprecated):
-      circleColor = mapStatusToColor(visibilityStatus, submissionStatus, isDeprecated),
-      status = mapStatusToText(visibilityStatus, submissionStatus, isDeprecated);
-
+      String submissionStatus, String visibilityStatus, bool isDeprecated)
+      : circleColor =
+            mapStatusToColor(visibilityStatus, submissionStatus, isDeprecated),
+        status =
+            mapStatusToText(visibilityStatus, submissionStatus, isDeprecated);
 
   @override
   Widget build(BuildContext context) {
@@ -26,7 +26,7 @@ class EffectVisibilityStatus extends StatelessWidget {
       const SizedBox(
         width: 4,
       ),
-      status.b2
+      Text(status, style: Theme.of(context).textTheme.bodyText2)
     ]);
   }
 }

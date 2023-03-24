@@ -28,19 +28,17 @@ dependencies:
   freezed_annotation: ^2.2.0
   functional_widget_annotation: ^0.10.0
   flutter_riverpod: ^2.3.1
-  one_context: ^2.1.0
   url_launcher: ^6.0.2
   flutter_login: ^4.1.1
   base_types:
     path: ./base_types
-  extensions:
-    path: ./extensions
   #sparkar_firestone_datasource:
   #  path: ./sparkar_firestone_datasource
   netlify_datasource:
     path: ./netlify_datasource
   riverpod_annotation: ^2.0.1
   draggable_scrollbar: ^0.1.0
+  auto_route: ^6.0.1
 
 dependency_overrides:
   flutter_cache:
@@ -56,6 +54,7 @@ dev_dependencies:
   json_serializable: ^6.6.1
   build_runner: ^2.3.3
   riverpod_generator: ^2.1.3
+  auto_route_generator: ^6.0.0
 
 
 # For information on the generic Dart part of this file, see the

@@ -1,5 +1,6 @@
 import 'dart:math';
 
+import 'package:auto_route/annotations.dart';
 import 'package:data_model/owner.dart';
 import 'package:draggable_scrollbar/draggable_scrollbar.dart';
 import 'package:flutter/material.dart';
@@ -12,6 +13,7 @@ import 'package:uqido_sparkar/widgets/models/home_page_list_item.dart';
 
 part 'home_page.g.dart';
 
+@RoutePage()
 class HomePage extends ConsumerWidget {
   const HomePage() : super(key: null);
 
@@ -19,9 +21,10 @@ class HomePage extends ConsumerWidget {
   Widget build(BuildContext context, WidgetRef ref) {
     final owners = ref.watch(fetchDataProvider);
 
-    return owners.maybeWhen(
-        orElse: () => CircularProgressIndicator(),
-        data: (data) => HomePageEffectsList(data));
+    return Scaffold(
+        body: owners.maybeWhen(
+            orElse: () => CircularProgressIndicator(),
+            data: (data) => HomePageEffectsList(data)));
   }
 }
 

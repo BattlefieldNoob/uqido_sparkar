@@ -57,14 +57,22 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "2.10.0"
-  back_button_interceptor:
-    dependency: transitive
+  auto_route:
+    dependency: "direct main"
     description:
-      name: back_button_interceptor
-      sha256: e47660f2178a4392eb72001f9594d3fdcb5efde93e59d2819d61fda499e781c8
+      name: auto_route
+      sha256: "70b2461cc58d6a46c20859f23148b370165da183d21a82b783156f9a91d9c38b"
       url: "https://pub.dev"
     source: hosted
-    version: "6.0.2"
+    version: "6.0.1"
+  auto_route_generator:
+    dependency: "direct dev"
+    description:
+      name: auto_route_generator
+      sha256: a3f11c3b1e6e884d1592924f3b7212855f1c7c8791c12d3b41b87ab81fb9d3b8
+      url: "https://pub.dev"
+    source: hosted
+    version: "6.0.0"
   base_types:
     dependency: "direct main"
     description:
@@ -263,13 +271,6 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "0.1.0"
-  extensions:
-    dependency: "direct main"
-    description:
-      path: extensions
-      relative: true
-    source: path
-    version: "1.0.0+1"
   fake_async:
     dependency: transitive
     description:
@@ -509,14 +510,6 @@ packages:
       relative: true
     source: path
     version: "1.0.0+1"
-  one_context:
-    dependency: "direct main"
-    description:
-      name: one_context
-      sha256: db39c05e68a0f8dabb68072eab31e21912a5f4933db24eabc2b1af8a02d221e2
-      url: "https://pub.dev"
-    source: hosted
-    version: "2.1.0"
   package_config:
     dependency: transitive
     description:
@@ -557,6 +550,14 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "2.1.5"
+  petitparser:
+    dependency: transitive
+    description:
+      name: petitparser
+      sha256: "49392a45ced973e8d94a85fdb21293fbb40ba805fc49f2965101ae748a3683b4"
+      url: "https://pub.dev"
+    source: hosted
+    version: "5.1.0"
   platform:
     dependency: transitive
     description:
@@ -970,6 +971,14 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "1.0.0"
+  xml:
+    dependency: transitive
+    description:
+      name: xml
+      sha256: "979ee37d622dec6365e2efa4d906c37470995871fe9ae080d967e192d88286b5"
+      url: "https://pub.dev"
+    source: hosted
+    version: "6.2.2"
   yaml:
     dependency: transitive
     description:
